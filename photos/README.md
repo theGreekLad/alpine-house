@@ -153,6 +153,17 @@ The full room-by-room notes are in [`../existing-conditions.md`](../existing-con
 - **Left:** the dining room's east (garage) wall, with decorative shelves, a light switch and folding chairs.
 - **Right edge:** the south wall's upper cabinets and counter.
 
+### 18 · Kitchen from the dining room
+![Kitchen from the dining room](18-kitchen-from-dining.jpg)
+
+**Camera:** at the peninsula on the dining side, looking south into the kitchen.
+
+- **South wall:** the **sink** (single bowl, gooseneck faucet, no window) under the cherry upper cabinets, with a **stainless dishwasher** to its left at the east end of the run, beside the hall opening.
+- **Right (west wall):** the base cabinets run around the corner to the range and the fridge.
+- **Ceiling:** a 3-head track light and one recessed can light.
+- **Left:** the stair half wall and pass-through, and the short hall opening at the kitchen's southeast corner.
+- **Right foreground:** the peninsula (cherry base, laminate top with a rounded end) and a stool.
+
 ---
 
 ## Dining room

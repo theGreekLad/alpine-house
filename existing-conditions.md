@@ -125,14 +125,14 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | **Windows** | One large **picture window** in the middle of the east wall, about 6–7 ft wide, with sheer tab-top curtains on a rod. |
 | **West (stair-side) wall** | Solid. It has the **thermostat**, a light switch, a floor register, outlets and a small cover plate. |
 | **North (garage) wall** | Plain, with a cover plate low on the wall. |
-| **Northwest corner** | An **exposed round galvanized duct** (about 8–10″ across) runs from the floor to the ceiling, right beside the stair landing. **[Confirm]** whether it's live or abandoned. |
+| **Northwest corner** | An **exposed round galvanized duct** (about 8–10″ across) runs from the floor to the ceiling, right beside the stair landing. **It's live (confirmed).** It probably carries air from the basement furnace up to the attic ducts that feed the ceiling registers. |
 | **Lighting** | **Track lighting** on the ceiling (one or two tracks, about 6 heads). No other ceiling fixture. |
 | **Heating** | A floor register on the west wall by the hall door. **Ceiling supply registers** near the front wall, possibly fed by the corner duct. Cover plates on the north and west walls, probably from removed baseboard heaters. |
 | **Other** | Floating shelves on the south part of the room. |
 
 **[Attention]**
 
-- **Corner duct:** confirm whether it's live by running the furnace and checking airflow at the ceiling registers and along the duct. Then remove it, reroute it or box it in.
+- **Corner duct (live):** the options are to box it in where it is, move it into a wall or closet, or replace it with floor registers fed from the basement. Decide before the new floors go in.
 - **Repairs:** patch the damaged drywall south of the window and around the outlet and register by the hall door, and make the heater cover plates safe.
 
 ### 4.2 Hall, linen closet and pantry *(photos 03, 04)*
@@ -211,21 +211,21 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 - **Ventilation:** add an **exhaust fan vented outside**.
 - **Open wall:** close the opened wall by the door.
 
-### 4.6 Kitchen: 9′ 8″ × 11′ 8″ *(photos 10, 11, 12, 13)*
+### 4.6 Kitchen: 9′ 8″ × 11′ 8″ *(photos 10, 11, 12, 13, 18)*
 
 | | |
 |---|---|
-| **Layout** | A **U shape**. There's a counter with upper cabinets on the **south wall** (the bathroom side). The **range and fridge** run along the **west (back) wall**. A **breakfast-bar peninsula** on the north side divides the kitchen from the dining room. You get to the dining room past the peninsula's east end, beside the stairs. |
+| **Layout** | A **U shape**. There's a counter with the **sink and dishwasher** and upper cabinets on the **south wall** (the bathroom side). The **range and fridge** run along the **west (back) wall**. A **breakfast-bar peninsula** on the north side divides the kitchen from the dining room. You get to the dining room past the peninsula's east end, beside the stairs. |
 | **Cabinets** | **Cherry-stained raised-panel wood**, with upper cabinets on the south and west walls and a tall end panel by the peninsula. |
 | **Counters** | **Almond or white laminate** with rounded front edges. The peninsula top has a rounded end. |
 | **Peninsula** | Wood base with drawers and doors, a laminate top, and seating for 2–3 stools on the dining side. |
-| **Appliances** | A **stainless electric range** that looks fairly new. A **white under-cabinet range hood**. A **stainless top-freezer fridge** that also looks fairly new. A countertop microwave. |
-| **Sink** | **[Confirm]** It isn't visible in the photos. It's most likely on the south counter, back-to-back with the bathroom plumbing. |
+| **Appliances** | A **stainless electric range** that looks fairly new. A **white under-cabinet range hood**. A **stainless top-freezer fridge** that also looks fairly new. A **stainless dishwasher** at the east end of the south run, beside the hall opening. A countertop microwave. |
+| **Sink** | Single bowl on the **south wall**, under the upper cabinets (no window), with a gooseneck faucet. It's between the dishwasher (east) and the corner run (west), back-to-back with the bathroom plumbing wall. |
 | **Windows** | **None.** The back wall is all cabinets. |
 | **East side (stairs)** | A **half wall with a flat white cap** and a large **framed pass-through above it**, with a white header and trim and a white post at the landing end. There's a floor register in the half wall. |
 | **Openings** | Open to the short hall at the southeast corner. Open to the dining room. Open to the stair landing at the northeast corner. |
 | **Floor** | Honey laminate, continuous with the dining room and hall. |
-| **Lighting** | A **small track light**. The hood has its own light. No under-cabinet lights. |
+| **Lighting** | A **3-head track light** and **one recessed can light**. The hood has its own light. No under-cabinet lights. |
 
 **[Attention]**
 
@@ -329,8 +329,8 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | Item | Location | Notes |
 |---|---|---|
 | Floor registers | Front room (west wall by the hall door), green room (by the door; southeast corner), bedroom 2 (southwest corner), kitchen (stair half wall) | From the basement furnace. |
-| Ceiling supply registers | Front room (near the front wall), bedroom 2, dining (above the slider) | **[Confirm]** the source. Possibly the corner duct and ducts in the attic. |
-| Exposed round duct | Front room, northwest corner, floor to ceiling | **[Confirm]** live or abandoned. |
+| Ceiling supply registers | Front room (near the front wall), bedroom 2, dining (above the slider) | Probably fed by the corner duct through ducts in the attic. |
+| Exposed round duct | Front room, northwest corner, floor to ceiling | **Live (confirmed).** Probably feeds the attic ducts and ceiling registers. |
 | Thermostat | Front room, west wall by the hall door | |
 | Electric baseboard heaters, **still installed** | Dining, under both north windows (2) | Remove them and cap the circuits. |
 | Old heater junction boxes and covers | Bedroom 2 (south and west walls), front room (north and west walls) | The heaters are gone. Make the boxes and circuits safe. |
@@ -344,7 +344,7 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | Location | What's there |
 |---|---|
 | Front room | Track lighting (about 6 heads). |
-| Kitchen | Small track light, plus the range hood light. |
+| Kitchen | A 3-head track light, one recessed can light, and the range hood light. |
 | Dining | Ceiling fan with a 4-light kit. |
 | Green room | Ceiling fan with a 4-light kit. |
 | Bedroom 2 | **No ceiling light seen.** |
@@ -378,7 +378,7 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 6. **Bathroom exhaust fan.** None seen; add one vented outside.
 7. **Hall ceiling hole.** Check for a leak (roof or flue pipe) before patching.
 8. **Baseboard heaters.** Remove the two in the dining room, and make the old junction boxes in bedroom 2 and the front room safe.
-9. **Exposed duct** in the front room. Determine whether it's live, then remove, reroute or box it in.
+9. **Exposed duct** in the front room. It's live, so get an HVAC quote to reroute it (into a wall or closet, or replace it with floor registers), or box it in. Decide before the new floors go in.
 10. **Open walls.** Close the bath wall by the door, bedroom 2's east wall and the panel bay.
 11. **Exposed garage wiring.** Protect it where it could be bumped.
 12. **Drywall repair** throughout: shelf and anchor holes, damaged patches, the marker in the dining room.
@@ -388,8 +388,6 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 ## 7. Open questions
 
 - Which basement rooms are the **carpeted bedroom** and the **unfinished room**?
-- Where is the **kitchen sink**?
-- Is the **front room corner duct** live?
 - What are the **deck's dimensions**? It looks larger than 150 sq ft.
 - Is the south end of the roof a **hip or a gable**? What's on the north and south sides (garage side windows or doors)?
 - What's the **linen closet's** exact size?
@@ -408,7 +406,7 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 - **Front door:** at the **north end** of the front wall, by the garage. The **picture window** goes in the middle of the wall.
 - **Green room windows:** a slider on the east and a double-hung on the south. **Bedroom 2:** double-hungs on the south and west.
 - **Bathroom:** the toilet and vanity go on the **north wall**. Add the window over the tub.
-- **Kitchen:** a U-shaped layout, with the counter on the south, the range and fridge on the west, the peninsula on the north, and **no windows**.
+- **Kitchen:** a U-shaped layout, with the sink and dishwasher on the south, the range and fridge on the west, the peninsula on the north, and **no windows**.
 - **Stairwell:** a semi-open half wall on the **kitchen side**, and a solid wall on the front room side.
 - **Dining room:** the **slider is on the bump-out's west wall** and opens to the deck, with **two windows on the north wall**.
 - **Deck:** across the back, in front of the slider and along the back wall. Its size is still to be confirmed.
