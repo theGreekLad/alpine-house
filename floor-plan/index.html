@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Main Floor Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a drafting sheet. The plan is the hero, with a title block under it, then the room schedule beside the list of things to check. */
+:root{
+  --bg:#F2F4F1; --sheet:#FCFCFA; --ink:#1C2320; --line:#3A4440; --muted:#66706B; --rule:#D6DBD5;
+  --accent:#2C6878; --warn:#B4632A;
+  --f-living:#FFFFFF; --f-bed:#ECF1E7; --f-wet:#E0ECF0; --f-circ:#F4F0E5; --f-store:#E8E8E1; --f-garage:#DFE2DE; --hl:#FBE4C2;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1311; --sheet:#151A17; --ink:#E1E6E2; --line:#A8B3AD; --muted:#8C9792; --rule:#2A322E;
+    --accent:#7DB7C6; --warn:#E39A62;
+    --f-living:#1B211E; --f-bed:#1D2720; --f-wet:#18252A; --f-circ:#24221C; --f-store:#22231F; --f-garage:#2A2E2C; --hl:#4D3B20;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1311; --sheet:#151A17; --ink:#E1E6E2; --line:#A8B3AD; --muted:#8C9792; --rule:#2A322E;
+  --accent:#7DB7C6; --warn:#E39A62;
+  --f-living:#1B211E; --f-bed:#1D2720; --f-wet:#18252A; --f-circ:#24221C; --f-store:#22231F; --f-garage:#2A2E2C; --hl:#4D3B20;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 24px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,48px);line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:4px 0 0;text-wrap:balance}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:8px}
+.meta b{color:var(--ink);font-weight:500}
+.flip{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.flip-label{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.seg button{font:500 14px var(--body);color:var(--ink);background:var(--sheet);border:0;padding:7px 14px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:3px}
+.plan-scroll{overflow-x:auto;padding:12px 8px 4px}
+#plan{display:block;width:100%;min-width:600px;height:auto}
+.titleblock{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border-top:1px solid var(--rule)}
+.titleblock div{padding:10px 14px;border-right:1px solid var(--rule);min-width:0}
+.titleblock div:last-child{border-right:0}
+.titleblock span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.titleblock strong{font-weight:500;font-size:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;padding:10px 14px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border:1px solid var(--line);vertical-align:-2px;margin-right:6px}
+.cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}}
+h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:.03em;text-transform:uppercase;margin:0 0 10px}
+.panel{padding:18px 18px 14px;min-width:0}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:6px 8px;border-bottom:1px solid var(--rule);white-space:nowrap}
+td:first-child{white-space:normal}
+td.num,th.num{text-align:right}
+td.dim{font-family:var(--mono);font-size:13px}
+tr.grp td{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-top:14px;border-bottom:0}
+tbody tr[data-room]{cursor:default}
+tbody tr[data-room].hl td{background:var(--hl)}
+tbody tr[data-room]:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+tr.total td{font-weight:600;border-bottom:0;border-top:1px solid var(--line)}
+tr.sub td{color:var(--muted);border-bottom:0}
+.note{font-size:13px;color:var(--muted);margin:12px 0 0;max-width:62ch}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.checks li{padding-left:14px;border-left:3px solid var(--rule)}
+.checks li.ask{border-left-color:var(--warn)}
+.checks li.ok{border-left-color:var(--accent)}
+.checks h3{font-size:15px;font-weight:600;margin:0 0 2px}
+.checks p{margin:0;font-size:14px;max-width:60ch}
+.budget{margin-top:18px;padding:12px 14px;background:var(--bg);border-radius:3px;font-size:14px}
+.budget strong{font-weight:600}
+/* plan drawing */
+#plan text{font-family:var(--display);fill:var(--ink)}
+#plan .rm{stroke:none;transition:fill .12s}
+#plan .rm.living{fill:var(--f-living)} #plan .rm.bed{fill:var(--f-bed)} #plan .rm.wet{fill:var(--f-wet)}
+#plan .rm.circ{fill:var(--f-circ)} #plan .rm.store{fill:var(--f-store)} #plan .rm.garage{fill:var(--f-garage)}
+#plan .rm.hl{fill:var(--hl)}
+#plan .gap-sheet{fill:var(--sheet)} #plan .gap-living{fill:var(--f-living)} #plan .gap-garage{fill:var(--f-garage)} #plan .gap-circ{fill:var(--f-circ)}
+#plan .wall{fill:none;stroke:var(--line);stroke-width:.28;stroke-linejoin:miter}
+#plan .outer{fill:none;stroke:var(--ink);stroke-width:.55;stroke-linejoin:miter}
+#plan .left{fill:url(#hatch)}
+#plan .hatchline{stroke:var(--warn);stroke-width:.1}
+#plan .open-cover{stroke:var(--f-living);stroke-width:.42}
+#plan .open-dash{stroke:var(--muted);stroke-width:.07;stroke-dasharray:.35 .25}
+#plan .tread{stroke:var(--line);stroke-width:.06}
+#plan .arrow{stroke:var(--ink);stroke-width:.09;fill:none}
+#plan .arrowhead{fill:var(--ink)}
+#plan .swing{fill:none;stroke:var(--line);stroke-width:.07}
+#plan .leaf{stroke:var(--ink);stroke-width:.12}
+#plan .ohd{stroke:var(--line);stroke-width:.08;stroke-dasharray:.4 .3}
+#plan .dimline{stroke:var(--muted);stroke-width:.06}
+#plan .dimline.acc{stroke:var(--warn)}
+#plan .t-name{font-weight:600;font-size:.82px;letter-spacing:.04px}
+#plan .t-sub{font-size:.6px;fill:var(--muted)}
+#plan .t-dim{font-family:var(--mono);font-size:.56px}
+#plan .t-area{font-family:var(--mono);font-size:.5px;fill:var(--muted)}
+#plan .t-small{font-weight:600;font-size:.56px}
+#plan .t-tiny{font-family:var(--mono);font-size:.4px}
+#plan .t-dimlabel{font-family:var(--mono);font-size:.6px;fill:var(--muted)}
+#plan .t-dimlabel.acc{fill:var(--warn);font-weight:500}
+#plan .t-front{font-weight:600;font-size:.8px;letter-spacing:.25px;fill:var(--accent)}
+#plan .compass{fill:none;stroke:var(--line);stroke-width:.07}
+#plan .compass-n{fill:var(--ink)}
+#plan .sb-dark{fill:var(--ink)} #plan .sb-light{fill:var(--sheet);stroke:var(--ink);stroke-width:.05}
+@media (prefers-reduced-motion:reduce){#plan .rm{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Sheet A-1 · Main floor</div>
+      <h1>Main Floor Plan</h1>
+      <div class="meta" id="meta"></div>
+    </div>
+  </header>
+
+  <section class="sheet" aria-label="Floor plan drawing">
+    <div class="plan-scroll"><svg id="plan" role="img" aria-label="Main floor plan drawn from room measurements"></svg></div>
+    <div class="legend">
+      <span><i style="background:var(--f-living)"></i>Living</span>
+      <span><i style="background:var(--f-bed)"></i>Bedroom</span>
+      <span><i style="background:var(--f-wet)"></i>Bath</span>
+      <span><i style="background:var(--f-circ)"></i>Hall / stairs</span>
+      <span><i style="background:var(--f-store)"></i>Closet / pantry</span>
+      <span><i style="background:var(--f-garage)"></i>Garage</span>
+      <span>- - - open to the next room</span>
+    </div>
+    <div class="titleblock">
+      <div><span>Drawn from</span><strong>Your room measurements</strong></div>
+      <div><span>Scale</span><strong>Approximate · not for construction</strong></div>
+      <div><span>Orientation</span><strong>Front faces east</strong></div>
+      <div><span>Walls</span><strong>Not drawn to thickness</strong></div>
+      <div><span>Date</span><strong>Nov 7, 2026</strong></div>
+    </div>
+  </section>
+
+  <div class="cols">
+    <section class="sheet panel" aria-labelledby="sched-h">
+      <h2 id="sched-h">Room schedule</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Room</th><th>East–west × north–south</th><th class="num">Sq ft</th></tr></thead>
+          <tbody id="sched"></tbody>
+        </table>
+      </div>
+      <p class="note">Sizes are the measurements you gave, except the hall, the hall closet and bedroom 2's closet, which were fitted to the space. On the drawing, a few rooms are stretched or shrunk by up to about 9 inches so the walls meet.</p>
+    </section>
+
+    <section class="sheet panel" aria-labelledby="check-h">
+      <h2 id="check-h">Things to check</h2>
+      <ul class="checks">
+        <li class="ok"><h3>Garage</h3>
+          <p>The garage is back to your measurement of 19′ 4″ deep. Its back wall lines up with the west side of the stairs, so it sticks out about 4′ 3″ past the front of the house.</p></li>
+        <li class="ask"><h3>Hall closet</h3>
+          <p>The closet across from the pantry is drawn at about 4′ wide × 2′ 10″ deep, opening north into the hall. That leaves a short stretch of hall in front of it leading to the green room door. Send its real size if you have it.</p></li>
+        <li class="ask"><h3>Doors</h3>
+          <p>The plan shows only the front door, the garage door and the door from the stair landing into the garage. Bedroom, bath and kitchen doors still need placing.</p></li>
+        <li class="ok"><h3>What lines up</h3>
+          <p>Across the bedroom side: green room 11′ 6″ + two 2′ closets + bedroom 2 at 9′ 6″ = 25′. Across the kitchen side: front room 11′ 6″ + stairs 3′ 7″ + kitchen 9′ 8″ ≈ 24′ 9″. Front to back, bedroom 2 + bath + kitchen comes to 28′ 1″ against 28′ 9″ on the front side. The 8″ difference is about two interior walls.</p></li>
+      </ul>
+      <div class="budget" id="budget"></div>
+    </section>
+  </div>
+</div>
+
+<script>
+(function(){
+  const W = 30.58, H = 40.5;
+  const flip = true; // geometry is measured from the front wall; the front faces east, so draw it mirrored
+
+  // Plan geometry in feet: x = east from the front (west) wall, y = north from the south wall.
+  // d = your measurement in inches [east-west, north-south].
+  const ROOMS = [
+    {id:'front',  name:'Front room', sub:'Entry / living', type:'living', g:{x:0,y:11.5,w:11.5,h:17.25}, d:[138,207], mode:'full'},
+    {id:'green',  name:'Green room', sub:'Bedroom', type:'bed', g:{x:0,y:0,w:11.5,h:11.5}, d:[138,138], mode:'full'},
+    {id:'gcl',    name:'Green room closet', type:'store', g:{x:11.5,y:0,w:2,h:6}, d:[24,72], mode:'cl'},
+    {id:'b2cl',   name:'Bedroom 2 closet', type:'store', g:{x:13.5,y:0,w:2,h:6}, d:[24,72], mode:'cl'},
+    {id:'bed2',   name:'Bedroom 2', type:'bed', g:{x:15.5,y:0,w:9.5,h:11.5}, d:[114,138], mode:'full'},
+    {id:'hall',   name:'Hall', type:'circ', poly:[[11.5,8.84],[15.5,8.84],[15.5,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,15.5],[11.5,15.5]], lab:[14.9,12.6], mode:'hall'},
+    {id:'hcl',    name:'Hall closet', type:'store', g:{x:11.5,y:6,w:4,h:2.84}, d:[48,34], mode:'cl'},
+    {id:'bath',   name:'Bathroom', short:'Bath', type:'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}, d:[80,59], mode:'full'},
+    {id:'pantry', name:'Pantry', type:'store', g:{x:11.5,y:15.5,w:3.58,h:3.17}, d:[44,38], mode:'small'},
+    {id:'stair',  name:'Stair opening', type:'circ', g:{x:11.5,y:18.67,w:3.58,h:7.33}, d:[43,88], mode:'none'},
+    {id:'landing',name:'Top landing', type:'circ', g:{x:11.5,y:26,w:3.58,h:2.75}, d:[43,32], mode:'none'},
+    {id:'kitchen',name:'Kitchen', type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}, d:[116,140], mode:'full'},
+    {id:'garage', name:'Garage', type:'garage', g:{x:-4.25,y:28.75,w:19.33,h:11.75}, d:[232,141], mode:'full'},
+    {id:'dining', name:'Dining room', type:'living', g:{x:15.08,y:28.75,w:15.5,h:11.75}, d:[186,138], mode:'full'}
+  ];
+  const LEFTOVER = [];
+  const OUTLINE = [[0,0],[25,0],[25,28.75],[30.58,28.75],[30.58,40.5],[-4.25,40.5],[-4.25,28.75],[0,28.75]];
+  const OPEN = [ [[11.5,11.5],[11.5,15.5]], [[15.08,28.75],[25,28.75]], [[15.08,26],[15.08,28.75]], [[15.08,16.42],[18.33,16.42]] ];
+
+  const SCHEDULE = [
+    ['Living', [['front','Front room (entry / living)',[138,207]],['kitchen','Kitchen',[116,140]],['dining','Dining room',[186,138]]]],
+    ['Bedrooms', [['green','Green room',[138,138]],['gcl','Green room closet',[24,72]],['bed2','Bedroom 2',[114,138]],['b2cl','Bedroom 2 closet (extended to fit)',[24,72]]]],
+    ['Bath & storage', [['bath','Bathroom',[80,59]],['pantry','Pantry',[44,38]],['hcl','Hall closet (size estimated)',[48,34]]]],
+    ['Halls & stairs', [['hall','Hall (fitted to the space)',null],['stair','Stair opening',[43,88]],['landing','Top landing to garage door',[43,32]]]],
+    ['Garage', [['garage','Garage',[232,141]]]]
+  ];
+
+  const fmt = i => { const f = Math.floor(i/12), r = Math.round(i - f*12); return r ? `${f}′ ${r}″` : `${f}′`; };
+  const area = d => d[0]*d[1]/144;
+  const polyArea = p => Math.abs(p.reduce((s,[x,y],i) => { const [x2,y2] = p[(i+1)%p.length]; return s + x*y2 - x2*y; }, 0))/2;
+  const X = x => flip ? W - x : x;
+  const Y = y => H - y;
+  const n = v => (+v).toFixed(3);
+  const rectPoly = g => [[g.x,g.y],[g.x+g.w,g.y],[g.x+g.w,g.y+g.h],[g.x,g.y+g.h]];
+  const pts = p => p.map(([x,y]) => `${n(X(x))},${n(Y(y))}`).join(' ');
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+  function text(x, y, s, cls, extra=''){ return `<text x="${n(X(x))}" y="${n(Y(y))}" text-anchor="middle" dominant-baseline="middle" class="${cls}" ${extra}>${esc(s)}</text>`; }
+  function line(a, b, cls){ return `<line x1="${n(X(a[0]))}" y1="${n(Y(a[1]))}" x2="${n(X(b[0]))}" y2="${n(Y(b[1]))}" class="${cls}"/>`; }
+
+  function dimH(x1, x2, y, label, acc){
+    const c = acc ? ' acc' : '';
+    let s = line([x1,y],[x2,y],'dimline'+c);
+    [x1,x2].forEach(x => { s += line([x-0.3,y-0.3],[x+0.3,y+0.3],'dimline'+c); });
+    s += text((x1+x2)/2, y+0.55, label, 't-dimlabel'+c);
+    return s;
+  }
+  function dimV(y1, y2, x, label, acc){
+    const c = acc ? ' acc' : '';
+    let s = line([x,y1],[x,y2],'dimline'+c);
+    [y1,y2].forEach(y => { s += line([x-0.3,y-0.3],[x+0.3,y+0.3],'dimline'+c); });
+    const tx = X(x) + (flip ? 0.55 : -0.55), ty = Y((y1+y2)/2);
+    s += `<text x="${n(tx)}" y="${n(ty)}" text-anchor="middle" dominant-baseline="middle" class="t-dimlabel${c}" transform="rotate(-90 ${n(tx)} ${n(ty)})">${esc(label)}</text>`;
+    return s;
+  }
+  function arc(hinge, from, to, cwInPlan){
+    const r = Math.hypot(from[0]-hinge[0], from[1]-hinge[1]);
+    // Clockwise in plan (y up) is counter-clockwise on screen; mirroring reverses it again.
+    let sweep = cwInPlan ? 0 : 1; if (flip) sweep = 1 - sweep;
+    return `<path class="swing" d="M${n(X(from[0]))},${n(Y(from[1]))} A${n(r)},${n(r)} 0 0 ${sweep} ${n(X(to[0]))},${n(Y(to[1]))}"/>`;
+  }
+
+  function draw(){
+    let s = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern></defs>`;
+
+    // room fills
+    ROOMS.forEach(r => { s += `<polygon class="rm ${r.type}" data-room="${r.id}" points="${pts(r.poly || rectPoly(r.g))}"><title>${esc(r.name)}</title></polygon>`; });
+    LEFTOVER.forEach(p => { s += `<polygon class="left" points="${pts(p)}"/>`; });
+    // interior walls
+    ROOMS.forEach(r => { s += `<polygon class="wall" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
+    LEFTOVER.forEach(p => { s += `<polygon class="wall" points="${pts(p)}"/>`; });
+
+    // stair treads (descends south from the top landing)
+    const st = ROOMS.find(r => r.id==='stair').g;
+    for (let i = 1; i < 9; i++){ const y = st.y + i*st.h/9; s += line([st.x,y],[st.x+st.w,y],'tread'); }
+    const cx = st.x + st.w/2;
+    s += line([cx, 27.6],[cx, st.y+0.9],'arrow');
+    s += `<polygon class="arrowhead" points="${pts([[cx-0.38,st.y+1.05],[cx+0.38,st.y+1.05],[cx,st.y+0.35]])}"/>`;
+    s += text(cx, 27.95, 'DN', 't-small');
+
+    // openings between rooms
+    OPEN.forEach(([a,b]) => { s += line(a,b,'open-cover') + line(a,b,'open-dash'); });
+
+    // outer wall, then cut door openings
+    s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
+    const gapRect = (x1,x2,y1,y2,cls) => { const a = Math.min(X(x1),X(x2)), b = Math.max(X(x1),X(x2)); return `<rect class="${cls}" x="${n(a)}" y="${n(Y(y2))}" width="${n(b-a)}" height="${n(y2-y1)}"/>`; };
+    // front door: west wall of front room
+    s += gapRect(-0.4,0,19.5,22.5,'gap-sheet') + gapRect(0,0.35,19.5,22.5,'gap-living');
+    s += line([0,19.5],[3,19.5],'leaf') + arc([0,19.5],[3,19.5],[0,22.5],false);
+    // overhead garage door: front (east) face of the garage
+    s += gapRect(-4.65,-4.25,30.4,38.9,'gap-sheet') + gapRect(-4.25,-3.9,30.4,38.9,'gap-garage');
+    s += line([-3.35,30.4],[-3.35,38.9],'ohd');
+    // garage to house door at top of the stair landing
+    s += gapRect(11.8,14.7,28.55,28.95,'gap-circ');
+    s += line([11.8,28.75],[11.8,31.65],'leaf') + arc([11.8,28.75],[11.8,31.65],[14.7,28.75],true);
+
+    // labels
+    ROOMS.forEach(r => {
+      const g = r.g; let lx, ly;
+      if (r.lab){ [lx,ly] = r.lab; } else { lx = g.x + g.w/2; ly = g.y + g.h/2; }
+      if (r.mode === 'full'){
+        const lines = [[(r.short || r.name).toUpperCase(),'t-name']];
+        if (r.sub) lines.push([r.sub,'t-sub']);
+        lines.push([`${fmt(r.d[0])} × ${fmt(r.d[1])}`,'t-dim'],[`${Math.round(area(r.d))} sq ft`,'t-area']);
+        const step = 0.82, top = ly + (lines.length-1)*step/2;
+        lines.forEach(([t,c],i) => { s += text(lx, top - i*step, t, c, `data-room="${r.id}" pointer-events="none"`); });
+      } else if (r.mode === 'small'){
+        s += text(lx, ly+0.35, r.name.toUpperCase(), 't-small', 'pointer-events="none"');
+        s += text(lx, ly-0.45, `${fmt(r.d[0])}×${fmt(r.d[1])}`, 't-tiny', 'pointer-events="none"');
+      } else if (r.mode === 'cl'){
+        s += text(lx, ly, 'CL', 't-small', 'pointer-events="none"');
+      } else if (r.mode === 'hall'){
+        s += text(lx, ly+0.55, 'HALL', 't-small', 'pointer-events="none"');
+        s += text(lx, ly-0.25, `≈ ${Math.round(polyArea(r.poly))} sq ft`, 't-area', 'pointer-events="none"');
+      }
+    });
+
+    // dimensions (overall, approximate)
+    s += dimH(0, 25, -1.7, '≈ 25′ 0″');
+    s += dimH(-4.25, 30.58, 42.0, '≈ 34′ 10″');
+    s += dimH(-4.25, 0, 43.7, '≈ 4′ 3″ jut');
+    s += dimV(0, 28.75, -1.7, '≈ 28′ 9″');
+    s += dimV(28.75, 40.5, -5.95, '11′ 9″');
+    s += dimV(0, 40.5, -7.8, '≈ 40′ 6″');
+    s += dimV(0, 28.75, 26.6, '≈ 28′ 9″');
+    s += dimV(28.75, 40.5, 32.2, '≈ 11′ 9″');
+    s += dimH(25, 30.58, 29.7, '≈ 5′ 7″ jut');
+
+    // front label
+    const fx = X(-4.2), fy = Y(14.0);
+    s += `<text x="${n(fx)}" y="${n(fy)}" text-anchor="middle" dominant-baseline="middle" class="t-front" transform="rotate(${flip?90:-90} ${n(fx)} ${n(fy)})">FRONT · ${flip?'EAST':'WEST'}</text>`;
+
+    // north arrow (in the empty corner beside the bedrooms)
+    const nc = [X(30.4), Y(5.4)];
+    s += `<circle class="compass" cx="${n(nc[0])}" cy="${n(nc[1])}" r="1.25"/>`;
+    s += `<polygon class="compass-n" points="${n(nc[0])},${n(nc[1]-1.05)} ${n(nc[0]-0.42)},${n(nc[1]+0.65)} ${n(nc[0])},${n(nc[1]+0.3)} ${n(nc[0]+0.42)},${n(nc[1]+0.65)}"/>`;
+    s += `<text x="${n(nc[0])}" y="${n(nc[1]-1.85)}" text-anchor="middle" dominant-baseline="middle" class="t-small">N</text>`;
+
+    // scale bar (5 ft), always reading left to right
+    const sbx = Math.min(X(28), X(33)), sby = Y(10.4);
+    for (let i = 0; i < 5; i++){ s += `<rect class="${i%2?'sb-light':'sb-dark'}" x="${n(sbx+i)}" y="${n(sby)}" width="1" height=".32"/>`; }
+    s += `<rect class="sb-light" x="${n(sbx)}" y="${n(sby)}" width="5" height=".32" style="fill:none"/>`;
+    [[0,'0'],[5,'5 ft']].forEach(([o,t]) => { s += `<text x="${n(sbx+o)}" y="${n(sby+0.85)}" text-anchor="middle" dominant-baseline="middle" class="t-tiny">${t}</text>`; });
+
+    const svg = document.getElementById('plan');
+    svg.setAttribute('viewBox', `-5.6 -4.6 45.8 ${n(H+9.0)}`);
+    svg.innerHTML = s;
+  }
+
+  function schedule(){
+    let h = '', living = 0, nonBed = 0;
+    const bedIds = ['green','gcl','bed2','b2cl'];
+    SCHEDULE.forEach(([grp, rows]) => {
+      h += `<tr class="grp"><td colspan="3">${grp}</td></tr>`;
+      rows.forEach(([id,label,d]) => {
+        const a = d ? area(d) : polyArea(ROOMS.find(r => r.id===id).poly);
+        if (id !== 'garage') living += a;
+        if (id !== 'garage' && id !== 'stair' && !bedIds.includes(id)) nonBed += a;
+        h += `<tr data-room="${id}" tabindex="0"><td>${label}</td><td class="dim">${d ? `${fmt(d[0])} × ${fmt(d[1])}` : 'L-shaped'}</td><td class="num">${Math.round(a)}</td></tr>`;
+      });
+    });
+    const garage = area([232,141]);
+    h += `<tr class="total"><td>Main floor, not counting garage</td><td></td><td class="num">≈ ${Math.round(living)}</td></tr>`;
+    h += `<tr class="sub"><td>Garage</td><td></td><td class="num">${Math.round(garage)}</td></tr>`;
+    document.getElementById('sched').innerHTML = h;
+    document.getElementById('meta').innerHTML = `<b>≈ ${Math.round(living)} sq ft</b> of rooms · <b>${Math.round(garage)} sq ft</b> garage · 2 bedrooms, 1 bath`;
+    const rest = 1480 - Math.round(nonBed/10)*10;
+    document.getElementById('budget').innerHTML = `<strong>For the budget:</strong> new flooring outside the bedrooms on this floor (front room, kitchen, dining, halls, bath, pantry and landing) is about <strong>${Math.round(nonBed/10)*10} sq ft</strong>. The spreadsheet assumed about 1,480 sq ft, so roughly ${rest.toLocaleString()} sq ft of that would have to be on the other level.`;
+  }
+
+  function setHL(id, on){
+    document.querySelectorAll(`#plan .rm[data-room="${id}"], #sched tr[data-room="${id}"]`).forEach(el => el.classList.toggle('hl', on));
+  }
+  let cur = null;
+  function hover(e){
+    const t = e.target.closest && e.target.closest('[data-room]');
+    const id = t ? t.getAttribute('data-room') : null;
+    if (id === cur) return;
+    if (cur) setHL(cur, false);
+    cur = id; if (cur) setHL(cur, true);
+  }
+  ['mouseover','focusin'].forEach(ev => {
+    document.getElementById('plan').addEventListener(ev, hover);
+    document.getElementById('sched').addEventListener(ev, hover);
+  });
+  ['mouseleave','focusout'].forEach(ev => {
+    ['plan','sched'].forEach(k => document.getElementById(k).addEventListener(ev, () => { if (cur) setHL(cur,false); cur = null; }));
+  });
+
+  schedule();
+  draw();
+})();
+</script>
+
+</body>
+</html>
