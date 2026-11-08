@@ -4,6 +4,8 @@ Planning files for the house renovation.
 
 ## Contents
 
-- **[floor-plan/](floor-plan/)**: the main floor as it is today, before renovation. It has an interactive plan (`index.html`), a picture of the plan and a room-by-room size schedule.
+- **[existing-conditions.md](existing-conditions.md)**: a room-by-room record of the house as it is now. It covers sizes, windows, doors, closets, cabinets, floors, lighting, heating vents, electrical and plumbing, plus the issues to fix and the open questions.
+- **[photos/](photos/)**: 17 walkthrough photos of every main-floor room, the garage, and the front and back of the house, each with a description.
+- **[floor-plan/](floor-plan/)**: the measured main-floor plan. It has an interactive page (`index.html`), a picture of the plan and a room size schedule.
 
 ![Main floor plan](floor-plan/floor-plan.png)
