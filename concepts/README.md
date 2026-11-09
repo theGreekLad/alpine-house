@@ -4,7 +4,7 @@ Renovation ideas, drawn on the measured [floor plan](../floor-plan/) and saved a
 
 | Version | Date | What it shows |
 |---|---|---|
-| [**Layout concepts**](2026-11-08-layout-concepts/) | Nov 8, 2026 | Four ideas for flow, use of space and feel: live in the back, open the middle, a bigger bath with a longer kitchen, and reclaiming the flue chase. |
+| [**Layout concepts**](2026-11-08-layout-concepts/) | Nov 8, 2026 | Five ideas for flow, use of space and feel: live in the back, open the middle, a bigger bath with a longer kitchen, reclaiming the flue chase, and a secret stair hidden under a lift-up island. |
 
 ## Adding a new version
 

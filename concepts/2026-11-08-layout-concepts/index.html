@@ -50,6 +50,13 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,48px);lin
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;padding:10px 14px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend span[hidden]{display:none}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:0 0 4px}
+.seg button{font:500 13.5px var(--body);color:var(--ink);background:var(--sheet);border:0;padding:7px 12px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--sheet)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.card .alt p{margin:0 0 8px}
+.card .alt a{color:var(--accent)}
 .extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:4px}
 .extras div{border-top:2px solid var(--ink);padding-top:10px}
 .extras h3{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.03em;text-transform:uppercase;margin:0 0 6px}
@@ -108,6 +115,11 @@ td:first-child{font-weight:600;min-width:150px}
 #plan .t-front{font-weight:600;font-size:.8px;letter-spacing:.25px;fill:var(--accent)}
 #plan .flow{fill:none;stroke:var(--accent);stroke-width:.16;stroke-dasharray:.5 .25;stroke-linecap:round;stroke-linejoin:round}
 #plan .flow.old{stroke:var(--warn)}
+#plan .island{fill:var(--accent-soft);fill-opacity:.9;stroke:var(--accent);stroke-width:.08}
+#plan .lid{fill:none;stroke:var(--accent);stroke-width:.06;stroke-dasharray:.3 .18}
+#plan .hinge{stroke:var(--accent);stroke-width:.18}
+#plan .lidup{stroke:var(--accent);stroke-width:.34}
+#plan .t-lid{font-weight:600;font-size:.5px;fill:var(--accent)}
 #plan .co{fill:var(--accent)} #plan .co.old{fill:var(--warn)} #plan .t-co{font-family:var(--mono);font-size:.62px;font-weight:600;fill:var(--sheet)}
 #plan .compass{fill:none;stroke:var(--line);stroke-width:.07} #plan .compass-n{fill:var(--ink)}
 #plan .sb-dark{fill:var(--ink)} #plan .sb-light{fill:var(--sheet);stroke:var(--ink);stroke-width:.05}
@@ -133,6 +145,8 @@ td:first-child{font-weight:600;min-width:150px}
         <span data-lg="add"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--accent)" stroke-width="4"/></svg>New wall</span>
         <span data-lg="half"><svg width="26" height="10"><line x1="0" y1="5" x2="26" y2="5" stroke="var(--line)" stroke-width="1.4"/><line x1="4" y1="1" x2="4" y2="9" stroke="var(--line)"/><line x1="12" y1="1" x2="12" y2="9" stroke="var(--line)"/><line x1="20" y1="1" x2="20" y2="9" stroke="var(--line)"/></svg>Half wall / railing</span>
         <span data-lg="changed"><svg width="14" height="14"><rect x="1" y="1" width="12" height="12" fill="var(--accent-soft)" stroke="var(--accent)"/></svg>Changed space or fixture</span>
+        <span data-lg="lid"><svg width="26" height="12"><rect x="1" y="1" width="24" height="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="3 2"/><line x1="1" y1="1" x2="1" y2="11" stroke="var(--accent)" stroke-width="3"/></svg>Lift-up lid and hinge</span>
+        <span data-lg="lidup"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--accent)" stroke-width="5"/></svg>Lid standing up</span>
         <span data-lg="furn"><svg width="22" height="10"><rect x="1" y="1" width="20" height="8" fill="none" stroke="var(--furn)" stroke-dasharray="3 2"/></svg>Furniture</span>
       </div>
     </section>
@@ -149,17 +163,18 @@ td:first-child{font-weight:600;min-width:150px}
           <tr><td>2 · Open the middle</td><td>The landing wall and the front room side of the stairwell. The duct has to move.</td><td>From the front door you see straight through to the kitchen, dining room and deck, and the walk to the deck gets much shorter.</td><td>Probably load-bearing, so it needs an engineer, a beam and a permit.</td><td>About $4,000–10,000 for the wall, plus railing and moving the duct.</td></tr>
           <tr><td>3 · Bigger bath, longer kitchen</td><td>Closes the short hall. The bath grows into it and the kitchen counter runs the full width. Needs concept 2.</td><td>Bath goes from 33 to about 47 sq ft, and the kitchen gets about 3 ft more counter.</td><td>No direct hall route from the bedrooms to the kitchen.</td><td>Small bath remodel about $8,000–18,000, plus kitchen cabinets.</td></tr>
           <tr><td>4 · Reclaim the flue chase</td><td>Removes the flue chase once the furnace and water heater vent through a basement wall.</td><td>Laundry by the bedrooms, or a real closet in bedroom 2.</td><td>Depends on replacing the furnace and water heater.</td><td>Depends on the equipment. Best timed for when it's due.</td></tr>
+          <tr><td>5 · Secret stair</td><td>The front room side of the stairwell comes down, and a counter-height island with a lift-up lid covers the stairs. Builds on concept 2, and the panel moves.</td><td>No stairwell in the middle of the house: a 35 sq ft island you can see across, joining the living room and kitchen.</td><td>The lid has to be cleared to go downstairs. Custom build, and the inspector has to agree.</td><td>Concept 2's costs plus roughly $5,000–15,000 for the island and lid (my guess).</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="small">Costs are national ranges for rough comparison, not quotes: removing a load-bearing wall from <a href="https://homeguide.com/costs/cost-to-remove-a-wall">HomeGuide</a>, wood stair railing at $20–60 per linear foot from <a href="https://homeguide.com/costs/cost-to-install-stair-railings-and-balusters">HomeGuide</a>, a mid-range small bathroom remodel from <a href="https://www.thisoldhouse.com/bathrooms/small-bathroom-remodel-cost">This Old House</a>, moving an electrical panel (about $2,400–4,800) from <a href="https://contractorplus.app/resources/construction-costs/relocate-electrical-panel/boise-id">ContractorPlus</a>, rerouting ductwork from <a href="https://angi.com/articles/cost-to-reroute-air-ducts.htm">Angi</a>, and solar tubes from <a href="https://angi.com/articles/how-much-solar-tubes-cost.htm">Angi</a>.</p>
+    <p class="small">Costs are national ranges for rough comparison, not quotes: removing a load-bearing wall from <a href="https://homeguide.com/costs/cost-to-remove-a-wall">HomeGuide</a>, wood stair railing at $20–60 per linear foot from <a href="https://homeguide.com/costs/cost-to-install-stair-railings-and-balusters">HomeGuide</a>, a mid-range small bathroom remodel from <a href="https://www.thisoldhouse.com/bathrooms/small-bathroom-remodel-cost">This Old House</a>, moving an electrical panel (about $2,400–4,800) from <a href="https://contractorplus.app/resources/construction-costs/relocate-electrical-panel/boise-id">ContractorPlus</a>, rerouting ductwork from <a href="https://angi.com/articles/cost-to-reroute-air-ducts.htm">Angi</a>, solar tubes from <a href="https://angi.com/articles/how-much-solar-tubes-cost.htm">Angi</a>, and hidden bookcase doors from <a href="https://murphydoor.com/blogs/posts/how-much-does-a-hidden-door-cost">Murphy Door</a>. The secret-stair build notes draw on a <a href="https://www.progressiveautomations.com/en-se/blogs/stories/stairwell-conversion-into-a-pantry-with-a-hidden-door-entrance">DIY stair hatch</a> and a <a href="https://www.dwell.com/article/how-they-pulled-it-off-a-secret-stair-hatch-that-seals-off-the-living-space-6955a961">hydraulic stair hatch in Dwell</a>.</p>
   </section>
 
   <section class="sheet compare" aria-labelledby="fit-h">
     <h2 id="fit-h">How they fit together</h2>
     <div class="extras">
       <div><h3>Now</h3><p>Concept 1 costs little and can be undone. Living in the back for a while also tells you how much you really want concept 2.</p></div>
-      <div><h3>One project</h3><p>Concepts 2 and 3 share the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath rebuild is already on the list because the surround is failing.</p></div>
+      <div><h3>One project</h3><p>Concepts 2 and 3 share the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath rebuild is already on the list because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.</p></div>
       <div><h3>When it's due</h3><p>Concept 4 waits for the furnace or water heater to need replacing. Ask the HVAC contractor about direct-vent units when you get quotes.</p></div>
     </div>
     <h2 style="margin-top:22px">Also worth a look</h2>
@@ -311,6 +326,37 @@ td:first-child{font-weight:600;min-width:150px}
       heaters:true }
   ];
 
+  // ---------- concept 5: the secret stair (one tab, two states) ----------
+  const LIVING5 = [[2.5,8.5,11.65,12.5,'TV / media'],[2.0,8.0,18.0,20.8,'sofa'],[3.5,6.5,15.4,16.9,'table'],[0.6,2.6,13.6,15.6,'chair'],BENCH];
+  const C5 = {
+    no:'5', short:'Secret stair', tag:'Your idea: a stair that hides', title:'Secret stair',
+    pitch:'Put a counter-height island over the stairwell and make the middle of its top a lid that lifts to reveal the stairs. Closed, the middle of the house is an island between the kitchen and the living room. Open, it\'s a guarded stairway down.',
+    names:{dining:'Family room + dining', front:'Living room', pantry:'Coats'}, changed:['landing'],
+    furniture:[FAMILY, LIVING5, MUD], stools:[[10.3,22.9],[10.3,24.7]],
+    remove:[[[11.5,18.67],[11.5,28.75]]], duct:[14.6,18.2], panel:true, route: ROUTE_OPEN,
+    toggle:[['c5','Closed: island'],['c5open','Open: stairs']],
+    feel:'With the lid down there\'s no stairwell in the middle of the house, just an island you can see across. The living room, landing and kitchen read as one space, and the island becomes where people gather while someone cooks. Opening it is a reveal guests won\'t forget.',
+    tradeoff:'Everything on the lid has to come off before anyone can go down. That\'s fine for trips to storage, laundry or the furnace, but tiresome if the basement becomes bedrooms or a family room you use all day. It\'s a custom build with moving parts that need upkeep, and it still needs concept 2\'s beam plus moving the electrical panel.',
+    code:'These stairs are the basement\'s main way out, so covering them is the inspector\'s call. Expect to need: a lid that opens from below without power or tools; an auto-stop so it can\'t close on someone; guards on every open side while it\'s up (36″ high, or 34″ along the stair); and a code-size egress window in the basement. The stair also needs 6′ 8″ of headroom, which a lid hinged on its long side allows. Talk to the building department before designing it.',
+    build:'Keep the lid light. A stone top this size would weigh about 500 lb, so use butcher block, or a laminate-faced panel on a steel or aluminum frame. One DIY stair hatch of about 150 lb used an electric linear actuator plus a hydraulic assist, remotes at the top and bottom, a battery bank for power cuts, and a limit switch to stop it.',
+    cost:'Concept 2\'s costs (the beam, and moving the duct and the panel), plus the island and the lid. The moving parts are off the shelf; the rest is custom carpentry and metalwork. I couldn\'t find published prices for this kind of job, so get quotes. My rough guess is $5,000–15,000 for an island and lid built by a pro, and much less if you build it yourself.',
+    altHtml:'<p><b>Disappearing floor.</b> A hatch flush with the floor instead of an island. Closed, the living room gains about 26 sq ft of floor right up to the kitchen half wall. Open, the raised hatch is the railing on the living-room side. <a href="https://www.dwell.com/article/how-they-pulled-it-off-a-secret-stair-hatch-that-seals-off-the-living-space-6955a961">Dwell featured a Los Angeles house</a> that does this with four hydraulic pistons. It\'s the most open version, but you lose the counter, and rugs and furniture have to come off it.</p>' +
+            '<p><b>Bookcase door.</b> Keep the stair walls, line the front-room side with built-in shelves, and turn the short landing wall into a hidden bookcase door. You get the secret passage and the shortcut from the front door to the landing for far less. A <a href="https://murphydoor.com/blogs/posts/how-much-does-a-hidden-door-cost">Murphy Door</a> bookcase door lists at about $1,440–1,600 for 24–36″ widths, plus a small header in the wall and installation. The duct in that corner still has to move.</p>',
+    includes:'Builds on concept 2: the open landing, the moved duct, the family room, the coat closet and the mudroom. The island replaces concept 2\'s half wall and panel pier.'
+  };
+  CONCEPTS.push(Object.assign({key:'c5', island:'closed',
+    steps:[[9.7,28.15,'Take down the wall between the front room and the stairwell and landing, with a beam to carry the load (the same structural work as concept 2). Move the duct.'],
+           [13.29,24.4,'Build a counter-height island over the stairwell, about 4′ 10″ × 7′ 4″ (35 sq ft), sitting on half walls on both sides. The half wall on the kitchen side is already there.'],
+           [13.29,19.9,'The 3′ 7″ × 7′ 4″ middle of the top is a lid. It\'s hinged along the living-room edge and lifted by an electric actuator with gas-spring assist.'],
+           [9.1,23.8,'Put stools at the north end on the living-room side, and open shelves under the overhang to the south.'],
+           [13.29,26.55,'A short skirt on the landing end of the lid closes off the top step, so the island looks solid when it\'s shut.'],
+           [11.0,29.9,'Move the electrical panel, for example to the garage side of this wall. It can\'t sit in a half wall, because it needs clear standing room in front of it up to 6½ ft.']]}, C5));
+  CONCEPTS.push(Object.assign({key:'c5open', tab:'c5', hidden:true, island:'open',
+    steps:[[12.15,23.3,'The lid swings up and stands along the living-room side. Its top edge is about 6′ 7″ off the floor, under the 8′ ceiling, and it\'s the guard on that side while it\'s up.'],
+           [16.1,22.3,'On the kitchen side, the half wall under the counter is the guard. The landing end is the way in.'],
+           [13.29,26.55,'Put switches at the top and bottom of the stairs, battery backup for power cuts, an auto-stop so it can\'t close on anyone, and a manual release that works from below.'],
+           [13.9,20.2,'Anything on the lid has to come off first, so treat it as a surface you clear after use.']]}, C5));
+
   function draw(cfg){
     // rooms for this concept
     let rooms = BASE_ROOMS.map(r => Object.assign({}, r));
@@ -332,7 +378,7 @@ td:first-child{font-weight:600;min-width:150px}
 
     // stairs
     for (let i = 1; i < 9; i++){ const y = 18.67 + i*7.33/9; s += line([11.5,y],[15.08,y],'tread'); }
-    s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
+    if (cfg.island !== 'closed') s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
 
     // walls removed / half walls / new walls
     (cfg.remove || []).forEach(([a,b]) => { s += line(a, b, 'erase') + line(a, b, 'removed'); });
@@ -363,6 +409,17 @@ td:first-child{font-weight:600;min-width:150px}
     if (cfg.laundry){ s += rectF(13.6, 15.4, 4.65, 6.85, 'fix-new') + tiny(14.5, 5.75, 'W/D') + rectF(11.6, 13.45, 6.05, 6.95, 'fix-new') + tiny(12.52, 6.5, 'linen'); }
     else s += circF(14.8, 6.3, 0.22, 'fix') + tiny(14.75, 7.35, 'FLUE');
     if (cfg.heaters) s += rectF(21.35, 24.35, 39.95, 40.25, 'fix') + rectF(26.35, 29.35, 39.95, 40.25, 'fix');
+    if (cfg.panel) s += rectF(8.4, 10.0, 28.85, 29.25, 'fix-new') + tiny(9.2, 29.65, 'panel');
+
+    // the secret-stair island: closed = one counter over the stairwell, open = lid standing up on the living-room edge
+    if (cfg.island === 'closed'){
+      s += rectF(10.7, 15.5, 18.67, 26, 'island') + rectF(11.5, 15.08, 18.67, 26, 'lid') + line([11.5,18.67],[11.5,26],'hinge') + line([11.5,26],[15.08,26],'hinge');
+      s += text(13.29, 22.15, 'LIFT-UP LID', 't-lid', 'pointer-events="none"') + tiny(13.29, 21.45, 'stairs below');
+    } else if (cfg.island === 'open'){
+      s += rectF(10.7, 11.5, 18.67, 26, 'island') + rectF(15.08, 15.5, 18.67, 26, 'island') + line([11.5,18.67],[11.5,26],'lidup');
+      s += `<text x="${n(X(11.1))}" y="${n(Y(21.0))}" text-anchor="middle" dominant-baseline="middle" class="t-fix" transform="rotate(-90 ${n(X(11.1))} ${n(Y(21.0))})">lid up</text>`;
+    }
+    (cfg.stools || []).forEach(([x, y]) => { s += circF(x, y, 0.45, 'furn'); });
 
     // furniture
     (cfg.furniture || []).forEach(set => set.forEach(([x0, x1, y0, y1, lab]) => {
@@ -436,7 +493,8 @@ td:first-child{font-weight:600;min-width:150px}
     svg.innerHTML = s;
 
     const used = {'old-route': !!cfg.route && !!cfg.old, route: !!cfg.route && !cfg.old, remove: !!(cfg.remove || []).length, add: !!(cfg.add || []).length,
-                  half: true, changed: !!((cfg.changed || []).length || cfg.duct || cfg.laundry), furn: !!(cfg.furniture || []).length};
+                  half: true, changed: !!((cfg.changed || []).length || cfg.duct || cfg.laundry), furn: !!(cfg.furniture || []).length,
+                  lid: cfg.island === 'closed', lidup: cfg.island === 'open'};
     document.querySelectorAll('.legend [data-lg]').forEach(el => { el.hidden = !used[el.dataset.lg]; });
   }
 
@@ -446,17 +504,22 @@ td:first-child{font-weight:600;min-width:150px}
     let route = '';
     if (len) route = `<div class="route"><b>≈ ${len} ft</b><span>walk from the front door to the deck slider${len < base ? `, about ${base - len} ft shorter than today` : ''}.</span></div>`;
     const sec = (h, t) => t ? `<h3>${h}</h3><p>${esc(t)}</p>` : '';
+    const seg = cfg.toggle ? `<div class="seg" role="group" aria-label="Lid position">${cfg.toggle.map(([k, l]) => `<button type="button" data-state="${k}" aria-pressed="${k === cfg.key}">${esc(l)}</button>`).join('')}</div>` : '';
+    const stepsHead = cfg.key === 'today' ? 'What holds it back' : cfg.island === 'open' ? 'With the lid open' : 'What changes';
     document.getElementById('card').innerHTML =
-      `<div class="tag">${esc(cfg.tag)}</div><h2>${cfg.no ? cfg.no + ' · ' : ''}${esc(cfg.title)}</h2><p class="pitch">${esc(cfg.pitch)}</p>` +
-      `<h3>${cfg.key === 'today' ? 'What holds it back' : 'What changes'}</h3><ol class="steps${cfg.old && cfg.key === 'today' ? ' today' : ''}">${steps}</ol>` + route +
-      sec('How it feels', cfg.feel) + sec('Trade-offs', cfg.tradeoff) + sec('Rough cost', cfg.cost) + (cfg.includes ? `<h3>Includes</h3><p>${esc(cfg.includes)}</p>` : '');
+      `<div class="tag">${esc(cfg.tag)}</div><h2>${cfg.no ? cfg.no + ' · ' : ''}${esc(cfg.title)}</h2><p class="pitch">${esc(cfg.pitch)}</p>` + seg +
+      `<h3>${stepsHead}</h3><ol class="steps${cfg.old && cfg.key === 'today' ? ' today' : ''}">${steps}</ol>` + route +
+      sec('How it feels', cfg.feel) + sec('Trade-offs', cfg.tradeoff) + sec('Code questions', cfg.code) + sec('Build notes', cfg.build) + sec('Rough cost', cfg.cost) +
+      (cfg.altHtml ? `<h3>Other ways to do it</h3><div class="alt">${cfg.altHtml}</div>` : '') +
+      (cfg.includes ? `<h3>Includes</h3><p>${esc(cfg.includes)}</p>` : '');
+    document.querySelectorAll('#card .seg button').forEach(b => b.addEventListener('click', () => { show(b.dataset.state); try { history.replaceState(null, '', '#' + b.dataset.state); } catch(_){} }));
   }
 
   const tabs = document.getElementById('tabs');
-  tabs.innerHTML = CONCEPTS.map(c => `<button type="button" role="tab" id="tab-${c.key}" aria-selected="false" data-key="${c.key}">${c.no ? `<span class="no">${c.no}</span>` : ''}${esc(c.short)}</button>`).join('');
+  tabs.innerHTML = CONCEPTS.filter(c => !c.hidden).map(c => `<button type="button" role="tab" id="tab-${c.key}" aria-selected="false" data-key="${c.key}">${c.no ? `<span class="no">${c.no}</span>` : ''}${esc(c.short)}</button>`).join('');
   function show(key){
     const cfg = CONCEPTS.find(c => c.key === key) || CONCEPTS[0];
-    tabs.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.key === cfg.key)));
+    tabs.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.key === (cfg.tab || cfg.key))));
     draw(cfg); card(cfg);
   }
   tabs.addEventListener('click', e => { const b = e.target.closest('button[data-key]'); if (!b) return; show(b.dataset.key); try { history.replaceState(null, '', '#' + b.dataset.key); } catch(_){} });

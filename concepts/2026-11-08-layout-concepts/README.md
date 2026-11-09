@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Four ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Five ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -13,7 +13,8 @@ Each concept is drawn on the measured [floor plan](../../floor-plan/), with the 
 - **Line with ticks:** a half wall with a railing.
 - **Teal fill:** a space or fixture that changes.
 - **Teal dashed line:** the new route from the front door to the deck slider.
-- **Grey dashed boxes:** furniture, to show how the rooms would be used.
+- **Grey dashed boxes and circles:** furniture and stools, to show how the rooms would be used.
+- **Teal dashed box with a thick edge (concept 5):** the lift-up lid and its hinge. A thick teal line shows the lid standing up.
 
 ## Today
 
@@ -98,10 +99,66 @@ The flue pipe between the bedrooms exists only because the basement furnace and 
 - **Trade-off:** it depends on replacing the furnace and water heater. A compact washer and dryer hold less than full-size ones.
 - **Rough cost:** depends on the equipment. Get an HVAC quote for direct-vent units, and a plumber and electrician for the laundry hookups and dryer vent.
 
+## 5 · Secret stair
+
+*A stair that hides. Builds on concept 2.*
+
+Put a counter-height island over the stairwell and make the middle of its top a lid that lifts to reveal the stairs. Closed, the middle of the house is an island between the kitchen and the living room. Open, it's a guarded stairway down.
+
+| Lid closed: island | Lid open: stairs |
+|---|---|
+| ![Concept 5, closed](5-secret-stair-closed.png) | ![Concept 5, open](5-secret-stair-open.png) |
+
+**With the lid closed**
+
+1. Take down the wall between the front room and the stairwell and landing. This needs a beam to carry the load, the same structural work as concept 2. Move the duct.
+2. Build a counter-height island over the stairwell, about 4′ 10″ × 7′ 4″ (35 sq ft), sitting on half walls on both sides. The half wall on the kitchen side is already there.
+3. The 3′ 7″ × 7′ 4″ middle of the top is a lid. It's hinged along the living-room edge and lifted by an electric actuator with gas-spring assist.
+4. Put stools at the north end on the living-room side, and open shelves under the overhang to the south.
+5. A short skirt on the landing end of the lid closes off the top step, so the island looks solid when it's shut.
+6. Move the electrical panel, for example to the garage side of this wall. It can't sit in a half wall, because it needs clear standing room in front of it up to 6½ ft.
+
+**With the lid open**
+
+1. The lid swings up and stands along the living-room side. Its top edge is about 6′ 7″ off the floor, under the 8′ ceiling, and it's the guard on that side while it's up.
+2. On the kitchen side, the half wall under the counter is the guard. The landing end is the way in.
+3. Put switches at the top and bottom of the stairs, battery backup for power cuts, an auto-stop so it can't close on anyone, and a manual release that works from below.
+4. Anything on the lid has to come off first, so treat it as a surface you clear after use.
+
+- **How it feels:** with the lid down there's no stairwell in the middle of the house, just an island you can see across. The living room, landing and kitchen read as one space.
+- **Trade-offs:**
+  - Everything on the lid has to come off before anyone can go down. That's fine for trips to storage, laundry or the furnace, but tiresome if the basement becomes bedrooms or a family room you use all day.
+  - It's a custom build with moving parts that need upkeep.
+  - It still needs concept 2's beam, plus moving the electrical panel.
+- **Code questions:** these stairs are the basement's main way out, so covering them is the inspector's call. Expect to need:
+  - a lid that opens from below without power or tools;
+  - an auto-stop so it can't close on someone;
+  - guards on every open side while it's up (36″ high, or 34″ along the stair);
+  - a code-size egress window in the basement.
+
+  The stair also needs 6′ 8″ of headroom, which a lid hinged on its long side allows. Talk to the building department before designing it.
+- **Build notes:** keep the lid light. A stone top this size would weigh about 500 lb, so use butcher block, or a laminate-faced panel on a steel or aluminum frame. A [DIY stair hatch](https://www.progressiveautomations.com/en-se/blogs/stories/stairwell-conversion-into-a-pantry-with-a-hidden-door-entrance) of about 150 lb used:
+  - an electric linear actuator plus a hydraulic assist;
+  - remotes at the top and bottom of the stairs;
+  - a battery bank for power cuts;
+  - a limit switch to stop it.
+- **Rough cost:** concept 2's costs, plus the island and lid. The moving parts are off the shelf; the rest is custom carpentry and metalwork. I couldn't find published prices for this kind of job, so get quotes. My rough guess is $5,000–15,000 for an island and lid built by a pro, and much less if you build it yourself.
+
+**Other ways to do it**
+
+- **Disappearing floor:** a hatch flush with the floor instead of an island.
+  - Closed, the living room gains about 26 sq ft of floor right up to the kitchen half wall. Open, the raised hatch is the railing on the living-room side.
+  - [Dwell featured a Los Angeles house](https://www.dwell.com/article/how-they-pulled-it-off-a-secret-stair-hatch-that-seals-off-the-living-space-6955a961) that does this with four hydraulic pistons.
+  - It's the most open version, but you lose the counter, and rugs and furniture have to come off it.
+- **Bookcase door:** keep the stair walls, line the front-room side with built-in shelves, and turn the short landing wall into a hidden bookcase door.
+  - You get the secret passage and the shortcut from the front door to the landing for far less.
+  - A [Murphy Door](https://murphydoor.com/blogs/posts/how-much-does-a-hidden-door-cost) bookcase door lists at about $1,440–1,600 for 24–36″ widths, plus a small header in the wall and installation.
+  - The duct in that corner still has to move.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
-- **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing.
+- **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look
@@ -120,3 +177,6 @@ These are national ranges for rough comparison, not quotes.
 - [ContractorPlus: relocating an electrical panel](https://contractorplus.app/resources/construction-costs/relocate-electrical-panel/boise-id)
 - [Angi: cost to reroute ductwork](https://angi.com/articles/cost-to-reroute-air-ducts.htm)
 - [Angi: solar tube cost](https://angi.com/articles/how-much-solar-tubes-cost.htm)
+- [Murphy Door: hidden door cost](https://murphydoor.com/blogs/posts/how-much-does-a-hidden-door-cost)
+- [Progressive Automations: stairwell hatch build](https://www.progressiveautomations.com/en-se/blogs/stories/stairwell-conversion-into-a-pantry-with-a-hidden-door-entrance)
+- [Dwell: a secret stair hatch](https://www.dwell.com/article/how-they-pulled-it-off-a-secret-stair-hatch-that-seals-off-the-living-space-6955a961)
