@@ -7,6 +7,8 @@ These are 3D models of two more budget-no-object layouts. Both keep the garage a
 
 They're built in the same scene as the [baseline](../2026-11-08-baseline/) and Dreams [1](../2026-11-08-dream-plan/) and [2](../2026-11-08-dream-plan-garage-kept/), so all five can be compared from the same camera.
 
+**Updated later on November 8:** the first version of Dream 4 closed the short hall from the bedrooms into the kitchen to make room for the fridge and a tall pantry. That hall now stays open, with the fridge and a pull-out pantry along the south wall instead. The images and `index.html` here show the fixed version, and the page also includes [Dream 5](../2026-11-08-dream-plan-5-no-garage/).
+
 ![All five, cutaway from the front](all-five-cutaway-front.jpg)
 *From left: today, then Dreams 1, 2, 3 and 4, cutaway from the front.*
 
@@ -14,7 +16,7 @@ They're built in the same scene as the [baseline](../2026-11-08-baseline/) and D
 
 - **Quick look:** the three-way images below show today, Dream 3 and Dream 4 from the same spot.
 - **Interactive model:** download `index.html` and open it in a web browser. It needs an internet connection to load the 3D library.
-  - The switch at the top flips between **Today** and **Dreams 1 to 4**.
+  - The switch at the top flips between **Today** and **Dreams 1 to 5**.
   - In a cutaway view, drag to orbit and scroll to zoom. In a room view, drag to look around.
 
 ## Dream 3: fewer walls
@@ -34,7 +36,7 @@ They're built in the same scene as the [baseline](../2026-11-08-baseline/) and D
 
 - **Kitchen:** it stays in its current spot as a U.
   - The sink sits under a new window about 6 ft wide in the west wall.
-  - A fridge and tall pantry go where the short hall used to open into the kitchen.
+  - A fridge and a pull-out pantry go on the south wall, beside the short hall from the bedrooms, which still opens into the kitchen.
   - A cooktop counter along the stair replaces the half wall, so whoever is cooking faces the living room.
   - A green breakfast bar faces the family room.
 - **Family room and dining:** they take the bump-out by the deck, with a sofa against the garage wall and the table under the north windows.
@@ -67,4 +69,4 @@ Each Dream 3 and Dream 4 view is also saved on its own, for example `dream-4-old
   - the header for the new kitchen window;
   - the entry addition's setback.
 - **Unchanged:** the roof is left off, and the deck is the existing one.
-- **The other models in this file** (Today and Dreams 1 and 2) match their own folders.
+- **The other models in this file** (Today and Dreams 1, 2 and 5) match their own folders.

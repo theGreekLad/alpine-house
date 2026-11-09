@@ -66,9 +66,9 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Sheet C-2 · Concepts 6 to 9 in 3D</div>
+    <div class="eyebrow">Sheet C-2 · Concepts 6 to 10 in 3D</div>
     <h1>Dream Plans in 3D</h1>
-    <div class="meta">Four budget-no-object layouts and the house as it is today, built in the same place · flip between them from any view</div>
+    <div class="meta">Five budget-no-object layouts and the house as it is today, built in the same place · flip between them from any view</div>
   </header>
 
   <div class="switch" role="group" aria-label="Which version of the house">
@@ -77,6 +77,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     <button type="button" data-model="dreamB" aria-pressed="false">Dream 2<small>garage kept</small></button>
     <button type="button" data-model="dreamC" aria-pressed="true">Dream 3<small>fewer walls</small></button>
     <button type="button" data-model="dreamD" aria-pressed="false">Dream 4<small>kitchen stays</small></button>
+    <button type="button" data-model="dreamE" aria-pressed="false">Dream 5<small>fewer walls, no garage</small></button>
   </div>
 
   <div class="views" id="views">
@@ -87,9 +88,10 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     <div class="vgroup" role="group" aria-label="Inside"><span>Inside</span>
       <button type="button" data-view="entry" aria-pressed="false">Front door</button>
       <button type="button" data-view="front" aria-pressed="false">Front room</button>
+      <button type="button" data-view="north" aria-pressed="false">North from the front room</button>
       <button type="button" data-view="suite" aria-pressed="false">Suite, end to end</button>
-      <button type="button" data-view="living" aria-pressed="false">Garage, looking out</button>
-      <button type="button" data-view="mud" aria-pressed="false">Garage, looking in</button>
+      <button type="button" data-view="living" aria-pressed="false">Garage end, looking out</button>
+      <button type="button" data-view="mud" aria-pressed="false">Garage end, looking in</button>
       <button type="button" data-view="kitchen" aria-pressed="false">Toward the deck</button>
       <button type="button" data-view="dining" aria-pressed="false">Back toward the middle</button>
       <button type="button" data-view="west" aria-pressed="false">Old kitchen's west wall</button>
@@ -135,13 +137,20 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
         <li>The bump-out becomes the family room and dining room by the deck.</li>
         <li>The open suite, open hall and entry, and the finished garage are the same as Dream 3.</li>
       </ul>
+      <ul class="list" data-for="dreamE" hidden>
+        <li>Dream 3's fewer walls, but the garage becomes a sunken living room with a vaulted ceiling, as in Dream 1, with no walls around it. Wide steps wrap its south and west sides, and it opens straight onto the landing and the kitchen.</li>
+        <li>The fridge and pantry are a freestanding oak block where the garage wall was.</li>
+        <li>The front room becomes a library and entry: books along the south wall, a desk at the picture window and two reading chairs. The front door stays in the notch, under a covered porch.</li>
+        <li>The open suite, open hall, laundry cupboard, glass stair, kitchen and dining room are the same as Dream 3.</li>
+        <li>About 73 ft of interior wall comes out and about 12 ft goes in.</li>
+      </ul>
     </section>
     <section class="panel" aria-labelledby="ab-h">
       <h2 id="ab-h">About this model</h2>
       <ul class="list">
-        <li>They follow concepts 6 to 9 on the layout concepts page, drawn on the measured plan. The stair stays where it is, and the outside walls stay put except for the small entry addition in Dreams 2 to 4.</li>
+        <li>They follow concepts 6 to 10 on the layout concepts page, drawn on the measured plan. The stair stays where it is, and the outside walls stay put except for the small entry addition in Dreams 2 to 4.</li>
         <li>Colors and finishes are placeholders to show the feel: white oak floors, warm white walls, a soft green in the bedroom and a green kitchen island.</li>
-        <li>Dream 1's sunken living room uses the garage floor's existing 1½–2 ft drop, and its vaulted ceiling assumes the garage rafters can be opened up. An engineer would confirm both.</li>
+        <li>The sunken living rooms in Dreams 1 and 5 use the garage floor's existing 1½–2 ft drop, and their vaulted ceilings assume the garage rafters can be opened up. An engineer would confirm both.</li>
         <li>The roof is left off, and the outside is kept simple.</li>
       </ul>
     </section>
@@ -267,13 +276,14 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     kitchen:[15.08,16.42,25,28.75,'cream','laminate'], garage:[-4.25,28.75,15.08,40.5,'plywood',null], dining:[15.08,28.75,30.58,40.5,'cream','laminateWorn']
   };
   const groups = { site: new T.Group() }; scene.add(groups.site);
-  // ---------- five models in one scene: today and the four dream plans ----------
+  // ---------- six models in one scene: today and the five dream plans ----------
   const models = {
     today: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
     dream: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
     dreamB: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
     dreamC: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
-    dreamD: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null }
+    dreamD: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
+    dreamE: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null }
   };
   Object.values(models).forEach(m => { scene.add(m.house); scene.add(m.ceiling); });
   let CUR = models.today;
@@ -1078,43 +1088,21 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     wb(false, -4.25, 26.3, F + 5.7, 0.35, 0.7, 0.3, 0.42, MD.black);
     pbox(-3.0, -0.25, 1.0, 22.3, 0, 1.6, M.brick);
   
-    function openSuite(){
-      // dressing: wardrobes along the south wall and a dresser island
-      pbox(11.6, 17.4, 0.05, 2.0, F, F + 7.4, MD.oakSlab, {uv: true});
-      pbox(13.0, 16.0, 4.5, 6.3, F + 0.2, F + 3.0, MD.oakSlab, {uv: true}); pbox(12.95, 16.05, 4.45, 6.35, F + 3.0, F + 3.12, MD.quartz);
-      pbox(13.2, 15.8, 4.7, 6.1, F, F + 0.2, MD.black);
-      flush(14.5, 4.0, 0.45, true);
-      // open bath: tub, shower behind glass, double vanity, the toilet in its own room
-      { const g = new T.CylinderGeometry(1, 1, 1.9, 36); g.scale(1.7, 1, 1.0); const p = V(19.6, 1.85, F + 0.95); g.translate(p.x, p.y, p.z); add(g, M.porcelain);
-        const w = new T.CylinderGeometry(1, 1, 0.04, 36); w.scale(1.5, 1, 0.82); const q = V(19.6, 1.85, F + 1.8); w.translate(q.x, q.y, q.z); add(w, MD.water, {cast: false}); }
-      cyl(21.5, 3.1, F, F + 3.2, 0.05, 0.05, MD.black);
-      wb(false, 25, 2.25, F + 1.85, 4.5, 3.7, 0.04, 0.27, MD.zellige); wb(true, 0, 23.25, F + 3.6, 3.5, 7.2, 0.04, -0.27, MD.zellige);
-      wb(false, 21.5, 1.5, F + 3.45, 3.0, 6.8, 0.04, 0, MD.guard, {cast: false, receive: false}); wb(true, 4.5, 23.25, F + 3.45, 3.5, 6.8, 0.04, 0, MD.guard, {cast: false, receive: false});
-      wb(true, 4.5, 23.25, F + 6.9, 3.5, 0.06, 0.08, 0, MD.black);
-      cyl(23.4, 2.2, CEIL - 0.7, CEIL, 0.02, 0.02, MD.black); cyl(23.4, 2.2, CEIL - 0.74, CEIL - 0.7, 0.45, 0.45, MD.black);
-      pbox(17.7, 21.7, 9.6, 11.4, F + 1.0, F + 2.8, MD.oakSlab, {uv: true}); pbox(17.65, 21.75, 9.55, 11.45, F + 2.8, F + 2.95, MD.quartz, {uv: true});
-      [18.7, 20.7].forEach(u => { pbox(u - 0.5, u + 0.5, 10.0, 10.9, F + 2.86, F + 2.97, M.porcelain); cyl(u, 11.25, F + 2.95, F + 3.7, 0.04, 0.04, MD.black);
-        wb(true, 11.5, u, F + 5.1, 1.75, 3.0, 0.03, 0.2, MD.black); wb(true, 11.5, u, F + 5.1, 1.6, 2.85, 0.04, 0.23, MD.mirror); });
-      wb(true, 11.5, 19.7, F + 5.6, 0.22, 0.9, 0.3, 0.34, M.shadeGlass, {cast: false});
-      pbox(22.85, 24.15, 10.9, 11.28, F + 1.4, F + 2.9, M.porcelain); cyl(23.5, 10.2, F, F + 1.4, 0.55, 0.6, M.porcelain);
-      pbox(17.9, 18.6, 3.5, 4.2, F, F + 1.5, MD.oakFurn); plant(18.3, 6.4, F, 0.7);
-      flush(20.0, 5.5, 0.5); flush(23.5, 9.2, 0.35, true);
-    }
     function kitchenInPlace(){
       const CT = F + 2.95;
-      // fridge and tall pantry where the short hall used to open into the kitchen
-      pbox(15.25, 18.25, 16.6, 18.45, F, F + 6.0, M.steel); pbox(16.72, 16.78, 18.44, 18.5, F + 1.0, F + 5.5, MD.black);
-      pbox(15.2, 18.3, 16.5, 18.45, F + 6.0, F + 7.6, MD.shaker, {uv: true});
-      pbox(18.33, 20.3, 16.5, 18.45, F, F + 7.6, MD.shaker, {uv: true});
-      // south and west runs; the sink sits under the new window
-      pbox(20.3, 25, 16.5, 18.45, F + 0.3, CT, MD.shaker, {uv: true}); pbox(22.75, 25, 18.45, 26.6, F + 0.3, CT, MD.shaker, {uv: true});
-      pbox(20.4, 25, 16.6, 18.4, F, F + 0.3, MD.black); pbox(22.85, 25, 18.45, 26.6, F, F + 0.3, MD.black);
-      pbox(20.25, 25, 16.42, 18.55, CT, CT + 0.13, MD.quartz, {uv: true}); pbox(22.6, 25, 18.55, 26.6, CT, CT + 0.13, MD.quartz, {uv: true});
+      // fridge and a pull-out pantry on the south wall; the short hall still opens into the kitchen beside them
+      pbox(18.45, 21.45, 16.6, 18.45, F, F + 6.0, M.steel); pbox(19.92, 19.98, 18.44, 18.5, F + 1.0, F + 5.5, MD.black);
+      pbox(18.4, 21.5, 16.5, 18.45, F + 6.0, F + 7.6, MD.shaker, {uv: true});
+      pbox(21.45, 22.75, 16.5, 18.45, F, F + 7.6, MD.shaker, {uv: true}); pbox(22.05, 22.15, 18.44, 18.5, F + 2.5, F + 5.0, MD.black);
+      // south corner and west run; the sink sits under the new window
+      pbox(22.75, 25, 16.5, 18.45, F + 0.3, CT, MD.shaker, {uv: true}); pbox(22.75, 25, 18.45, 26.6, F + 0.3, CT, MD.shaker, {uv: true});
+      pbox(22.85, 25, 16.6, 18.4, F, F + 0.3, MD.black); pbox(22.85, 25, 18.45, 26.6, F, F + 0.3, MD.black);
+      pbox(22.75, 25, 16.42, 18.55, CT, CT + 0.13, MD.quartz, {uv: true}); pbox(22.6, 25, 18.55, 26.6, CT, CT + 0.13, MD.quartz, {uv: true});
       pbox(23.25, 24.6, 20.9, 22.7, CT + 0.01, CT + 0.14, M.steel); pbox(23.4, 24.45, 21.05, 22.55, CT + 0.02, CT + 0.15, MD.black);
       cyl(24.8, 21.8, CT + 0.13, CT + 1.4, 0.05, 0.05, MD.black); pbox(24.3, 24.85, 21.73, 21.87, CT + 1.3, CT + 1.4, MD.black);
       pbox(22.7, 22.76, 22.85, 24.75, F + 0.15, CT - 0.05, M.steel);
       [F + 4.8, F + 6.0].forEach(h => pbox(24.4, 25, 25.0, 26.5, h, h + 0.1, MD.oakFurn));
-      pbox(20.4, 22.6, 16.42, 17.2, F + 4.6, F + 4.7, MD.oakFurn); cyl(21.0, 16.9, F + 4.7, F + 5.2, 0.25, 0.25, MD.terracotta);
+      pbox(23.0, 24.9, 16.42, 17.2, F + 4.6, F + 4.7, MD.oakFurn); cyl(23.6, 16.9, F + 4.7, F + 5.2, 0.25, 0.25, MD.terracotta);
       // breakfast bar facing the family room, in the green of the other islands
       pbox(19.5, 25, 26.6, 28.4, F + 0.3, CT, MD.shakerGreen, {uv: true}); pbox(19.6, 24.9, 26.7, 28.3, F, F + 0.3, MD.black);
       pbox(19.4, 25, 26.5, 29.2, CT, CT + 0.15, MD.quartz, {uv: true});
@@ -1141,12 +1129,217 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     }
   }
 
+  // the open primary suite, shared by Dreams 3 to 5
+  function openSuite(){
+    // dressing: wardrobes along the south wall and a dresser island
+    pbox(11.6, 17.4, 0.05, 2.0, F, F + 7.4, MD.oakSlab, {uv: true});
+    pbox(13.0, 16.0, 4.5, 6.3, F + 0.2, F + 3.0, MD.oakSlab, {uv: true}); pbox(12.95, 16.05, 4.45, 6.35, F + 3.0, F + 3.12, MD.quartz);
+    pbox(13.2, 15.8, 4.7, 6.1, F, F + 0.2, MD.black);
+    flush(14.5, 4.0, 0.45, true);
+    // open bath: tub, shower behind glass, double vanity, the toilet in its own room
+    { const g = new T.CylinderGeometry(1, 1, 1.9, 36); g.scale(1.7, 1, 1.0); const p = V(19.6, 1.85, F + 0.95); g.translate(p.x, p.y, p.z); add(g, M.porcelain);
+      const w = new T.CylinderGeometry(1, 1, 0.04, 36); w.scale(1.5, 1, 0.82); const q = V(19.6, 1.85, F + 1.8); w.translate(q.x, q.y, q.z); add(w, MD.water, {cast: false}); }
+    cyl(21.5, 3.1, F, F + 3.2, 0.05, 0.05, MD.black);
+    wb(false, 25, 2.25, F + 1.85, 4.5, 3.7, 0.04, 0.27, MD.zellige); wb(true, 0, 23.25, F + 3.6, 3.5, 7.2, 0.04, -0.27, MD.zellige);
+    wb(false, 21.5, 1.5, F + 3.45, 3.0, 6.8, 0.04, 0, MD.guard, {cast: false, receive: false}); wb(true, 4.5, 23.25, F + 3.45, 3.5, 6.8, 0.04, 0, MD.guard, {cast: false, receive: false});
+    wb(true, 4.5, 23.25, F + 6.9, 3.5, 0.06, 0.08, 0, MD.black);
+    cyl(23.4, 2.2, CEIL - 0.7, CEIL, 0.02, 0.02, MD.black); cyl(23.4, 2.2, CEIL - 0.74, CEIL - 0.7, 0.45, 0.45, MD.black);
+    pbox(17.7, 21.7, 9.6, 11.4, F + 1.0, F + 2.8, MD.oakSlab, {uv: true}); pbox(17.65, 21.75, 9.55, 11.45, F + 2.8, F + 2.95, MD.quartz, {uv: true});
+    [18.7, 20.7].forEach(u => { pbox(u - 0.5, u + 0.5, 10.0, 10.9, F + 2.86, F + 2.97, M.porcelain); cyl(u, 11.25, F + 2.95, F + 3.7, 0.04, 0.04, MD.black);
+      wb(true, 11.5, u, F + 5.1, 1.75, 3.0, 0.03, 0.2, MD.black); wb(true, 11.5, u, F + 5.1, 1.6, 2.85, 0.04, 0.23, MD.mirror); });
+    wb(true, 11.5, 19.7, F + 5.6, 0.22, 0.9, 0.3, 0.34, M.shadeGlass, {cast: false});
+    pbox(22.85, 24.15, 10.9, 11.28, F + 1.4, F + 2.9, M.porcelain); cyl(23.5, 10.2, F, F + 1.4, 0.55, 0.6, M.porcelain);
+    pbox(17.9, 18.6, 3.5, 4.2, F, F + 1.5, MD.oakFurn); plant(18.3, 6.4, F, 0.7);
+    flush(20.0, 5.5, 0.5); flush(23.5, 9.2, 0.35, true);
+  }
+
+  // ---------- dream plan 5: fewer walls, and the garage becomes the living room ----------
+  const ROOMS_DREAM_E = {
+    wc:[22.0,7.0,25,11.5,'dWarm',null], bathz:[17.5,0,25,11.5,'dWarm','dStone'], suite:[0,0,17.5,11.5,'dSage','dOak'],
+    hall:[11.5,11.5,18.33,15.5,'dWarm','dOak'], nook:[15.08,15.5,18.33,16.42,'dWarm','dOak'],
+    hbath:[18.33,11.5,25,16.42,'dWarm','dStone'], laund:[11.5,15.5,15.08,18.67,'dWarm','dStone'],
+    stair:[11.5,18.67,15.08,26,'dWarm',null], landing:[11.5,26,15.08,28.75,'dWarm','dOak'],
+    library:[0,11.5,11.5,28.75,'dWarm','dOak'],
+    dining:[15.08,16.42,25,28.75,'dWarm','dOak'], kitchen:[15.08,28.75,30.58,40.5,'dWarm','dOak'],
+    lounge:[-4.25,28.75,15.08,40.5,'dWarm',null]
+  };
+
+  function buildDream5(){
+    const LF = 0.35, ST = (F - LF)/3, CT = F + 2.95, ceil = {parent: CUR.ceiling};
+    const winD = (s, e, o) => win(s, e, Object.assign({frameMat: MD.black}, o || {}));
+
+    // Exterior walls: the original shell; the front door stays in the notch, and a big window replaces the garage door
+    wall([0,0],[0,28.75], {t:0.5, bot:0, ext:true, out:1, breaks:[11.5], ops:[
+      winD(3.8, 7.8, {sill: F + 3.1, head: F + 6.9, lites: 2, fixed: true}),
+      winD(14.8, 21.6, {sill: F + 1.8, head: F + 6.9, fixed: true, lites: 2}),
+      {k:'front', s:22.4, e:25.4, sill:F, head:DOORH}]});
+    wall([-4.25,28.75],[0,28.75], {t:0.5, bot:0, ext:true, out:1, outside: M.stone});
+    wall([-4.25,28.75],[-4.25,40.5], {t:0.5, bot:0, ext:true, out:1, outside: M.stone, ops:[winD(30.4, 38.9, {sill: LF + 1.8, head: 8.9, fixed: true, lites: 3})]});
+    wall([0,0],[25,0], {t:0.5, bot:0, ext:true, out:1, breaks:[11.5, 17.5], ops:[winD(7.0, 9.8, {head: F + 7.0}), winD(18.2, 21.2, {sill: F + 3.3, head: F + 7.2, frosted: true})]});
+    wall([25,0],[25,28.75], {t:0.5, bot:0, ext:true, out:-1, breaks:[11.5, 16.42], ops:[
+      winD(1.4, 4.0, {sill: F + 3.8, head: F + 7.2, frosted: true}),
+      winD(12.9, 15.1, {sill: F + 4.4, head: F + 7.0, frosted: true}),
+      {k:'slider', s:19.6, e:25.6, sill:F, head:DOORH, lites:2, frameMat: MD.black}]});
+    wall([25,28.75],[30.58,28.75], {t:0.5, bot:0, ext:true, out:1, ops:[winD(26.3, 29.3, {sill: F + 3.4, head: F + 7.2})]});
+    wall([30.58,28.75],[30.58,40.5], {t:0.5, bot:0, ext:true, out:-1, ops:[{k:'slider', s:30.0, e:38.2, sill:F, head:DOORH + 0.2, lites:3, frameMat: MD.black}]});
+    wall([-4.25,40.5],[30.58,40.5], {t:0.5, bot:0, ext:true, out:-1, breaks:[12.5, 15.08], ops:[
+      winD(-3.0, 0.2, {sill: LF + 2.4, head: 8.9, fixed: true}), winD(5.8, 9.0, {sill: LF + 2.4, head: 8.9, fixed: true}),
+      winD(21.6, 24.1, {sill: F + 3.4, head: F + 7.2}), winD(26.6, 29.1, {sill: F + 3.4, head: F + 7.2})]});
+
+    // Interior walls: only around the bedroom, the bathrooms, the toilet and the laundry cupboard
+    wall([0,11.5],[11.5,11.5]);
+    wall([11.5,15.5],[11.5,18.67]);
+    wall([22.0,7.0],[22.0,11.5]);
+    wall([22.0,7.0],[25,7.0], {ops:[{k:'door', s:22.4, e:24.6, sill:F, head:DOORH, hinge:'s', swing:1}]});
+    wall([11.5,11.5],[17.5,11.5], {ops:[{k:'door', s:12.2, e:14.8, sill:F, head:DOORH, hinge:'e', swing:1}]});
+    wall([17.5,11.5],[25,11.5]);
+    wall([18.33,11.5],[18.33,16.42], {ops:[{k:'door', s:12.2, e:14.7, sill:F, head:DOORH, hinge:'s', swing:-1}]});
+    wall([18.33,16.42],[25,16.42]);
+    wall([11.5,15.5],[15.08,15.5], {ops:[{k:'bypass', s:11.7, e:14.9, sill:F, head:DOORH}]});
+    wall([15.08,15.5],[15.08,18.67]);
+    wall([11.5,18.67],[15.08,18.67]);
+    // beams where the garage walls were
+    pbox(0, 15.08, 28.6, 28.9, CEIL - 0.75, CEIL, M.dWarm); pbox(14.93, 15.23, 28.75, 35.5, CEIL - 0.75, CEIL, M.dWarm);
+
+    // Floors: house level, then the old garage slab, with wide steps wrapping its south and west sides
+    for (const k in CUR.rooms){ const r = CUR.rooms[k]; if (r[5]) pbox(r[0], r[2], r[1], r[3], F - 0.3, F, M[r[5]], {uv: true}); }
+    pbox(-4.25, 15.08, 28.75, 40.5, -0.1, 0.12, M.concrete, {uv: true});
+    pbox(-4.25, 10.7, 30.55, 40.5, 0.12, LF, M.dOak, {uv: true});
+    pbox(-4.25, 11.6, 29.65, 30.55, 0.12, LF + ST, M.dOak, {uv: true}); pbox(10.7, 11.6, 30.55, 40.5, 0.12, LF + ST, M.dOak, {uv: true});
+    pbox(-4.25, 12.5, 28.75, 29.65, 0.12, LF + 2*ST, M.dOak, {uv: true}); pbox(11.6, 12.5, 29.65, 40.5, 0.12, LF + 2*ST, M.dOak, {uv: true});
+    pbox(12.5, 15.08, 28.75, 40.5, 0.12, F, M.dOak, {uv: true});
+    // darker oak nosings so each step reads
+    [[0, 12.5, 28.62, 28.75, F], [-4.25, 11.6, 29.52, 29.65, LF + 2*ST], [-4.25, 10.7, 30.42, 30.55, LF + ST],
+     [12.5, 12.63, 28.75, 40.5, F], [11.6, 11.73, 29.65, 40.5, LF + 2*ST], [10.7, 10.83, 30.55, 40.5, LF + ST]].forEach(([a, b, c, d, h]) => pbox(a, b, c, d, h - 0.06, h + 0.01, MD.oakFurn, {cast: false}));
+
+    // Ceilings: flat over the house with a skylight above the stair, flat over the kitchen, vaulted over the living room
+    [[0, 25, 0, 20.4], [0, 25, 24.6, 28.75], [0, 11.9, 20.4, 24.6], [14.7, 25, 20.4, 24.6]].forEach(([a, b, c, d]) => pbox(a, b, c, d, CEIL, CEIL + 0.12, M.white, ceil));
+    pbox(11.9, 14.7, 20.3, 20.4, CEIL, CEIL + 1.6, M.white, ceil); pbox(11.9, 14.7, 24.6, 24.7, CEIL, CEIL + 1.6, M.white, ceil);
+    pbox(11.8, 11.9, 20.3, 24.7, CEIL, CEIL + 1.6, M.white, ceil); pbox(14.7, 14.8, 20.3, 24.7, CEIL, CEIL + 1.6, M.white, ceil);
+    pbox(11.9, 14.7, 20.4, 24.6, CEIL + 1.6, CEIL + 1.65, MD.sky, Object.assign({cast: false}, ceil));
+    pbox(15.08, 30.58, 28.75, 40.5, CEIL, CEIL + 0.12, M.white, ceil);
+    pbox(-4.25, 0, 22.5, 28.75, CEIL, CEIL + 0.12, M.white, ceil);
+    const vx0 = -4.25, vx1 = 15.08, vy0 = 28.75, vy1 = 40.5, vyc = (vy0 + vy1)/2, rise = 3.0, half = (vy1 - vy0)/2;
+    const vl = Math.hypot(half, rise), th = Math.atan2(rise, half);
+    [[vy0 + half/2, th], [vy1 - half/2, -th]].forEach(([yc, a]) => { const g = new T.BoxGeometry(vx1 - vx0, 0.12, vl); g.rotateX(a); const p = V((vx0 + vx1)/2, yc, CEIL + rise/2 + 0.06); g.translate(p.x, p.y, p.z); add(g, M.white, ceil); });
+    const gable = xi => { const sh = new T.Shape(); sh.moveTo(vy0, CEIL); sh.lineTo(vy1, CEIL); sh.lineTo(vyc, CEIL + rise + 0.1); sh.lineTo(vy0, CEIL);
+      const g = new T.ExtrudeGeometry(sh, {depth: 0.3, bevelEnabled: false}); g.rotateY(Math.PI/2); g.translate(OX - xi - 0.15, 0, OZ); add(g, M.white, ceil); };
+    gable(vx0); gable(vx1);
+    [-2.0, 2.0, 6.0, 10.0].forEach(x => pbox(x - 0.22, x + 0.22, vy0 + 0.1, vy1 - 0.1, CEIL - 0.5, CEIL, MD.beam, ceil));
+    pbox(vx0, vx1, vyc - 0.25, vyc + 0.25, CEIL + rise - 0.55, CEIL + rise - 0.05, MD.beam, ceil);
+
+    // Stair: same place, oak treads, glass guards on both sides
+    for (let i = 0; i < 8; i++){ const y1 = 26 - i*0.917, top = F - (i+1)*0.75; pbox(11.6, 15.0, y1 - 0.917, y1, top - 0.75, top, MD.oakFurn); }
+    pbox(11.45, 11.55, 18.67, 26, F - 8, F - 0.3, M.dWarm); pbox(15.03, 15.13, 18.67, 26, F - 8, F - 0.3, M.dWarm);
+    pbox(11.5, 15.08, 18.6, 18.7, F - 8, F - 0.3, M.dWarm); pbox(11.5, 15.08, 18.67, 26, F - 8.2, F - 8, M.hole);
+    const guard = (c, s, e) => { wb(false, c, (s + e)/2, F + 1.58, e - s, 3.0, 0.05, 0, MD.guard, {cast: false, receive: false});
+      wb(false, c, (s + e)/2, F + 3.14, e - s, 0.14, 0.22, 0, MD.oakFurn); [s + 0.1, e - 0.1].forEach(u => wb(false, c, u, F + 1.6, 0.1, 3.1, 0.12, 0, M.steel)); };
+    guard(11.5, 18.67, 26); guard(15.08, 18.67, 26);
+
+    // ---------- kitchen (old dining room); the fridge and pantry are a freestanding block where the garage wall was ----------
+    pbox(17.1, 30.3, 38.5, 40.5, F + 0.3, CT, MD.shaker, {uv: true}); pbox(17.1, 30.3, 38.6, 40.5, F, F + 0.3, MD.black);
+    pbox(17.05, 30.35, 38.4, 40.5, CT, CT + 0.13, MD.quartz, {uv: true});
+    pbox(21.95, 23.75, 38.75, 40.15, CT + 0.01, CT + 0.14, M.steel); pbox(22.1, 23.6, 38.9, 40.0, CT + 0.02, CT + 0.15, MD.black);
+    cyl(22.85, 40.25, CT + 0.13, CT + 1.4, 0.05, 0.05, MD.black); pbox(22.78, 22.92, 39.8, 40.3, CT + 1.3, CT + 1.4, MD.black);
+    pbox(17.6, 20.1, 38.8, 40.2, CT + 0.13, CT + 0.16, MD.black);
+    pbox(17.3, 20.4, 39.1, 40.5, F + 5.7, CEIL, MD.plaster);
+    [F + 4.9, F + 6.2].forEach(h => pbox(24.4, 26.3, 39.65, 40.5, h, h + 0.12, MD.oakFurn));
+    pbox(24.7, 25.1, 39.9, 40.3, F + 5.02, F + 5.6, MD.linen); cyl(25.7, 40.1, F + 5.02, F + 5.5, 0.22, 0.22, MD.terracotta);
+    pbox(15.08, 17.08, 35.5, 40.5, F, CEIL, MD.oakSlab, {uv: true});
+    pbox(17.07, 17.12, 37.5, 39.9, F + 2.7, F + 5.6, MD.black); pbox(17.11, 17.14, 37.6, 39.8, F + 4.13, F + 4.18, M.steel);
+    wb(false, 15.08, 37.6, F + 5.0, 2.6, 1.9, 0.05, 0.03, MD.black); wb(false, 15.08, 37.6, F + 5.0, 2.4, 1.7, 0.05, 0.07, MD.art);
+    pbox(18.5, 26.5, 31.8, 35.0, F + 0.3, CT, MD.shakerGreen, {uv: true}); pbox(18.6, 26.4, 31.9, 34.9, F, F + 0.3, MD.black);
+    pbox(18.35, 26.65, 31.0, 35.15, CT, CT + 0.15, MD.quartz, {uv: true});
+    cyl(21.0, 33.3, CT + 0.15, CT + 0.45, 0.45, 0.6, MD.oakFurn);
+    [19.6, 21.5, 23.4, 25.3].forEach(x => { cyl(x, 30.3, F + 2.05, F + 2.22, 0.55, 0.55, MD.oakFurn); cyl(x, 30.3, F, F + 2.05, 0.07, 0.07, MD.black); cyl(x, 30.3, F, F + 0.04, 0.45, 0.45, MD.black); cyl(x, 30.3, F + 0.7, F + 0.75, 0.38, 0.38, MD.black); });
+    [20.5, 22.5, 24.5].forEach(x => { cyl(x, 33.4, F + 6.5, CEIL, 0.02, 0.02, MD.black); cyl(x, 33.4, F + 6.0, F + 6.5, 0.6, 0.12, MD.black); cyl(x, 33.4, F + 5.98, F + 6.02, 0.5, 0.5, M.bulb, {cast: false}); });
+    plight(22.5, 33.4, F + 5.6, 0.5, 16);
+    flush(28.2, 35.0, 0.5);
+
+    // ---------- dining (old kitchen) ----------
+    pbox(18.4, 21.9, 19.2, 26.0, F + 2.35, F + 2.5, MD.oakFurn);
+    pbox(18.9, 21.4, 19.8, 20.2, F, F + 2.35, MD.oakFurn); pbox(18.9, 21.4, 25.0, 25.4, F, F + 2.35, MD.oakFurn); pbox(19.95, 20.35, 20.2, 25.0, F + 0.4, F + 0.6, MD.oakFurn);
+    [20.3, 22.6, 24.9].forEach(y => { chair(17.85, y, 'w'); chair(22.45, y, 'e'); });
+    chair(20.15, 18.55, 'n'); chair(20.15, 26.65, 's');
+    pbox(19.95, 20.35, 20.6, 24.6, F + 6.1, F + 6.3, MD.black); pbox(20.0, 20.3, 20.7, 24.5, F + 6.08, F + 6.1, M.bulb, {cast: false});
+    [21.0, 24.2].forEach(y => cyl(20.15, y, F + 6.3, CEIL, 0.015, 0.015, MD.black));
+    plight(20.15, 22.6, F + 5.6, 0.45);
+    wb(true, 16.42, 21.65, F + 5.0, 4.4, 3.1, 0.05, -0.21, MD.black); wb(true, 16.42, 21.65, F + 5.0, 4.2, 2.9, 0.05, -0.25, MD.art);
+
+    // ---------- living room (old garage), down the wide steps ----------
+    pbox(0.5, 5.5, 39.0, 40.5, LF, CEIL + 0.75, MD.plaster);
+    pbox(1.8, 4.2, 38.94, 39.0, LF + 1.3, LF + 3.6, MD.black); pbox(2.05, 3.95, 38.9, 38.94, LF + 1.45, LF + 2.15, MD.fire, {cast: false});
+    pbox(0.7, 5.3, 38.62, 39.0, LF + 4.4, LF + 4.72, MD.beam);
+    pbox(0.2, 5.8, 37.95, 39.0, LF, LF + 0.5, M.concreteLight, {uv: true});
+    pbox(-1.8, 8.4, 31.4, 38.6, LF, LF + 0.03, MD.rug, {cast: false});
+    sofa(-0.9, 7.1, 32.2, 35.0, 's', MD.fabric, LF);
+    [0.2, 5.9].forEach(x => pbox(x - 0.55, x + 0.55, 32.95, 33.35, LF + 1.4, LF + 2.4, MD.fabricDark));
+    pbox(1.5, 4.5, 35.7, 37.1, LF + 1.2, LF + 1.38, MD.oakFurn); pbox(1.8, 4.2, 36.0, 36.8, LF, LF + 1.2, MD.oakFurn);
+    sofa(7.8, 9.8, 34.3, 36.3, 'w', MD.leather, LF);
+    pbox(-4.0, -2.75, 31.2, 38.2, LF, LF + 1.45, MD.shaker, {uv: true}); pbox(-4.0, -2.8, 31.3, 38.1, LF + 1.45, LF + 1.75, MD.fabricDark);
+    [32.4, 37.0].forEach(y => pbox(-3.95, -3.55, y - 0.6, y + 0.6, LF + 1.75, LF + 2.75, MD.linen));
+    // cushions on the steps, and built-ins at the top of them
+    [[1.0, 4.0], [6.5, 9.0]].forEach(([a, b]) => pbox(a, b, 29.75, 30.45, LF + ST, LF + ST + 0.25, MD.fabricDark));
+    bookcase(12.55, 15.03, 39.4, 40.45, F, F + 7.2);
+    cyl(-2.1, 30.95, LF, LF + 5.0, 0.04, 0.04, MD.black); cyl(-2.1, 30.95, LF, LF + 0.06, 0.5, 0.5, MD.black); cyl(-2.1, 30.95, LF + 4.4, LF + 5.3, 0.62, 0.48, M.shadeGlass, {cast: false}); plight(-2.1, 30.95, LF + 4.6, 0.22, 12);
+    plant(8.4, 39.6, LF, 1.0);
+    plight(3.5, 34.5, CEIL + 1.0, 0.45, 22); plight(13.6, 33.0, CEIL - 0.6, 0.25, 12);
+
+    // ---------- library and entry (the front room) ----------
+    bookcase(0.6, 11.0, 11.6, 12.8, F, F + 7.6);
+    pbox(3.0, 11.0, 13.8, 20.2, F, F + 0.03, MD.rug, {cast: false});
+    pbox(0.5, 2.5, 15.2, 19.2, F + 2.45, F + 2.6, MD.oakFurn); [[0.7, 15.4], [2.3, 15.4], [0.7, 19.0], [2.3, 19.0]].forEach(([x, y]) => pbox(x - 0.06, x + 0.06, y - 0.06, y + 0.06, F, F + 2.45, MD.black));
+    chair(3.2, 17.2, 'e');
+    cyl(1.0, 18.7, F + 2.6, F + 3.8, 0.04, 0.04, MD.black); cyl(1.0, 18.7, F + 3.6, F + 4.1, 0.38, 0.26, M.shadeGlass, {cast: false});
+    sofa(4.2, 6.2, 17.0, 19.0, 'n', MD.leather, F); sofa(8.4, 10.4, 17.0, 19.0, 'n', MD.fabric, F);
+    cyl(7.3, 18.0, F + 1.7, F + 1.85, 0.75, 0.75, MD.oakFurn); cyl(7.3, 18.0, F, F + 1.7, 0.12, 0.12, MD.black); cyl(7.3, 18.0, F, F + 0.05, 0.5, 0.5, MD.black);
+    cyl(7.3, 18.0, F + 1.85, F + 2.9, 0.05, 0.05, MD.black); cyl(7.3, 18.0, F + 2.7, F + 3.3, 0.45, 0.32, M.shadeGlass, {cast: false}); plight(7.3, 18.0, F + 3.0, 0.2, 10);
+    pbox(0.2, 1.8, 25.7, 28.6, F, F + 7.4, MD.shaker, {uv: true}); pbox(1.79, 1.82, 26.6, 26.7, F + 2.8, F + 3.8, MD.black); pbox(1.79, 1.82, 27.6, 27.7, F + 2.8, F + 3.8, MD.black);
+    pbox(0.4, 4.4, 22.5, 25.3, F, F + 0.03, MD.rugBlue, {cast: false});
+    flush(6.2, 16.0); flush(5.0, 24.2, 0.55);
+    plant(10.9, 13.7, F, 0.8);
+
+    // ---------- hall bath, laundry, hall ----------
+    wb(false, 25, 13.96, F + 2.15, 4.62, 4.3, 0.04, 0.27, MD.zellige); wb(true, 16.42, 23.7, F + 3.6, 2.35, 7.2, 0.04, 0.22, MD.zellige); wb(true, 11.5, 23.7, F + 3.6, 2.35, 7.2, 0.04, -0.22, MD.zellige);
+    wb(false, 22.5, 12.9, F + 3.45, 2.5, 6.8, 0.04, 0, MD.guard, {cast: false, receive: false});
+    cyl(23.7, 13.96, CEIL - 0.7, CEIL, 0.02, 0.02, MD.black); cyl(23.7, 13.96, CEIL - 0.74, CEIL - 0.7, 0.4, 0.4, MD.black);
+    pbox(20.95, 22.25, 15.95, 16.38, F + 1.4, F + 2.9, M.porcelain); cyl(21.6, 15.3, F, F + 1.4, 0.55, 0.6, M.porcelain);
+    pbox(18.5, 20.6, 14.85, 16.38, F + 1.0, F + 2.75, MD.oakSlab, {uv: true}); pbox(18.45, 20.65, 14.8, 16.4, F + 2.75, F + 2.9, MD.quartz); pbox(19.1, 20.0, 15.15, 15.95, F + 2.81, F + 2.92, M.porcelain);
+    wb(true, 16.42, 19.55, F + 5.0, 1.8, 2.6, 0.04, 0.24, MD.mirror);
+    flush(21.5, 14.0, 0.45);
+    pbox(11.7, 14.0, 16.2, 18.55, F, F + 6.2, M.porcelain); pbox(12.35, 13.35, 16.15, 16.2, F + 1.0, F + 2.0, MD.black); pbox(12.35, 13.35, 16.15, 16.2, F + 4.0, F + 5.0, MD.black);
+    pbox(14.05, 14.98, 16.6, 18.6, F + 4.5, F + 4.6, MD.oakFurn);
+    flush(14.6, 13.4, 0.45); flush(14.5, 9.8, 0.4, true);
+    pbox(15.7, 17.5, 11.72, 12.6, F, F + 2.6, MD.oakFurn); wb(true, 11.5, 16.6, F + 5.0, 2.4, 1.8, 0.05, -0.21, MD.black); wb(true, 11.5, 16.6, F + 5.0, 2.2, 1.6, 0.05, -0.25, MD.art);
+
+    // ---------- primary bedroom and the open suite (as Dream 3) ----------
+    pbox(1.2, 9.6, 3.4, 10.2, F, F + 0.03, MD.rug, {cast: false});
+    pbox(2.2, 8.6, 4.9, 11.3, F + 0.4, F + 1.2, MD.oakFurn); pbox(2.35, 8.45, 5.0, 11.1, F + 1.2, F + 2.0, MD.linen);
+    pbox(2.28, 8.52, 4.95, 9.7, F + 1.95, F + 2.12, MD.duvet); pbox(2.28, 8.52, 4.92, 5.1, F + 1.3, F + 2.12, MD.duvet);
+    [3.95, 6.85].forEach(x => pbox(x - 1.3, x + 1.3, 9.95, 10.95, F + 2.0, F + 2.7, MD.linen));
+    pbox(2.0, 8.8, 11.12, 11.4, F, F + 4.8, MD.fabric);
+    [1.45, 9.35].forEach(x => { pbox(x - 0.55, x + 0.55, 10.3, 11.3, F, F + 2.0, MD.oakFurn); cyl(x, 10.8, F + 2.0, F + 3.1, 0.12, 0.08, MD.black); cyl(x, 10.8, F + 3.0, F + 3.7, 0.45, 0.35, M.shadeGlass, {cast: false}); });
+    sofa(0.5, 2.5, 0.6, 2.6, 's', MD.leather, F);
+    flush(5.75, 5.75);
+    openSuite();
+
+    // ---------- outside: a covered porch at the front door, a planter under the big window ----------
+    pbox(-4.1, -0.25, 21.9, 28.55, 0, F - 0.55, M.concreteLight, {uv: true}); pbox(-4.7, -4.1, 22.4, 25.4, 0, (F - 0.55)/2, M.concreteLight);
+    pbox(-4.7, 0.25, 21.5, 28.75, F + 7.7, F + 8.15, M.trim);
+    pbox(-4.3, -3.8, 21.7, 22.2, 0, F + 7.7, M.trim); pbox(-4.45, -3.65, 21.55, 22.35, 0, 1.6, M.stone, {uv: true});
+    wb(false, 0, 26.0, F + 5.7, 0.35, 0.7, 0.3, 0.42, MD.black);
+    pbox(-3.0, -0.25, 1.0, 21.3, 0, 1.6, M.brick);
+    pbox(-7.0, -4.6, 30.2, 39.1, 0, 1.3, M.stone, {uv: true});
+    [31.4, 34.6, 37.8].forEach(y => { const m = new T.Mesh(new T.IcosahedronGeometry(1.3, 1), M.leaf[y > 35 ? 1 : 0]); m.scale.set(1, 0.7, 1); m.position.copy(V(-5.8, y, 1.9)); m.castShadow = true; CUR.house.add(m); });
+  }
+
 
   CUR = models.today; CUR.rooms = ROOMS_TODAY; buildToday();
   CUR = models.dream; CUR.rooms = ROOMS_DREAM; buildDream();
   CUR = models.dreamB; CUR.rooms = ROOMS_DREAM_B; buildGarageKept('B');
   CUR = models.dreamC; CUR.rooms = ROOMS_DREAM_C; buildGarageKept('C');
   CUR = models.dreamD; CUR.rooms = ROOMS_DREAM_D; buildGarageKept('D');
+  CUR = models.dreamE; CUR.rooms = ROOMS_DREAM_E; buildDream5();
 
   // ---------- site (kept simple: the inside is the focus) ----------
   const site = {parent: groups.site};
@@ -1195,74 +1388,89 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     over:     {mode: 'cut', sun: 'midday',    pos: V(-6, -6, 38), at: V(12.5, 20.5, F), fov: 50, title: 'Cutaway from the front',
       dreamC: 'Dream 3: the garage kept and every wall that isn\'t needed taken out. The primary suite is one open room, the hall is part of the living room, and the entry opens straight in.',
       dreamD: 'Dream 4: the same open plan, but the kitchen stays in its current spot around a big new west window, and the bump-out becomes the family room and dining room.',
+      dreamE: 'Dream 5: fewer walls, and the garage becomes a sunken living room with a vaulted ceiling. The front room is a library you walk through from the front door, and the open suite is the same as Dream 3.',
       today: 'Today, with the ceilings lifted off: the front room, the green room and bedroom 2 along the south wall, and the one-car garage on the north end.',
       dream: 'Dream 1 from the same spot: the garage is a sunken living room, the front room is a foyer and office, and the two south bedrooms are one primary suite.',
       dreamB: 'Dream 2 from the same spot: the garage stays (finished, with a car for scale), the front room stays the living room, and a small entry addition sits in the corner by the garage.'},
     overback: {mode: 'cut', sun: 'midday',    pos: V(36, 50, 37), at: V(13.5, 21.5, F), fov: 50, title: 'Cutaway from the back',
       dreamC: 'From the northwest: the kitchen by the deck, the dining room, the glass stair, and the open suite at the far end.',
       dreamD: 'From the northwest: the family room and dining table in the bump-out, the U-shaped kitchen in its current spot with the new window, and the open suite beyond.',
+      dreamE: 'From the northwest: the kitchen by the deck, with the sunken living room opening off it on the left, past the freestanding fridge and pantry block.',
       today: 'From the northwest: the dining bump-out with the slider to the deck, the U-shaped kitchen and breakfast bar, and the stairs beside the kitchen.',
       dream: 'From the northwest: the kitchen and green island in the old dining room, the dining table where the kitchen was, and the stair behind glass.',
       dreamB: 'From the northwest: the same kitchen, dining room and glass stair as Dream 1, with the finished garage on the other side of the kitchen wall.'},
-    entry:    {mode: 'in', sun: 'afternoon', pos: V(1.3, 26.6, F + 5.2), at: V(20, 23.5, F + 3.4), fov: 72, title: 'Just inside the front door',
+    entry:    {mode: 'in', sun: 'afternoon', pos: V(1.7, 24.2, F + 5.2), at: V(20, 23.5, F + 3.4), fov: 72, title: 'Just inside the front door',
       dreamC: 'The entry opens straight into the living room. Past the glass stair: the dining room and the glass doors to the deck.',
       dreamD: 'Across the living room and the glass stair to the kitchen, with the cooktop counter on the stair and the new window beyond.',
+      dreamE: 'Through the front door into the library. Past the glass stair are the dining room and the deck doors, and on the right the floor steps down into the living room.',
       today: 'The front door opens into a corner of the front room, facing the solid stair wall and the duct.',
-      dream: 'A real foyer with a bench and a coat closet. The stair is behind glass, so you see through the dining room to the glass doors and the deck.',
-      dreamB: 'Through the new entry and into the living room: the stair is behind glass, so you see straight through the dining room to the deck doors.'},
+      dream: 'Dream 1\'s foyer. The stair is behind glass, so you see through the dining room to the glass doors and the deck.',
+      dreamB: 'Just past the new entry, in the living room: the stair is behind glass, so you see straight through the dining room to the deck doors.'},
     front:    {mode: 'in', sun: 'morning',   pos: V(9.6, 26.8, F + 5.2), at: V(2.0, 13.0, F + 3.0), fov: 74, title: 'Front room',
       dreamC: 'The living room, with the hall now part of it: the media wall and fireplace, the picture window, and the suite door at the back.',
       dreamD: 'The same open living room and hall as Dream 3.',
+      dreamE: 'The library: books along the south wall, a desk at the picture window, two reading chairs, and the hall and suite door on the right.',
       today: 'The front room from its back corner by the stairs: the picture window and the doorway to the hall.',
       dream: 'In Dream 1 this end of the front room is the foyer, with the coat closet and the office door.',
       dreamB: 'The living room: a media wall with a linear fireplace on the south wall, the picture window, and the doorway to the hall.'},
+    north:    {mode: 'in', sun: 'afternoon', pos: V(9.8, 23.0, F + 5.2), at: V(3.0, 37.0, F + 0.8), fov: 74, title: 'North from the front room',
+      today: 'Today: the north end of the front room, by the front door. The garage is behind that wall.',
+      dream: 'In Dream 1 the foyer looks through a wide cased opening and down the steps into the living room.',
+      dreamB: 'In Dream 2 this is the north end of the living room, with a console against the garage wall.',
+      dreamC: 'The north end of the living room, with the open entry on the right and the garage behind the wall.',
+      dreamD: 'The same as Dream 3.',
+      dreamE: 'From the library, down the wide steps into the living room: the vaulted ceiling with oak beams, the fireplace between two windows, and the coat cabinet by the front door on the right.'},
     suite:    {mode: 'in', sun: 'afternoon', pos: V(1.2, 3.7, F + 5.2), at: V(24.0, 4.6, F + 2.8), fov: 74, title: 'Primary suite, end to end',
       today: 'Today: the green room looking west, toward its closet.',
       dream: 'In Dream 1 the bedroom ends at a wall, with the walk-in closet and bath behind it.',
       dreamB: 'In Dream 2 the bedroom ends at a wall, with the walk-in closet and bath behind it.',
       dreamC: 'One open room from the bed past the wardrobes and dresser to the tub and shower. Only the toilet has its own walls.',
-      dreamD: 'The same open suite as Dream 3.'},
-    living:   {mode: 'in', sun: 'morning',   pos: V(14.2, 30.6, F + 5.0), at: V(-4.25, 36.6, F + 2.4), fov: 74, title: 'Garage, looking out',
+      dreamD: 'The same open suite as Dream 3.', dreamE: 'The same open suite as Dream 3.'},
+    living:   {mode: 'in', sun: 'morning',   pos: V(14.2, 30.6, F + 5.0), at: V(-4.25, 36.6, F + 2.4), fov: 74, title: 'Garage end, looking out',
       dreamC: 'The same finished garage as Dream 2.', dreamD: 'The same finished garage as Dream 2.',
+      dreamE: 'The garage becomes the living room, as in Dream 1, but with no walls around it: wide steps along two sides, a vaulted ceiling with oak beams, the window seat where the garage door was, and the fireplace.',
       today: 'The garage, from the door at the top of the stairs. Its floor is 1½–2 ft below the house and its rafters are open.',
       dream: 'In Dream 1 the garage becomes the living room: three steps down, a vaulted ceiling with oak beams, a window seat where the garage door was, and a fireplace on the north wall.',
       dreamB: 'In Dream 2 the garage stays a garage, finished: drywall, an epoxy floor, a new insulated door with windows, storage along the wall, and room for a car.'},
-    mud:      {mode: 'in', sun: 'afternoon', pos: V(-1.6, 39.2, 5.7), at: V(14.5, 30.5, 2.6), fov: 74, title: 'Garage, looking in',
+    mud:      {mode: 'in', sun: 'afternoon', pos: V(-1.6, 39.2, 5.7), at: V(14.5, 30.5, 2.6), fov: 74, title: 'Garage end, looking in',
       dreamC: 'The same lockers, storage and EV charger as Dream 2.', dreamD: 'The same lockers, storage and EV charger as Dream 2.',
+      dreamE: 'From the far corner of the living room: the wide steps up to the library and the landing, and the kitchen beyond the fridge and pantry block.',
       today: 'From the far corner of the garage, back toward the door into the house.',
       dream: 'From the far corner of the Dream 1 living room: the fireplace, the steps up to the raised strip, and the kitchen beyond.',
       dreamB: 'From the far corner of the garage: green lockers with a bench beside the steps into the house, storage cabinets and an EV charger.'},
     kitchen:  {mode: 'in', sun: 'afternoon', pos: V(15.7, 27.6, F + 5.3), at: V(28.5, 37.5, F + 3.0), fov: 72, title: 'Toward the deck',
-      dreamC: 'The same kitchen by the deck as Dream 2.',
+      dreamC: 'The same kitchen by the deck as Dream 2.', dreamE: 'The same kitchen by the deck as Dream 3.',
       dreamD: 'Into the bump-out, now the family room and dining room: a sofa against the garage wall, the table under the north windows, and the slider to the deck.',
       today: 'From beside the stair half wall: the breakfast bar, the dining room and the slider to the deck.',
       dream: 'The kitchen now sits by the deck: a green island with stools, counters under the north windows, a tall oak wall for the fridge and ovens, and a wide glass door.',
       dreamB: 'The same kitchen by the deck. Here the tall fridge and pantry wall backs onto the garage and stops short of the island, so the aisle stays clear.'},
     dining:   {mode: 'in', sun: 'afternoon', pos: V(22.5, 38.6, F + 5.4), at: V(18.0, 19.0, F + 2.6), fov: 74, title: 'Back toward the middle',
       dreamC: 'From the sink, over the island: the dining room and the open stair, with the living room beyond.',
+      dreamE: 'From the sink, over the island: the dining room and the open stair, with the library beyond and the living room steps on the left.',
       dreamD: 'From the family room: the breakfast bar, and the kitchen in its current spot with the new window on the right and the cooktop counter along the stair.',
       today: 'From the north side of the dining room: the breakfast bar, the U-shaped kitchen and the stair half wall.',
       dream: 'From the sink, over the island: the dining table where the kitchen was, glass doors to the deck on the right, and the open stair beyond.',
       dreamB: 'From the sink, over the island: the dining table, the glass doors to the deck, and the open stair with the living room beyond.'},
     west:     {mode: 'in', sun: 'afternoon', pos: V(17.6, 27.0, F + 5.3), at: V(25, 20.5, F + 3.6), fov: 74, title: 'The west wall of the old kitchen',
       today: 'Today\'s kitchen: the range and fridge on the back wall, with no window.',
-      dream: 'In Dreams 1 to 3 this is the dining room, with glass doors to the deck.',
-      dreamB: 'In Dreams 1 to 3 this is the dining room, with glass doors to the deck.',
-      dreamC: 'In Dreams 1 to 3 this is the dining room, with glass doors to the deck.',
-      dreamD: 'The kitchen stays here, with a new window about 6 ft wide over the sink, looking over the deck to the yard.'},
+      dream: 'In Dreams 1, 2, 3 and 5 this is the dining room, with glass doors to the deck.',
+      dreamB: 'In Dreams 1, 2, 3 and 5 this is the dining room, with glass doors to the deck.',
+      dreamC: 'In Dreams 1, 2, 3 and 5 this is the dining room, with glass doors to the deck.',
+      dreamD: 'The kitchen stays here, with a new window about 6 ft wide over the sink, looking over the deck to the yard.',
+      dreamE: 'In Dreams 1, 2, 3 and 5 this is the dining room, with glass doors to the deck.'},
     primary:  {mode: 'in', sun: 'morning',   pos: V(10.8, 1.0, F + 5.0), at: V(3.0, 11.5, F + 2.8), fov: 72, title: 'Primary bedroom',
-      dreamC: 'The sleeping end of the open suite.', dreamD: 'The sleeping end of the open suite.',
+      dreamC: 'The sleeping end of the open suite.', dreamD: 'The sleeping end of the open suite.', dreamE: 'The sleeping end of the open suite.',
       today: 'Today this is the green room, seen from its southwest corner.',
       dream: 'The primary bedroom: the bed on the north wall, windows to the front and south, and a softer green.',
       dreamB: 'The same primary bedroom, a foot shorter than in Dream 1 because the living room keeps its full size.'},
     spa:      {mode: 'in', sun: 'afternoon', pos: V(24.3, 0.7, F + 5.3), at: V(18.4, 10.8, F + 3.0), fov: 80, title: 'Spa bath',
       dreamC: 'The open bath from the shower corner: the tub, the double vanity, the toilet room, and the dressing area and bed beyond.',
-      dreamD: 'The same open bath as Dream 3.',
+      dreamD: 'The same open bath as Dream 3.', dreamE: 'The same open bath as Dream 3.',
       today: 'Today this is bedroom 2, seen from its southwest corner.',
       dream: 'Bedroom 2 becomes the spa bath, seen from the shower corner: the freestanding tub under the south window, the double vanity on the far wall, and a low wall around the toilet.',
       dreamB: 'The same spa bath as Dream 1: the freestanding tub, the double vanity and a low wall around the toilet.'}
   };
-  const BADGE = {today: 'Today', dream: 'Dream 1 · garage → living room', dreamB: 'Dream 2 · garage kept', dreamC: 'Dream 3 · fewer walls', dreamD: 'Dream 4 · kitchen stays'};
+  const BADGE = {today: 'Today', dream: 'Dream 1 · garage → living room', dreamB: 'Dream 2 · garage kept', dreamC: 'Dream 3 · fewer walls', dreamD: 'Dream 4 · kitchen stays', dreamE: 'Dream 5 · fewer walls, no garage'};
 
   let model = 'dreamC', viewKey = 'over', viewMode = 'cut';
   function applyModel(){

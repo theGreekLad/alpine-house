@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Nine ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Ten ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -281,11 +281,13 @@ Concept 7 with every wall that isn't doing a job taken out. Walls stay only arou
 
 ![Concept 9](9-kitchen-stays.png)
 
+**See it in 3D:** [Dreams 3 and 4](../../renderings/2026-11-08-dream-plans-3-and-4/).
+
 The kitchen stays where it is but opens up around a big new window in the west wall, over the sink. The rest follows concept 8: few walls and the garage kept. The bump-out by the deck becomes the family room and dining room.
 
 1. **Kitchen in place.** A U around the new window:
    - the sink under the window;
-   - a fridge and tall pantry where the short hall used to open into the kitchen;
+   - a fridge and a pull-out pantry on the south wall, so the short hall from the bedrooms still opens into the kitchen;
    - a cooktop counter along the stair;
    - a breakfast bar facing the family room.
 2. **The new window.** It's about 6 ft wide over the sink and looks out over the deck to the yard, bringing afternoon light into the middle of the house. It could also be a pass-through window to the deck.
@@ -297,19 +299,54 @@ The kitchen stays where it is but opens up around a big new window in the west w
 - **How it feels:** the kitchen stays in the middle of the house, where it's easy to reach from everywhere. Now it's bright: daylight from the big window, a view through the stair to the living room, and the family room and deck right beside it.
 - **Trade-offs:**
   - It's a working U rather than an island kitchen, with an aisle about 5′ 8″ wide.
+  - The pantry is a narrow pull-out beside the fridge rather than a walk-in.
   - The cooktop on the stair counter needs a downdraft vent, so a hood doesn't block the view.
-  - The short hall from the bedrooms into the kitchen closes, so you reach the kitchen through the living room and the landing.
 - **Checks first:** the new window needs a header in the west wall. If that wall carries the roof, an engineer sizes it.
 - **Rough cost:** less than concepts 6–8, because the kitchen's plumbing stays close to where it is and the bump-out needs furniture rather than a new kitchen. Get a quote for the window header.
 - **Variations:**
   - **Pass-through window:** a counter-height sliding window that opens onto the deck, with a bar ledge outside.
   - **Glass on both sides:** keep glass on the stair's kitchen side and move the cooktop to the south counter.
 
+## 10 · Fewer walls, garage converted
+
+*Budget no object · fewer walls · the garage becomes living space.*
+
+![Concept 10](10-fewer-walls-no-garage.png)
+
+**See it in 3D:** [Dream 5](../../renderings/2026-11-08-dream-plan-5-no-garage/).
+
+Concept 8's fewer walls, but the garage no longer has to be a garage. It becomes a sunken living room that opens straight onto the kitchen and the landing, and the front room becomes a library you walk through from the front door. Walls stay only around the bedroom, the bathrooms, the toilet and outside.
+
+1. **Living room in the garage.** Three steps down, since the garage floor already sits about 1½ ft below the house. The rafters go, for a vaulted ceiling. A big window replaces the garage door, with a window seat under it, and a fireplace sits on the north wall between two windows.
+2. **Wide steps.** The garage walls come out, so the old wall line becomes wide steps that wrap around the south and west sides of the room. You can sit on them, and they bring the living room into the landing and the kitchen.
+3. **Library.** The front room becomes a library and study: books along the south wall, a desk at the picture window and two reading chairs. It's the room you walk through from the front door.
+4. **Entry.** The front door stays in the notch, shifted a little south, under a new covered porch, with a coat cabinet beside it. No entry addition is needed.
+5. **Kitchen.** By the deck, as in concepts 6–8, with the island facing the living room. The fridge and pantry are a freestanding cabinet block where the garage wall was, and the kitchen is open to the living room beside it.
+6. **Dining.** In the old kitchen spot, with glass doors to the deck.
+7. **Stair.** Glass guards on both sides, with a skylight above. The landing opens on all four sides.
+8. **Suite, hall and laundry.** The open suite, open hall and laundry cupboard from concept 8.
+
+- **Walls:** about 73 ft of interior wall comes out, including the garage walls, which no longer need to be fire-rated once it's living space. Another 15 ft turns into glass at the stair, and only about 12 ft of new wall goes in: the suite's front wall and the toilet room.
+- **How it feels:** you come in under the porch into the library and look straight across the glass stair to the dining room and the deck. Turn right and the floor steps down into a big, vaulted living room with a fire at the far end. The kitchen is open to it along the west side, so whoever is cooking is part of the room.
+- **Trade-offs:**
+  - There's no garage, which matters in Utah winters.
+  - There's no room you can close off for guests, TV noise or work. The library is a walk-through space, and sound travels across the whole north side.
+  - The main floor has one bedroom, so the rest of the household goes downstairs.
+- **Checks first:**
+  - Ask your city whether the garage can become living space without adding parking elsewhere, and what the porch needs.
+  - Get an engineer for the beams: the garage walls, the landing, the stair walls, the hall and the vaulted ceiling.
+- **Build notes:** the old garage needs an insulated floor, walls and ceiling. Heat in the floor keeps a big room over a slab from feeling cold, and the fireplace can be a direct-vent gas unit.
+- **Rough cost:** in the same range as concept 6, a whole-floor renovation plus a garage conversion ([Angi](https://angi.com/articles/how-much-does-it-cost-demo-interior.htm): most whole-house remodels run $100,000–200,000; [This Old House](https://www.thisoldhouse.com/garages/garage-conversion-cost): most garage conversions run about $10,000–52,000). There's no entry addition and less wall to frame and finish, but more beams.
+- **Variations:**
+  - **A door to close:** glass sliding doors along the top of the steps, so the library can close off as a study or guest room.
+  - **Somewhere to park:** a detached garage or carport, if the lot and the city allow it.
+  - **Kitchen stays:** concept 9's kitchen also works here, with the bump-out as the dining room.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
-- **Or go all in:** the dream plans (6 to 9) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
+- **Or go all in:** the dream plans (6 to 10) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look
