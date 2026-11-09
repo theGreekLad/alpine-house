@@ -12,4 +12,4 @@ These are 3D models of the house, saved as dated snapshots so changes can be com
 2. Put the updated `index.html`, the snapshot images (using the same view names as the baseline) and a README in it. The README should say what changed compared with the baseline.
 3. Add a row to the table above.
 
-Keep the baseline folder unchanged so you can always compare against the starting point. It's also tagged in git as `baseline-2026-11-08`.
+Keep the baseline folder unchanged so you can always compare against the starting point.
