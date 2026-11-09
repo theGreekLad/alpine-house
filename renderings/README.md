@@ -6,6 +6,7 @@ These are 3D models of the house, saved as dated snapshots so changes can be com
 |---|---|---|
 | [**Baseline**](2026-11-08-baseline/) | Nov 8, 2026 | The house as it is today, before any renovation. This is the reference point for every later version. It matches the updated [floor plan](../floor-plan/). |
 | [**Dream plan**](2026-11-08-dream-plan/) | Nov 8, 2026 | [Concept 6](../concepts/2026-11-08-layout-concepts/), the budget-no-object layout, built in the same scene as the baseline with a Today / Dream switch. The garage becomes a sunken living room, the kitchen moves by the deck, and the south bedrooms become a primary suite. |
+| [**Dream plan, garage kept**](2026-11-08-dream-plan-garage-kept/) | Nov 8, 2026 | [Concept 7](../concepts/2026-11-08-layout-concepts/): the same dream moves, but the garage stays a garage (finished, with mudroom lockers), the front room stays the living room, and a small entry addition gets the front door facing the street. Its page switches between Today, Dream 1 and Dream 2. |
 
 ## Adding a new version
 

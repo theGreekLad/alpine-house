@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Six ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Seven ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -201,11 +201,54 @@ The walk from the front door to the deck drops to about **31 ft**.
   - **A hidden stair:** concept 5's lift-up island in place of the glass guards.
 - **Downstairs:** two bedrooms with egress windows, a full bath on the existing rough-in, a family room and storage. The basement needs its own measured plan first.
 
+## 7 · Dream plan, garage kept
+
+*Budget no object, but the garage stays a garage.*
+
+![Concept 7](7-dream-plan-garage-kept.png)
+
+**See it in 3D:** [the garage-kept model](../../renderings/2026-11-08-dream-plan-garage-kept/) switches between today, Dream 1 and this plan from the same camera views.
+
+The same big moves as the dream plan, but the garage is finished instead of converted. The front room stays the living room and opens up to the glass stair. A small entry addition beside the garage gives the house a real front door, and a mudroom wall in the garage handles everyday comings and goings.
+
+1. **Entry addition.** A small addition fills the notch beside the garage, flush with its front. The front door finally faces the street, with a coat closet before you step into the living room.
+2. **Living room.** The front room stays the living room but opens up: glass on the stair side, the landing wall gone, and a media wall with a linear fireplace on the south wall. The doorway to the hall stays, so you can walk a loop.
+3. **Garage, finished.** It's insulated and drywalled, with:
+   - an epoxy floor;
+   - a new insulated door;
+   - storage cabinets and an EV charger;
+   - lockers with a bench by the steps into the house.
+4. **Kitchen by the deck.** An 8-ft island with stools, counters under the north windows, and a tall fridge and pantry wall against the garage. The tall wall stops short of the island, so the aisle stays clear.
+5. **Dining.** It takes the old kitchen spot, with glass doors out to the deck.
+6. **Open stair.** Glass guards and a skylight. Coming up from the garage, you land in the middle of the house.
+7. **Primary suite.** The same as concept 6: a walk-in closet and a spa bath behind a small vestibule. The bedroom keeps its current wall line.
+8. **Hall bath and laundry.** The hall bath gets a walk-in shower, and the old pantry becomes the laundry closet.
+
+The walk from the front door to the deck is about **35 ft**.
+
+- **How it feels:** you come in through a real front door, step into the living room and see straight through the glass stair to the dining room, the kitchen and the deck. Coming home from the garage, you drop your things at the lockers and step up into the open landing at the middle of everything.
+- **Trade-offs:**
+  - The living room stays the size of the front room, about 11′ 6″ × 17′, so it's cozier than concept 6's.
+  - The main floor has one bedroom and no office, so guests, kids and work space go downstairs, unless you keep bedroom 2 (see Variations).
+  - The entry is a small addition, which means a foundation, a roof tie-in and a permit.
+- **Checks first:**
+  - Ask your city about setbacks for the entry addition. It lines up with the garage front, which may help.
+  - Get an engineer for the beam at the landing and stair walls.
+  - The garage keeps its fire-rated walls and a self-closing door into the house.
+- **Rough cost:**
+  - The main floor is in the same range as concept 6.
+  - The entry addition adds roughly $14,000–32,000, [Angi's](https://www.angi.com/articles/entryway-addition-cost.htm) range for entryway additions.
+  - Finishing the garage runs from a few thousand dollars for a floor coating, paint and storage up to [This Old House's](https://www.thisoldhouse.com/garages/garage-remodel-cost) mid-range $14,000–28,000 with insulation and a new door. That figure is for a typical two-car garage, so a one-car garage should cost less.
+- **Variations:**
+  - **Keep bedroom 2:** keep it as an office or guest room, and give the primary suite the old bath plus the short hall as its bathroom (concept 3).
+  - **Skip the addition:** build the coat closet and a bench into the north end of the living room instead.
+  - **A hidden stair:** concept 5's lift-up island in place of the glass guards.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
-- **Or go all in:** the dream plan replaces concepts 1–5 rather than adding to them. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
+- **Or go all in:** the dream plans (6 and 7) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look
@@ -228,4 +271,6 @@ These are national ranges for rough comparison, not quotes.
 - [Progressive Automations: stairwell hatch build](https://www.progressiveautomations.com/en-se/blogs/stories/stairwell-conversion-into-a-pantry-with-a-hidden-door-entrance)
 - [Angi: cost to gut a house](https://angi.com/articles/how-much-does-it-cost-demo-interior.htm)
 - [This Old House: garage conversion cost](https://www.thisoldhouse.com/garages/garage-conversion-cost)
+- [Angi: entryway addition cost](https://www.angi.com/articles/entryway-addition-cost.htm)
+- [This Old House: garage remodel cost](https://www.thisoldhouse.com/garages/garage-remodel-cost)
 - [Dwell: a secret stair hatch](https://www.dwell.com/article/how-they-pulled-it-off-a-secret-stair-hatch-that-seals-off-the-living-space-6955a961)
