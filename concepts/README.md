@@ -4,7 +4,7 @@ Renovation ideas, drawn on the measured [floor plan](../floor-plan/) and saved a
 
 | Version | Date | What it shows |
 |---|---|---|
-| [**Layout concepts**](2026-11-08-layout-concepts/) | Nov 8, 2026 | Seven ideas for flow, use of space and feel: live in the back, open the middle, a bigger bath with a longer kitchen, reclaiming the flue chase, a secret stair hidden under a lift-up island, a budget-no-object dream plan that turns the garage into a sunken living room, and a second dream plan that keeps the garage. |
+| [**Layout concepts**](2026-11-08-layout-concepts/) | Nov 8, 2026 | Nine ideas for flow, use of space and feel: live in the back, open the middle, a bigger bath with a longer kitchen, reclaiming the flue chase, a secret stair hidden under a lift-up island, and four budget-no-object dream plans. Dream 1 turns the garage into a sunken living room. Dream 2 keeps the garage. Dream 3 also takes out every wall that isn't needed. Dream 4 does the same but keeps the kitchen in place. |
 
 ## Adding a new version
 

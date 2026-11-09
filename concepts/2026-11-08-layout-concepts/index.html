@@ -172,6 +172,8 @@ td:first-child{font-weight:600;min-width:150px}
           <tr><td>5 · Secret stair</td><td>The front room side of the stairwell comes down, and a counter-height island with a lift-up lid covers the stairs. Builds on concept 2, and the panel moves.</td><td>No stairwell in the middle of the house: a 35 sq ft island you can see across, joining the living room and kitchen.</td><td>The lid has to be cleared to go downstairs. Custom build, and the inspector has to agree.</td><td>Concept 2's costs plus roughly $5,000–15,000 for the island and lid (my guess).</td></tr>
           <tr><td>6 · Dream plan</td><td>Everything inside: the garage becomes a sunken living room, the kitchen moves to the deck side, the stair opens up behind glass, and the south bedrooms become one primary suite.</td><td>One loop of living spaces around a bright, open stair, plus a real foyer and a primary suite.</td><td>No garage, and one bedroom plus an office on the main floor, so it leans on a finished basement.</td><td>A whole-floor gut renovation plus structural work: likely well into six figures.</td></tr>
           <tr><td>7 · Dream, garage kept</td><td>Like concept 6, but the garage is finished instead of converted, the front room stays the living room, and a small entry addition gives the house a real front door.</td><td>The same open middle, kitchen by the deck and primary suite, with the garage kept and a front door that faces the street.</td><td>A smaller living room than concept 6, one bedroom on the main floor, and a small addition to permit.</td><td>About the same as concept 6, plus roughly $14,000–32,000 for the entry addition.</td></tr>
+          <tr><td>8 · Fewer walls</td><td>Concept 7 with the walls that aren't needed taken out: an open primary suite, the hall merged into the living room, an open entry and a laundry cupboard.</td><td>One connected space from the front door to the deck, and a hotel-style suite with daylight on three sides.</td><td>More sound and smells travel, the open bath isn't for everyone, and there are more beams.</td><td>About the same as concept 7.</td></tr>
+          <tr><td>9 · Kitchen stays</td><td>The kitchen stays where it is as a U around a big new window, the bump-out becomes the family room and dining room, and the rest follows concept 8.</td><td>A bright kitchen in the middle of the house, with the family room and deck beside it.</td><td>A working U rather than an island, and no direct hall route from the bedrooms to the kitchen.</td><td>Less than concepts 6–8, since the kitchen's plumbing stays close to where it is.</td></tr>
         </tbody>
       </table>
     </div>
@@ -183,7 +185,7 @@ td:first-child{font-weight:600;min-width:150px}
     <div class="extras">
       <div><h3>Now</h3><p>Concept 1 costs little and can be undone. Living in the back for a while also tells you how much you really want concept 2.</p></div>
       <div><h3>One project</h3><p>Concepts 2 and 3 share the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath rebuild is already on the list because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.</p></div>
-      <div><h3>Or go all in</h3><p>The dream plans (6 and 7) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
+      <div><h3>Or go all in</h3><p>The dream plans (6 to 9) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
       <div><h3>When it's due</h3><p>Concept 4 waits for the furnace or water heater to need replacing. Ask the HVAC contractor about direct-vent units when you get quotes.</p></div>
     </div>
     <h2 style="margin-top:22px">Also worth a look</h2>
@@ -410,6 +412,51 @@ td:first-child{font-weight:600;min-width:150px}
             '<p><b>A hidden stair.</b> Concept 5\'s lift-up island works here too, in place of the glass guards.</p>',
     downstairs:'Finish the basement for the rest of the household: two bedrooms with egress windows, a full bath on the existing plumbing rough-in, a family room and storage. It needs its own measured plan, so that\'s the next thing to draw.' });
 
+  const DOWNSTAIRS = 'Finish the basement for the rest of the household: two bedrooms with egress windows, a full bath on the existing plumbing rough-in, a family room and storage. It needs its own measured plan, so that\'s the next thing to draw.';
+  CONCEPTS.push({ key:'dreamC', no:'8', short:'Fewer walls', tag:'Budget no object · garage kept · fewer walls', title:'Fewer walls, garage kept', dream:true, variant:'C',
+    pitch:'Concept 7 with every wall that isn\'t doing a job taken out. Walls stay only where they\'re needed: around the bedroom, the bathrooms and the toilet, at the garage, and outside. The rest of the house is one connected space, and the primary suite is one open room.',
+    route:[[-3.6,24.4],[-0.5,24.8],[5.5,25.6],[11.5,27.3],[14.6,27.5],[18.0,29.6],[27.6,29.6],[30.3,31.4]],
+    steps:[[10.2,2.6,'The primary suite is one open room: sleeping at the front, a dressing area with wardrobes and a dresser island in the middle, and an open bath at the back with the tub and a double vanity. Only the toilet gets its own walls, and the shower is behind glass.'],
+           [13.3,13.7,'The hall wall comes out, so the hall becomes part of the living room, with the suite and hall bath doors opening off it. The laundry becomes a cupboard with sliding doors instead of a room.'],
+           [-0.9,25.8,'The entry addition opens fully into the living room, with a beam where the old front wall was and a coat cabinet instead of a closet.'],
+           [9.6,24.3,'The living room keeps concept 7\'s media wall and linear fireplace, and now runs straight into the hall.'],
+           [13.29,22.3,'Glass guards on both sides of the stair, with a skylight above.'],
+           [28.3,34.0,'The kitchen sits by the deck, as in concept 7.'],
+           [23.6,27.4,'Dining takes the old kitchen spot, with glass doors to the deck.'],
+           [12.6,34.2,'The garage stays a garage, finished, with lockers and a bench by the door into the house.']],
+    walls:'About 46 ft of interior wall comes out, plus 6 ft of the old front wall at the entry. Another 15 ft turns into glass, and only about 12 ft of new wall goes in: the suite\'s front wall and the toilet room.',
+    feel:'From the front door you see across the living room, through the glass stair and the dining room, to the deck. The suite feels like a hotel suite: one long room from the bed to the tub, with daylight from three sides.',
+    tradeoff:'Open rooms carry sound and smells further, and an open bath isn\'t for everyone. Sliding panels between the dressing area and the bath would give privacy back when you want it. More open spans also mean more beams, so the engineering matters more.',
+    checks:'The same as concept 7: setbacks for the entry addition, the garage\'s fire-rated walls, and an engineer for the beams. Here there are more of them: the old front wall at the entry, the landing, the stair walls and the hall.',
+    build:'Venting matters more with an open bath: a quiet, strong exhaust fan over the shower and the tub, on a humidity sensor. Plumbing runs through the basement ceiling as before.',
+    cost:'About the same as concept 7. Fewer walls means less framing, drywall and doors, but more beams and more finish work around the openings.',
+    altTitle:'Variations',
+    altHtml:'<p><b>Privacy panels.</b> Add sliding panels between the dressing area and the bath, so the bath can close off without a full wall.</p>' +
+            '<p><b>Mix and match.</b> The open suite and hall also work with concepts 6 and 7.</p>',
+    downstairs: DOWNSTAIRS });
+
+  CONCEPTS.push({ key:'dreamD', no:'9', short:'Kitchen stays', tag:'Budget no object · garage kept · kitchen stays', title:'Kitchen stays, fewer walls', dream:true, variant:'D',
+    pitch:'The kitchen stays where it is but opens up around a big new window in the west wall, over the sink. The rest follows concept 8: few walls and the garage kept. The bump-out by the deck becomes the family room and dining room.',
+    route:[[-3.6,24.4],[-0.5,24.8],[5.5,25.6],[11.5,27.3],[14.6,27.5],[17.6,29.0],[19.5,30.6],[30.3,33.4]],
+    steps:[[19.9,21.0,'The kitchen stays in its current spot as a U: the sink under the new window, a fridge and tall pantry where the short hall used to open, a cooktop counter along the stair, and a breakfast bar facing the family room.'],
+           [21.8,23.6,'A new window about 6 ft wide over the sink looks out over the deck to the yard and brings afternoon light into the middle of the house. It could also be a pass-through window to the deck.'],
+           [27.7,30.3,'The bump-out becomes the family room and dining room: a sofa against the garage wall, the table under the north windows, and the slider to the deck.'],
+           [10.2,2.6,'The open primary suite from concept 8.'],
+           [13.3,13.7,'The open hall and the laundry cupboard from concept 8.'],
+           [-0.9,25.8,'The open entry with a coat cabinet.'],
+           [13.29,22.3,'Glass on the living room side of the stair. On the kitchen side, the cooktop counter is the guard, so whoever is cooking faces the living room.'],
+           [12.6,34.2,'The finished garage with lockers and a bench.']],
+    walls:'About 54 ft of interior wall comes out, including the kitchen\'s half wall to the stair, which becomes the cooktop counter. Another 7 ft turns into glass, and only about 12 ft of new wall goes in.',
+    feel:'The kitchen stays in the middle of the house, where it\'s easy to reach from everywhere, but now it\'s bright: daylight from the big window, a view through the stair to the living room, and the family room and deck right beside it.',
+    tradeoff:'It\'s a working U rather than an island kitchen, with an aisle about 5′ 8″ wide. The cooktop on the stair counter needs a downdraft vent, so a hood doesn\'t block the view. The short hall from the bedrooms into the kitchen closes, so you reach the kitchen through the living room and the landing.',
+    checks:'The same as concept 8. The new window needs a header in the west wall; if that wall carries the roof, an engineer sizes it.',
+    build:'Keeping the kitchen in place keeps the sink, power and gas close to where they are now. The cooktop counter needs power run to it, and a downdraft vent ducted out through the basement.',
+    cost:'Less than concepts 6–8, because the kitchen\'s plumbing stays close to where it is and the bump-out needs furniture rather than a new kitchen. Get a quote for the window header.',
+    altTitle:'Variations',
+    altHtml:'<p><b>Pass-through window.</b> Make the new window a counter-height sliding window that opens onto the deck, with a bar ledge outside for summer.</p>' +
+            '<p><b>Glass on both sides.</b> Keep glass on the stair\'s kitchen side too and move the cooktop to the south counter, if you\'d rather have the full view through the stair.</p>',
+    downstairs: DOWNSTAIRS });
+
   // ---------- shared drawing pieces ----------
   const DEFS = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern>
       <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker>
@@ -620,8 +667,129 @@ td:first-child{font-weight:600;min-width:150px}
     finish(s, cfg, {route: true, furn: true, glass: true, half: false, changed: true});
   }
 
+  // ---------- concepts 8 and 9: fewer walls, with the garage kept (9 keeps the kitchen where it is) ----------
+  // today's interior walls that come out in both open plans
+  const OPEN_REMOVED = [
+    [[11.5,0],[11.5,11.5]], [[13.5,0],[13.5,6]], [[11.5,6],[14.1,6]], [[11.5,8],[15.5,8]], [[14.1,6],[14.1,8]], [[13.5,4.5],[15.5,4.5]],
+    [[15.5,0],[15.5,11.5]], [[11.5,11.5],[11.5,15.5]], [[11.5,26],[11.5,28.75]], [[0,22.5],[0,28.75]]
+  ];
+  function drawOpen(cfg){
+    const D = cfg.variant === 'D';
+    let s = DEFS;
+    s += `<rect class="porch" x="${n(X(-4.25))}" y="${n(Y(26.4))}" width="2.55" height="4.0"/>` + vtext(-5.55, 24.4, 'stoop');
+    s += `<rect class="porch" x="${n(X(30.3))}" y="${n(Y(28.45))}" width="${n(30.3 - 25.25)}" height="${n(28.45 - 17.0)}"/>` + tiny(27.8, 22.7, 'deck');
+    // zones without walls: sleeping and dressing, the open bath
+    const zones = [[0, 17.5, 0, 11.5, 'bed'], [17.5, 25, 0, 11.5, 'wet']];
+    zones.forEach(([x0, x1, y0, y1, t]) => { s += `<polygon class="rm ${t}" points="${pts([[x0,y0],[x1,y0],[x1,y1],[x0,y1]])}"/>`; });
+    const rooms = [
+      {type:'wet', g:{x:22.0,y:7.0,w:3.0,h:4.5}},
+      {type:'living', poly:[[0,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,15.5],[11.5,15.5],[11.5,28.75],[0,28.75]]},
+      {type:'chg', g:{x:-4.25,y:22.5,w:4.25,h:6.25}},
+      {type:'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}},
+      {type:'store', g:{x:11.5,y:15.5,w:3.58,h:3.17}},
+      {type:'circ', g:{x:11.5,y:18.67,w:3.58,h:7.33}},
+      {type:'circ', g:{x:11.5,y:26,w:3.58,h:2.75}},
+      {type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}},
+      {type:'living', g:{x:15.08,y:28.75,w:15.5,h:11.75}},
+      {type:'garage', g:{x:-4.25,y:28.75,w:19.33,h:11.75}}
+    ];
+    rooms.forEach(r => { s += `<polygon class="rm ${r.type}" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
+    rooms.forEach(r => { s += `<polygon class="wall" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
+    s += `<polygon class="wall" points="${pts([[0,0],[25,0],[25,11.5],[0,11.5]])}"/>`;
+
+    for (let i = 1; i < 9; i++){ const y = 18.67 + i*7.33/9; s += line([11.5,y],[15.08,y],'tread'); }
+    s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
+    const open = [ [[11.5,26],[11.5,28.75]], [[15.08,26],[15.08,28.75]], [[15.08,28.75],[25,28.75]], [[0,22.5],[0,28.75]] ];
+    if (!D) open.push([[15.08,16.42],[18.33,16.42]]);
+    open.forEach(([a,b]) => { s += line(a, b, 'erase') + line(a, b, 'open-dash'); });
+    s += line([11.5,18.67],[11.5,26], 'erase') + line([11.5,18.67],[11.5,26], 'glassrail');
+    if (!D) s += line([15.08,18.67],[15.08,26], 'erase') + line([15.08,18.67],[15.08,26], 'glassrail');
+    else s += line([15.08,18.67],[15.08,26], 'erase');
+    OPEN_REMOVED.forEach(([a,b]) => { s += line(a, b, 'removed'); });
+    if (D) s += line([15.08,18.67],[15.08,26], 'removed');
+    s += line([11.5,11.5],[15.5,11.5],'added') + line([22.0,7.0],[22.0,11.5],'added') + line([22.0,7.0],[25,7.0],'added');
+
+    // primary suite: wardrobes and a dresser island, an open bath, the toilet in its own room
+    s += rectF(11.6, 17.4, 0.05, 2.0, 'fix') + tiny(14.5, 1.0, 'wardrobes') + rectF(13.0, 16.0, 4.5, 6.3, 'fix') + tiny(14.5, 5.4, 'dresser');
+    s += ellF(19.6, 1.8, 1.7, 1.0, 'fix') + ellF(19.6, 1.8, 1.35, 0.7, 'fix2') + rectF(21.5, 25, 0, 4.5, 'fix') + tiny(23.25, 2.25, 'shower');
+    s += rectF(17.7, 21.7, 9.6, 11.45, 'fix') + ellF(18.7, 10.5, 0.5, 0.35, 'fix2') + ellF(20.7, 10.5, 0.5, 0.35, 'fix2');
+    s += rectF(22.85, 24.15, 10.95, 11.35, 'fix') + ellF(23.5, 10.2, 0.5, 0.6, 'fix') + tiny(23.5, 8.4, 'WC');
+    // living room, laundry cupboard, hall bath
+    s += rectF(1.0, 10.5, 11.6, 13.2, 'fix') + tiny(5.75, 12.4, 'media wall · linear fireplace');
+    s += rectF(11.7, 14.0, 16.2, 18.55, 'fix') + tiny(12.85, 17.4, 'W/D') + rectF(14.05, 14.95, 17.2, 18.55, 'fix');
+    s += rectF(22.5, 24.85, 11.65, 16.27, 'fix') + tiny(23.7, 13.9, 'shower');
+    s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
+    s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
+    s += rectF(-4.05, -0.45, 26.95, 28.6, 'fix') + tiny(-2.25, 27.75, 'coat cabinet');
+    // garage
+    s += rectF(13.95, 15.0, 31.2, 37.2, 'fix') + vtext(14.47, 34.2, 'lockers + bench');
+    s += rectF(-3.5, 10.5, 28.85, 30.2, 'fix') + tiny(3.5, 29.5, 'storage cabinets');
+    [29.9, 30.8].forEach(y => { s += line([11.8, y],[14.7, y],'stepline'); });
+    s += tiny(13.25, 30.35, 'steps');
+    s += RR(-4.65,-4.25,30.4,38.9,'gap-sheet') + RR(-4.25,-3.9,30.4,38.9,'gap-garage') + line([-3.35,30.4],[-3.35,38.9],'ohd');
+
+    if (!D){
+      // kitchen by the deck, as in concept 7
+      s += rectF(17.1, 30.3, 38.5, 40.5, 'fix') + rectF(15.08, 17.08, 35.5, 40.5, 'fix') + vtext(16.08, 38.0, 'fridge · pantry');
+      s += rectF(21.9, 23.8, 38.85, 40.15, 'fix2') + line([22.85,38.85],[22.85,40.15],'fix2');
+      [[18.2,39.1],[19.5,39.1],[18.2,40.0],[19.5,40.0]].forEach(([x,y]) => { s += circF(x, y, 0.3, 'fix2'); });
+      s += rectF(18.5, 26.5, 31.8, 35.0, 'fix') + tiny(22.5, 33.4, 'island');
+      [19.6, 21.5, 23.4, 25.3].forEach(x => { s += circF(x, 30.9, 0.45, 'furn'); });
+    } else {
+      // kitchen stays: a U around the new window, a cooktop counter along the stair, a breakfast bar facing the family room
+      s += rectF(15.15, 18.3, 16.5, 18.45, 'fix') + tiny(16.7, 17.5, 'fridge') + rectF(18.33, 20.3, 16.5, 18.45, 'fix') + tiny(19.3, 17.5, 'pantry');
+      s += rectF(20.3, 25, 16.42, 18.45, 'fix') + rectF(22.75, 25, 18.45, 26.6, 'fix') + rectF(19.5, 25, 26.6, 28.6, 'fix-new') + tiny(22.2, 27.6, 'breakfast bar');
+      s += rectF(23.3, 24.6, 20.9, 22.7, 'fix2') + line([23.3,21.8],[24.6,21.8],'fix2') + rectF(22.8, 24.9, 22.8, 24.8, 'fix2') + tiny(23.85, 23.8, 'DW');
+      s += rectF(15.08, 17.1, 18.75, 25.95, 'fix-new') + [[15.7,21.6],[16.5,21.6],[15.7,22.6],[16.5,22.6]].map(([x,y]) => circF(x, y, 0.28, 'fix2')).join('') + vtext(16.1, 24.6, 'cooktop counter');
+      [20.4, 22.2, 24.0].forEach(x => { s += circF(x, 29.5, 0.45, 'furn'); });
+    }
+
+    s += furnSvg(D ? OPEN_D_FURN : OPEN_C_FURN);
+    s += `<polygon class="outer" points="${pts(OUTLINE_B)}"/>`;
+    s += openingsSvg(D ? OPEN_D_OPENINGS : OPEN_C_OPENINGS);
+    if (cfg.route) s += `<polyline class="flow" points="${pts(cfg.route)}" marker-end="url(#ah)"/>`;
+    const L = [[5.75,2.75,'PRIMARY SUITE','t-name'],[19.6,6.4,'OPEN BATH','t-small'],[14.5,3.3,'DRESSING','t-small'],[5.75,24.3,'LIVING ROOM','t-name'],[3.0,39.3,'GARAGE','t-name'],
+               [21.65,13.25,'BATH','t-small'],[-2.1,24.3,'ENTRY','t-small'],[16.0,13.6,'HALL','t-fix']];
+    if (!D) L.push([22.5,36.75,'KITCHEN','t-name'], [20.15,17.55,'DINING','t-name']);
+    else L.push([20.0,25.2,'KITCHEN','t-name'], [22.0,39.4,'FAMILY ROOM + DINING','t-name']);
+    L.forEach(([x, y, t, c]) => { s += text(x, y, t, c, 'pointer-events="none"'); });
+    finish(s, cfg, {route: true, furn: true, glass: true, half: false, changed: true, remove: true, add: true});
+  }
+  const OPEN_BASE_OPENINGS = [
+    {t:'door', ax:'v', c:-4.25, s:22.9, e:25.9, hinge:'s', swing:1, room:'chg', out:-1},
+    {t:'door', ax:'h', c:28.75, s:11.8, e:14.7, hinge:'s', swing:1, room:'garage'},
+    {t:'door', ax:'h', c:11.5, s:12.2, e:14.8, hinge:'e', swing:-1, room:'bed'},
+    {t:'door', ax:'h', c:7.0, s:22.4, e:24.6, hinge:'s', swing:-1, room:'wet'},
+    {t:'door', ax:'v', c:18.33, s:12.2, e:14.7, hinge:'s', swing:1, room:'wet'},
+    {t:'bypass', ax:'h', c:15.5, s:11.7, e:14.9, room:'store'},
+    {t:'win', ax:'v', c:0, s:3.8, e:7.8}, {t:'win', ax:'h', c:0, s:7.0, e:9.8},
+    {t:'win', ax:'v', c:0, s:14.8, e:21.6},
+    {t:'win', ax:'h', c:0, s:18.2, e:21.2}, {t:'win', ax:'v', c:25, s:1.4, e:4.0},
+    {t:'win', ax:'v', c:25, s:12.9, e:15.1},
+    {t:'slider', ax:'v', c:30.58, s:30.0, e:38.2},
+    {t:'win', ax:'h', c:40.5, s:21.6, e:24.1}, {t:'win', ax:'h', c:40.5, s:26.6, e:29.1},
+    {t:'win', ax:'h', c:28.75, s:26.3, e:29.3},
+    {t:'win', ax:'h', c:22.5, s:-3.4, e:-0.9},
+    {t:'win', ax:'h', c:40.5, s:1.5, e:4.5}
+  ];
+  const OPEN_C_OPENINGS = OPEN_BASE_OPENINGS.concat([{t:'slider', ax:'v', c:25, s:19.6, e:25.6}]);
+  const OPEN_D_OPENINGS = OPEN_BASE_OPENINGS.concat([{t:'win', ax:'v', c:25, s:18.8, e:24.8}]);
+  const OPEN_COMMON_FURN = [
+    [2.2,8.6,4.9,11.4,'king bed'],[0.9,2.0,10.3,11.4,''],[8.8,9.9,10.3,11.4,''],[0.5,2.5,0.6,2.6,'chair'],
+    [2.0,9.0,19.0,21.8,'sofa'],[4.0,7.0,16.3,17.8,'table'],[0.6,2.6,14.6,16.6,'chair'],[3.0,8.5,27.9,28.55,'console'],
+    [-2.8,11.0,31.7,37.7,'car']
+  ];
+  const OPEN_C_FURN = [OPEN_COMMON_FURN.concat([
+    [18.4,21.9,19.2,26.0,'table'],[17.5,18.2,19.8,20.8,''],[17.5,18.2,22.1,23.1,''],[17.5,18.2,24.4,25.4,''],[22.1,22.8,19.8,20.8,''],[22.1,22.8,22.1,23.1,''],[22.1,22.8,24.4,25.4,''],
+    [19.65,20.65,18.3,19.0,''],[19.65,20.65,26.2,26.9,'']])];
+  const OPEN_D_FURN = [OPEN_COMMON_FURN.concat([
+    [15.4,18.2,31.8,38.6,'sofa'],[19.0,20.5,33.7,36.7,'table'],
+    [23.4,28.6,34.6,37.6,'dining table'],[24.0,25.0,33.6,34.3,''],[25.5,26.5,33.6,34.3,''],[27.0,28.0,33.6,34.3,''],
+    [24.0,25.0,37.9,38.6,''],[25.5,26.5,37.9,38.6,''],[27.0,28.0,37.9,38.6,''],[22.5,23.2,35.6,36.6,''],[28.8,29.5,35.6,36.6,'']])];
+
   function drawDream(cfg){
     if (cfg.variant === 'B') return drawDreamB(cfg);
+    if (cfg.variant === 'C' || cfg.variant === 'D') return drawOpen(cfg);
     let s = DEFS;
     s += `<rect class="porch" x="${n(X(0))}" y="${n(Y(28.75))}" width="4.25" height="${n(28.75 - 21.8)}"/>` + vtext(-2.1, 25.3, 'covered porch');
     s += `<rect class="porch" x="${n(X(30.3))}" y="${n(Y(28.45))}" width="${n(30.3 - 25.25)}" height="${n(28.45 - 17.0)}"/>` + tiny(27.8, 22.7, 'deck');
@@ -777,7 +945,7 @@ td:first-child{font-weight:600;min-width:150px}
     document.getElementById('card').innerHTML =
       `<div class="tag">${esc(cfg.tag)}</div><h2>${cfg.no ? cfg.no + ' · ' : ''}${esc(cfg.title)}</h2><p class="pitch">${esc(cfg.pitch)}</p>` + seg +
       `<h3>${stepsHead}</h3><ol class="steps${cfg.old && cfg.key === 'today' ? ' today' : ''}">${steps}</ol>` + route +
-      sec('How it feels', cfg.feel) + sec('Trade-offs', cfg.tradeoff) + sec('Code questions', cfg.code) + sec('Checks first', cfg.checks) + sec('Build notes', cfg.build) + sec('Rough cost', cfg.cost) +
+      sec('How it feels', cfg.feel) + sec('Walls', cfg.walls) + sec('Trade-offs', cfg.tradeoff) + sec('Code questions', cfg.code) + sec('Checks first', cfg.checks) + sec('Build notes', cfg.build) + sec('Rough cost', cfg.cost) +
       (cfg.altHtml ? `<h3>${esc(cfg.altTitle || 'Other ways to do it')}</h3><div class="alt">${cfg.altHtml}</div>` : '') + sec('Downstairs', cfg.downstairs) +
       (cfg.includes ? `<h3>Includes</h3><p>${esc(cfg.includes)}</p>` : '');
     document.querySelectorAll('#card .seg button').forEach(b => b.addEventListener('click', () => { show(b.dataset.state); try { history.replaceState(null, '', '#' + b.dataset.state); } catch(_){} }));

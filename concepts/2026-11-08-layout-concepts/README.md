@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Seven ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Nine ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -244,11 +244,72 @@ The walk from the front door to the deck is about **35 ft**.
   - **Skip the addition:** build the coat closet and a bench into the north end of the living room instead.
   - **A hidden stair:** concept 5's lift-up island in place of the glass guards.
 
+## 8 · Fewer walls, garage kept
+
+*Budget no object · the garage stays · every wall that isn't needed comes out.*
+
+![Concept 8](8-fewer-walls.png)
+
+**See it in 3D:** [Dreams 3 and 4](../../renderings/2026-11-08-dream-plans-3-and-4/).
+
+Concept 7 with every wall that isn't doing a job taken out. Walls stay only around the bedroom, the bathrooms and the toilet, at the garage, and outside. On the plan, orange dashes are today's walls that come out, and teal lines are the few new ones.
+
+1. **Open primary suite.** One room: sleeping at the front, a dressing area with wardrobes and a dresser island in the middle, and an open bath at the back with the tub and a double vanity. Only the toilet gets its own walls, and the shower is behind glass.
+2. **Hall and laundry.** The hall wall comes out, so the hall becomes part of the living room, with the suite and hall bath doors opening off it. The laundry becomes a cupboard with sliding doors.
+3. **Entry.** The entry addition opens fully into the living room, with a beam where the old front wall was and a coat cabinet instead of a closet.
+4. **Living room.** It keeps concept 7's media wall and linear fireplace.
+5. **Stair.** Glass guards on both sides, with a skylight above.
+6. **Kitchen.** By the deck, as in concept 7.
+7. **Dining.** In the old kitchen spot, with glass doors to the deck.
+8. **Garage.** Finished, with lockers and a bench by the door into the house.
+
+- **Walls:** about 46 ft of interior wall comes out, plus 6 ft of the old front wall at the entry. Another 15 ft turns into glass, and only about 12 ft of new wall goes in: the suite's front wall and the toilet room.
+- **How it feels:** from the front door you see across the living room, through the glass stair and the dining room, to the deck. The suite feels like a hotel suite, one long room from the bed to the tub, with daylight from three sides.
+- **Trade-offs:**
+  - Open rooms carry sound and smells further.
+  - An open bath isn't for everyone; sliding panels between the dressing area and the bath would give privacy back when you want it.
+  - More open spans mean more beams.
+- **Checks first:**
+  - The same as concept 7: setbacks for the entry addition, the garage's fire-rated walls, and an engineer for the beams.
+  - Here there are more beams: at the old front wall at the entry, the landing, the stair walls and the hall.
+- **Build notes:** an open bath needs strong, quiet exhaust over the shower and tub, on a humidity sensor.
+- **Rough cost:** about the same as concept 7. Fewer walls means less framing, drywall and doors, but more beams and more finish work around the openings.
+
+## 9 · Kitchen stays, fewer walls
+
+*Budget no object · the garage stays · the kitchen stays where it is.*
+
+![Concept 9](9-kitchen-stays.png)
+
+The kitchen stays where it is but opens up around a big new window in the west wall, over the sink. The rest follows concept 8: few walls and the garage kept. The bump-out by the deck becomes the family room and dining room.
+
+1. **Kitchen in place.** A U around the new window:
+   - the sink under the window;
+   - a fridge and tall pantry where the short hall used to open into the kitchen;
+   - a cooktop counter along the stair;
+   - a breakfast bar facing the family room.
+2. **The new window.** It's about 6 ft wide over the sink and looks out over the deck to the yard, bringing afternoon light into the middle of the house. It could also be a pass-through window to the deck.
+3. **Family room and dining.** The bump-out gets a sofa against the garage wall, the table under the north windows, and the slider to the deck.
+4. **Suite, hall, entry and garage.** The same as concept 8.
+5. **Stair.** Glass on the living room side. On the kitchen side, the cooktop counter is the guard, so whoever is cooking faces the living room.
+
+- **Walls:** about 54 ft of interior wall comes out, including the kitchen's half wall to the stair, which becomes the cooktop counter. Another 7 ft turns into glass, and only about 12 ft of new wall goes in.
+- **How it feels:** the kitchen stays in the middle of the house, where it's easy to reach from everywhere. Now it's bright: daylight from the big window, a view through the stair to the living room, and the family room and deck right beside it.
+- **Trade-offs:**
+  - It's a working U rather than an island kitchen, with an aisle about 5′ 8″ wide.
+  - The cooktop on the stair counter needs a downdraft vent, so a hood doesn't block the view.
+  - The short hall from the bedrooms into the kitchen closes, so you reach the kitchen through the living room and the landing.
+- **Checks first:** the new window needs a header in the west wall. If that wall carries the roof, an engineer sizes it.
+- **Rough cost:** less than concepts 6–8, because the kitchen's plumbing stays close to where it is and the bump-out needs furniture rather than a new kitchen. Get a quote for the window header.
+- **Variations:**
+  - **Pass-through window:** a counter-height sliding window that opens onto the deck, with a bar ledge outside.
+  - **Glass on both sides:** keep glass on the stair's kitchen side and move the cooktop to the south counter.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
-- **Or go all in:** the dream plans (6 and 7) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
+- **Or go all in:** the dream plans (6 to 9) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look
