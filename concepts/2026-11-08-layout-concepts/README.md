@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Twelve ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Thirteen ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -412,11 +412,58 @@ Concept 11 with two bedrooms on the main floor instead of one open suite. The be
   - **A bigger primary bath:** take 2–3 ft from bedroom 2 for a roomier bath with a tub. Bedroom 2 would drop to about 7 × 11½ ft.
   - **Kitchen by the deck:** concept 10's kitchen also works with two bedrooms.
 
+## 13 · Dream 7, refined
+
+*Your idea: Dream 7 with a clear way into the kitchen and a stairwell that changes.*
+
+**See it in 3D:** [Dream 7 refined](../../renderings/2026-11-08-dream-7-refined/), with a switch for the three stairwell settings.
+
+Dream 7 with the kitchen and the stair refined. The island is shorter and starts further from the bedroom hall, so the way into the kitchen is clear. The old pantry is a pantry again. And the stairwell has three settings: a stair, a big work table, or extra floor.
+
+| Stair | Big table | Extra floor |
+|---|---|---|
+| ![Concept 13, stair](13-dream-7-refined-stair.png) | ![Concept 13, big table](13-dream-7-refined-table.png) | ![Concept 13, extra floor](13-dream-7-refined-floor.png) |
+
+**The kitchen and pantry**
+
+1. **A clear way in.** The island now starts about 4 ft from the bedroom hall instead of 2, and it's shorter, so you walk straight out of the hall into the kitchen. Glass fills the gap along the stair.
+2. **Fridge.** It moves a step west, clear of the way in, with a coffee shelf in the corner by the hall.
+3. **Pantry.** The old pantry is a pantry again, open to the kitchen, with shelves on three sides. The laundry goes in the basement.
+4. **Island.** It keeps the cooktop on its kitchen side. A leaf, folded in half, hangs on its stair side, ready to fold out.
+
+**The stairwell's three settings**
+
+- **Stair (most days):** the stair works as it does now, with glass on the library side and the island as the guard on the kitchen side. The floor panel stands upright at the bottom end of the stairwell, against the back of the pantry. Its underside can be a chalkboard or a pinboard.
+- **Big table:** the leaf unfolds across the stairwell and rests on the library-side rail, which is set at counter height. With the island, that's a work surface of about 31 sq ft, with the cooktop still usable at the kitchen edge. A gate closes the top of the stair while the leaf is out.
+- **Extra floor:** the floor panel folds down from the back of the pantry, counterbalanced like a wall bed, and lands flush on ledges around the stairwell. That adds about 26 sq ft of floor. Half of the leaf folds up as a bar ledge with room for three stools, so guests sit across from the cook, and the new floor opens onto the landing.
+
+- **Walls:** the same as concept 12: about 54 ft comes out and no new walls go in. About 9 ft turns into glass.
+- **How it feels:** you come out of the bedroom hall onto open kitchen floor instead of jogging around the corner of a counter. Most days the stair is just a stair. On a big cooking day the middle of the house becomes a kitchen table, and when people come over it becomes floor.
+- **Trade-offs:**
+  - While the leaf or the floor is down, the stair is closed, so the basement needs its own way out if anyone sleeps there.
+  - The panels need custom building and good hardware.
+  - The island is about 2 ft shorter than concept 12's cooktop counter.
+  - The laundry goes in the basement.
+- **Code questions:** closing off the only stair to the basement is the inspector's call, as with concept 5. Expect to need:
+  - egress windows in the basement bedrooms;
+  - panels that open from below without power or tools;
+  - a gate or an interlock at the top of the stair;
+  - guards on every open edge whenever the stair is in use.
+- **Build notes:**
+  - The leaf is two butcher-block halves joined by a piano hinge, hung from the island's stair edge, with fold-out steel brackets for the bar ledge.
+  - The floor panel is built like a floor, rated for about 40 lb per sq ft, on a counterbalanced hinge like a wall bed's, landing on steel angles around the stairwell.
+  - My estimate is 150–250 lb for the floor panel, so the counterbalance matters.
+- **Rough cost:** concept 12's costs, plus custom carpentry, metalwork and hardware for the two panels. I couldn't find published prices for this kind of build. My rough guess is $4,000–12,000 for both, built by a pro.
+- **Variations:**
+  - **Glass that opens:** library-side glass panels that pivot open in the floor setting, locked closed whenever the stair is open.
+  - **A sliding leaf:** a telescoping leaf under the island's top instead of a folding one. The cooktop would move to the west counter.
+  - **Just one:** the floor panel alone for party space, or the leaf alone for the work table.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
-- **Or go all in:** the dream plans (6 to 12) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
+- **Or go all in:** the dream plans (6 to 13) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look

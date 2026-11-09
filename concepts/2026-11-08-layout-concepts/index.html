@@ -119,6 +119,9 @@ td:first-child{font-weight:600;min-width:150px}
 #plan .lid{fill:none;stroke:var(--accent);stroke-width:.06;stroke-dasharray:.3 .18}
 #plan .hinge{stroke:var(--accent);stroke-width:.18}
 #plan .lidup{stroke:var(--accent);stroke-width:.34}
+#plan .leafbox{fill:var(--accent-soft);fill-opacity:.9;stroke:var(--accent);stroke-width:.08}
+#plan .floorbox{fill:var(--fix);stroke:var(--accent);stroke-width:.08;stroke-dasharray:.3 .18}
+#plan .gate{stroke:var(--ink);stroke-width:.14;stroke-dasharray:.25 .12}
 #plan .t-lid{font-weight:600;font-size:.5px;fill:var(--accent)}
 #plan .glassrail{stroke:var(--glass);stroke-width:.22}
 #plan .pocketline{stroke:var(--line);stroke-width:.06;stroke-dasharray:.2 .12}
@@ -152,6 +155,9 @@ td:first-child{font-weight:600;min-width:150px}
         <span data-lg="changed"><svg width="14" height="14"><rect x="1" y="1" width="12" height="12" fill="var(--accent-soft)" stroke="var(--accent)"/></svg>Changed space or fixture</span>
         <span data-lg="lid"><svg width="26" height="12"><rect x="1" y="1" width="24" height="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="3 2"/><line x1="1" y1="1" x2="1" y2="11" stroke="var(--accent)" stroke-width="3"/></svg>Lift-up lid and hinge</span>
         <span data-lg="lidup"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--accent)" stroke-width="5"/></svg>Lid standing up</span>
+        <span data-lg="leaf"><svg width="26" height="12"><rect x="1" y="1" width="24" height="10" fill="var(--accent-soft)" stroke="var(--accent)"/></svg>Table leaf or bar ledge</span>
+        <span data-lg="floorp"><svg width="26" height="12"><rect x="1" y="1" width="24" height="10" fill="var(--fix)" stroke="var(--accent)" stroke-dasharray="3 2"/></svg>Fold-down floor</span>
+        <span data-lg="stored"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--accent)" stroke-width="5"/></svg>Panel folded away</span>
         <span data-lg="glass"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--glass)" stroke-width="4"/></svg>Glass guard</span>
         <span data-lg="furn"><svg width="22" height="10"><rect x="1" y="1" width="20" height="8" fill="none" stroke="var(--furn)" stroke-dasharray="3 2"/></svg>Furniture</span>
       </div>
@@ -177,6 +183,7 @@ td:first-child{font-weight:600;min-width:150px}
           <tr><td>10 · Fewer walls, no garage</td><td>Concept 8's open plan, but the garage becomes a sunken living room open to the kitchen and the landing, and the front room becomes a library and entry.</td><td>The biggest living room of any plan, open to the kitchen, with a library at the front door.</td><td>No garage, and no room to close off apart from the bedroom and the baths.</td><td>About the same as concept 6.</td></tr>
           <tr><td>11 · Kitchen stays, no garage</td><td>Concept 10, but the kitchen stays in place around a big new window, and the bump-out becomes the dining room.</td><td>The garage living room and library of concept 10, with the kitchen's plumbing left where it is.</td><td>A working U instead of an island, and still no garage.</td><td>Less than concept 10.</td></tr>
           <tr><td>12 · Kitchen stays, two bedrooms</td><td>Concept 11 with both bedrooms kept, and a small primary bath where the closets and flue chase were.</td><td>Two bedrooms on the main floor, a primary bath, and no new walls.</td><td>A small shower bath, wardrobes instead of closets, and still no garage.</td><td>About the same as concept 11.</td></tr>
+          <tr><td>13 · Dream 7, refined</td><td>Concept 12 with a shorter island, the fridge moved, the pantry back, and a stairwell that becomes a table or extra floor.</td><td>A clear way in from the bedroom hall, and a stairwell that works three ways.</td><td>The stair is closed while the table or floor is in use, and the panels are custom.</td><td>Concept 12, plus roughly $4,000–12,000 for the panels (my guess).</td></tr>
         </tbody>
       </table>
     </div>
@@ -188,7 +195,7 @@ td:first-child{font-weight:600;min-width:150px}
     <div class="extras">
       <div><h3>Now</h3><p>Concept 1 costs little and can be undone. Living in the back for a while also tells you how much you really want concept 2.</p></div>
       <div><h3>One project</h3><p>Concepts 2 and 3 share the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath rebuild is already on the list because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.</p></div>
-      <div><h3>Or go all in</h3><p>The dream plans (6 to 12) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
+      <div><h3>Or go all in</h3><p>The dream plans (6 to 13) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
       <div><h3>When it's due</h3><p>Concept 4 waits for the furnace or water heater to need replacing. Ask the HVAC contractor about direct-vent units when you get quotes.</p></div>
     </div>
     <h2 style="margin-top:22px">Also worth a look</h2>
@@ -530,6 +537,43 @@ td:first-child{font-weight:600;min-width:150px}
     altHtml:'<p><b>A bigger primary bath.</b> Take 2–3 ft from bedroom 2 for a roomier bath with a tub. Bedroom 2 would drop to about 7 × 11½ ft.</p>' +
             '<p><b>Kitchen by the deck.</b> Concept 10\'s kitchen also works with two bedrooms, if you\'d rather have an island open to the living room.</p>',
     downstairs: DOWNSTAIRS });
+
+  // ---------- concept 13: Dream 7 refined (one tab, three stairwell settings) ----------
+  const C13 = {
+    no:'13', short:'Dream 7, refined', tag:'Your idea · Dream 7 with a stairwell that changes', title:'Dream 7, refined', dream:true, variant:'H',
+    toggleLabel:'Stairwell setting', toggle:[['dreamH','Stair'],['dreamHtable','Big table'],['dreamHfloor','Extra floor']],
+    pitch:'Dream 7 with the kitchen and the stair refined. The island is shorter and starts further from the bedroom hall, so the way into the kitchen is clear. The old pantry is a pantry again. And the stairwell has three settings: a stair, a big work table, or extra floor.',
+    route: ROUTE_KSTAY_NOGARAGE,
+    walls:'The same as concept 12: about 54 ft of interior wall comes out and no new walls go in. About 9 ft turns into glass: the library side of the stair, plus a short piece on the kitchen side between the island and the pantry.',
+    feel:'You come out of the bedroom hall onto open kitchen floor instead of jogging around the corner of a counter. Most days the stair is just a stair. On a big cooking day, the middle of the house becomes a kitchen table you can work around. When people come over, it becomes floor, with seats at the island facing the cook.',
+    tradeoff:'While the leaf or the floor is down, the stair is closed, so the basement needs its own way out if anyone sleeps there. The panels need custom building and good hardware. The island is about 2 ft shorter than concept 12\'s cooktop counter, and without the laundry cupboard, the laundry goes in the basement.',
+    code:'Closing off the only stair to the basement is the inspector\'s call, as with concept 5. Expect to need: egress windows in the basement bedrooms; panels that open from below without power or tools; a gate or an interlock at the top of the stair; and guards on every open edge whenever the stair is in use. Talk to the building department before designing the panels.',
+    checks:'The same as concept 12: the garage conversion, the beams, the window header, and direct-vent furnace and water heater units so the flue chase can come out.',
+    build:'The leaf: two butcher-block halves joined by a piano hinge, hung from the island\'s stair edge on a continuous hinge, with fold-out steel brackets for the bar ledge. The floor panel: built like a floor, with framing and plywood rated for about 40 lb per sq ft, on a counterbalanced hinge like a wall bed\'s, landing on steel angles around the stairwell. My estimate is 150–250 lb for the panel, so the counterbalance matters.',
+    cost:'Concept 12\'s costs, plus custom carpentry, metalwork and hardware for the leaf and the floor panel. I couldn\'t find published prices for this kind of build, so get quotes. My rough guess is $4,000–12,000 for both, built by a pro.',
+    altTitle:'Variations',
+    altHtml:'<p><b>Glass that opens.</b> Make the library-side glass two panels that pivot open in the floor setting, so the new floor joins the library. They\'d need to lock closed whenever the stair is open.</p>' +
+            '<p><b>A sliding leaf.</b> A telescoping leaf could slide out from under the island\'s top instead of folding. It hides completely, but the cooktop would have to move to the west counter.</p>' +
+            '<p><b>Just one.</b> If three settings feel like too much, the floor panel alone gives you the party space, and the leaf alone gives you the work table.</p>',
+    downstairs: DOWNSTAIRS
+  };
+  CONCEPTS.push(Object.assign({key:'dreamH', mode:'stair',
+    steps:[[17.0,19.6,'The island now starts about 4 ft from the bedroom hall instead of 2, and it\'s shorter, so you walk straight out of the hall into the kitchen. Glass fills the gap along the stair.'],
+           [21.2,19.2,'The fridge moves a step west, clear of the way in, with a coffee shelf in the corner by the hall.'],
+           [16.2,17.4,'The old pantry is a pantry again, open to the kitchen, with shelves on three sides. The laundry goes in the basement.'],
+           [16.2,21.4,'The island keeps the cooktop on its kitchen side. A leaf, folded in half, hangs on its stair side, ready to fold out.'],
+           [12.2,20.4,'The floor panel stands upright at the bottom end of the stairwell, against the back of the pantry. Its underside can be a chalkboard or a pinboard.'],
+           [12.3,27.2,'Most days the stair works as it does now, with glass on the library side and the island as the guard on the kitchen side.']]}, C13));
+  CONCEPTS.push(Object.assign({key:'dreamHtable', tab:'dreamH', hidden:true, mode:'table', stepsHead:'As a big table',
+    steps:[[13.29,21.6,'The leaf unfolds across the stairwell and rests on the library-side rail, which is set at counter height. With the island, that\'s a work surface of about 31 sq ft.'],
+           [16.2,21.4,'The cooktop stays at the kitchen edge, so the table works for big cooking days, baking, homework, crafts or a buffet.'],
+           [13.29,26.9,'A gate closes the top of the stair while the leaf is out, so no one steps down under it.'],
+           [13.29,20.3,'The floor panel stays upright at the bottom end.']]}, C13));
+  CONCEPTS.push(Object.assign({key:'dreamHfloor', tab:'dreamH', hidden:true, mode:'floor', stepsHead:'As extra floor',
+    steps:[[13.0,20.6,'The floor panel folds down from the back of the pantry, counterbalanced like a wall bed, and lands flush on ledges around the stairwell. That\'s about 26 sq ft of extra floor.'],
+           [14.2,21.2,'Half of the leaf folds up as a bar ledge on the island\'s stair side, with room for three stools, so guests sit across from the cook.'],
+           [12.3,27.2,'The new floor opens onto the landing, so the library, the landing and the kitchen work as one room when people are over.'],
+           [10.6,20.8,'The glass on the library side stays as a divider. Panels that pivot open could join the new floor to the library (see Variations).']]}, C13));
 
   // ---------- shared drawing pieces ----------
   const DEFS = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern>
@@ -898,6 +942,7 @@ td:first-child{font-weight:600;min-width:150px}
     {t:'door', ax:'v', c:11.5, s:8.4, e:10.95, hinge:'s', swing:-1, room:'bed'},
     {t:'door', ax:'v', c:15.5, s:8.4, e:10.95, hinge:'s', swing:1, room:'bed'},
     {t:'pocket', ax:'v', c:11.5, s:3.2, e:5.4, room:'wet'} ]);
+  const OPEN_H_OPENINGS = OPEN_G_OPENINGS.filter(o => o.t !== 'bypass').concat([{t:'cased', ax:'v', c:15.08, s:16.6, e:18.5, room:'store'}]);
   const OPEN_LOUNGE_FURN = [[0.5,2.5,15.2,19.2,'desk'],[4.2,6.2,17.0,19.0,'chair'],[8.4,10.4,17.0,19.0,'chair'],
     [-0.9,7.1,32.2,35.0,'sofa'],[1.5,4.5,35.7,37.1,'table'],[7.8,9.8,34.3,36.3,'chair'],[-4.15,-2.85,31.2,38.2,'window seat']];
   const OPEN_SUITE_FURN = [[2.2,8.6,4.9,11.4,'king bed'],[0.9,2.0,10.3,11.4,''],[8.8,9.9,10.3,11.4,''],[0.5,2.5,0.6,2.6,'chair']];
@@ -909,7 +954,7 @@ td:first-child{font-weight:600;min-width:150px}
     [19.65,20.65,18.3,19.0,''],[19.65,20.65,26.2,26.9,'']];
 
   function drawOpenE(cfg){
-    const v = cfg.variant, kStay = v !== 'E', twoBed = v === 'G';
+    const v = cfg.variant, kStay = v !== 'E', twoBed = v === 'G' || v === 'H', refined = v === 'H', mode = cfg.mode || 'stair';
     let s = DEFS;
     s += `<rect class="porch" x="${n(X(0))}" y="${n(Y(28.75))}" width="4.25" height="${n(28.75 - 21.8)}"/>` + vtext(-2.1, 25.3, 'covered porch');
     s += `<rect class="porch" x="${n(X(30.3))}" y="${n(Y(28.45))}" width="${n(30.3 - 25.25)}" height="${n(28.45 - 17.0)}"/>` + tiny(27.8, 22.7, 'deck');
@@ -930,9 +975,10 @@ td:first-child{font-weight:600;min-width:150px}
     if (twoBed) [[0, 11.5], [15.5, 25]].forEach(([x0, x1]) => { s += `<polygon class="wall" points="${pts([[x0,0],[x1,0],[x1,11.5],[x0,11.5]])}"/>`; });
     else s += `<polygon class="wall" points="${pts([[0,0],[25,0],[25,11.5],[0,11.5]])}"/>`;
 
-    for (let i = 1; i < 9; i++){ const y = 18.67 + i*7.33/9; s += line([11.5,y],[15.08,y],'tread'); }
-    s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
+    if (mode !== 'floor') for (let i = 1; i < 9; i++){ const y = 18.67 + i*7.33/9; s += line([11.5,y],[15.08,y],'tread'); }
+    if (mode === 'stair') s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
     DREAM_GLASS.forEach(([a,b]) => { if (!kStay || a[0] === 11.5) s += line(a, b, 'glassrail'); });
+    if (refined) s += line([15.08,18.67],[15.08,20.6],'glassrail');
     (twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).forEach(([a,b]) => { s += line(a, b, 'removed'); });
     if (!twoBed) s += line([11.5,11.5],[15.5,11.5],'added') + line([22.0,7.0],[22.0,11.5],'added') + line([22.0,7.0],[25,7.0],'added');
 
@@ -950,10 +996,12 @@ td:first-child{font-weight:600;min-width:150px}
       [19.6, 21.5, 23.4, 25.3].forEach(x => { s += circF(x, 30.9, 0.45, 'furn'); });
     } else {
       // kitchen stays, as in concept 9; a low drinks bar and buffet on the old garage wall line
-      s += rectF(18.45, 21.45, 16.5, 18.45, 'fix') + tiny(19.95, 17.5, 'fridge') + rectF(21.45, 22.75, 16.5, 18.45, 'fix') + vtext(22.1, 17.45, 'pantry');
+      if (!refined) s += rectF(18.45, 21.45, 16.5, 18.45, 'fix') + tiny(19.95, 17.5, 'fridge') + rectF(21.45, 22.75, 16.5, 18.45, 'fix') + vtext(22.1, 17.45, 'pantry');
+      else s += rectF(18.4, 19.6, 16.42, 17.4, 'fix') + tiny(19.0, 16.9, 'coffee') + rectF(19.7, 22.7, 16.5, 18.45, 'fix-new') + tiny(21.2, 17.5, 'fridge');
       s += rectF(22.75, 25, 16.42, 18.45, 'fix') + rectF(22.75, 25, 18.45, 26.6, 'fix') + rectF(19.5, 25, 26.6, 28.6, 'fix-new') + tiny(22.2, 27.6, 'breakfast bar');
       s += rectF(23.3, 24.6, 20.9, 22.7, 'fix2') + line([23.3,21.8],[24.6,21.8],'fix2') + rectF(22.8, 24.9, 22.8, 24.8, 'fix2') + tiny(23.85, 23.8, 'DW');
-      s += rectF(15.08, 17.1, 18.75, 25.95, 'fix-new') + [[15.7,21.6],[16.5,21.6],[15.7,22.6],[16.5,22.6]].map(([x,y]) => circF(x, y, 0.28, 'fix2')).join('') + vtext(16.1, 24.6, 'cooktop counter');
+      if (!refined) s += rectF(15.08, 17.1, 18.75, 25.95, 'fix-new') + [[15.7,21.6],[16.5,21.6],[15.7,22.6],[16.5,22.6]].map(([x,y]) => circF(x, y, 0.28, 'fix2')).join('') + vtext(16.1, 24.6, 'cooktop counter');
+      else s += rectF(15.08, 17.3, 20.6, 26.0, 'fix-new') + [[16.3,22.8],[16.95,22.8],[16.3,23.8],[16.95,23.8]].map(([x,y]) => circF(x, y, 0.26, 'fix2')).join('') + vtext(15.65, 23.3, 'island · cooktop');
       [20.4, 22.2, 24.0].forEach(x => { s += circF(x, 29.5, 0.45, 'furn'); });
       s += rectF(15.2, 17.0, 34.0, 40.4, 'fix-new') + vtext(16.1, 37.4, 'drinks bar · buffet');
     }
@@ -977,26 +1025,39 @@ td:first-child{font-weight:600;min-width:150px}
       s += rectF(13.9, 15.45, 3.2, 5.0, 'fix-new') + ellF(14.65, 4.1, 0.45, 0.32, 'fix2');
       s += rectF(12.35, 13.65, 7.55, 7.95, 'fix-new') + ellF(13.0, 6.85, 0.5, 0.6, 'fix-new');
     }
-    s += rectF(11.7, 14.0, 16.2, 18.55, 'fix') + tiny(12.85, 17.4, 'W/D') + rectF(14.05, 14.95, 17.2, 18.55, 'fix');
+    if (!refined) s += rectF(11.7, 14.0, 16.2, 18.55, 'fix') + tiny(12.85, 17.4, 'W/D') + rectF(14.05, 14.95, 17.2, 18.55, 'fix');
+    else s += rectF(11.55, 12.5, 15.55, 18.62, 'fix') + rectF(12.5, 15.03, 17.75, 18.62, 'fix') + rectF(12.5, 15.03, 15.55, 16.3, 'fix');
+    // the stairwell's three settings
+    if (refined){
+      if (mode !== 'floor') s += line([11.5, 18.82],[15.08, 18.82],'lidup') + tiny(13.29, 19.25, 'floor panel, upright');
+      if (mode === 'stair') s += rectF(14.86, 15.08, 20.6, 26.0, 'leafbox');
+      if (mode === 'table') s += rectF(11.5, 15.08, 20.6, 26.0, 'leafbox') + line([15.08,20.6],[15.08,26.0],'hinge') + tiny(13.29, 23.6, 'table leaf') + tiny(13.29, 23.0, 'at counter height') + line([11.5,26.0],[15.08,26.0],'gate');
+      if (mode === 'floor'){
+        s += rectF(11.5, 15.08, 18.67, 26.0, 'floorbox') + line([11.5,18.67],[15.08,18.67],'hinge') + tiny(12.5, 19.4, 'floor panel');
+        s += rectF(13.29, 15.08, 20.6, 26.0, 'leafbox') + vtext(14.2, 23.3, 'bar ledge');
+        [21.6, 23.3, 25.0].forEach(y => { s += circF(12.55, y, 0.45, 'furn'); });
+      }
+    }
     s += rectF(22.5, 24.85, 11.65, 16.27, 'fix') + tiny(23.7, 13.9, 'shower');
     s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
     s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
 
     s += furnSvg([OPEN_LOUNGE_FURN.concat(twoBed ? TWO_BED_FURN : OPEN_SUITE_FURN, kStay ? BUMP_DINING_FURN : OLD_KITCHEN_DINING_FURN)]);
     s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
-    s += openingsSvg(twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
+    s += openingsSvg(refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
     if (cfg.route) s += `<polyline class="flow" points="${pts(cfg.route)}" marker-end="url(#ah)"/>`;
     const L = [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[4.4,38.0,'LIVING ROOM','t-name'],[21.65,13.25,'BATH','t-small'],[16.0,13.6,'HALL','t-fix']];
     if (twoBed) L.push([5.75,3.4,'PRIMARY BEDROOM','t-name'],[20.8,4.2,'BEDROOM 2','t-name'],[12.7,4.3,'BATH','t-small']);
+    if (refined) L.push([13.75,17.05,'PANTRY','t-fix']);
     else L.push([5.75,2.75,'PRIMARY SUITE','t-name'],[19.6,6.4,'OPEN BATH','t-small'],[14.5,3.3,'DRESSING','t-small']);
     if (kStay) L.push([20.0,25.2,'KITCHEN','t-name'],[24.8,39.4,'DINING','t-name']);
     else L.push([22.5,36.75,'KITCHEN','t-name'],[20.15,17.55,'DINING','t-name']);
     L.forEach(([x, y, t, c]) => { s += text(x, y, t, c, 'pointer-events="none"'); });
-    finish(s, cfg, {route: true, furn: true, glass: true, half: false, changed: kStay, remove: true, add: !twoBed});
+    finish(s, cfg, {route: true, furn: true, glass: true, half: false, changed: kStay, remove: true, add: !twoBed, leaf: refined, floorp: refined && mode === 'floor', stored: refined && mode !== 'floor'});
   }
 
   function drawDream(cfg){
-    if (cfg.variant === 'E' || cfg.variant === 'F' || cfg.variant === 'G') return drawOpenE(cfg);
+    if ('EFGH'.includes(cfg.variant || '-')) return drawOpenE(cfg);
     if (cfg.variant === 'B') return drawDreamB(cfg);
     if (cfg.variant === 'C' || cfg.variant === 'D') return drawOpen(cfg);
     let s = DEFS;
@@ -1149,8 +1210,8 @@ td:first-child{font-weight:600;min-width:150px}
     let route = '';
     if (len) route = `<div class="route"><b>≈ ${len} ft</b><span>walk from the front door to the deck slider${len < base ? `, about ${base - len} ft shorter than today` : ''}.</span></div>`;
     const sec = (h, t) => t ? `<h3>${h}</h3><p>${esc(t)}</p>` : '';
-    const seg = cfg.toggle ? `<div class="seg" role="group" aria-label="Lid position">${cfg.toggle.map(([k, l]) => `<button type="button" data-state="${k}" aria-pressed="${k === cfg.key}">${esc(l)}</button>`).join('')}</div>` : '';
-    const stepsHead = cfg.key === 'today' ? 'What holds it back' : cfg.island === 'open' ? 'With the lid open' : 'What changes';
+    const seg = cfg.toggle ? `<div class="seg" role="group" aria-label="${esc(cfg.toggleLabel || 'Lid position')}">${cfg.toggle.map(([k, l]) => `<button type="button" data-state="${k}" aria-pressed="${k === cfg.key}">${esc(l)}</button>`).join('')}</div>` : '';
+    const stepsHead = cfg.stepsHead || (cfg.key === 'today' ? 'What holds it back' : cfg.island === 'open' ? 'With the lid open' : 'What changes');
     document.getElementById('card').innerHTML =
       `<div class="tag">${esc(cfg.tag)}</div><h2>${cfg.no ? cfg.no + ' · ' : ''}${esc(cfg.title)}</h2><p class="pitch">${esc(cfg.pitch)}</p>` + seg +
       `<h3>${stepsHead}</h3><ol class="steps${cfg.old && cfg.key === 'today' ? ' today' : ''}">${steps}</ol>` + route +

@@ -10,6 +10,7 @@ These are 3D models of the house, saved as dated snapshots so changes can be com
 | [**Dream plans 3 and 4**](2026-11-08-dream-plans-3-and-4/) | Nov 8, 2026 | [Concepts 8 and 9](../concepts/2026-11-08-layout-concepts/), both with the garage kept. Dream 3 takes out every wall that isn't needed, including an open primary suite. Dream 4 does the same but keeps the kitchen in place, around a big new window. Its page switches between Today and all four dream plans. |
 | [**Dream plan 5, no garage**](2026-11-08-dream-plan-5-no-garage/) | Nov 8, 2026 | [Concept 10](../concepts/2026-11-08-layout-concepts/): Dream 3's fewer walls, but the garage becomes a sunken living room with wide steps on two sides, and the front room becomes a library and entry. Its page switches between Today and all five dream plans. |
 | [**Dream plans 6 and 7**](2026-11-08-dream-plans-6-and-7/) | Nov 8, 2026 | [Concepts 11 and 12](../concepts/2026-11-08-layout-concepts/): Dream 5 with the kitchen kept in its current spot and the bump-out as the dining room. Dream 7 also keeps two bedrooms on the main floor, with a small primary bath between them. Its page switches between Today and all seven dream plans. |
+| [**Dream 7 refined**](2026-11-08-dream-7-refined/) | Nov 8, 2026 | [Concept 13](../concepts/2026-11-08-layout-concepts/): Dream 7 with a shorter island that clears the way in from the bedroom hall, the pantry back, and a stairwell with three settings: a stair, a big table or extra floor. Its page adds a switch for the settings. |
 
 ## Adding a new version
 
