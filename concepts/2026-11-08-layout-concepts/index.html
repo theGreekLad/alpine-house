@@ -187,6 +187,7 @@ td:first-child{font-weight:600;min-width:150px}
           <tr><td>11 · Kitchen stays, no garage</td><td>Concept 10, but the kitchen stays in place around a big new window, and the bump-out becomes the dining room.</td><td>The garage living room and library of concept 10, with the kitchen's plumbing left where it is.</td><td>A working U instead of an island, and still no garage.</td><td>Less than concept 10.</td></tr>
           <tr><td>12 · Kitchen stays, two bedrooms</td><td>Concept 11 with both bedrooms kept, and a small primary bath where the closets and flue chase were.</td><td>Two bedrooms on the main floor, a primary bath, and no new walls.</td><td>A small shower bath, wardrobes instead of closets, and still no garage.</td><td>About the same as concept 11.</td></tr>
           <tr><td>13 · Dream 7, refined</td><td>Concept 12 with a shorter island, the fridge moved, the pantry back, and a stairwell that becomes a table or extra floor.</td><td>A clear way in from the bedroom hall, and a stairwell that works three ways.</td><td>The stair is closed while the table or floor is in use, and the panels are custom.</td><td>Concept 12, plus roughly $4,000–12,000 for the panels (my guess).</td></tr>
+          <tr><td>14 · Garage kitchen</td><td>The garage becomes a vaulted kitchen on a raised floor, the bump-out the dining room, and the old kitchen a family room. The rest follows concept 13.</td><td>The biggest room becomes the kitchen, beside the dining room and deck and a few steps from the front door.</td><td>No garage, the kitchen window faces the street, and every kitchen service is new.</td><td>The most of any plan: a whole-floor renovation, a garage conversion and an all-new kitchen.</td></tr>
         </tbody>
       </table>
     </div>
@@ -198,7 +199,7 @@ td:first-child{font-weight:600;min-width:150px}
     <div class="extras">
       <div><h3>Now</h3><p>Concept 1 costs little and can be undone. Living in the back for a while also tells you how much you really want concept 2.</p></div>
       <div><h3>One project</h3><p>Concepts 2 and 3 share the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath rebuild is already on the list because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.</p></div>
-      <div><h3>Or go all in</h3><p>The dream plans (6 to 13) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
+      <div><h3>Or go all in</h3><p>The dream plans (6 to 14) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
       <div><h3>When it's due</h3><p>Concept 4 waits for the furnace or water heater to need replacing. Ask the HVAC contractor about direct-vent units when you get quotes.</p></div>
     </div>
     <h2 style="margin-top:22px">Also worth a look</h2>
@@ -597,6 +598,31 @@ td:first-child{font-weight:600;min-width:150px}
       toggle2Label: 'Garage', toggle2: H_GARAGE.map(([, g2, label]) => ['dreamH' + ms + g2, label])}));
   }));
 
+  // ---------- concept 14: the garage becomes the kitchen ----------
+  CONCEPTS.push({ key:'dreamJ', no:'14', short:'Garage kitchen', tag:'Your idea · the garage becomes the kitchen', title:'Garage kitchen', dream:true, variant:'J',
+    pitch:'Dream 7 refined, but the garage becomes the kitchen. Its floor comes up to the level of the house and its ceiling opens to the rafters, so the biggest room in the house becomes a vaulted kitchen with a big island. It opens onto the dining room by the deck and the library by the front door, and the old kitchen becomes a family room.',
+    route:[[0.4,23.9],[5.0,26.4],[11.0,29.9],[17.0,30.6],[30.3,31.8]],
+    steps:[[12.0,35.5,'The garage becomes the kitchen. Its floor comes up about 1½ ft to the level of the house on a new framed floor, which carries the drains, gas and ducts, so there are no steps. The ceiling opens to the rafters.'],
+           [0.0,33.4,'An 8-ft island with four stools sits in the middle, facing the range, under pendants hung from the vaulted ceiling.'],
+           [-3.0,30.0,'The garage door becomes a wide window over the sink, looking out to the street and the morning sun, with a planter outside.'],
+           [7.0,37.4,'The range sits between two windows on the north wall. A tall wall beside it holds the fridge, the pantry and the ovens.'],
+           [18.6,32.4,'The garage wall to the bump-out comes out, so the dining room is right beside the kitchen, with a low buffet between them and the slider to the deck at the far end.'],
+           [21.0,21.7,'The old kitchen becomes a family room: a sofa facing a media wall, and a big new window over the deck.'],
+           [5.8,14.6,'The front room stays the library and entry. Its north wall comes out, so the kitchen opens straight off it, a few steps from the front door.'],
+           [13.29,22.3,'Glass on both sides of the stair, now that the kitchen has moved away from it.'],
+           [10.4,6.0,'The two bedrooms, the small primary bath and the open hall from concept 12, with the laundry cupboard back.']],
+    walls:'About 52 ft of interior wall comes out: the garage walls to the library, the landing and the bump-out, the closets between the bedrooms, the hall wall, the landing wall and the kitchen\'s half wall to the stair. About 15 ft turns into glass at the stair, and no new walls go in.',
+    feel:'The kitchen becomes the center of the house. From the front door you look through the library straight into it, the groceries travel about 15 ft, and the dining room and deck are right beside it. The old kitchen becomes a quieter family room for TV, away from the cooking.',
+    tradeoff:'There\'s no garage, and the kitchen\'s big window faces the street. Everything about the kitchen is new: plumbing, gas, venting and electrical all have to reach a room with no basement under it. There\'s no big sunken living room in this one; the library and the family room share that job.',
+    checks:'Ask your city whether the garage can become living space without adding parking elsewhere. Get an engineer for the beams (the garage walls and the vaulted ceiling) and for the new raised floor, and have a plumber confirm the drains can reach the basement with enough slope.',
+    build:'Raising the floor about 1½ ft on a framed floor over the slab leaves a crawl space for the drains, the gas line, the hood duct and the heat. The hood can vent up through the roof, and the sink drain runs through the foundation wall into the basement.',
+    cost:'The most expensive of the plans: a whole-floor renovation, a garage conversion with a new raised floor, and an all-new kitchen in a room that has none of the services yet. Angi says most whole-house remodels run $100,000–200,000, and This Old House puts most garage conversions at about $10,000–52,000, before the kitchen itself.',
+    altTitle:'Variations',
+    altHtml:'<p><b>Keep the floor sunken.</b> Leave the kitchen three steps down, as in concept 10\'s living room. It saves the new floor, but every trip between the kitchen and the table crosses steps, and the drains have to be cut into the slab.</p>' +
+            '<p><b>A front kitchen garden.</b> Turn the driveway in front of the sink window into a planted courtyard with a low wall, so the window looks onto green instead of the street.</p>' +
+            '<p><b>The stairwell settings.</b> The fold-down floor from concept 13 still works here. The table leaf needs an island beside the stair, so it doesn\'t.</p>',
+    downstairs: DOWNSTAIRS });
+
   // ---------- shared drawing pieces ----------
   const DEFS = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern>
       <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker>
@@ -968,6 +994,10 @@ td:first-child{font-weight:600;min-width:150px}
   const OPEN_H_GARAGE_OPENINGS = OPEN_H_OPENINGS.filter(o => !(o.t === 'win' && (o.c === -4.25 || (o.c === 40.5 && o.s < 10)))).concat([
     {t:'win', ax:'h', c:40.5, s:1.5, e:4.5}, {t:'door', ax:'h', c:28.75, s:11.8, e:14.7, hinge:'s', swing:1, room:'garage'}]);
   const GARAGE_LIVING_FURN = [[2.0,9.0,19.0,21.8,'sofa'],[4.0,7.0,16.3,17.8,'table'],[0.6,2.6,14.6,16.6,'chair'],[3.0,8.5,27.9,28.55,'console'],[-2.8,11.0,31.7,37.7,'car']];
+  // concept 14: the garage becomes the kitchen
+  const OPEN_J_REMOVED = OPEN_G_REMOVED.map(([a, b]) => (a[0] === 0 && a[1] === 28.75) ? [[1.8,28.75],[11.5,28.75]] : [a, b]);
+  const OPEN_J_OPENINGS = OPEN_G_OPENINGS.filter(o => !(o.t === 'win' && o.c === 40.5 && o.s < 10)).concat([{t:'win', ax:'h', c:40.5, s:-0.8, e:1.4}, {t:'win', ax:'h', c:40.5, s:5.6, e:7.8}]);
+  const FAMILY_J_FURN = [[17.8,23.4,22.4,25.2,'sofa'],[18.9,22.3,19.4,21.0,'table']];
   const OPEN_LOUNGE_FURN = [[0.5,2.5,15.2,19.2,'desk'],[4.2,6.2,17.0,19.0,'chair'],[8.4,10.4,17.0,19.0,'chair'],
     [-0.9,7.1,32.2,35.0,'sofa'],[1.5,4.5,35.7,37.1,'table'],[7.8,9.8,34.3,36.3,'chair'],[-4.15,-2.85,31.2,38.2,'window seat']];
   const OPEN_SUITE_FURN = [[2.2,8.6,4.9,11.4,'king bed'],[0.9,2.0,10.3,11.4,''],[8.8,9.9,10.3,11.4,''],[0.5,2.5,0.6,2.6,'chair']];
@@ -979,7 +1009,7 @@ td:first-child{font-weight:600;min-width:150px}
     [19.65,20.65,18.3,19.0,''],[19.65,20.65,26.2,26.9,'']];
 
   function drawOpenE(cfg){
-    const v = cfg.variant, kStay = v !== 'E', twoBed = v === 'G' || v === 'H', refined = v === 'H', mode = cfg.mode || 'stair', gk = !!cfg.garageKept;
+    const v = cfg.variant, gKit = v === 'J', kStay = v !== 'E' && !gKit, twoBed = 'GHJ'.includes(v), refined = v === 'H', mode = cfg.mode || 'stair', gk = !!cfg.garageKept;
     let s = DEFS;
     s += `<rect class="porch" x="${n(X(0))}" y="${n(Y(28.75))}" width="4.25" height="${n(28.75 - 21.8)}"/>` + vtext(-2.1, 25.3, 'covered porch');
     s += `<rect class="porch" x="${n(X(30.3))}" y="${n(Y(28.45))}" width="${n(30.3 - 25.25)}" height="${n(28.45 - 17.0)}"/>` + tiny(27.8, 22.7, 'deck');
@@ -1005,10 +1035,11 @@ td:first-child{font-weight:600;min-width:150px}
     if (mode === 'stair') s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
     DREAM_GLASS.forEach(([a,b]) => { if (!kStay || a[0] === 11.5) s += line(a, b, 'glassrail'); });
     if (refined) s += line([15.08,18.67],[15.08,20.6],'glassrail');
-    (twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).filter(([a, b]) => !(gk && (a[1] === 28.75 && b[1] === 28.75 || a[0] === 15.08 && a[1] === 28.75))).forEach(([a,b]) => { s += line(a, b, 'removed'); });
+    (gKit ? OPEN_J_REMOVED : twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).filter(([a, b]) => !(gk && (a[1] === 28.75 && b[1] === 28.75 || a[0] === 15.08 && a[1] === 28.75))).forEach(([a,b]) => { s += line(a, b, 'removed'); });
     if (!twoBed) s += line([11.5,11.5],[15.5,11.5],'added') + line([22.0,7.0],[22.0,11.5],'added') + line([22.0,7.0],[25,7.0],'added');
 
-    if (!gk){
+    if (gKit) s += tiny(6.0, 29.9, 'floor raised to house level');
+    else if (!gk){
       // wide steps down into the sunken living room, wrapping around to the kitchen side
       [29.65, 30.55].forEach((y, i) => { s += line([-4.25, y],[i ? 10.7 : 11.6, y],'stepline'); });
       [[11.6, 29.65], [10.7, 30.55]].forEach(([x, y0]) => { s += line([x, y0],[x, 40.5],'stepline'); });
@@ -1021,7 +1052,18 @@ td:first-child{font-weight:600;min-width:150px}
       s += rectF(-3.5, 10.5, 28.85, 30.2, 'fix') + tiny(3.5, 29.5, 'storage cabinets');
       s += RR(-4.65,-4.25,30.4,38.9,'gap-sheet') + RR(-4.25,-3.9,30.4,38.9,'gap-garage') + line([-3.35,30.4],[-3.35,38.9],'ohd');
     }
-    if (!kStay){
+    if (gKit){
+      // the kitchen in the garage: a sink run under the old garage door opening, the range wall, a tall wall, an island
+      s += rectF(-4.0, -1.85, 28.9, 40.4, 'fix-new') + rectF(-3.55, -2.25, 33.85, 35.45, 'fix2') + line([-3.55,34.65],[-2.25,34.65],'fix2');
+      s += rectF(-3.9, -1.9, 35.9, 37.9, 'fix2') + tiny(-2.9, 36.9, 'DW');
+      s += rectF(-1.85, 9.0, 38.4, 40.5, 'fix-new') + rectF(2.25, 4.75, 38.5, 40.4, 'fix2');
+      [[2.9,39.0],[4.1,39.0],[2.9,39.9],[4.1,39.9]].forEach(([x,y]) => { s += circF(x, y, 0.3, 'fix2'); });
+      s += tiny(3.5, 37.9, 'range · hood') + rectF(9.0, 15.0, 38.2, 40.5, 'fix-new') + tiny(12.0, 39.35, 'fridge · pantry · ovens');
+      s += rectF(1.9, 10.1, 32.0, 34.9, 'fix-new') + tiny(6.0, 33.5, 'island');
+      [3.0, 4.8, 6.6, 8.4].forEach(x => { s += circF(x, 31.35, 0.45, 'furn'); });
+      s += rectF(15.2, 17.0, 34.0, 40.4, 'fix-new') + vtext(16.1, 37.4, 'buffet');
+      s += rectF(18.6, 24.6, 16.5, 17.8, 'fix') + tiny(21.6, 17.15, 'TV · media');
+    } else if (!kStay){
       // kitchen by the deck; the fridge and pantry are a freestanding cabinet block where the garage wall was
       s += rectF(17.1, 30.3, 38.5, 40.5, 'fix') + rectF(15.08, 17.08, 35.5, 40.5, 'fix') + vtext(16.08, 38.0, 'fridge · pantry');
       s += rectF(21.9, 23.8, 38.85, 40.15, 'fix2') + line([22.85,38.85],[22.85,40.15],'fix2');
@@ -1039,7 +1081,7 @@ td:first-child{font-weight:600;min-width:150px}
       [20.4, 22.2, 24.0].forEach(x => { s += circF(x, 29.5, 0.45, 'furn'); });
       s += rectF(15.2, 17.0, 34.0, 40.4, 'fix-new') + vtext(16.1, 37.4, 'drinks bar · buffet');
     }
-    if (!gk){
+    if (!gk && !gKit){
       s += rectF(12.55, 15.03, 39.3, 40.45, 'fix') + tiny(13.8, 38.8, 'built-ins');
       s += rectF(1.5, 4.5, 39.4, 40.5, 'fix') + tiny(3.0, 38.9, 'fireplace');
     }
@@ -1079,22 +1121,23 @@ td:first-child{font-weight:600;min-width:150px}
     s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
     s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
 
-    s += furnSvg([(gk ? GARAGE_LIVING_FURN : OPEN_LOUNGE_FURN).concat(twoBed ? TWO_BED_FURN : OPEN_SUITE_FURN, kStay ? BUMP_DINING_FURN : OLD_KITCHEN_DINING_FURN)]);
+    s += furnSvg([(gk ? GARAGE_LIVING_FURN : gKit ? OPEN_LOUNGE_FURN.slice(0, 3).concat(FAMILY_J_FURN) : OPEN_LOUNGE_FURN).concat(twoBed ? TWO_BED_FURN : OPEN_SUITE_FURN, (kStay || gKit) ? BUMP_DINING_FURN : OLD_KITCHEN_DINING_FURN)]);
     s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
-    s += openingsSvg(gk ? OPEN_H_GARAGE_OPENINGS : refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
+    s += openingsSvg(gKit ? OPEN_J_OPENINGS : gk ? OPEN_H_GARAGE_OPENINGS : refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
     if (cfg.route) s += `<polyline class="flow" points="${pts(cfg.route)}" marker-end="url(#ah)"/>`;
-    const L = (gk ? [[5.75,24.3,'LIVING ROOM','t-name'],[4.0,39.4,'GARAGE','t-name']] : [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[4.4,38.0,'LIVING ROOM','t-name']]).concat([[21.65,13.25,'BATH','t-small'],[16.0,13.6,'HALL','t-fix']]);
+    const L = (gk ? [[5.75,24.3,'LIVING ROOM','t-name'],[4.0,39.4,'GARAGE','t-name']] : gKit ? [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[5.0,36.6,'KITCHEN','t-name'],[24.8,39.4,'DINING','t-name'],[20.6,26.9,'FAMILY ROOM','t-name']] : [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[4.4,38.0,'LIVING ROOM','t-name']]).concat([[21.65,13.25,'BATH','t-small'],[16.0,13.6,'HALL','t-fix']]);
     if (twoBed) L.push([5.75,3.4,'PRIMARY BEDROOM','t-name'],[20.8,4.2,'BEDROOM 2','t-name'],[12.7,4.3,'BATH','t-small']);
-    if (refined) L.push([13.75,17.05,'PANTRY','t-fix']);
     else L.push([5.75,2.75,'PRIMARY SUITE','t-name'],[19.6,6.4,'OPEN BATH','t-small'],[14.5,3.3,'DRESSING','t-small']);
-    if (kStay) L.push([20.0,25.2,'KITCHEN','t-name'],[24.8,39.4,'DINING','t-name']);
+    if (refined) L.push([13.75,17.05,'PANTRY','t-fix']);
+    if (gKit) {}
+    else if (kStay) L.push([20.0,25.2,'KITCHEN','t-name'],[24.8,39.4,'DINING','t-name']);
     else L.push([22.5,36.75,'KITCHEN','t-name'],[20.15,17.55,'DINING','t-name']);
     L.forEach(([x, y, t, c]) => { s += text(x, y, t, c, 'pointer-events="none"'); });
-    finish(s, cfg, {route: true, furn: true, glass: true, half: false, changed: kStay, remove: true, add: !twoBed, leaf: refined, floorp: refined && mode === 'floor', stored: refined && mode !== 'floor'});
+    finish(s, cfg, {route: true, furn: true, glass: true, half: false, changed: kStay || gKit, remove: true, add: !twoBed, leaf: refined, floorp: refined && mode === 'floor', stored: refined && mode !== 'floor'});
   }
 
   function drawDream(cfg){
-    if ('EFGH'.includes(cfg.variant || '-')) return drawOpenE(cfg);
+    if ('EFGHJ'.includes(cfg.variant || '-')) return drawOpenE(cfg);
     if (cfg.variant === 'B') return drawDreamB(cfg);
     if (cfg.variant === 'C' || cfg.variant === 'D') return drawOpen(cfg);
     let s = DEFS;

@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Thirteen ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Fourteen ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -471,11 +471,45 @@ The page also has a **Garage** switch: living room (as above) or garage. Every s
 - **Trade-off:** you keep the garage but lose the big sunken living room. The living room is the front room, about 11½ × 17 ft.
 - **Rough cost:** less than converting the garage. Finishing it runs from a few thousand dollars up to [This Old House's](https://www.thisoldhouse.com/garages/garage-remodel-cost) mid-range $14,000–28,000 for a typical two-car garage, against about $10,000–52,000 for most [garage conversions](https://www.thisoldhouse.com/garages/garage-conversion-cost).
 
+## 14 · Garage kitchen
+
+*Your idea: the garage becomes the kitchen. Built on concept 13.*
+
+![Concept 14](14-garage-kitchen.png)
+
+**See it in 3D:** [Dream 8, the garage kitchen](../../renderings/2026-11-09-garage-kitchen/).
+
+Dream 7 refined, but the garage becomes the kitchen. Its floor comes up to the level of the house and its ceiling opens to the rafters, so the biggest room in the house becomes a vaulted kitchen with a big island. It opens onto the dining room by the deck and the library by the front door, and the old kitchen becomes a family room.
+
+1. **The garage becomes the kitchen.** Its floor comes up about 1½ ft to the level of the house on a new framed floor, which carries the drains, gas and ducts, so there are no steps. The ceiling opens to the rafters.
+2. **Island.** An 8-ft island with four stools sits in the middle, facing the range, under pendants hung from the vaulted ceiling.
+3. **Sink window.** The garage door becomes a wide window over the sink, looking out to the street and the morning sun, with a planter outside.
+4. **Range and tall wall.** The range sits between two windows on the north wall. A tall wall beside it holds the fridge, the pantry and the ovens.
+5. **Dining room.** The garage wall to the bump-out comes out, so the dining room is right beside the kitchen, with a low buffet between them and the slider to the deck at the far end.
+6. **Family room.** The old kitchen becomes a family room: a sofa facing a media wall, and a big new window over the deck.
+7. **Library and entry.** The front room stays the library. Its north wall comes out, so the kitchen opens straight off it, a few steps from the front door.
+8. **Stair.** Glass on both sides, now that the kitchen has moved away from it.
+9. **Bedrooms.** The two bedrooms, the small primary bath and the open hall from concept 12, with the laundry cupboard back.
+
+- **Walls:** about 52 ft of interior wall comes out. About 15 ft turns into glass at the stair, and no new walls go in.
+- **How it feels:** the kitchen becomes the center of the house. From the front door you look through the library straight into it, groceries travel about 15 ft, and the dining room and deck are right beside it. The old kitchen becomes a quieter family room for TV.
+- **Trade-offs:**
+  - There's no garage, and the kitchen's big window faces the street.
+  - Everything about the kitchen is new: plumbing, gas, venting and electrical all have to reach a room with no basement under it.
+  - There's no big sunken living room; the library and the family room share that job.
+- **Checks first:** whether the city allows the garage to become living space without parking elsewhere; an engineer for the beams and the new raised floor; a plumber to confirm the drains can reach the basement with enough slope.
+- **Build notes:** the raised floor leaves a crawl space for the drains, the gas line, the hood duct and the heat. The hood vents up through the roof, and the sink drain runs through the foundation wall into the basement.
+- **Rough cost:** the most of any plan: a whole-floor renovation, a garage conversion with a new raised floor, and an all-new kitchen in a room that has none of the services yet. Most whole-house remodels run $100,000–200,000 ([Angi](https://angi.com/articles/how-much-does-it-cost-demo-interior.htm)), and most garage conversions about $10,000–52,000 ([This Old House](https://www.thisoldhouse.com/garages/garage-conversion-cost)), before the kitchen itself.
+- **Variations:**
+  - **Keep the floor sunken:** leave the kitchen three steps down. It saves the new floor, but every trip to the table crosses steps, and the drains have to be cut into the slab.
+  - **A front kitchen garden:** a planted courtyard with a low wall in front of the sink window.
+  - **The stairwell settings:** concept 13's fold-down floor still works here; the table leaf needs an island beside the stair, so it doesn't.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
-- **Or go all in:** the dream plans (6 to 13) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
+- **Or go all in:** the dream plans (6 to 14) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look
