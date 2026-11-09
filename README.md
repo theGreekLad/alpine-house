@@ -8,6 +8,7 @@ Planning files for the house renovation.
 - **[photos/](photos/)**: 18 walkthrough photos of every main-floor room, the garage, and the front and back of the house, each with a description.
 - **[floor-plan/](floor-plan/)**: the measured main-floor plan. It has an interactive page (`index.html`), a picture of the plan and a room size schedule.
 - **[renderings/](renderings/)**: dated 3D models of the house. The [baseline](renderings/2026-11-08-baseline/) shows the house as it is today and is the starting point for comparing every change.
+- **[concepts/](concepts/)**: renovation ideas drawn on the floor plan. The first set, [layout concepts](concepts/2026-11-08-layout-concepts/), covers flow, use of space and feel.
 
 ![Baseline 3D model, cutaway from the front](renderings/2026-11-08-baseline/cutaway-front.jpg)
 

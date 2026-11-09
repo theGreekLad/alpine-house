@@ -1,0 +1,474 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>
+<title>Layout Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: drafting-sheet family. Concept tabs on top; the plan drawing on the left, the concept card beside it; a comparison table below. */
+:root{
+  --bg:#F2F4F1; --sheet:#FCFCFA; --ink:#1C2320; --line:#3A4440; --muted:#66706B; --rule:#D6DBD5;
+  --accent:#2C6878; --accent-soft:#D3E6EA; --warn:#B4632A;
+  --f-living:#FFFFFF; --f-bed:#ECF1E7; --f-wet:#E0ECF0; --f-circ:#F4F0E5; --f-store:#E8E8E1; --f-garage:#DFE2DE;
+  --glass:#CFE3EC; --fix:#F7F6F2; --furn:#8A938E;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1311; --sheet:#151A17; --ink:#E1E6E2; --line:#A8B3AD; --muted:#8C9792; --rule:#2A322E;
+    --accent:#7DB7C6; --accent-soft:#1C3740; --warn:#E39A62;
+    --f-living:#1B211E; --f-bed:#1D2720; --f-wet:#18252A; --f-circ:#24221C; --f-store:#22231F; --f-garage:#2A2E2C;
+    --glass:#26414C; --fix:#232925; --furn:#7F8A85; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1311; --sheet:#151A17; --ink:#E1E6E2; --line:#A8B3AD; --muted:#8C9792; --rule:#2A322E;
+  --accent:#7DB7C6; --accent-soft:#1C3740; --warn:#E39A62;
+  --f-living:#1B211E; --f-bed:#1D2720; --f-wet:#18252A; --f-circ:#24221C; --f-store:#22231F; --f-garage:#2A2E2C;
+  --glass:#26414C; --fix:#232925; --furn:#7F8A85; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,48px);line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:4px 0 0;text-wrap:balance}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:8px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{font:500 14px var(--body);color:var(--ink);background:var(--sheet);border:1px solid var(--line);border-radius:3px;padding:7px 12px;cursor:pointer;display:flex;gap:8px;align-items:baseline}
+.tabs button .no{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tabs button:hover{border-color:var(--accent)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.tabs button[aria-selected="true"] .no{color:var(--sheet)}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.main{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:900px){.main{grid-template-columns:minmax(0,1fr)}}
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:3px;min-width:0}
+.plan-scroll{overflow-x:auto;padding:10px 6px 2px}
+#plan{display:block;width:100%;min-width:520px;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;padding:10px 14px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend span[hidden]{display:none}
+.extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:4px}
+.extras div{border-top:2px solid var(--ink);padding-top:10px}
+.extras h3{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.03em;text-transform:uppercase;margin:0 0 6px}
+.extras p{margin:0;font-size:14px;max-width:60ch}
+.legend svg{flex:none}
+.card{padding:18px 20px 16px}
+.card h2{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;margin:0;text-wrap:balance}
+.card .tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.card .pitch{font-size:16px;margin:10px 0 14px;max-width:60ch}
+.card h3{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.card p{margin:0;max-width:60ch;font-size:14.5px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.steps li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;font-size:14.5px}
+.steps .n{width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--sheet);font:600 12px var(--mono);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.steps.today .n{background:var(--warn)}
+.route{display:flex;gap:10px;align-items:baseline;padding:10px 12px;border-radius:3px;background:var(--bg);margin-top:14px;font-size:14px}
+.route b{font-family:var(--mono);font-weight:500;font-size:20px;white-space:nowrap}
+.compare{padding:18px 20px}
+.compare h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:.03em;text-transform:uppercase;margin:0 0 10px}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 8px;border-bottom:1px solid var(--rule);vertical-align:top;min-width:120px}
+td:first-child{font-weight:600;min-width:150px}
+.small{font-size:13px;color:var(--muted);max-width:90ch;margin:10px 0 0}
+.small a{color:var(--accent)}
+/* drawing */
+#plan text{font-family:var(--display);fill:var(--ink)}
+#plan .rm{stroke:none}
+#plan .rm.living{fill:var(--f-living)} #plan .rm.bed{fill:var(--f-bed)} #plan .rm.wet{fill:var(--f-wet)} #plan .rm.circ{fill:var(--f-circ)}
+#plan .rm.store{fill:var(--f-store)} #plan .rm.garage{fill:var(--f-garage)} #plan .rm.mech{fill:url(#hatch)} #plan .rm.chg{fill:var(--accent-soft)}
+#plan .wall{fill:none;stroke:var(--line);stroke-width:.28;stroke-linejoin:miter}
+#plan .outer{fill:none;stroke:var(--ink);stroke-width:.55;stroke-linejoin:miter}
+#plan .wallfill{fill:var(--line)}
+#plan .hatchline{stroke:var(--warn);stroke-width:.1}
+#plan .erase{stroke:var(--f-living);stroke-width:.44}
+#plan .removed{stroke:var(--warn);stroke-width:.24;stroke-dasharray:.4 .22}
+#plan .added{stroke:var(--accent);stroke-width:.34}
+#plan .halfwall{stroke:var(--line);stroke-width:.1} #plan .rail{stroke:var(--line);stroke-width:.05}
+#plan .open-dash{stroke:var(--muted);stroke-width:.07;stroke-dasharray:.35 .25}
+#plan .tread{stroke:var(--line);stroke-width:.06} #plan .arrow{stroke:var(--ink);stroke-width:.09;fill:none} #plan .arrowhead{fill:var(--ink)}
+#plan .swing{fill:none;stroke:var(--line);stroke-width:.07} #plan .leaf{stroke:var(--ink);stroke-width:.12}
+#plan .ohd{stroke:var(--line);stroke-width:.08;stroke-dasharray:.4 .3}
+#plan .gap-sheet{fill:var(--sheet)} #plan .gap-living{fill:var(--f-living)} #plan .gap-garage{fill:var(--f-garage)} #plan .gap-circ{fill:var(--f-circ)}
+#plan .gap-bed{fill:var(--f-bed)} #plan .gap-wet{fill:var(--f-wet)} #plan .gap-store{fill:var(--f-store)} #plan .gap-chg{fill:var(--accent-soft)}
+#plan .win{fill:var(--glass);stroke:var(--ink);stroke-width:.05} #plan .winline{stroke:var(--ink);stroke-width:.05}
+#plan .bypass{fill:var(--sheet);stroke:var(--line);stroke-width:.05} #plan .jamb{stroke:var(--ink);stroke-width:.14}
+#plan .fix{fill:var(--fix);stroke:var(--line);stroke-width:.06} #plan .fix2{fill:none;stroke:var(--line);stroke-width:.05}
+#plan .fix-new{fill:var(--accent-soft);stroke:var(--accent);stroke-width:.08}
+#plan .furn{fill:none;stroke:var(--furn);stroke-width:.06;stroke-dasharray:.18 .1}
+#plan .t-furn{font-family:var(--mono);font-size:.4px;fill:var(--furn)}
+#plan .t-name{font-weight:600;font-size:.78px;letter-spacing:.04px}
+#plan .t-sub{font-family:var(--mono);font-size:.42px;fill:var(--muted)}
+#plan .t-small{font-weight:600;font-size:.52px}
+#plan .t-fix{font-family:var(--mono);font-size:.36px;fill:var(--muted)}
+#plan .t-front{font-weight:600;font-size:.8px;letter-spacing:.25px;fill:var(--accent)}
+#plan .flow{fill:none;stroke:var(--accent);stroke-width:.16;stroke-dasharray:.5 .25;stroke-linecap:round;stroke-linejoin:round}
+#plan .flow.old{stroke:var(--warn)}
+#plan .co{fill:var(--accent)} #plan .co.old{fill:var(--warn)} #plan .t-co{font-family:var(--mono);font-size:.62px;font-weight:600;fill:var(--sheet)}
+#plan .compass{fill:none;stroke:var(--line);stroke-width:.07} #plan .compass-n{fill:var(--ink)}
+#plan .sb-dark{fill:var(--ink)} #plan .sb-light{fill:var(--sheet);stroke:var(--ink);stroke-width:.05}
+#plan .t-tiny{font-family:var(--mono);font-size:.4px}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Sheet C-1 · Layout concepts</div>
+    <h1>Layout Concepts</h1>
+    <div class="meta">Ideas for flow, space and feel, drawn on the measured plan · colors and fixtures come later</div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Concepts" id="tabs"></div>
+
+  <div class="main">
+    <section class="sheet" aria-label="Concept plan">
+      <div class="plan-scroll"><svg id="plan" role="img" aria-label="Floor plan for the selected concept"></svg></div>
+      <div class="legend" aria-hidden="true">
+        <span data-lg="old-route"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--warn)" stroke-width="2.4" stroke-dasharray="6 3"/></svg>Today's route, front door to deck</span>
+        <span data-lg="route"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--accent)" stroke-width="2.4" stroke-dasharray="6 3"/></svg>New route, front door to deck</span>
+        <span data-lg="remove"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--warn)" stroke-width="3" stroke-dasharray="5 3"/></svg>Wall removed</span>
+        <span data-lg="add"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--accent)" stroke-width="4"/></svg>New wall</span>
+        <span data-lg="half"><svg width="26" height="10"><line x1="0" y1="5" x2="26" y2="5" stroke="var(--line)" stroke-width="1.4"/><line x1="4" y1="1" x2="4" y2="9" stroke="var(--line)"/><line x1="12" y1="1" x2="12" y2="9" stroke="var(--line)"/><line x1="20" y1="1" x2="20" y2="9" stroke="var(--line)"/></svg>Half wall / railing</span>
+        <span data-lg="changed"><svg width="14" height="14"><rect x="1" y="1" width="12" height="12" fill="var(--accent-soft)" stroke="var(--accent)"/></svg>Changed space or fixture</span>
+        <span data-lg="furn"><svg width="22" height="10"><rect x="1" y="1" width="20" height="8" fill="none" stroke="var(--furn)" stroke-dasharray="3 2"/></svg>Furniture</span>
+      </div>
+    </section>
+    <section class="sheet card" aria-live="polite" id="card"></section>
+  </div>
+
+  <section class="sheet compare" aria-labelledby="cmp-h">
+    <h2 id="cmp-h">Side by side</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Concept</th><th>What moves</th><th>Biggest win</th><th>Trade-off</th><th>Rough cost</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Live in the back</td><td>Furniture, small built-ins. No walls.</td><td>The brightest room, next to the kitchen and deck, becomes the everyday room.</td><td>The front room is still cut off from the rest of the house.</td><td>Low. Mostly furniture and DIY built-ins.</td></tr>
+          <tr><td>2 · Open the middle</td><td>The landing wall and the front room side of the stairwell. The duct has to move.</td><td>From the front door you see straight through to the kitchen, dining room and deck, and the walk to the deck gets much shorter.</td><td>Probably load-bearing, so it needs an engineer, a beam and a permit.</td><td>About $4,000–10,000 for the wall, plus railing and moving the duct.</td></tr>
+          <tr><td>3 · Bigger bath, longer kitchen</td><td>Closes the short hall. The bath grows into it and the kitchen counter runs the full width. Needs concept 2.</td><td>Bath goes from 33 to about 47 sq ft, and the kitchen gets about 3 ft more counter.</td><td>No direct hall route from the bedrooms to the kitchen.</td><td>Small bath remodel about $8,000–18,000, plus kitchen cabinets.</td></tr>
+          <tr><td>4 · Reclaim the flue chase</td><td>Removes the flue chase once the furnace and water heater vent through a basement wall.</td><td>Laundry by the bedrooms, or a real closet in bedroom 2.</td><td>Depends on replacing the furnace and water heater.</td><td>Depends on the equipment. Best timed for when it's due.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Costs are national ranges for rough comparison, not quotes: removing a load-bearing wall from <a href="https://homeguide.com/costs/cost-to-remove-a-wall">HomeGuide</a>, wood stair railing at $20–60 per linear foot from <a href="https://homeguide.com/costs/cost-to-install-stair-railings-and-balusters">HomeGuide</a>, a mid-range small bathroom remodel from <a href="https://www.thisoldhouse.com/bathrooms/small-bathroom-remodel-cost">This Old House</a>, moving an electrical panel (about $2,400–4,800) from <a href="https://contractorplus.app/resources/construction-costs/relocate-electrical-panel/boise-id">ContractorPlus</a>, rerouting ductwork from <a href="https://angi.com/articles/cost-to-reroute-air-ducts.htm">Angi</a>, and solar tubes from <a href="https://angi.com/articles/how-much-solar-tubes-cost.htm">Angi</a>.</p>
+  </section>
+
+  <section class="sheet compare" aria-labelledby="fit-h">
+    <h2 id="fit-h">How they fit together</h2>
+    <div class="extras">
+      <div><h3>Now</h3><p>Concept 1 costs little and can be undone. Living in the back for a while also tells you how much you really want concept 2.</p></div>
+      <div><h3>One project</h3><p>Concepts 2 and 3 share the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath rebuild is already on the list because the surround is failing.</p></div>
+      <div><h3>When it's due</h3><p>Concept 4 waits for the furnace or water heater to need replacing. Ask the HVAC contractor about direct-vent units when you get quotes.</p></div>
+    </div>
+    <h2 style="margin-top:22px">Also worth a look</h2>
+    <div class="extras">
+      <div><h3>Light in the hall</h3><p>The hall has no windows. A solar tube in the hall ceiling (about $600–1,000 installed) brings in daylight, and the ceiling already needs patching.</p></div>
+      <div><h3>The basement</h3><p>It's unfinished and already plumbed for a second bath. Finishing it is the biggest space gain available: a second bathroom, plus a rec room or bedrooms. It needs its own measured plan first.</p></div>
+      <div><h3>The end of the hall</h3><p>The linen closet door swings out into the hall between the two bedroom doors. A bifold door, or open shelving, would make that end feel less crowded.</p></div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const W = 30.58, H = 40.5;
+  const X = x => W - x, Y = y => H - y;                 // front faces east: draw mirrored, north up
+  const n = v => (+v).toFixed(3);
+  const pts = p => p.map(([x,y]) => `${n(X(x))},${n(Y(y))}`).join(' ');
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const rectPoly = g => [[g.x,g.y],[g.x+g.w,g.y],[g.x+g.w,g.y+g.h],[g.x,g.y+g.h]];
+  const text = (x, y, s, cls, extra='') => `<text x="${n(X(x))}" y="${n(Y(y))}" text-anchor="middle" dominant-baseline="middle" class="${cls}" ${extra}>${esc(s)}</text>`;
+  const line = (a, b, cls) => `<line x1="${n(X(a[0]))}" y1="${n(Y(a[1]))}" x2="${n(X(b[0]))}" y2="${n(Y(b[1]))}" class="${cls}"/>`;
+  const RR = (x1, x2, y1, y2, cls) => { const a = Math.min(X(x1),X(x2)), b = Math.max(X(x1),X(x2)); return `<rect class="${cls}" x="${n(a)}" y="${n(Y(Math.max(y1,y2)))}" width="${n(b-a)}" height="${n(Math.abs(y2-y1))}"/>`; };
+  const rectF = (x0, x1, y0, y1, cls) => `<polygon class="${cls}" points="${pts([[x0,y0],[x1,y0],[x1,y1],[x0,y1]])}"/>`;
+  const circF = (x, y, r, cls) => `<circle class="${cls}" cx="${n(X(x))}" cy="${n(Y(y))}" r="${n(r)}"/>`;
+  const ellF = (x, y, rx, ry, cls) => `<ellipse class="${cls}" cx="${n(X(x))}" cy="${n(Y(y))}" rx="${n(rx)}" ry="${n(ry)}"/>`;
+  const tiny = (x, y, t, cls) => text(x, y, t, cls || 't-fix', 'pointer-events="none"');
+
+  // ---------- today's plan (same geometry as the measured floor plan) ----------
+  const BASE_ROOMS = [
+    {id:'front',  type:'living', g:{x:0,y:11.5,w:11.5,h:17.25}},
+    {id:'green',  type:'bed', g:{x:0,y:0,w:11.5,h:11.5}},
+    {id:'gcl',    type:'store', g:{x:11.5,y:0,w:2,h:6}},
+    {id:'b2cl',   type:'store', g:{x:13.5,y:0,w:2,h:4.5}},
+    {id:'bed2',   type:'bed', g:{x:15.5,y:0,w:9.5,h:11.5}},
+    {id:'hall',   type:'circ', poly:[[11.5,8],[15.5,8],[15.5,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,15.5],[11.5,15.5]]},
+    {id:'linen',  type:'store', g:{x:11.5,y:6,w:2.6,h:2}},
+    {id:'chase',  type:'mech', poly:[[13.5,4.5],[15.5,4.5],[15.5,8],[14.1,8],[14.1,6],[13.5,6]]},
+    {id:'bath',   type:'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}},
+    {id:'pantry', type:'store', g:{x:11.5,y:15.5,w:3.58,h:3.17}},
+    {id:'stair',  type:'circ', g:{x:11.5,y:18.67,w:3.58,h:7.33}},
+    {id:'landing',type:'circ', g:{x:11.5,y:26,w:3.58,h:2.75}},
+    {id:'kitchen',type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}},
+    {id:'garage', type:'garage', g:{x:-4.25,y:28.75,w:19.33,h:11.75}},
+    {id:'dining', type:'living', g:{x:15.08,y:28.75,w:15.5,h:11.75}}
+  ];
+  const OUTLINE = [[0,0],[25,0],[25,28.75],[30.58,28.75],[30.58,40.5],[-4.25,40.5],[-4.25,28.75],[0,28.75]];
+  const BASE_OPEN = [ [[15.08,28.75],[25,28.75]], [[15.08,26],[15.08,28.75]], [[15.08,16.42],[18.33,16.42]] ];
+  const BASE_OPENINGS = [
+    {id:'front', t:'door', ax:'v', c:0, s:25.4, e:28.4, hinge:'e', swing:1, room:'living', out:-1},
+    {id:'greendoor', t:'door', ax:'v', c:11.5, s:8.4, e:10.95, hinge:'e', swing:-1, room:'bed'},
+    {id:'bed2door', t:'door', ax:'v', c:15.5, s:8.4, e:10.95, hinge:'e', swing:1, room:'bed'},
+    {id:'bathdoor', t:'door', ax:'v', c:18.33, s:12.2, e:14.7, hinge:'s', swing:1, room:'wet'},
+    {id:'linendoor', t:'door', ax:'h', c:8, s:12.15, e:14.0, hinge:'e', swing:1, room:'circ'},
+    {id:'pantrydoor', t:'door', ax:'h', c:15.5, s:12.2, e:14.45, hinge:'e', swing:-1, room:'circ'},
+    {id:'garagedoor', t:'door', ax:'h', c:28.75, s:11.8, e:14.7, hinge:'s', swing:1, room:'garage'},
+    {id:'gcl', t:'bypass', ax:'v', c:11.5, s:0.4, e:5.6, room:'store'},
+    {id:'b2cl', t:'cased', ax:'v', c:15.5, s:0.3, e:4.25, room:'store'},
+    {id:'fronthall', t:'cased', ax:'v', c:11.5, s:12.0, e:15.0, room:'living'},
+    {id:'slider', t:'slider', ax:'v', c:30.58, s:32.2, e:38.2},
+    {t:'win', ax:'v', c:0, s:3.8, e:7.8}, {t:'win', ax:'v', c:0, s:14.8, e:21.6},
+    {t:'win', ax:'h', c:0, s:7.0, e:9.8}, {t:'win', ax:'h', c:0, s:16.6, e:19.4},
+    {t:'win', ax:'v', c:25, s:1.4, e:4.0}, {t:'win', ax:'v', c:25, s:12.9, e:15.1},
+    {t:'win', ax:'h', c:40.5, s:21.6, e:24.1}, {t:'win', ax:'h', c:40.5, s:26.6, e:29.1}
+  ];
+
+  // furniture sets [x0, x1, y0, y1, label]
+  // family room: lounge against the garage wall, dining table under the north windows, a clear lane from the kitchen to the slider
+  const FAMILY = [[15.4,18.2,31.8,38.6,'sofa'],[19.0,20.5,33.7,36.7,'table'],
+                  [23.4,28.6,34.6,37.6,'dining table'],[24.0,25.0,33.6,34.3,''],[25.5,26.5,33.6,34.3,''],[27.0,28.0,33.6,34.3,''],
+                  [24.0,25.0,37.9,38.6,''],[25.5,26.5,37.9,38.6,''],[27.0,28.0,37.9,38.6,''],[22.5,23.2,35.6,36.6,''],[28.8,29.5,35.6,36.6,'']];
+  const BENCH = [0.15,1.45,21.95,25.15,'bench + hooks'];
+  const DEN = [[0.9,3.6,14.8,21.4,'sofa'],[4.6,6.2,16.5,19.7,'table'],[10.5,11.25,16.0,21.5,'TV / shelves'],[4.5,8.5,11.65,13.3,'desk'],BENCH];
+  const LIVING = [[2.5,8.5,11.65,12.5,'TV / media'],[2.0,9.0,18.0,20.8,'sofa'],[4.0,7.0,15.4,16.9,'table'],[0.6,2.6,13.6,15.6,'chair'],BENCH];
+  const MUD = [[14.05,15.0,32.0,35.8,'lockers']];
+
+  const ROUTE_TODAY = [[0.9,26.9],[5.5,22.5],[10.8,13.8],[13.5,13.6],[16.9,14.2],[16.9,17.6],[16.6,24.5],[16.5,29.6],[30.3,33.4]];
+  const ROUTE_OPEN  = [[0.9,26.9],[6.5,27.3],[11.5,27.4],[14.8,27.5],[16.5,29.4],[30.3,33.4]];
+  const routeLen = r => Math.round(r.reduce((s, p, i) => i ? s + Math.hypot(p[0]-r[i-1][0], p[1]-r[i-1][1]) : 0, 0));
+
+  const NAMES = {front:'Front room', green:'Green room', bed2:'Bedroom 2', kitchen:'Kitchen', dining:'Dining room', garage:'Garage', bath:'Bath', pantry:'Pantry', hall:'Hall', linen:'Linen', gcl:'CL', b2cl:'CL'};
+  const LABEL_AT = {front:[5.75,24.4], green:[5.75,6.6], bed2:[20.3,6.0], kitchen:[19.1,22.7], dining:[22.2,39.55], garage:[5.4,37.2], bath:[21.65,13.25], pantry:[13.3,16.6], hall:[13.5,12.4], linen:[12.8,7.0], gcl:[12.5,3.0], b2cl:[14.5,2.25]};
+
+  // ---------- concepts ----------
+  const CONCEPTS = [
+    { key:'today', no:'', short:'Today', tag:'Starting point', title:'Today',
+      pitch:'How the main floor works now, before any changes.',
+      steps:[[3.4,25.6,'The front door opens into a corner of the front room, with no closet or landing spot.'],
+             [10.0,22.0,'The stairs, pantry and landing make a solid block down the middle. The front room reaches the rest of the house only through one doorway to the hall.'],
+             [28.0,30.0,'The brightest room, with the slider to the deck, is in the far back corner, as far as you can get from the front door.'],
+             [13.5,9.8,'The hall has no windows, and five doors open off it.'],
+             [14.75,2.5,'The flue chase and a 2′ × 4′ 6″ closet use up the space between the bedrooms.']],
+      route: ROUTE_TODAY, old:true,
+      feel:'Each room is closed off from the others, and the walk from the front door to the deck zigzags through the front room, hall and kitchen.',
+      heaters:true },
+    { key:'c1', no:'1', short:'Live in the back', tag:'Move furniture, not walls', title:'Live in the back',
+      pitch:'Make the bright back room the everyday family room and give the front room a calmer job. No walls move.',
+      names:{dining:'Family room + dining', front:'Den / office', pantry:'Coats'}, changed:['pantry'],
+      furniture:[FAMILY, DEN, MUD],
+      steps:[[21.2,31.4,'Turn the dining room into a family room with dining: a sofa and chairs against the garage wall, the table under the north windows, and a clear lane from the kitchen to the slider. Take out the two baseboard heaters so the north wall can be used.'],
+             [8.6,21.8,'The front room becomes a quieter den, office or playroom, with the TV on the long stair-side wall and a desk on the south wall.'],
+             [2.6,23.6,'Add a drop zone by the front door: a bench, hooks and a shoe cabinet on the short wall between the door and the picture window.'],
+             [12.2,18.0,'Turn the pantry into a coat closet, since it already has a hanging rod. Move pantry food into a tall cabinet in the kitchen.'],
+             [12.6,34.0,'Build a garage mudroom: lockers and a bench by the door up to the landing, for everyday comings and goings.']],
+      route: ROUTE_TODAY, old:true,
+      feel:'Daily life happens next to the kitchen and the deck, in the room with the best light. Coats and shoes get a home by both doors.',
+      tradeoff:'Nothing structural changes, so the front room is still cut off from the rest of the house, and the route from the front door to the deck stays long.',
+      cost:'Low: mostly furniture and simple built-ins you can do yourself. No permits.' },
+    { key:'c2', no:'2', short:'Open the middle', tag:'The big flow move', title:'Open the middle',
+      pitch:'Open the front room to the stair landing so you see straight through from the front door to the kitchen, family room and deck.',
+      names:{dining:'Family room + dining', front:'Living room', pantry:'Coats'}, changed:['landing'],
+      furniture:[FAMILY, LIVING, MUD],
+      remove:[[[11.5,26],[11.5,28.75]]], halfwalls:[[[11.5,18.67],[11.5,24.2]]], pier:[11.28,11.72,24.2,26.0],
+      duct:[14.6,18.2],
+      steps:[[10.2,28.3,'Remove the short wall between the front room and the stair landing.'],
+             [10.1,21.4,'Replace the front room side of the stairwell with a half wall and railing, matching the kitchen side. Light reaches the stairs and the basement.'],
+             [10.1,24.9,'Keep the electrical panel in a short wall at the top of the stairs, or move it.'],
+             [12.2,18.0,'Move the live duct out of the front room corner. It could go in a wall or up through the coat closet floor, as shown here.'],
+             [16.3,25.6,'Swap the stair gate for a proper railing and gate so the landing reads as an open hub.'],
+             [6.0,22.6,'Turn the living room to face a media wall on the south wall, so the sofa\'s back defines a clear entry path from the front door to the landing.']],
+      route: ROUTE_OPEN,
+      feel:'Coming in the front door, you see through the house to the deck. It reads as one connected space instead of a row of separate rooms, with a loop through the middle: front room, landing, kitchen, hall, and back.',
+      tradeoff:'This is probably the load-bearing line down the middle of the house, so it needs an engineer, a beam and a permit. The front room gives up the stair-side wall for furniture, so the TV moves to the south wall.',
+      cost:'Removing a load-bearing wall runs about $4,000–10,000. A wood railing is $20–60 per linear foot. Moving the duct a few feet is roughly $500–2,000 (my estimate from Angi\'s per-foot rates; a full reroute runs $1,500–9,000). Moving the panel, if you don\'t keep it in a short wall, is about $2,400–4,800.',
+      includes:'Includes concept 1\'s family room, coat closet and mudroom.' },
+    { key:'c3', no:'3', short:'Bigger bath, longer kitchen', tag:'Builds on concept 2', title:'Bigger bath, longer kitchen',
+      pitch:'Once the landing is open, the short hall into the kitchen isn\'t needed as a route. Give that space to the bathroom and the kitchen.',
+      names:{dining:'Family room + dining', front:'Living room', pantry:'Coats', bath:'Bath'}, changed:['bath','landing'], bathSub:'≈ 47 sq ft',
+      furniture:[FAMILY, LIVING, MUD],
+      remove:[[[11.5,26],[11.5,28.75]], [[18.33,11.5],[18.33,16.42]]], halfwalls:[[[11.5,18.67],[11.5,24.2]]], pier:[11.28,11.72,24.2,26.0],
+      add:[[[15.5,11.5],[15.5,16.42]], [[15.08,16.42],[18.33,16.42]]], duct:[14.6,18.2], bigBath:true, longKitchen:true,
+      steps:[[23.7,14.5,'The bathroom grows east into the short hall: from 6′ 8″ × 4′ 11″ (33 sq ft) to about 9′ 6″ × 4′ 11″ (47 sq ft), with room for a 4-ft vanity and a linen tower.'],
+             [14.7,13.4,'The bathroom door moves to open off the main hall.'],
+             [17.0,19.3,'Close the hall\'s opening into the kitchen. The south counter then runs the full width, adding about 3 ft of counter and cabinets.'],
+             [23.7,12.6,'Plumbing changes can be run from the unfinished basement below, which keeps them simpler.']],
+      route: ROUTE_OPEN,
+      feel:'The one main-floor bathroom stops feeling cramped, and the kitchen gets real prep space without touching the breakfast bar.',
+      tradeoff:'You lose the direct hall route from the bedrooms to the kitchen. You\'d go through the front room and landing instead, about 15 ft further. It only makes sense together with concept 2.',
+      cost:'A mid-range small bathroom remodel runs about $8,000–18,000, and changing the layout can push it higher. The extra kitchen cabinets and counter are on top of that.',
+      includes:'Includes everything in concept 2.' },
+    { key:'c4', no:'4', short:'Reclaim the flue chase', tag:'When the furnace and water heater are replaced', title:'Reclaim the flue chase',
+      pitch:'The flue pipe between the bedrooms exists only because the basement furnace and water heater vent up through the roof. Direct-vent models vent out a basement wall instead, which frees that space.',
+      names:{}, changed:['laundry'], laundry:true,
+      steps:[[14.5,8.95,'Remove the flue chase and combine it with the linen closet.'],
+             [12.5,8.95,'Option A, drawn here: a laundry closet at the end of the hall with a compact 24-inch stacked washer and dryer and linen shelves beside it. Water and drains come straight up from the unfinished basement.'],
+             [16.4,6.3,'Option B: extend bedroom 2\'s closet to about 2′ × 8′ instead, using the wall that\'s already open.']],
+      feel:'Laundry right beside the bedrooms, or a proper closet in bedroom 2. Either way, the dead space between the bedrooms becomes useful.',
+      tradeoff:'It depends on replacing the furnace and water heater, so it\'s best timed for when they\'re due. A compact washer and dryer hold less than full-size ones.',
+      cost:'Depends on the equipment. Get an HVAC quote for direct-vent units, and a plumber and electrician for the laundry hookups and dryer vent.',
+      heaters:true }
+  ];
+
+  function draw(cfg){
+    // rooms for this concept
+    let rooms = BASE_ROOMS.map(r => Object.assign({}, r));
+    if (cfg.bigBath){
+      rooms.find(r => r.id === 'bath').g = {x:15.5, y:11.5, w:9.5, h:4.92};
+      rooms.find(r => r.id === 'hall').poly = [[11.5,8],[15.5,8],[15.5,15.5],[11.5,15.5]];
+    }
+    if (cfg.laundry){
+      rooms = rooms.filter(r => r.id !== 'linen' && r.id !== 'chase');
+      rooms.push({id:'laundry', type:'chg', poly:[[11.5,6],[13.5,6],[13.5,4.5],[15.5,4.5],[15.5,8],[11.5,8]]});
+    }
+    const changed = new Set(cfg.changed || []);
+    let s = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern>
+      <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker>
+      <marker id="ah-old" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--warn)"/></marker></defs>`;
+    rooms.forEach(r => { s += `<polygon class="rm ${changed.has(r.id) ? 'chg' : r.type}" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
+    rooms.forEach(r => { s += `<polygon class="wall" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
+    if (cfg.bigBath) s += rectF(15.08, 15.5, 15.5, 16.42, 'wallfill');
+
+    // stairs
+    for (let i = 1; i < 9; i++){ const y = 18.67 + i*7.33/9; s += line([11.5,y],[15.08,y],'tread'); }
+    s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
+
+    // walls removed / half walls / new walls
+    (cfg.remove || []).forEach(([a,b]) => { s += line(a, b, 'erase') + line(a, b, 'removed'); });
+    (cfg.halfwalls || []).forEach(([a,b]) => { s += line(a, b, 'erase') + line(a, b, 'halfwall'); for (let y = a[1] + 0.35; y < b[1]; y += 0.55) s += line([a[0] - 0.14, y], [a[0] + 0.14, y], 'rail'); });
+    if (cfg.pier) s += rectF(cfg.pier[0], cfg.pier[1], cfg.pier[2], cfg.pier[3], 'wallfill');
+    let open = BASE_OPEN.slice(); if (cfg.add) open = open.filter(seg => !(seg[0][1] === 16.42 && seg[1][1] === 16.42));
+    open.forEach(([a,b]) => { s += line(a, b, 'erase') + line(a, b, 'open-dash'); });
+    (cfg.add || []).forEach(([a,b]) => { s += line(a, b, 'added'); });
+
+    // kitchen half wall to the stairs
+    s += rectF(14.88, 15.28, 18.75, 25.95, 'gap-living') + line([15.08,18.67],[15.08,26],'halfwall');
+    for (let y = 19.0; y < 25.9; y += 0.55) s += line([14.94, y], [15.22, y], 'rail');
+
+    // fixtures
+    const kx0 = cfg.longKitchen ? 15.5 : 18.33;
+    s += rectF(kx0, 25, 16.42, 18.42, cfg.longKitchen ? 'fix-new' : 'fix') + rectF(23.0, 25, 18.42, 24.05, 'fix');
+    s += rectF(21.1, 22.6, 16.75, 18.15, 'fix2') + rectF(21.3, 22.4, 16.9, 18.0, 'fix2');
+    s += cfg.longKitchen ? rectF(15.7, 17.7, 16.5, 18.35, 'fix2') + tiny(16.7, 17.4, 'DW') + tiny(19.6, 17.4, '+ counter') : rectF(18.4, 20.45, 16.5, 18.35, 'fix2') + tiny(19.42, 17.4, 'DW');
+    s += rectF(22.75, 25, 20.0, 22.5, 'fix') + [[23.4,20.6],[24.4,20.6],[23.4,21.9],[24.4,21.9]].map(([x,y]) => circF(x, y, 0.32, 'fix2')).join('');
+    s += rectF(22.35, 25, 24.05, 26.85, 'fix') + line([22.35,24.05],[25,26.85],'fix2') + line([22.35,26.85],[25,24.05],'fix2');
+    { const pen = [[25,26.9],[17.9,26.9]]; for (let i = 1; i < 12; i++){ const a = -Math.PI/2 - i*Math.PI/12; pen.push([17.9 + 1.025*Math.cos(a), 27.925 + 1.025*Math.sin(a)]); } pen.push([17.9,28.95],[25,28.95]); s += `<polygon class="fix" points="${pts(pen)}"/>`; }
+    s += rectF(22.5, 24.85, 11.65, 16.27, 'fix') + `<rect class="fix2" x="${n(X(24.6))}" y="${n(Y(16.0))}" width="1.85" height="4.08" rx=".5"/>`;
+    s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
+    if (cfg.bigBath){ s += rectF(16.6, 20.6, 14.7, 16.38, 'fix-new') + ellF(17.7, 15.55, 0.55, 0.38, 'fix2') + ellF(19.5, 15.55, 0.55, 0.38, 'fix2') + rectF(15.6, 16.5, 14.95, 16.38, 'fix-new') + tiny(16.05, 14.6, 'linen'); }
+    else s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
+    if (cfg.duct) s += circF(cfg.duct[0], cfg.duct[1], 0.36, 'fix-new');
+    else s += circF(10.85, 28.1, 0.42, 'fix') + tiny(9.6, 27.6, 'DUCT');
+    if (cfg.laundry){ s += rectF(13.6, 15.4, 4.65, 6.85, 'fix-new') + tiny(14.5, 5.75, 'W/D') + rectF(11.6, 13.45, 6.05, 6.95, 'fix-new') + tiny(12.52, 6.5, 'linen'); }
+    else s += circF(14.8, 6.3, 0.22, 'fix') + tiny(14.75, 7.35, 'FLUE');
+    if (cfg.heaters) s += rectF(21.35, 24.35, 39.95, 40.25, 'fix') + rectF(26.35, 29.35, 39.95, 40.25, 'fix');
+
+    // furniture
+    (cfg.furniture || []).forEach(set => set.forEach(([x0, x1, y0, y1, lab]) => {
+      s += rectF(x0, x1, y0, y1, 'furn');
+      if (!lab) return;
+      const cx = X((x0 + x1)/2), cy = Y((y0 + y1)/2);
+      const tall = (y1 - y0) > (x1 - x0) && lab.length * 0.25 > (x1 - x0) - 0.2;
+      s += `<text x="${n(cx)}" y="${n(cy)}" text-anchor="middle" dominant-baseline="middle" class="t-furn" pointer-events="none"${tall ? ` transform="rotate(-90 ${n(cx)} ${n(cy)})"` : ''}>${esc(lab)}</text>`;
+    }));
+
+    // outer wall and openings
+    s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
+    let openings = BASE_OPENINGS.slice();
+    if (cfg.bigBath) openings = openings.filter(o => o.id !== 'bathdoor').concat([{t:'door', ax:'v', c:15.5, s:12.2, e:14.6, hinge:'s', swing:1, room:'chg'}]);
+    if (cfg.laundry) openings = openings.filter(o => o.id !== 'linendoor').concat([{t:'bypass', ax:'h', c:8, s:11.7, e:15.3, room:'chg'}]);
+    const at = (o, u, v) => o.ax === 'v' ? [o.c + v, u] : [u, o.c + v];
+    const band = (o, u0, u1, v0, v1, cls) => { const a = at(o, u0, v0), b = at(o, u1, v1); return RR(a[0], b[0], a[1], b[1], cls); };
+    openings.forEach(o => {
+      const w = o.e - o.s;
+      if (o.t === 'win' || o.t === 'slider'){
+        s += band(o, o.s, o.e, -0.3, 0.3, 'win');
+        s += o.t === 'win' ? line(at(o, o.s, 0), at(o, o.e, 0), 'winline') : line(at(o, o.s, -0.1), at(o, o.s + w*0.55, -0.1), 'winline') + line(at(o, o.e - w*0.55, 0.1), at(o, o.e, 0.1), 'winline');
+        return;
+      }
+      if (o.out) s += band(o, o.s, o.e, o.out*0.32, 0, 'gap-sheet') + band(o, o.s, o.e, 0, -o.out*0.32, 'gap-' + o.room);
+      else s += band(o, o.s, o.e, -0.2, 0.2, 'gap-' + o.room);
+      if (o.t === 'door'){
+        const hu = o.hinge === 's' ? o.s : o.e, ou = o.hinge === 's' ? o.e : o.s;
+        s += line(at(o, hu, 0), at(o, hu, o.swing*w), 'leaf');
+        const ap = []; for (let i = 0; i <= 16; i++){ const t = i/16*Math.PI/2; ap.push(at(o, hu + (ou - hu)*Math.sin(t), o.swing*w*Math.cos(t))); }
+        s += `<polyline class="swing" points="${pts(ap)}"/>`;
+      } else if (o.t === 'bypass'){
+        s += band(o, o.s, o.s + w*0.55, -0.17, -0.04, 'bypass') + band(o, o.e - w*0.55, o.e, 0.04, 0.17, 'bypass');
+      } else if (o.t === 'cased'){
+        s += line(at(o, o.s, -0.3), at(o, o.s, 0.3), 'jamb') + line(at(o, o.e, -0.3), at(o, o.e, 0.3), 'jamb');
+      }
+    });
+    s += RR(-4.65,-4.25,30.4,38.9,'gap-sheet') + RR(-4.25,-3.9,30.4,38.9,'gap-garage') + line([-3.35,30.4],[-3.35,38.9],'ohd');
+
+    // route
+    if (cfg.route) s += `<polyline class="flow${cfg.old ? ' old' : ''}" points="${pts(cfg.route)}" marker-end="url(#${cfg.old ? 'ah-old' : 'ah'})"/>`;
+
+    // labels
+    const names = Object.assign({}, NAMES, cfg.names || {});
+    if (cfg.laundry) delete names.linen;
+    const at2 = Object.assign({}, LABEL_AT, cfg.bigBath ? {bath:[20.2,13.3]} : {});
+    Object.keys(names).forEach(id => {
+      if (!rooms.find(r => r.id === id)) return;
+      const [x, y] = at2[id]; const nm = names[id];
+      const big = ['front','green','bed2','kitchen','dining','garage'].includes(id);
+      if (big) s += text(x, y, nm.toUpperCase(), 't-name', 'pointer-events="none"');
+      else s += text(x, y, nm.toUpperCase(), id === 'gcl' || id === 'b2cl' || id === 'linen' || id === 'laundry' ? 't-fix' : 't-small', 'pointer-events="none"');
+    });
+    if (cfg.bathSub) s += text(20.2, 12.55, cfg.bathSub, 't-sub');
+
+    // numbered callouts
+    (cfg.steps || []).forEach(([x, y], i) => { s += circF(x, y, 0.5, 'co' + (cfg.old ? ' old' : '')) + `<text x="${n(X(x))}" y="${n(Y(y) + 0.02)}" text-anchor="middle" dominant-baseline="middle" class="t-co">${i + 1}</text>`; });
+
+    // front label, compass, scale
+    const fx = X(-6.6), fy = Y(14.0);
+    s += `<text x="${n(fx)}" y="${n(fy)}" text-anchor="middle" dominant-baseline="middle" class="t-front" transform="rotate(90 ${n(fx)} ${n(fy)})">FRONT · EAST</text>`;
+    const nc = [X(30.4), Y(5.4)];
+    s += `<circle class="compass" cx="${n(nc[0])}" cy="${n(nc[1])}" r="1.25"/><polygon class="compass-n" points="${n(nc[0])},${n(nc[1]-1.05)} ${n(nc[0]-0.42)},${n(nc[1]+0.65)} ${n(nc[0])},${n(nc[1]+0.3)} ${n(nc[0]+0.42)},${n(nc[1]+0.65)}"/>`;
+    s += `<text x="${n(nc[0])}" y="${n(nc[1]-1.85)}" text-anchor="middle" dominant-baseline="middle" class="t-small">N</text>`;
+    const sbx = X(33), sby = Y(10.4);
+    for (let i = 0; i < 5; i++) s += `<rect class="${i%2?'sb-light':'sb-dark'}" x="${n(sbx+i)}" y="${n(sby)}" width="1" height=".32"/>`;
+    [[0,'0'],[5,'5 ft']].forEach(([o,t]) => { s += `<text x="${n(sbx+o)}" y="${n(sby+0.85)}" text-anchor="middle" dominant-baseline="middle" class="t-tiny">${t}</text>`; });
+
+    const svg = document.getElementById('plan');
+    svg.setAttribute('viewBox', `-1.6 -1.6 ${n(W + 4.25 + 6.6)} ${n(H + 3.2)}`);
+    svg.innerHTML = s;
+
+    const used = {'old-route': !!cfg.route && !!cfg.old, route: !!cfg.route && !cfg.old, remove: !!(cfg.remove || []).length, add: !!(cfg.add || []).length,
+                  half: true, changed: !!((cfg.changed || []).length || cfg.duct || cfg.laundry), furn: !!(cfg.furniture || []).length};
+    document.querySelectorAll('.legend [data-lg]').forEach(el => { el.hidden = !used[el.dataset.lg]; });
+  }
+
+  function card(cfg){
+    const steps = (cfg.steps || []).map((st, i) => `<li><span class="n">${i + 1}</span><span>${esc(st[2])}</span></li>`).join('');
+    const len = cfg.route ? routeLen(cfg.route) : null, base = routeLen(ROUTE_TODAY);
+    let route = '';
+    if (len) route = `<div class="route"><b>≈ ${len} ft</b><span>walk from the front door to the deck slider${len < base ? `, about ${base - len} ft shorter than today` : ''}.</span></div>`;
+    const sec = (h, t) => t ? `<h3>${h}</h3><p>${esc(t)}</p>` : '';
+    document.getElementById('card').innerHTML =
+      `<div class="tag">${esc(cfg.tag)}</div><h2>${cfg.no ? cfg.no + ' · ' : ''}${esc(cfg.title)}</h2><p class="pitch">${esc(cfg.pitch)}</p>` +
+      `<h3>${cfg.key === 'today' ? 'What holds it back' : 'What changes'}</h3><ol class="steps${cfg.old && cfg.key === 'today' ? ' today' : ''}">${steps}</ol>` + route +
+      sec('How it feels', cfg.feel) + sec('Trade-offs', cfg.tradeoff) + sec('Rough cost', cfg.cost) + (cfg.includes ? `<h3>Includes</h3><p>${esc(cfg.includes)}</p>` : '');
+  }
+
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = CONCEPTS.map(c => `<button type="button" role="tab" id="tab-${c.key}" aria-selected="false" data-key="${c.key}">${c.no ? `<span class="no">${c.no}</span>` : ''}${esc(c.short)}</button>`).join('');
+  function show(key){
+    const cfg = CONCEPTS.find(c => c.key === key) || CONCEPTS[0];
+    tabs.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.key === cfg.key)));
+    draw(cfg); card(cfg);
+  }
+  tabs.addEventListener('click', e => { const b = e.target.closest('button[data-key]'); if (!b) return; show(b.dataset.key); try { history.replaceState(null, '', '#' + b.dataset.key); } catch(_){} });
+  tabs.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const bs = [...tabs.querySelectorAll('button')], i = bs.indexOf(document.activeElement); if (i < 0) return;
+    const nb = bs[(i + (e.key === 'ArrowRight' ? 1 : bs.length - 1)) % bs.length]; nb.focus(); nb.click();
+  });
+  const fromHash = () => show((location.hash || '').replace('#','') || 'today');
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+})();
+</script>
+
+</body></html>
