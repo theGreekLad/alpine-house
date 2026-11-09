@@ -589,14 +589,34 @@ td:first-child{font-weight:600;min-width:150px}
     checks:'The same as concept 12, without the garage conversion: the beams, the window header, and direct-vent furnace and water heater units so the flue chase can come out. The garage keeps its fire-rated walls and a self-closing door.',
     cost:'Less than with the garage converted. Finishing the garage runs from a few thousand dollars up to This Old House\'s mid-range $14,000–28,000 for a typical two-car garage, against about $10,000–52,000 for most garage conversions. The panels add roughly $4,000–12,000 (my guess).'
   };
-  H_MODES.forEach(([mode, ms, , head]) => H_GARAGE.forEach(([gar, gs]) => {
-    const key = 'dreamH' + ms + gs;
-    const steps = gar ? H_STEPS[mode].map(([x, y, t]) => [x, y, toLivingRoom(t)]).concat([H_GARAGE_STEP]) : H_STEPS[mode];
-    CONCEPTS.push(Object.assign({}, C13, gar ? C13_GARAGE : {}, {key, mode, garageKept: gar, steps, stepsHead: head,
+  // the pantry: the reach-in old pantry, or a walk-in pantry where the hall bath was
+  const H_PANTRY = [[false, '', 'Reach-in'], [true, 'wi', 'Walk-in']];
+  const H_PANTRY_STEPS = [
+    [19.2, 13.5, 'The hall bath becomes a walk-in pantry of about 33 sq ft, three times the old one: shelves on two walls, a counter for small appliances, and its own window. It opens off the short hall, a step from the kitchen, and the old pantry goes back to being the laundry cupboard.'],
+    [15.2, 1.3, 'The bath between the bedrooms grows a foot into bedroom 2, to a 5 × 8 ft bath with a tub. It becomes the main bath, with doors from the hall and from the primary bedroom. Bedroom 2 gives up about 8 sq ft, and its bed moves to the west wall.']];
+  const C13_WALKIN = {
+    living: {
+      pitch:'Dream 7 refined with a walk-in pantry. The hall bath becomes a pantry about three times the size of the old one, and the bath between the bedrooms grows a foot into a full bath with a tub, opening from both the hall and the primary bedroom. The kitchen, the stairwell\'s three settings and the garage living room are the same.',
+      walls:'About 62 ft of interior wall comes out, including the closets between the bedrooms and the garage walls. About 9 ft goes in to make the middle bath a foot wider, and about 9 ft turns into glass.',
+      tradeoff:'There\'s one bathroom on the main floor instead of two. It\'s shared by both bedrooms and guests, and the primary bedroom no longer has a bath of its own. Bedroom 2 gives up about 8 sq ft. The basement already has a plumbing rough-in for a second bath. The stair is still closed while the table or the floor is in use.' },
+    garage: {
+      pitch:'Dream 7 refined with a walk-in pantry and the garage kept. The hall bath becomes a pantry about three times the size of the old one, and the bath between the bedrooms grows a foot into a full bath with a tub, opening from both the hall and the primary bedroom. The garage is finished, and the front room is the living room again.',
+      walls:'About 35 ft of interior wall comes out. The garage keeps its fire-rated walls and a self-closing door to the landing. About 9 ft goes in to make the middle bath a foot wider, and about 9 ft turns into glass.',
+      tradeoff:'There\'s one bathroom on the main floor instead of two. It\'s shared by both bedrooms and guests, and the primary bedroom no longer has a bath of its own. Bedroom 2 gives up about 8 sq ft. The basement already has a plumbing rough-in for a second bath. You also lose the big sunken living room and the library.' }
+  };
+  const WALKIN_COST = ' The walk-in pantry costs about the same as the reach-in: the hall bath\'s plumbing is capped rather than redone, and the middle bath is a little bigger.';
+  H_MODES.forEach(([mode, ms, , head]) => H_GARAGE.forEach(([gar, gs]) => H_PANTRY.forEach(([wi, ps]) => {
+    const key = 'dreamH' + ms + gs + ps;
+    let steps = gar ? H_STEPS[mode].map(([x, y, t]) => [x, y, toLivingRoom(t)]).concat([H_GARAGE_STEP]) : H_STEPS[mode];
+    if (wi) steps = steps.filter(([, , t]) => !t.startsWith('The old pantry is a pantry again')).concat(H_PANTRY_STEPS);
+    const base = Object.assign({}, C13, gar ? C13_GARAGE : {});
+    const extra = wi ? Object.assign({}, C13_WALKIN[gar ? 'garage' : 'living'], {cost: base.cost + WALKIN_COST}) : {};
+    CONCEPTS.push(Object.assign(base, extra, {key, mode, garageKept: gar, bigPantry: wi, steps, stepsHead: head,
       tab: key === 'dreamH' ? undefined : 'dreamH', hidden: key !== 'dreamH',
-      toggle: H_MODES.map(([, m2, label]) => ['dreamH' + m2 + gs, label]),
-      toggle2Label: 'Garage', toggle2: H_GARAGE.map(([, g2, label]) => ['dreamH' + ms + g2, label])}));
-  }));
+      toggle: H_MODES.map(([, m2, label]) => ['dreamH' + m2 + gs + ps, label]),
+      toggle2Label: 'Garage', toggle2: H_GARAGE.map(([, g2, label]) => ['dreamH' + ms + g2 + ps, label]),
+      toggle3Label: 'Pantry', toggle3: H_PANTRY.map(([, p2, label]) => ['dreamH' + ms + gs + p2, label])}));
+  })));
 
   // ---------- concept 14: the garage becomes the kitchen ----------
   CONCEPTS.push({ key:'dreamJ', no:'14', short:'Garage kitchen', tag:'Your idea · the garage becomes the kitchen', title:'Garage kitchen', dream:true, variant:'J',
@@ -998,6 +1018,14 @@ td:first-child{font-weight:600;min-width:150px}
   const OPEN_J_REMOVED = OPEN_G_REMOVED.map(([a, b]) => (a[0] === 0 && a[1] === 28.75) ? [[1.8,28.75],[11.5,28.75]] : [a, b]);
   const OPEN_J_OPENINGS = OPEN_G_OPENINGS.filter(o => !(o.t === 'win' && o.c === 40.5 && o.s < 10)).concat([{t:'win', ax:'h', c:40.5, s:-0.8, e:1.4}, {t:'win', ax:'h', c:40.5, s:5.6, e:7.8}]);
   const FAMILY_J_FURN = [[17.8,23.4,22.4,25.2,'sofa'],[18.9,22.3,19.4,21.0,'table']];
+  // concept 13 with the walk-in pantry: the hall bath becomes the pantry, the bath between the bedrooms grows a foot into bedroom 2
+  const WALKIN_OPENINGS = base => base.filter(o => !(o.ax === 'v' && (o.c === 18.33 || o.c === 15.5) && o.t === 'door') && !(o.t === 'cased' && o.c === 15.08)).concat([
+    {t:'cased', ax:'v', c:18.33, s:13.7, e:16.3, room:'store'},
+    {t:'door', ax:'v', c:15.5, s:8.4, e:10.95, hinge:'e', swing:1, room:'bed'},
+    {t:'door', ax:'h', c:8, s:11.8, e:14.1, hinge:'s', swing:-1, room:'wet'},
+    {t:'bypass', ax:'h', c:15.5, s:11.7, e:14.9, room:'store'} ]).filter((o, i, a) => !(o.t === 'bypass' && a.findIndex(p => p.t === 'bypass') !== i));
+  const WALKIN_BED2_FURN = [[2.0,8.4,4.9,11.4,'king bed'],[0.7,1.8,10.3,11.4,''],[8.6,9.5,10.3,11.4,''],[8.6,10.4,0.6,2.4,'chair'],
+    [18.3,24.9,5.0,10.0,'queen bed'],[24.0,24.9,4.0,4.9,''],[24.0,24.9,10.1,11.0,''],[22.5,24.95,0.1,2.0,'desk'],[23.2,24.2,2.2,3.2,'']];
   const OPEN_LOUNGE_FURN = [[0.5,2.5,15.2,19.2,'desk'],[4.2,6.2,17.0,19.0,'chair'],[8.4,10.4,17.0,19.0,'chair'],
     [-0.9,7.1,32.2,35.0,'sofa'],[1.5,4.5,35.7,37.1,'table'],[7.8,9.8,34.3,36.3,'chair'],[-4.15,-2.85,31.2,38.2,'window seat']];
   const OPEN_SUITE_FURN = [[2.2,8.6,4.9,11.4,'king bed'],[0.9,2.0,10.3,11.4,''],[8.8,9.9,10.3,11.4,''],[0.5,2.5,0.6,2.6,'chair']];
@@ -1009,18 +1037,18 @@ td:first-child{font-weight:600;min-width:150px}
     [19.65,20.65,18.3,19.0,''],[19.65,20.65,26.2,26.9,'']];
 
   function drawOpenE(cfg){
-    const v = cfg.variant, gKit = v === 'J', kStay = v !== 'E' && !gKit, twoBed = 'GHJ'.includes(v), refined = v === 'H', mode = cfg.mode || 'stair', gk = !!cfg.garageKept;
+    const v = cfg.variant, wi = !!cfg.bigPantry, gKit = v === 'J', kStay = v !== 'E' && !gKit, twoBed = 'GHJ'.includes(v), refined = v === 'H', mode = cfg.mode || 'stair', gk = !!cfg.garageKept;
     let s = DEFS;
     s += `<rect class="porch" x="${n(X(0))}" y="${n(Y(28.75))}" width="4.25" height="${n(28.75 - 21.8)}"/>` + vtext(-2.1, 25.3, 'covered porch');
     s += `<rect class="porch" x="${n(X(30.3))}" y="${n(Y(28.45))}" width="${n(30.3 - 25.25)}" height="${n(28.45 - 17.0)}"/>` + tiny(27.8, 22.7, 'deck');
-    (twoBed ? [[0, 11.5, 0, 11.5, 'bed'], [15.5, 25, 0, 11.5, 'bed'], [11.5, 15.5, 8, 11.5, 'living']] : [[0, 17.5, 0, 11.5, 'bed'], [17.5, 25, 0, 11.5, 'wet']])
+    (wi ? [[0, 11.5, 0, 11.5, 'bed'], [16.5, 25, 0, 11.5, 'bed'], [15.5, 16.5, 8, 11.5, 'bed'], [11.5, 15.5, 8, 11.5, 'living']] : twoBed ? [[0, 11.5, 0, 11.5, 'bed'], [15.5, 25, 0, 11.5, 'bed'], [11.5, 15.5, 8, 11.5, 'living']] : [[0, 17.5, 0, 11.5, 'bed'], [17.5, 25, 0, 11.5, 'wet']])
       .forEach(([x0, x1, y0, y1, t]) => { s += `<polygon class="rm ${t}" points="${pts([[x0,y0],[x1,y0],[x1,y1],[x0,y1]])}"/>`; });
     const rooms = [
-      twoBed ? {type:'wet', g:{x:11.5,y:0,w:4,h:8}} : {type:'wet', g:{x:22.0,y:7.0,w:3.0,h:4.5}},
+      wi ? {type:'wet', g:{x:11.5,y:0,w:5,h:8}} : twoBed ? {type:'wet', g:{x:11.5,y:0,w:4,h:8}} : {type:'wet', g:{x:22.0,y:7.0,w:3.0,h:4.5}},
       {type:'living', poly:[[0,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,15.5],[11.5,15.5],[11.5,28.75],[0,28.75]]},
       {type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}},
       gk ? {type:'living', g:{x:15.08,y:28.75,w:15.5,h:11.75}} : {type:'living', g:{x:-4.25,y:28.75,w:34.83,h:11.75}},
-      {type:'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}},
+      {type: wi ? 'store' : 'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}},
       {type:'store', g:{x:11.5,y:15.5,w:3.58,h:3.17}},
       {type:'circ', g:{x:11.5,y:18.67,w:3.58,h:7.33}},
       {type:'circ', g:{x:11.5,y:26,w:3.58,h:2.75}}
@@ -1028,14 +1056,16 @@ td:first-child{font-weight:600;min-width:150px}
     if (gk) rooms.push({type:'garage', g:{x:-4.25,y:28.75,w:19.33,h:11.75}});
     rooms.forEach(r => { s += `<polygon class="rm ${r.type}" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
     [rooms[0], rooms[4], rooms[5]].concat(gk ? [rooms[rooms.length - 1]] : []).forEach(r => { s += `<polygon class="wall" points="${pts(rectPoly(r.g))}"/>`; });
-    if (twoBed) [[0, 11.5], [15.5, 25]].forEach(([x0, x1]) => { s += `<polygon class="wall" points="${pts([[x0,0],[x1,0],[x1,11.5],[x0,11.5]])}"/>`; });
+    if (wi) [[[0,0],[11.5,0],[11.5,11.5],[0,11.5]], [[16.5,0],[25,0],[25,11.5],[15.5,11.5],[15.5,8],[16.5,8]]].forEach(P => { s += `<polygon class="wall" points="${pts(P)}"/>`; });
+    else if (twoBed) [[0, 11.5], [15.5, 25]].forEach(([x0, x1]) => { s += `<polygon class="wall" points="${pts([[x0,0],[x1,0],[x1,11.5],[x0,11.5]])}"/>`; });
     else s += `<polygon class="wall" points="${pts([[0,0],[25,0],[25,11.5],[0,11.5]])}"/>`;
 
     if (mode !== 'floor') for (let i = 1; i < 9; i++){ const y = 18.67 + i*7.33/9; s += line([11.5,y],[15.08,y],'tread'); }
     if (mode === 'stair') s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
     DREAM_GLASS.forEach(([a,b]) => { if (!kStay || a[0] === 11.5) s += line(a, b, 'glassrail'); });
     if (refined) s += line([15.08,18.67],[15.08,20.6],'glassrail');
-    (gKit ? OPEN_J_REMOVED : twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).filter(([a, b]) => !(gk && (a[1] === 28.75 && b[1] === 28.75 || a[0] === 15.08 && a[1] === 28.75))).forEach(([a,b]) => { s += line(a, b, 'removed'); });
+    (gKit ? OPEN_J_REMOVED : twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).filter(([a, b]) => !(gk && (a[1] === 28.75 && b[1] === 28.75 || a[0] === 15.08 && a[1] === 28.75))).concat(wi ? [[[15.5,0],[15.5,8]]] : []).forEach(([a,b]) => { s += line(a, b, 'removed'); });
+    if (wi) s += line([16.5,0],[16.5,8],'added') + line([15.5,8],[16.5,8],'added');
     if (!twoBed) s += line([11.5,11.5],[15.5,11.5],'added') + line([22.0,7.0],[22.0,11.5],'added') + line([22.0,7.0],[25,7.0],'added');
 
     if (gKit) s += tiny(6.0, 29.9, 'floor raised to house level');
@@ -1099,12 +1129,20 @@ td:first-child{font-weight:600;min-width:150px}
     } else {
       // two bedrooms; wardrobes replace the closets, and the space between the bedrooms becomes the primary bath
       s += rectF(0.3, 6.8, 0.05, 2.0, 'fix-new') + tiny(3.55, 1.0, 'wardrobes');
+      if (wi){
+        // the shared bath, 5 x 8 ft, with a tub; bedroom 2's wardrobes move a foot west
+        s += rectF(16.55, 18.5, 0.1, 4.6, 'fix-new') + vtext(17.5, 2.35, 'wardrobes');
+        s += rectF(11.55, 16.45, 0.05, 2.55, 'fix-new') + `<rect class="fix2" x="${n(X(16.15))}" y="${n(Y(2.25))}" width="4.3" height="1.9" rx=".5"/>` + tiny(12.9, 1.4, 'tub');
+        s += rectF(16.05, 16.45, 3.25, 4.55, 'fix-new') + ellF(15.45, 3.9, 0.6, 0.5, 'fix-new');
+        s += rectF(14.85, 16.45, 5.0, 7.6, 'fix-new') + ellF(15.65, 6.3, 0.35, 0.5, 'fix2');
+      } else {
       s += rectF(15.55, 17.5, 0.2, 7.6, 'fix-new') + vtext(16.5, 3.9, 'wardrobes');
       s += rectF(11.55, 15.45, 0.05, 3.0, 'fix-new') + tiny(13.5, 1.5, 'shower');
       s += rectF(13.9, 15.45, 3.2, 5.0, 'fix-new') + ellF(14.65, 4.1, 0.45, 0.32, 'fix2');
       s += rectF(12.35, 13.65, 7.55, 7.95, 'fix-new') + ellF(13.0, 6.85, 0.5, 0.6, 'fix-new');
+      }
     }
-    if (!refined) s += rectF(11.7, 14.0, 16.2, 18.55, 'fix') + tiny(12.85, 17.4, 'W/D') + rectF(14.05, 14.95, 17.2, 18.55, 'fix');
+    if (!refined || wi) s += rectF(11.7, 14.0, 16.2, 18.55, 'fix') + tiny(12.85, 17.4, 'W/D') + rectF(14.05, 14.95, 17.2, 18.55, 'fix');
     else s += rectF(11.55, 12.5, 15.55, 18.62, 'fix') + rectF(12.5, 15.03, 17.75, 18.62, 'fix') + rectF(12.5, 15.03, 15.55, 16.3, 'fix');
     // the stairwell's three settings
     if (refined){
@@ -1117,23 +1155,30 @@ td:first-child{font-weight:600;min-width:150px}
         [21.6, 23.3, 25.0].forEach(y => { s += circF(12.55, y, 0.45, 'furn'); });
       }
     }
+    if (!wi){
     s += rectF(22.5, 24.85, 11.65, 16.27, 'fix') + tiny(23.7, 13.9, 'shower');
     s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
     s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
+    } else {
+      // the walk-in pantry: shelves on two walls and a counter for small appliances on the third
+      s += rectF(18.4, 24.95, 11.55, 12.75, 'fix-new') + rectF(19.7, 23.75, 15.35, 16.37, 'fix-new') + rectF(23.75, 24.95, 12.75, 16.37, 'fix-new');
+      s += tiny(21.5, 12.15, 'shelves') + tiny(21.7, 15.85, 'shelves') + vtext(24.35, 14.55, 'counter');
+    }
 
-    s += furnSvg([(gk ? GARAGE_LIVING_FURN : gKit ? OPEN_LOUNGE_FURN.slice(0, 3).concat(FAMILY_J_FURN) : OPEN_LOUNGE_FURN).concat(twoBed ? TWO_BED_FURN : OPEN_SUITE_FURN, (kStay || gKit) ? BUMP_DINING_FURN : OLD_KITCHEN_DINING_FURN)]);
+    s += furnSvg([(gk ? GARAGE_LIVING_FURN : gKit ? OPEN_LOUNGE_FURN.slice(0, 3).concat(FAMILY_J_FURN) : OPEN_LOUNGE_FURN).concat(wi ? WALKIN_BED2_FURN : twoBed ? TWO_BED_FURN : OPEN_SUITE_FURN, (kStay || gKit) ? BUMP_DINING_FURN : OLD_KITCHEN_DINING_FURN)]);
     s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
-    s += openingsSvg(gKit ? OPEN_J_OPENINGS : gk ? OPEN_H_GARAGE_OPENINGS : refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
+    s += openingsSvg(wi ? WALKIN_OPENINGS(gk ? OPEN_H_GARAGE_OPENINGS : OPEN_H_OPENINGS) : gKit ? OPEN_J_OPENINGS : gk ? OPEN_H_GARAGE_OPENINGS : refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
     if (cfg.route) s += `<polyline class="flow" points="${pts(cfg.route)}" marker-end="url(#ah)"/>`;
-    const L = (gk ? [[5.75,24.3,'LIVING ROOM','t-name'],[4.0,39.4,'GARAGE','t-name']] : gKit ? [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[5.0,36.6,'KITCHEN','t-name'],[24.8,39.4,'DINING','t-name'],[20.6,26.9,'FAMILY ROOM','t-name']] : [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[4.4,38.0,'LIVING ROOM','t-name']]).concat([[21.65,13.25,'BATH','t-small'],[16.0,13.6,'HALL','t-fix']]);
-    if (twoBed) L.push([5.75,3.4,'PRIMARY BEDROOM','t-name'],[20.8,4.2,'BEDROOM 2','t-name'],[12.7,4.3,'BATH','t-small']);
+    const L = (gk ? [[5.75,24.3,'LIVING ROOM','t-name'],[4.0,39.4,'GARAGE','t-name']] : gKit ? [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[5.0,36.6,'KITCHEN','t-name'],[24.8,39.4,'DINING','t-name'],[20.6,26.9,'FAMILY ROOM','t-name']] : [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[4.4,38.0,'LIVING ROOM','t-name']]).concat([wi ? [21.6,14.1,'WALK-IN PANTRY','t-small'] : [21.65,13.25,'BATH','t-small'],[16.0,13.6,'HALL','t-fix']]);
+    if (wi) L.push([5.75,3.4,'PRIMARY BEDROOM','t-name'],[20.6,3.6,'BEDROOM 2','t-name'],[13.2,4.9,'BATH','t-small']);
+    else if (twoBed) L.push([5.75,3.4,'PRIMARY BEDROOM','t-name'],[20.8,4.2,'BEDROOM 2','t-name'],[12.7,4.3,'BATH','t-small']);
     else L.push([5.75,2.75,'PRIMARY SUITE','t-name'],[19.6,6.4,'OPEN BATH','t-small'],[14.5,3.3,'DRESSING','t-small']);
-    if (refined) L.push([13.75,17.05,'PANTRY','t-fix']);
+    if (refined && !wi) L.push([13.75,17.05,'PANTRY','t-fix']);
     if (gKit) {}
     else if (kStay) L.push([20.0,25.2,'KITCHEN','t-name'],[24.8,39.4,'DINING','t-name']);
     else L.push([22.5,36.75,'KITCHEN','t-name'],[20.15,17.55,'DINING','t-name']);
     L.forEach(([x, y, t, c]) => { s += text(x, y, t, c, 'pointer-events="none"'); });
-    finish(s, cfg, {route: true, furn: true, glass: true, half: false, changed: kStay || gKit, remove: true, add: !twoBed, leaf: refined, floorp: refined && mode === 'floor', stored: refined && mode !== 'floor'});
+    finish(s, cfg, {route: true, furn: true, glass: true, half: false, changed: kStay || gKit, remove: true, add: !twoBed || wi, leaf: refined, floorp: refined && mode === 'floor', stored: refined && mode !== 'floor'});
   }
 
   function drawDream(cfg){
@@ -1291,7 +1336,7 @@ td:first-child{font-weight:600;min-width:150px}
     if (len) route = `<div class="route"><b>≈ ${len} ft</b><span>walk from the front door to the deck slider${len < base ? `, about ${base - len} ft shorter than today` : ''}.</span></div>`;
     const sec = (h, t) => t ? `<h3>${h}</h3><p>${esc(t)}</p>` : '';
     const segRow = (label, list, title) => `<div class="segrow">${title ? `<span>${esc(title)}</span>` : ''}<div class="seg" role="group" aria-label="${esc(label)}">${list.map(([k, l]) => `<button type="button" data-state="${k}" aria-pressed="${k === cfg.key}">${esc(l)}</button>`).join('')}</div></div>`;
-    const seg = (cfg.toggle ? segRow(cfg.toggleLabel || 'Lid position', cfg.toggle, cfg.toggle2 ? 'Stairwell' : '') : '') + (cfg.toggle2 ? segRow(cfg.toggle2Label, cfg.toggle2, cfg.toggle2Label) : '');
+    const seg = (cfg.toggle ? segRow(cfg.toggleLabel || 'Lid position', cfg.toggle, cfg.toggle2 ? 'Stairwell' : '') : '') + (cfg.toggle2 ? segRow(cfg.toggle2Label, cfg.toggle2, cfg.toggle2Label) : '') + (cfg.toggle3 ? segRow(cfg.toggle3Label, cfg.toggle3, cfg.toggle3Label) : '');
     const stepsHead = cfg.stepsHead || (cfg.key === 'today' ? 'What holds it back' : cfg.island === 'open' ? 'With the lid open' : 'What changes');
     document.getElementById('card').innerHTML =
       `<div class="tag">${esc(cfg.tag)}</div><h2>${cfg.no ? cfg.no + ' · ' : ''}${esc(cfg.title)}</h2><p class="pitch">${esc(cfg.pitch)}</p>` + seg +

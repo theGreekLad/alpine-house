@@ -416,7 +416,7 @@ Concept 11 with two bedrooms on the main floor instead of one open suite. The be
 
 *Your idea: Dream 7 with a clear way into the kitchen and a stairwell that changes.*
 
-**See it in 3D:** [Dream 7 refined](../../renderings/2026-11-08-dream-7-refined/), with switches for the three stairwell settings and for the garage.
+**See it in 3D:** [Dream 7 refined](../../renderings/2026-11-08-dream-7-refined/), with switches for the three stairwell settings, the garage and the pantry.
 
 Dream 7 with the kitchen and the stair refined. The island is shorter and starts further from the bedroom hall, so the way into the kitchen is clear. The old pantry is a pantry again. And the stairwell has three settings: a stair, a big work table, or extra floor.
 
@@ -470,6 +470,20 @@ The page also has a **Garage** switch: living room (as above) or garage. Every s
 - **Walls:** about 27 ft comes out instead of 54, since the garage walls stay. About 9 ft turns into glass, and no new walls go in.
 - **Trade-off:** you keep the garage but lose the big sunken living room. The living room is the front room, about 11½ × 17 ft.
 - **Rough cost:** less than converting the garage. Finishing it runs from a few thousand dollars up to [This Old House's](https://www.thisoldhouse.com/garages/garage-remodel-cost) mid-range $14,000–28,000 for a typical two-car garage, against about $10,000–52,000 for most [garage conversions](https://www.thisoldhouse.com/garages/garage-conversion-cost).
+
+**With a walk-in pantry**
+
+A third switch, **Pantry**, trades a bathroom for a much bigger pantry. Every stairwell and garage setting works with either pantry.
+
+![Concept 13 with the walk-in pantry](13-dream-7-refined-walk-in-pantry.png)
+
+- **Walk-in pantry:** the hall bath becomes a pantry of about 33 sq ft, three times the reach-in one. It has shelves on two walls, a counter for small appliances and its own window. It opens off the short hall, a step from the kitchen.
+- **Laundry:** the old pantry goes back to being the laundry cupboard.
+- **One shared bath:** the bath between the bedrooms grows a foot into bedroom 2, to a 5 × 8 ft bath with a tub. It becomes the main bath, with doors from the hall and from the primary bedroom.
+- **Bedroom 2:** it gives up about 8 sq ft, and its bed moves to the west wall.
+- **Walls:** about 62 ft comes out with the garage as living space, or about 35 ft with the garage kept. About 9 ft of new wall goes in for the wider bath.
+- **Trade-off:** one bathroom on the main floor instead of two, shared by both bedrooms and guests, and the primary bedroom no longer has a bath of its own. The basement already has a plumbing rough-in for a second bath.
+- **Rough cost:** about the same as the reach-in version. The hall bath's plumbing is capped rather than redone, and the middle bath is a little bigger.
 
 ## 14 · Garage kitchen
 
