@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Ten ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Twelve ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -340,13 +340,83 @@ Concept 8's fewer walls, but the garage no longer has to be a garage. It becomes
 - **Variations:**
   - **A door to close:** glass sliding doors along the top of the steps, so the library can close off as a study or guest room.
   - **Somewhere to park:** a detached garage or carport, if the lot and the city allow it.
-  - **Kitchen stays:** concept 9's kitchen also works here, with the bump-out as the dining room.
+  - **Kitchen stays:** concept 11 keeps the kitchen where it is, with the bump-out as the dining room.
+
+## 11 · Kitchen stays, garage converted
+
+*Budget no object · fewer walls · the garage becomes living space · the kitchen stays where it is.*
+
+![Concept 11](11-kitchen-stays-no-garage.png)
+
+**See it in 3D:** [Dreams 6 and 7](../../renderings/2026-11-08-dream-plans-6-and-7/).
+
+Concept 10, but the kitchen stays where it is, opened up around a big new window over the sink as in concept 9. The garage still becomes the sunken living room, the front room is still the library, and the bump-out by the deck becomes a big dining room.
+
+1. **Kitchen in place.** A U, as in concept 9:
+   - the sink under a new window about 6 ft wide;
+   - a fridge and a pull-out pantry on the south wall, beside the short hall, which stays open;
+   - a cooktop counter along the stair;
+   - a breakfast bar facing the dining room.
+2. **Dining room.** The bump-out gets a table for ten under the north windows, with the slider to the deck at the end.
+3. **Drinks bar.** A low drinks bar and buffet stands where the garage wall was. It serves the dining room and the living room and keeps the view open between them.
+4. **Living room.** The garage becomes the living room, as in concept 10: three steps down, a vaulted ceiling, a window seat where the garage door was, and a fireplace between two windows.
+5. **Wide steps.** They wrap the south and west sides of the living room.
+6. **Library.** The front room, with books along the south wall and a desk at the picture window.
+7. **Entry.** The front door stays in the notch, under a covered porch, with a coat cabinet beside it.
+8. **Stair.** Glass on the library side. On the kitchen side, the cooktop counter is the guard, so whoever is cooking faces the library.
+9. **Suite, hall and laundry.** The open suite, open hall and laundry cupboard from concept 8.
+
+- **Walls:** about 80 ft of interior wall comes out: concept 10's 73 ft plus the kitchen's half wall to the stair, which becomes the cooktop counter. Another 7 ft turns into glass, and only about 12 ft of new wall goes in.
+- **How it feels:** the kitchen stays at the center of the house: the library across the stair, the dining room and the deck beside it, and the living room a few steps down.
+- **Trade-offs:**
+  - It's a working U rather than an island kitchen, and the pantry is a pull-out beside the fridge.
+  - The kitchen sees the living room only across the dining room or the landing, not straight on as in concept 10.
+  - There's still no garage.
+- **Checks first:** the same as concept 10, plus a header for the new kitchen window.
+- **Build notes:** keeping the kitchen in place keeps the sink, power and gas close to where they are now. The cooktop counter needs a downdraft vent ducted through the basement.
+- **Rough cost:** less than concept 10, because the kitchen's plumbing stays close to where it is. It's still a whole-floor renovation plus a garage conversion.
+- **Variations:**
+  - **Two bedrooms:** concept 12.
+  - **A family room:** a sofa and a TV in the bump-out with a smaller table, keeping the old garage as the quieter living room.
+
+## 12 · Kitchen stays, two bedrooms
+
+*Budget no object · fewer walls · the garage becomes living space · the kitchen stays · two bedrooms on the main floor.*
+
+![Concept 12](12-kitchen-stays-two-bedrooms.png)
+
+**See it in 3D:** [Dreams 6 and 7](../../renderings/2026-11-08-dream-plans-6-and-7/).
+
+Concept 11 with two bedrooms on the main floor instead of one open suite. The bedrooms keep the walls they have now, and the closets, linen closet and flue chase between them become a small bathroom for the primary bedroom. Everywhere else, the walls that aren't needed come out.
+
+1. **Primary bedroom.** The green room. Wardrobes along the south wall replace its closet, and a pocket door in the west wall opens to its own bathroom.
+2. **Primary bath.** The closets, the linen closet and the flue chase between the bedrooms become a bath about 4 × 8 ft, about the size of today's hall bath. It has a shower across the south end, a vanity and a toilet.
+3. **Bedroom 2.** It keeps its size, with wardrobes on the east wall, room for a queen bed, and a desk under the west window. It shares the hall bath with guests.
+4. **Hall.** It stays open to the library, and the laundry is a cupboard. Both bedroom doors open off a small nook at the end of the hall.
+5. **Kitchen.** In its current spot around the new window, as in concept 11.
+6. **Dining room.** In the bump-out, with the drinks bar and buffet on the old garage wall line.
+7. **Living room.** The sunken living room in the old garage, with wide steps on two sides.
+8. **Library and entry.** The front room, with the front door under a covered porch.
+
+- **Walls:** about 54 ft of interior wall comes out: the closets, linen closet and flue chase between the bedrooms, the hall wall, the landing wall, the garage walls and the kitchen's half wall. Another 7 ft turns into glass. No new walls go in, because both bedrooms keep the walls they have now.
+- **How it feels:** the bedrooms stay private rooms with doors at the end of an open hall. Everything else is one connected space.
+- **Trade-offs:**
+  - The primary bath is small, with a shower rather than a tub.
+  - The closets become wardrobes inside the rooms.
+  - Bedroom 2 and guests share the hall bath.
+  - There's still no garage.
+- **Checks first:** the primary bath only fits once the flue chase is gone, so the furnace and water heater need to be direct-vent units or a heat pump (concept 4). Otherwise the same as concept 11.
+- **Build notes:** the new bath's drains and supply run down to the unfinished basement, next to the hall bath's. Use a quiet exhaust fan on a humidity sensor.
+- **Rough cost:** about the same as concept 11. Keeping the bedroom walls saves framing and finishing, but the new bathroom adds plumbing, tile and fixtures.
+- **Variations:**
+  - **A bigger primary bath:** take 2–3 ft from bedroom 2 for a roomier bath with a tub. Bedroom 2 would drop to about 7 × 11½ ft.
+  - **Kitchen by the deck:** concept 10's kitchen also works with two bedrooms.
 
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
-- **Or go all in:** the dream plans (6 to 10) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
+- **Or go all in:** the dream plans (6 to 12) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look
