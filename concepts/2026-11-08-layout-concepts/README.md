@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Fourteen ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Fifteen ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -519,11 +519,43 @@ Dream 7 refined, but the garage becomes the kitchen. Its floor comes up to the l
   - **A front kitchen garden:** a planted courtyard with a low wall in front of the sink window.
   - **The stairwell settings:** concept 13's fold-down floor still works here; the table leaf needs an island beside the stair, so it doesn't.
 
+## 15 · Dream 9: the big pantry
+
+*Your idea: Dream 7 refined, reworked to make room for a big pantry. Built on concept 13.*
+
+![Concept 15](15-dream-9-big-pantry.png)
+
+**See it in 3D:** [Dream 9, the big pantry](../../renderings/2026-11-09-dream-9-big-pantry/).
+
+Dream 7 refined, with the bedroom end reworked around a big working pantry. The pantry takes the hall bath and the north end of bedroom 2: about 56 sq ft, with a prep sink, shelves on three walls and the laundry. The bath between the bedrooms grows into the shared full bath, the old pantry becomes a powder room, and both bedrooms get a little smaller.
+
+1. **Pantry.** The hall bath and the north 3½ ft of bedroom 2 become a working pantry of about 56 sq ft, five times the old one. It opens off the hall, a step from the kitchen.
+2. **Counter and prep sink.** A counter runs the length of the west wall, with a prep sink under the window and room for the small appliances.
+3. **Laundry.** The washer and dryer stack in a closet in the corner, so the laundry stays on the main floor.
+4. **Shared bath.** The bath between the bedrooms grows a foot into the primary bedroom, to 5 × 8 ft with a tub. It has a door from the hall and a pocket door from the primary bedroom.
+5. **Bedroom 2.** About 9½ × 8 ft: a full bed against the west wall, wardrobes, and a desk under the window. Its door moves to the new short hall.
+6. **Powder room.** The old pantry and a foot of the hall become a powder room for guests, leaving a 3 ft way through from the library to the bedrooms.
+7. **Primary bedroom.** A foot narrower, about 10½ × 11½ ft, with its king bed and wardrobes.
+8. **Kitchen and stairwell.** The same as concept 13, including the stairwell's three settings (the switch on the interactive page).
+
+- **Walls:** about 77 ft of interior wall comes out, including the closets between the bedrooms, the walls around bedroom 2 and the hall bath, and the garage walls. About 27 ft of new wall goes in for the pantry, the short hall, the shared bath and the powder room. About 9 ft turns into glass at the stair.
+- **How it feels:** groceries go from the front door through the library and straight into the pantry, a step from the kitchen. Small appliances, bulk food and the laundry live behind one opening, so the kitchen counters stay clear. The bedrooms have a short hall of their own, with a powder room out front for guests.
+- **Trade-offs:**
+  - Bedroom 2 drops from about 109 to 76 sq ft: room for a full bed, wardrobes and a desk, but not a queen.
+  - The primary bedroom is a foot narrower and loses its own bath, so the main floor has one full bath plus a powder room.
+  - The laundry shares the pantry, and the stair is still closed while the table or the floor is in use.
+- **Checks first:** that bedroom 2 meets your city's minimums (usually 70 sq ft and 7 ft in any direction); that the prep sink and washer can reuse the hall bath's lines and the powder room can tie into the stack; and concept 13's checks.
+- **Rough cost:** about the same as concept 13. You skip the hall bath remodel (its surround is failing anyway) and add a powder room and a pantry sink, which roughly balance. The stairwell panels still add roughly $4,000–12,000 (my guess).
+- **Variations:**
+  - **Keep a queen in bedroom 2:** take 2 ft from bedroom 2 instead of 3½. The pantry shrinks to about 43 sq ft, and bedroom 2 stays about 9½ × 9½ ft.
+  - **Laundry downstairs:** the pantry gets its whole southeast corner back for a tall fridge or freezer.
+  - **Keep the garage:** concept 13's garage switch works here too; the bedroom end doesn't change.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
-- **Or go all in:** the dream plans (6 to 14) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
+- **Or go all in:** the dream plans (6 to 15) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look
