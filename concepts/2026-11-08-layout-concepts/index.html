@@ -120,6 +120,11 @@ td:first-child{font-weight:600;min-width:150px}
 #plan .hinge{stroke:var(--accent);stroke-width:.18}
 #plan .lidup{stroke:var(--accent);stroke-width:.34}
 #plan .t-lid{font-weight:600;font-size:.5px;fill:var(--accent)}
+#plan .glassrail{stroke:var(--glass);stroke-width:.22}
+#plan .pocketline{stroke:var(--line);stroke-width:.06;stroke-dasharray:.2 .12}
+#plan .stepline{stroke:var(--line);stroke-width:.06}
+#plan .rod{stroke:var(--line);stroke-width:.05;stroke-dasharray:.25 .15}
+#plan .porch{fill:none;stroke:var(--muted);stroke-width:.07;stroke-dasharray:.3 .2}
 #plan .co{fill:var(--accent)} #plan .co.old{fill:var(--warn)} #plan .t-co{font-family:var(--mono);font-size:.62px;font-weight:600;fill:var(--sheet)}
 #plan .compass{fill:none;stroke:var(--line);stroke-width:.07} #plan .compass-n{fill:var(--ink)}
 #plan .sb-dark{fill:var(--ink)} #plan .sb-light{fill:var(--sheet);stroke:var(--ink);stroke-width:.05}
@@ -147,6 +152,7 @@ td:first-child{font-weight:600;min-width:150px}
         <span data-lg="changed"><svg width="14" height="14"><rect x="1" y="1" width="12" height="12" fill="var(--accent-soft)" stroke="var(--accent)"/></svg>Changed space or fixture</span>
         <span data-lg="lid"><svg width="26" height="12"><rect x="1" y="1" width="24" height="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="3 2"/><line x1="1" y1="1" x2="1" y2="11" stroke="var(--accent)" stroke-width="3"/></svg>Lift-up lid and hinge</span>
         <span data-lg="lidup"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--accent)" stroke-width="5"/></svg>Lid standing up</span>
+        <span data-lg="glass"><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="var(--glass)" stroke-width="4"/></svg>Glass guard</span>
         <span data-lg="furn"><svg width="22" height="10"><rect x="1" y="1" width="20" height="8" fill="none" stroke="var(--furn)" stroke-dasharray="3 2"/></svg>Furniture</span>
       </div>
     </section>
@@ -164,10 +170,11 @@ td:first-child{font-weight:600;min-width:150px}
           <tr><td>3 · Bigger bath, longer kitchen</td><td>Closes the short hall. The bath grows into it and the kitchen counter runs the full width. Needs concept 2.</td><td>Bath goes from 33 to about 47 sq ft, and the kitchen gets about 3 ft more counter.</td><td>No direct hall route from the bedrooms to the kitchen.</td><td>Small bath remodel about $8,000–18,000, plus kitchen cabinets.</td></tr>
           <tr><td>4 · Reclaim the flue chase</td><td>Removes the flue chase once the furnace and water heater vent through a basement wall.</td><td>Laundry by the bedrooms, or a real closet in bedroom 2.</td><td>Depends on replacing the furnace and water heater.</td><td>Depends on the equipment. Best timed for when it's due.</td></tr>
           <tr><td>5 · Secret stair</td><td>The front room side of the stairwell comes down, and a counter-height island with a lift-up lid covers the stairs. Builds on concept 2, and the panel moves.</td><td>No stairwell in the middle of the house: a 35 sq ft island you can see across, joining the living room and kitchen.</td><td>The lid has to be cleared to go downstairs. Custom build, and the inspector has to agree.</td><td>Concept 2's costs plus roughly $5,000–15,000 for the island and lid (my guess).</td></tr>
+          <tr><td>6 · Dream plan</td><td>Everything inside: the garage becomes a sunken living room, the kitchen moves to the deck side, the stair opens up behind glass, and the south bedrooms become one primary suite.</td><td>One loop of living spaces around a bright, open stair, plus a real foyer and a primary suite.</td><td>No garage, and one bedroom plus an office on the main floor, so it leans on a finished basement.</td><td>A whole-floor gut renovation plus structural work: likely well into six figures.</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="small">Costs are national ranges for rough comparison, not quotes: removing a load-bearing wall from <a href="https://homeguide.com/costs/cost-to-remove-a-wall">HomeGuide</a>, wood stair railing at $20–60 per linear foot from <a href="https://homeguide.com/costs/cost-to-install-stair-railings-and-balusters">HomeGuide</a>, a mid-range small bathroom remodel from <a href="https://www.thisoldhouse.com/bathrooms/small-bathroom-remodel-cost">This Old House</a>, moving an electrical panel (about $2,400–4,800) from <a href="https://contractorplus.app/resources/construction-costs/relocate-electrical-panel/boise-id">ContractorPlus</a>, rerouting ductwork from <a href="https://angi.com/articles/cost-to-reroute-air-ducts.htm">Angi</a>, solar tubes from <a href="https://angi.com/articles/how-much-solar-tubes-cost.htm">Angi</a>, and hidden bookcase doors from <a href="https://murphydoor.com/blogs/posts/how-much-does-a-hidden-door-cost">Murphy Door</a>. The secret-stair build notes draw on a <a href="https://www.progressiveautomations.com/en-se/blogs/stories/stairwell-conversion-into-a-pantry-with-a-hidden-door-entrance">DIY stair hatch</a> and a <a href="https://www.dwell.com/article/how-they-pulled-it-off-a-secret-stair-hatch-that-seals-off-the-living-space-6955a961">hydraulic stair hatch in Dwell</a>.</p>
+    <p class="small">Costs are national ranges for rough comparison, not quotes: removing a load-bearing wall from <a href="https://homeguide.com/costs/cost-to-remove-a-wall">HomeGuide</a>, wood stair railing at $20–60 per linear foot from <a href="https://homeguide.com/costs/cost-to-install-stair-railings-and-balusters">HomeGuide</a>, a mid-range small bathroom remodel from <a href="https://www.thisoldhouse.com/bathrooms/small-bathroom-remodel-cost">This Old House</a>, moving an electrical panel (about $2,400–4,800) from <a href="https://contractorplus.app/resources/construction-costs/relocate-electrical-panel/boise-id">ContractorPlus</a>, rerouting ductwork from <a href="https://angi.com/articles/cost-to-reroute-air-ducts.htm">Angi</a>, solar tubes from <a href="https://angi.com/articles/how-much-solar-tubes-cost.htm">Angi</a>, and hidden bookcase doors from <a href="https://murphydoor.com/blogs/posts/how-much-does-a-hidden-door-cost">Murphy Door</a>. For the dream plan: whole-house remodels from <a href="https://angi.com/articles/how-much-does-it-cost-demo-interior.htm">Angi</a> and garage conversions from <a href="https://www.thisoldhouse.com/garages/garage-conversion-cost">This Old House</a>. The secret-stair build notes draw on a <a href="https://www.progressiveautomations.com/en-se/blogs/stories/stairwell-conversion-into-a-pantry-with-a-hidden-door-entrance">DIY stair hatch</a> and a <a href="https://www.dwell.com/article/how-they-pulled-it-off-a-secret-stair-hatch-that-seals-off-the-living-space-6955a961">hydraulic stair hatch in Dwell</a>.</p>
   </section>
 
   <section class="sheet compare" aria-labelledby="fit-h">
@@ -175,6 +182,7 @@ td:first-child{font-weight:600;min-width:150px}
     <div class="extras">
       <div><h3>Now</h3><p>Concept 1 costs little and can be undone. Living in the back for a while also tells you how much you really want concept 2.</p></div>
       <div><h3>One project</h3><p>Concepts 2 and 3 share the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath rebuild is already on the list because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.</p></div>
+      <div><h3>Or go all in</h3><p>The dream plan replaces concepts 1–5 rather than adding to them. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
       <div><h3>When it's due</h3><p>Concept 4 waits for the furnace or water heater to need replacing. Ask the HVAC contractor about direct-vent units when you get quotes.</p></div>
     </div>
     <h2 style="margin-top:22px">Also worth a look</h2>
@@ -357,7 +365,190 @@ td:first-child{font-weight:600;min-width:150px}
            [13.29,26.55,'Put switches at the top and bottom of the stairs, battery backup for power cuts, an auto-stop so it can\'t close on anyone, and a manual release that works from below.'],
            [13.9,20.2,'Anything on the lid has to come off first, so treat it as a surface you clear after use.']]}, C5));
 
+  CONCEPTS.push({ key:'dream', no:'6', short:'Dream plan', tag:'Budget no object', title:'Dream plan', dream:true,
+    pitch:'Start over inside the same exterior walls. Living, kitchen and dining wrap around an open stair, the garage becomes a sunken living room, and the two south bedrooms become one primary suite. Kids, guests and a family room go downstairs.',
+    route:[[0.9,26.9],[6.0,27.4],[11.5,27.4],[14.6,27.5],[18.0,29.6],[27.6,29.6],[30.3,31.4]],
+    steps:[[-1.4,37.8,'The garage becomes a sunken living room, three steps down, since its floor is already 1½–2 ft below the house. Its rafters are already open, so it can have a vaulted ceiling. A big window replaces the garage door, with a window seat and a fireplace on the north wall. A raised strip along the kitchen side links the landing to the kitchen.'],
+           [28.3,34.0,'The kitchen moves to the old dining room by the deck: an 8-ft island with four stools, counters under the north windows, a tall wall for the fridge, pantry and ovens, and a wide glass door to the deck.'],
+           [23.6,27.4,'Dining takes the old kitchen spot, with new glass doors in the west wall to a new patio.'],
+           [13.29,22.3,'The stair stays where it is but opens up, with glass guards on both sides and a skylight above, so it becomes the bright center of the house.'],
+           [8.8,24.0,'The north half of the front room becomes a real foyer, with a coat closet, a bench and a view through the glass stair to the patio. A covered porch shelters the front door.'],
+           [9.6,16.4,'The south half of the front room is an office or guest room, with the front window and a sofa bed.'],
+           [16.3,9.6,'The two south bedrooms become one primary suite behind a small vestibule. The green room is the bedroom, a 6′ × 8′ walk-in closet replaces the old closets and flue chase, and bedroom 2 becomes a spa bath with a freestanding tub, a walk-in shower, a double vanity and a toilet nook.'],
+           [16.9,13.9,'The hall bath stays for guests, refreshed with a walk-in shower, and the old pantry becomes a laundry closet beside the bedrooms.']],
+    feel:'You arrive in a real foyer and see straight through the glass stair to the patio. Daily life runs in one loop: down the steps to the fire in the living room, cooking at the island with the deck doors open, eating by the west glass. The bedroom wing sits behind a vestibule, quiet and separate.',
+    tradeoff:'You give up the garage, which matters in Utah winters, and the main floor drops to one bedroom plus an office. It works best with a finished basement, or with the office doubling as a guest room. The kitchen\'s new spot depends on what\'s under the old dining room: easy if the basement reaches that far, harder over a crawlspace or slab.',
+    checks:'Ask your city whether the garage can become living space without adding parking elsewhere, and what the new porch needs. Get an engineer for the beams: the garage–dining wall, the landing and stair walls, and the vaulted ceiling. The garage also needs an insulated floor and walls.',
+    build:'Plumbing for the spa bath, hall bath, laundry and the kitchen\'s new spot can run through the unfinished basement ceiling. Replace the furnace and water heater with direct-vent units or a heat pump, and run new ducts from the basement. That removes the flue chase and the duct in the front room.',
+    cost:'This is a gut renovation of the whole main floor plus structural work. For scale, Angi says most whole-house demolition-and-remodel projects run $100,000–200,000, and This Old House puts most garage conversions at about $10,000–52,000. With glass walls, a vaulted ceiling and custom finishes, expect the top of that range or more. I can build a real budget once you settle on a direction.',
+    altTitle:'Variations',
+    altHtml:'<p><b>Two bedrooms upstairs.</b> Move the office door to the hall and add a closet, and it becomes bedroom 2, next to the hall bath.</p>' +
+            '<p><b>Somewhere to park.</b> A detached two-car garage or a carport off the driveway, if the lot and the city allow it.</p>' +
+            '<p><b>A hidden stair.</b> Concept 5\'s lift-up island works here too, in place of the glass guards.</p>',
+    downstairs:'Finish the basement for the rest of the household: two bedrooms with egress windows, a full bath on the existing plumbing rough-in, a family room and storage. It needs its own measured plan, so that\'s the next thing to draw.' });
+
+  // ---------- shared drawing pieces ----------
+  const DEFS = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern>
+      <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker>
+      <marker id="ah-old" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--warn)"/></marker></defs>`;
+  function openingsSvg(openings){
+    let s = '';
+    const at = (o, u, v) => o.ax === 'v' ? [o.c + v, u] : [u, o.c + v];
+    const band = (o, u0, u1, v0, v1, cls) => { const a = at(o, u0, v0), b = at(o, u1, v1); return RR(a[0], b[0], a[1], b[1], cls); };
+    openings.forEach(o => {
+      const w = o.e - o.s;
+      if (o.t === 'win' || o.t === 'slider'){
+        s += band(o, o.s, o.e, -0.3, 0.3, 'win');
+        s += o.t === 'win' ? line(at(o, o.s, 0), at(o, o.e, 0), 'winline') : line(at(o, o.s, -0.1), at(o, o.s + w*0.55, -0.1), 'winline') + line(at(o, o.e - w*0.55, 0.1), at(o, o.e, 0.1), 'winline');
+        return;
+      }
+      if (o.out) s += band(o, o.s, o.e, o.out*0.32, 0, 'gap-sheet') + band(o, o.s, o.e, 0, -o.out*0.32, 'gap-' + o.room);
+      else s += band(o, o.s, o.e, -0.2, 0.2, 'gap-' + o.room);
+      if (o.t === 'door'){
+        const hu = o.hinge === 's' ? o.s : o.e, ou = o.hinge === 's' ? o.e : o.s;
+        s += line(at(o, hu, 0), at(o, hu, o.swing*w), 'leaf');
+        const ap = []; for (let i = 0; i <= 16; i++){ const t = i/16*Math.PI/2; ap.push(at(o, hu + (ou - hu)*Math.sin(t), o.swing*w*Math.cos(t))); }
+        s += `<polyline class="swing" points="${pts(ap)}"/>`;
+      } else if (o.t === 'bypass'){
+        s += band(o, o.s, o.s + w*0.55, -0.17, -0.04, 'bypass') + band(o, o.e - w*0.55, o.e, 0.04, 0.17, 'bypass');
+      } else if (o.t === 'cased'){
+        s += line(at(o, o.s, -0.3), at(o, o.s, 0.3), 'jamb') + line(at(o, o.e, -0.3), at(o, o.e, 0.3), 'jamb');
+      } else if (o.t === 'pocket'){
+        s += line(at(o, o.s, -0.3), at(o, o.s, 0.3), 'jamb') + line(at(o, o.e, -0.3), at(o, o.e, 0.3), 'jamb') + line(at(o, o.s - w, 0), at(o, o.s + 0.3, 0), 'pocketline');
+      }
+    });
+    return s;
+  }
+  function finish(s, cfg, used){
+    (cfg.steps || []).forEach(([x, y], i) => { s += circF(x, y, 0.5, 'co' + (cfg.old ? ' old' : '')) + `<text x="${n(X(x))}" y="${n(Y(y) + 0.02)}" text-anchor="middle" dominant-baseline="middle" class="t-co">${i + 1}</text>`; });
+    const fx = X(-6.6), fy = Y(14.0);
+    s += `<text x="${n(fx)}" y="${n(fy)}" text-anchor="middle" dominant-baseline="middle" class="t-front" transform="rotate(90 ${n(fx)} ${n(fy)})">FRONT · EAST</text>`;
+    const nc = [X(30.4), Y(5.4)];
+    s += `<circle class="compass" cx="${n(nc[0])}" cy="${n(nc[1])}" r="1.25"/><polygon class="compass-n" points="${n(nc[0])},${n(nc[1]-1.05)} ${n(nc[0]-0.42)},${n(nc[1]+0.65)} ${n(nc[0])},${n(nc[1]+0.3)} ${n(nc[0]+0.42)},${n(nc[1]+0.65)}"/>`;
+    s += `<text x="${n(nc[0])}" y="${n(nc[1]-1.85)}" text-anchor="middle" dominant-baseline="middle" class="t-small">N</text>`;
+    const sbx = X(33), sby = Y(10.4);
+    for (let i = 0; i < 5; i++) s += `<rect class="${i%2?'sb-light':'sb-dark'}" x="${n(sbx+i)}" y="${n(sby)}" width="1" height=".32"/>`;
+    [[0,'0'],[5,'5 ft']].forEach(([o,t]) => { s += `<text x="${n(sbx+o)}" y="${n(sby+0.85)}" text-anchor="middle" dominant-baseline="middle" class="t-tiny">${t}</text>`; });
+    const svg = document.getElementById('plan');
+    svg.setAttribute('viewBox', `-1.6 -1.6 ${n(W + 4.25 + 6.6)} ${n(H + 3.2)}`);
+    svg.innerHTML = s;
+    document.querySelectorAll('.legend [data-lg]').forEach(el => { el.hidden = !used[el.dataset.lg]; });
+  }
+  function furnSvg(sets){
+    let s = '';
+    (sets || []).forEach(set => set.forEach(([x0, x1, y0, y1, lab]) => {
+      s += rectF(x0, x1, y0, y1, 'furn');
+      if (!lab) return;
+      const cx = X((x0 + x1)/2), cy = Y((y0 + y1)/2);
+      const tall = (y1 - y0) > (x1 - x0) && lab.length * 0.25 > (x1 - x0) - 0.2;
+      s += `<text x="${n(cx)}" y="${n(cy)}" text-anchor="middle" dominant-baseline="middle" class="t-furn" pointer-events="none"${tall ? ` transform="rotate(-90 ${n(cx)} ${n(cy)})"` : ''}>${esc(lab)}</text>`;
+    }));
+    return s;
+  }
+  const vtext = (x, y, t, cls) => `<text x="${n(X(x))}" y="${n(Y(y))}" text-anchor="middle" dominant-baseline="middle" class="${cls || 't-fix'}" pointer-events="none" transform="rotate(-90 ${n(X(x))} ${n(Y(y))})">${esc(t)}</text>`;
+
+  // ---------- concept 6: the dream plan (a full redraw inside the same exterior walls) ----------
+  const DREAM_ROOMS = [
+    {id:'bed',    type:'bed',    g:{x:0,y:0,w:11.5,h:12.5}},
+    {id:'wic',    type:'store',  g:{x:11.5,y:0,w:6,h:8}},
+    {id:'vest',   type:'circ',   g:{x:11.5,y:8,w:6,h:3.5}},
+    {id:'ens',    type:'wet',    g:{x:17.5,y:0,w:7.5,h:11.5}},
+    {id:'hall',   type:'circ',   poly:[[11.5,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,15.5],[11.5,15.5]]},
+    {id:'hbath',  type:'wet',    g:{x:18.33,y:11.5,w:6.67,h:4.92}},
+    {id:'laund',  type:'store',  g:{x:11.5,y:15.5,w:3.58,h:3.17}},
+    {id:'stair',  type:'circ',   g:{x:11.5,y:18.67,w:3.58,h:7.33}},
+    {id:'landing',type:'circ',   g:{x:11.5,y:26,w:3.58,h:2.75}},
+    {id:'office', type:'bed',    g:{x:0,y:12.5,w:11.5,h:7.5}},
+    {id:'coats',  type:'store',  g:{x:3,y:20,w:5,h:2}},
+    {id:'foyer',  type:'circ',   poly:[[0,20],[3,20],[3,22],[8,22],[8,20],[11.5,20],[11.5,28.75],[0,28.75]]},
+    {id:'dining', type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}},
+    {id:'kitchen',type:'living', g:{x:15.08,y:28.75,w:15.5,h:11.75}},
+    {id:'living', type:'living', g:{x:-4.25,y:28.75,w:19.33,h:11.75}}
+  ];
+  const DREAM_OPEN = [ [[11.5,26],[11.5,28.75]], [[11.5,28.75],[15.08,28.75]], [[15.08,26],[15.08,28.75]], [[15.08,28.75],[25,28.75]], [[15.08,16.42],[18.33,16.42]], [[15.08,28.75],[15.08,34]] ];
+  const DREAM_GLASS = [ [[11.5,18.67],[11.5,26]], [[15.08,18.67],[15.08,26]] ];
+  const DREAM_OPENINGS = [
+    {t:'door', ax:'v', c:0, s:25.4, e:28.4, hinge:'e', swing:1, room:'circ', out:-1},
+    {t:'door', ax:'h', c:20, s:8.6, e:11.1, hinge:'e', swing:-1, room:'bed'},
+    {t:'bypass', ax:'h', c:22, s:3.2, e:7.8, room:'store'},
+    {t:'cased', ax:'h', c:28.75, s:1.5, e:6.5, room:'living'},
+    {t:'door', ax:'h', c:11.5, s:12.2, e:14.8, hinge:'e', swing:-1, room:'circ'},
+    {t:'door', ax:'v', c:11.5, s:8.4, e:10.95, hinge:'e', swing:-1, room:'bed'},
+    {t:'pocket', ax:'v', c:17.5, s:8.4, e:10.95, room:'wet'},
+    {t:'cased', ax:'h', c:8, s:13.0, e:16.0, room:'store'},
+    {t:'door', ax:'v', c:18.33, s:12.2, e:14.7, hinge:'s', swing:1, room:'wet'},
+    {t:'door', ax:'h', c:15.5, s:12.2, e:14.45, hinge:'e', swing:-1, room:'circ'},
+    {t:'win', ax:'v', c:0, s:3.8, e:7.8}, {t:'win', ax:'h', c:0, s:7.0, e:9.8},
+    {t:'win', ax:'v', c:0, s:13.6, e:18.6},
+    {t:'win', ax:'h', c:0, s:18.2, e:21.2}, {t:'win', ax:'v', c:25, s:1.4, e:4.0},
+    {t:'win', ax:'v', c:25, s:12.9, e:15.1},
+    {t:'slider', ax:'v', c:25, s:19.6, e:25.6},
+    {t:'slider', ax:'v', c:30.58, s:30.0, e:38.2},
+    {t:'win', ax:'h', c:40.5, s:21.6, e:24.1}, {t:'win', ax:'h', c:40.5, s:26.6, e:29.1},
+    {t:'win', ax:'h', c:28.75, s:26.3, e:29.3},
+    {t:'win', ax:'v', c:-4.25, s:30.4, e:38.9},
+    {t:'win', ax:'h', c:40.5, s:-3.0, e:0.2}, {t:'win', ax:'h', c:40.5, s:5.8, e:9.0}
+  ];
+  const DREAM_FURN = [[
+    [2.2,8.6,5.9,12.4,'king bed'],[0.9,2.0,11.3,12.4,''],[8.8,9.9,11.3,12.4,''],[0.5,2.5,0.6,2.6,'chair'],
+    [0.4,2.4,14.0,18.0,'desk'],[4.5,10.5,12.65,15.4,'sofa bed'],[10.55,11.4,12.6,17.2,'shelves'],
+    [0.15,1.45,22.4,25.2,'bench'],
+    [18.4,21.9,19.2,26.0,'table'],[17.5,18.2,19.8,20.8,''],[17.5,18.2,22.1,23.1,''],[17.5,18.2,24.4,25.4,''],[22.1,22.8,19.8,20.8,''],[22.1,22.8,22.1,23.1,''],[22.1,22.8,24.4,25.4,''],
+    [19.65,20.65,18.3,19.0,''],[19.65,20.65,26.2,26.9,''],
+    [-0.9,7.1,32.2,35.0,'sofa'],[1.5,4.5,35.7,37.1,'table'],[7.8,9.8,34.3,36.3,'chair'],[-4.15,-2.85,31.2,38.2,'window seat']
+  ]];
+  function drawDream(cfg){
+    let s = DEFS;
+    s += `<rect class="porch" x="${n(X(0))}" y="${n(Y(28.75))}" width="4.25" height="${n(28.75 - 21.8)}"/>` + vtext(-2.1, 25.3, 'covered porch');
+    s += `<rect class="porch" x="${n(X(30.3))}" y="${n(Y(28.45))}" width="${n(30.3 - 25.25)}" height="${n(28.45 - 17.0)}"/>` + tiny(27.8, 22.7, 'new patio');
+    DREAM_ROOMS.forEach(r => { s += `<polygon class="rm ${r.type}" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
+    DREAM_ROOMS.forEach(r => { s += `<polygon class="wall" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
+
+    // stairs, open on both sides behind glass
+    for (let i = 1; i < 9; i++){ const y = 18.67 + i*7.33/9; s += line([11.5,y],[15.08,y],'tread'); }
+    s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
+    DREAM_OPEN.forEach(([a,b]) => { s += line(a, b, 'erase') + line(a, b, 'open-dash'); });
+    DREAM_GLASS.forEach(([a,b]) => { s += line(a, b, 'erase') + line(a, b, 'glassrail'); });
+
+    // sunken living room: three steps down from the foyer and from the raised strip by the kitchen
+    [12.5, 11.6, 10.7].forEach(x => { s += line([x, 28.75],[x, 40.5],'stepline'); });
+    [29.65, 30.55].forEach(y => { s += line([1.5, y],[6.5, y],'stepline'); });
+    s += vtext(11.15, 33.0, '3 steps down') + tiny(4.0, 30.1, '3 steps down');
+
+    // kitchen
+    s += rectF(17.1, 30.3, 38.5, 40.5, 'fix') + rectF(15.08, 17.08, 34.0, 40.5, 'fix') + vtext(16.08, 37.25, 'fridge · pantry · ovens');
+    s += rectF(21.9, 23.8, 38.85, 40.15, 'fix2') + line([22.85,38.85],[22.85,40.15],'fix2');
+    [[18.2,39.1],[19.5,39.1],[18.2,40.0],[19.5,40.0]].forEach(([x,y]) => { s += circF(x, y, 0.3, 'fix2'); });
+    s += rectF(18.5, 26.5, 31.8, 35.0, 'fix') + tiny(22.5, 33.4, 'island');
+    [19.6, 21.5, 23.4, 25.3].forEach(x => { s += circF(x, 30.9, 0.45, 'furn'); });
+    // living room built-ins and fireplace
+    s += rectF(12.55, 15.03, 39.3, 40.45, 'fix') + tiny(13.8, 38.8, 'built-ins');
+    s += rectF(1.5, 4.5, 39.4, 40.5, 'fix') + tiny(3.0, 38.9, 'fireplace');
+    // primary suite
+    s += rectF(11.55, 13.45, 0.05, 7.95, 'fix') + rectF(15.55, 17.45, 0.05, 7.95, 'fix') + line([12.5,0.4],[12.5,7.6],'rod') + line([16.5,0.4],[16.5,7.6],'rod');
+    s += tiny(14.5, 4.4, 'WALK-IN') + tiny(14.5, 3.8, 'CLOSET');
+    s += ellF(19.6, 1.8, 1.7, 1.0, 'fix') + ellF(19.6, 1.8, 1.35, 0.7, 'fix2') + rectF(21.5, 25, 0, 4.5, 'fix') + tiny(23.25, 2.25, 'shower');
+    s += line([22.3,5.0],[22.3,8.3],'wall') + rectF(24.55, 24.95, 6.6, 7.9, 'fix') + ellF(23.95, 7.25, 0.6, 0.5, 'fix') + tiny(23.4, 8.8, 'WC');
+    s += rectF(18.6, 24.0, 9.6, 11.45, 'fix') + ellF(19.9, 10.5, 0.5, 0.35, 'fix2') + ellF(22.7, 10.5, 0.5, 0.35, 'fix2');
+    // hall bath and laundry
+    s += rectF(22.5, 24.85, 11.65, 16.27, 'fix') + tiny(23.7, 13.9, 'shower');
+    s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
+    s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
+    s += rectF(11.7, 14.0, 16.2, 18.55, 'fix') + tiny(12.85, 17.4, 'W/D') + rectF(14.05, 14.95, 17.2, 18.55, 'fix');
+
+    s += furnSvg(DREAM_FURN);
+    s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
+    s += openingsSvg(DREAM_OPENINGS);
+    if (cfg.route) s += `<polyline class="flow" points="${pts(cfg.route)}" marker-end="url(#ah)"/>`;
+
+    const L = [[6.0,3.9,'PRIMARY BEDROOM','t-name'],[6.3,17.3,'OFFICE / GUEST','t-name'],[6.0,26.4,'FOYER','t-name'],[7.6,38.0,'LIVING ROOM','t-name'],
+               [22.5,36.75,'KITCHEN','t-name'],[20.15,17.55,'DINING','t-name'],[19.9,6.3,'SPA BATH','t-small'],[21.65,13.25,'BATH','t-small']];
+    L.forEach(([x, y, t, c]) => { s += text(x, y, t, c, 'pointer-events="none"'); });
+    finish(s, cfg, {route: true, furn: true, glass: true, half: false});
+  }
+
   function draw(cfg){
+    if (cfg.dream) return drawDream(cfg);
     // rooms for this concept
     let rooms = BASE_ROOMS.map(r => Object.assign({}, r));
     if (cfg.bigBath){
@@ -369,9 +560,7 @@ td:first-child{font-weight:600;min-width:150px}
       rooms.push({id:'laundry', type:'chg', poly:[[11.5,6],[13.5,6],[13.5,4.5],[15.5,4.5],[15.5,8],[11.5,8]]});
     }
     const changed = new Set(cfg.changed || []);
-    let s = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern>
-      <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker>
-      <marker id="ah-old" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--warn)"/></marker></defs>`;
+    let s = DEFS;
     rooms.forEach(r => { s += `<polygon class="rm ${changed.has(r.id) ? 'chg' : r.type}" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
     rooms.forEach(r => { s += `<polygon class="wall" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
     if (cfg.bigBath) s += rectF(15.08, 15.5, 15.5, 16.42, 'wallfill');
@@ -422,41 +611,14 @@ td:first-child{font-weight:600;min-width:150px}
     (cfg.stools || []).forEach(([x, y]) => { s += circF(x, y, 0.45, 'furn'); });
 
     // furniture
-    (cfg.furniture || []).forEach(set => set.forEach(([x0, x1, y0, y1, lab]) => {
-      s += rectF(x0, x1, y0, y1, 'furn');
-      if (!lab) return;
-      const cx = X((x0 + x1)/2), cy = Y((y0 + y1)/2);
-      const tall = (y1 - y0) > (x1 - x0) && lab.length * 0.25 > (x1 - x0) - 0.2;
-      s += `<text x="${n(cx)}" y="${n(cy)}" text-anchor="middle" dominant-baseline="middle" class="t-furn" pointer-events="none"${tall ? ` transform="rotate(-90 ${n(cx)} ${n(cy)})"` : ''}>${esc(lab)}</text>`;
-    }));
+    s += furnSvg(cfg.furniture);
 
     // outer wall and openings
     s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
     let openings = BASE_OPENINGS.slice();
     if (cfg.bigBath) openings = openings.filter(o => o.id !== 'bathdoor').concat([{t:'door', ax:'v', c:15.5, s:12.2, e:14.6, hinge:'s', swing:1, room:'chg'}]);
     if (cfg.laundry) openings = openings.filter(o => o.id !== 'linendoor').concat([{t:'bypass', ax:'h', c:8, s:11.7, e:15.3, room:'chg'}]);
-    const at = (o, u, v) => o.ax === 'v' ? [o.c + v, u] : [u, o.c + v];
-    const band = (o, u0, u1, v0, v1, cls) => { const a = at(o, u0, v0), b = at(o, u1, v1); return RR(a[0], b[0], a[1], b[1], cls); };
-    openings.forEach(o => {
-      const w = o.e - o.s;
-      if (o.t === 'win' || o.t === 'slider'){
-        s += band(o, o.s, o.e, -0.3, 0.3, 'win');
-        s += o.t === 'win' ? line(at(o, o.s, 0), at(o, o.e, 0), 'winline') : line(at(o, o.s, -0.1), at(o, o.s + w*0.55, -0.1), 'winline') + line(at(o, o.e - w*0.55, 0.1), at(o, o.e, 0.1), 'winline');
-        return;
-      }
-      if (o.out) s += band(o, o.s, o.e, o.out*0.32, 0, 'gap-sheet') + band(o, o.s, o.e, 0, -o.out*0.32, 'gap-' + o.room);
-      else s += band(o, o.s, o.e, -0.2, 0.2, 'gap-' + o.room);
-      if (o.t === 'door'){
-        const hu = o.hinge === 's' ? o.s : o.e, ou = o.hinge === 's' ? o.e : o.s;
-        s += line(at(o, hu, 0), at(o, hu, o.swing*w), 'leaf');
-        const ap = []; for (let i = 0; i <= 16; i++){ const t = i/16*Math.PI/2; ap.push(at(o, hu + (ou - hu)*Math.sin(t), o.swing*w*Math.cos(t))); }
-        s += `<polyline class="swing" points="${pts(ap)}"/>`;
-      } else if (o.t === 'bypass'){
-        s += band(o, o.s, o.s + w*0.55, -0.17, -0.04, 'bypass') + band(o, o.e - w*0.55, o.e, 0.04, 0.17, 'bypass');
-      } else if (o.t === 'cased'){
-        s += line(at(o, o.s, -0.3), at(o, o.s, 0.3), 'jamb') + line(at(o, o.e, -0.3), at(o, o.e, 0.3), 'jamb');
-      }
-    });
+    s += openingsSvg(openings);
     s += RR(-4.65,-4.25,30.4,38.9,'gap-sheet') + RR(-4.25,-3.9,30.4,38.9,'gap-garage') + line([-3.35,30.4],[-3.35,38.9],'ohd');
 
     // route
@@ -475,27 +637,9 @@ td:first-child{font-weight:600;min-width:150px}
     });
     if (cfg.bathSub) s += text(20.2, 12.55, cfg.bathSub, 't-sub');
 
-    // numbered callouts
-    (cfg.steps || []).forEach(([x, y], i) => { s += circF(x, y, 0.5, 'co' + (cfg.old ? ' old' : '')) + `<text x="${n(X(x))}" y="${n(Y(y) + 0.02)}" text-anchor="middle" dominant-baseline="middle" class="t-co">${i + 1}</text>`; });
-
-    // front label, compass, scale
-    const fx = X(-6.6), fy = Y(14.0);
-    s += `<text x="${n(fx)}" y="${n(fy)}" text-anchor="middle" dominant-baseline="middle" class="t-front" transform="rotate(90 ${n(fx)} ${n(fy)})">FRONT · EAST</text>`;
-    const nc = [X(30.4), Y(5.4)];
-    s += `<circle class="compass" cx="${n(nc[0])}" cy="${n(nc[1])}" r="1.25"/><polygon class="compass-n" points="${n(nc[0])},${n(nc[1]-1.05)} ${n(nc[0]-0.42)},${n(nc[1]+0.65)} ${n(nc[0])},${n(nc[1]+0.3)} ${n(nc[0]+0.42)},${n(nc[1]+0.65)}"/>`;
-    s += `<text x="${n(nc[0])}" y="${n(nc[1]-1.85)}" text-anchor="middle" dominant-baseline="middle" class="t-small">N</text>`;
-    const sbx = X(33), sby = Y(10.4);
-    for (let i = 0; i < 5; i++) s += `<rect class="${i%2?'sb-light':'sb-dark'}" x="${n(sbx+i)}" y="${n(sby)}" width="1" height=".32"/>`;
-    [[0,'0'],[5,'5 ft']].forEach(([o,t]) => { s += `<text x="${n(sbx+o)}" y="${n(sby+0.85)}" text-anchor="middle" dominant-baseline="middle" class="t-tiny">${t}</text>`; });
-
-    const svg = document.getElementById('plan');
-    svg.setAttribute('viewBox', `-1.6 -1.6 ${n(W + 4.25 + 6.6)} ${n(H + 3.2)}`);
-    svg.innerHTML = s;
-
-    const used = {'old-route': !!cfg.route && !!cfg.old, route: !!cfg.route && !cfg.old, remove: !!(cfg.remove || []).length, add: !!(cfg.add || []).length,
+    finish(s, cfg, {'old-route': !!cfg.route && !!cfg.old, route: !!cfg.route && !cfg.old, remove: !!(cfg.remove || []).length, add: !!(cfg.add || []).length,
                   half: true, changed: !!((cfg.changed || []).length || cfg.duct || cfg.laundry), furn: !!(cfg.furniture || []).length,
-                  lid: cfg.island === 'closed', lidup: cfg.island === 'open'};
-    document.querySelectorAll('.legend [data-lg]').forEach(el => { el.hidden = !used[el.dataset.lg]; });
+                  lid: cfg.island === 'closed', lidup: cfg.island === 'open'});
   }
 
   function card(cfg){
@@ -509,8 +653,8 @@ td:first-child{font-weight:600;min-width:150px}
     document.getElementById('card').innerHTML =
       `<div class="tag">${esc(cfg.tag)}</div><h2>${cfg.no ? cfg.no + ' · ' : ''}${esc(cfg.title)}</h2><p class="pitch">${esc(cfg.pitch)}</p>` + seg +
       `<h3>${stepsHead}</h3><ol class="steps${cfg.old && cfg.key === 'today' ? ' today' : ''}">${steps}</ol>` + route +
-      sec('How it feels', cfg.feel) + sec('Trade-offs', cfg.tradeoff) + sec('Code questions', cfg.code) + sec('Build notes', cfg.build) + sec('Rough cost', cfg.cost) +
-      (cfg.altHtml ? `<h3>Other ways to do it</h3><div class="alt">${cfg.altHtml}</div>` : '') +
+      sec('How it feels', cfg.feel) + sec('Trade-offs', cfg.tradeoff) + sec('Code questions', cfg.code) + sec('Checks first', cfg.checks) + sec('Build notes', cfg.build) + sec('Rough cost', cfg.cost) +
+      (cfg.altHtml ? `<h3>${esc(cfg.altTitle || 'Other ways to do it')}</h3><div class="alt">${cfg.altHtml}</div>` : '') + sec('Downstairs', cfg.downstairs) +
       (cfg.includes ? `<h3>Includes</h3><p>${esc(cfg.includes)}</p>` : '');
     document.querySelectorAll('#card .seg button').forEach(b => b.addEventListener('click', () => { show(b.dataset.state); try { history.replaceState(null, '', '#' + b.dataset.state); } catch(_){} }));
   }

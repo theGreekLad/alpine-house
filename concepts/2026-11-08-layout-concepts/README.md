@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Five ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Six ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -155,10 +155,55 @@ Put a counter-height island over the stairwell and make the middle of its top a 
   - A [Murphy Door](https://murphydoor.com/blogs/posts/how-much-does-a-hidden-door-cost) bookcase door lists at about $1,440–1,600 for 24–36″ widths, plus a small header in the wall and installation.
   - The duct in that corner still has to move.
 
+## 6 · Dream plan
+
+*Budget no object: start over inside the same exterior walls.*
+
+![Concept 6](6-dream-plan.png)
+
+Living, kitchen and dining wrap around an open stair, the garage becomes a sunken living room, and the two south bedrooms become one primary suite. Kids, guests and a family room go downstairs.
+
+1. **Living room in the garage.** The garage becomes a sunken living room, three steps down, since its floor is already 1½–2 ft below the house. Its rafters are already open, so it can have a vaulted ceiling. A big window with a window seat replaces the garage door, and there's a fireplace on the north wall. A raised strip along the kitchen side links the landing to the kitchen.
+2. **Kitchen by the deck.** The kitchen moves to the old dining room. It has an 8-ft island with four stools, counters under the north windows, a tall wall for the fridge, pantry and ovens, and a wide glass door to the deck.
+3. **Dining.** Dining takes the old kitchen spot, with new glass doors in the west wall to a new patio.
+4. **Open stair.** The stair stays where it is but opens up, with glass guards on both sides and a skylight above.
+5. **Foyer.** The north half of the front room becomes a real foyer, with a coat closet, a bench and a view through the glass stair to the patio. A covered porch shelters the front door.
+6. **Office or guest room.** It takes the south half of the front room, with the front window.
+7. **Primary suite.** The two south bedrooms become one suite behind a small vestibule:
+   - The green room is the bedroom.
+   - A 6′ × 8′ walk-in closet replaces the old closets and the flue chase.
+   - Bedroom 2 becomes a spa bath with a freestanding tub, a walk-in shower, a double vanity and a toilet nook.
+8. **Hall bath and laundry.** The hall bath stays for guests, refreshed with a walk-in shower. The old pantry becomes a laundry closet beside the bedrooms.
+
+The walk from the front door to the deck drops to about **31 ft**.
+
+- **How it feels:** you arrive in a real foyer and see straight through the glass stair to the patio. Daily life runs in one loop: down the steps to the fire, cooking at the island with the deck doors open, eating by the west glass. The bedroom wing sits behind a vestibule, quiet and separate.
+- **Trade-offs:**
+  - You give up the garage, which matters in Utah winters.
+  - The main floor drops to one bedroom plus an office. It works best with a finished basement, or with the office doubling as a guest room.
+  - The kitchen's new spot depends on what's under the old dining room: easy if the basement reaches that far, harder over a crawlspace or slab.
+- **Checks first:**
+  - Ask your city whether the garage can become living space without adding parking elsewhere, and what the new porch needs.
+  - Get an engineer for the beams: the garage–dining wall, the landing and stair walls, and the vaulted ceiling.
+  - Plan for the garage to need an insulated floor and walls.
+- **Build notes:**
+  - Plumbing for the spa bath, hall bath, laundry and the kitchen's new spot can run through the unfinished basement ceiling.
+  - Replace the furnace and water heater with direct-vent units or a heat pump, and run new ducts from the basement. That removes the flue chase and the front room duct.
+- **Rough cost:** this is a gut renovation of the whole main floor plus structural work.
+  - [Angi](https://angi.com/articles/how-much-does-it-cost-demo-interior.htm) says most whole-house demolition-and-remodel projects run $100,000–200,000.
+  - [This Old House](https://www.thisoldhouse.com/garages/garage-conversion-cost) puts most garage conversions at about $10,000–52,000.
+  - With glass walls, a vaulted ceiling and custom finishes, expect the top of that range or more.
+- **Variations:**
+  - **Two bedrooms upstairs:** move the office door to the hall and add a closet, and it becomes bedroom 2.
+  - **Somewhere to park:** a detached garage or carport, if the lot and the city allow it.
+  - **A hidden stair:** concept 5's lift-up island in place of the glass guards.
+- **Downstairs:** two bedrooms with egress windows, a full bath on the existing rough-in, a family room and storage. The basement needs its own measured plan first.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
+- **Or go all in:** the dream plan replaces concepts 1–5 rather than adding to them. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look
@@ -179,4 +224,6 @@ These are national ranges for rough comparison, not quotes.
 - [Angi: solar tube cost](https://angi.com/articles/how-much-solar-tubes-cost.htm)
 - [Murphy Door: hidden door cost](https://murphydoor.com/blogs/posts/how-much-does-a-hidden-door-cost)
 - [Progressive Automations: stairwell hatch build](https://www.progressiveautomations.com/en-se/blogs/stories/stairwell-conversion-into-a-pantry-with-a-hidden-door-entrance)
+- [Angi: cost to gut a house](https://angi.com/articles/how-much-does-it-cost-demo-interior.htm)
+- [This Old House: garage conversion cost](https://www.thisoldhouse.com/garages/garage-conversion-cost)
 - [Dwell: a secret stair hatch](https://www.dwell.com/article/how-they-pulled-it-off-a-secret-stair-hatch-that-seals-off-the-living-space-6955a961)
