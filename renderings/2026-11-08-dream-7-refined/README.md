@@ -8,6 +8,7 @@ This is a 3D model of [concept 13](../../concepts/2026-11-08-layout-concepts/#13
   - **Stair:** most days it's a stair, with the table leaf folded on the island's stair side and the floor panel standing upright at the bottom end.
   - **Big table:** the leaf unfolds across the stairwell onto the library-side rail, making about 31 sq ft of work surface with the island. A gate closes the top of the stair.
   - **Extra floor:** the floor panel folds down flush with the floor, adding about 26 sq ft, and half the leaf becomes a bar ledge for three stools.
+- **The garage, either way.** As living space, it's Dream 5's sunken living room, and the front room is a library. Kept as a garage, it's finished as in Dream 2, and the front room goes back to being the living room.
 
 Everything else is the same as Dream 7. It's built in the same scene as today and Dreams 1 to 7.
 
@@ -18,7 +19,7 @@ Everything else is the same as Dream 7. It's built in the same scene as today an
 
 - **Quick look:** the images below.
 - **Interactive model:** download `index.html` and open it in a web browser. It needs an internet connection to load the 3D library.
-  - Pick **Dream 7 refined** in the switch at the top, then use the **Stairwell** buttons under it to change the setting.
+  - Pick **Dream 7 refined** in the switch at the top, then use the **Stairwell** and **Garage** buttons under it.
   - Two views are new for this version: **Out of the bedroom hall** and **The stair and the island**.
 
 ## The three settings
@@ -30,6 +31,18 @@ Everything else is the same as Dream 7. It's built in the same scene as today an
 | **Cutaway from the back** | ![Cutaway from the back](settings-cutaway-back.jpg) |
 | **Cutaway from the front** | ![Cutaway from the front](settings-cutaway-front.jpg) |
 
+## Garage as living room or kept as a garage
+
+| View | Living room · Garage |
+|---|---|
+| **Cutaway from the front** | ![Cutaway from the front](garage-cutaway-front.jpg) |
+| **Cutaway from the back** | ![Cutaway from the back](garage-cutaway-back.jpg) |
+| **Just inside the front door** | ![Front door](garage-front-door.jpg) |
+| **Front room** | ![Front room](garage-front-room.jpg) |
+| **North from the front room** | ![North from the front room](garage-north-from-the-front-room.jpg) |
+| **Garage end, looking out** | ![Garage end, looking out](garage-garage-end-looking-out.jpg) |
+| **Garage end, looking in** | ![Garage end, looking in](garage-garage-end-looking-in.jpg) |
+
 ## Dream 7 and Dream 7 refined
 
 | View | Dream 7 · Dream 7 refined |
@@ -39,7 +52,7 @@ Everything else is the same as Dream 7. It's built in the same scene as today an
 | **The old kitchen's west wall** | ![West wall](compare-old-kitchen-west-wall.jpg) |
 | **Back toward the middle** | ![Back toward the middle](compare-back-toward-the-middle.jpg) |
 
-Each Dream 7 refined view is also saved on its own, for example `dream-7-refined-out-of-the-bedroom-hall.jpg`, and `dream-7-refined-table-` or `dream-7-refined-floor-` for the other settings.
+Each Dream 7 refined view is also saved on its own, for example `dream-7-refined-out-of-the-bedroom-hall.jpg`, with `dream-7-refined-table-`, `dream-7-refined-floor-` or `dream-7-refined-garage-kept-` for the other settings.
 
 ## Approximations
 

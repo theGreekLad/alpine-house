@@ -416,7 +416,7 @@ Concept 11 with two bedrooms on the main floor instead of one open suite. The be
 
 *Your idea: Dream 7 with a clear way into the kitchen and a stairwell that changes.*
 
-**See it in 3D:** [Dream 7 refined](../../renderings/2026-11-08-dream-7-refined/), with a switch for the three stairwell settings.
+**See it in 3D:** [Dream 7 refined](../../renderings/2026-11-08-dream-7-refined/), with switches for the three stairwell settings and for the garage.
 
 Dream 7 with the kitchen and the stair refined. The island is shorter and starts further from the bedroom hall, so the way into the kitchen is clear. The old pantry is a pantry again. And the stairwell has three settings: a stair, a big work table, or extra floor.
 
@@ -458,6 +458,18 @@ Dream 7 with the kitchen and the stair refined. The island is shorter and starts
   - **Glass that opens:** library-side glass panels that pivot open in the floor setting, locked closed whenever the stair is open.
   - **A sliding leaf:** a telescoping leaf under the island's top instead of a folding one. The cooktop would move to the west counter.
   - **Just one:** the floor panel alone for party space, or the leaf alone for the work table.
+
+**With the garage kept**
+
+The page also has a **Garage** switch: living room (as above) or garage. Every stairwell setting works either way.
+
+![Concept 13 with the garage kept](13-dream-7-refined-garage-kept.png)
+
+- **Garage:** finished as in concept 7: insulated, with an epoxy floor, a new insulated door, storage, an EV charger, and lockers with a bench by the steps up to the landing. It keeps its fire-rated walls and a self-closing door to the landing.
+- **Front room:** it goes back to being the living room, with a media wall and a linear fireplace. There's no library.
+- **Walls:** about 27 ft comes out instead of 54, since the garage walls stay. About 9 ft turns into glass, and no new walls go in.
+- **Trade-off:** you keep the garage but lose the big sunken living room. The living room is the front room, about 11½ × 17 ft.
+- **Rough cost:** less than converting the garage. Finishing it runs from a few thousand dollars up to [This Old House's](https://www.thisoldhouse.com/garages/garage-remodel-cost) mid-range $14,000–28,000 for a typical two-car garage, against about $10,000–52,000 for most [garage conversions](https://www.thisoldhouse.com/garages/garage-conversion-cost).
 
 ## How they fit together
 

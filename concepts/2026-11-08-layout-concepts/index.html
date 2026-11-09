@@ -51,6 +51,9 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,48px);lin
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend span[hidden]{display:none}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:0 0 4px}
+.segrow{display:flex;align-items:center;gap:10px;margin:0 0 6px}
+.segrow>span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);min-width:78px}
+.segrow .seg{margin:0}
 .seg button{font:500 13.5px var(--body);color:var(--ink);background:var(--sheet);border:0;padding:7px 12px;cursor:pointer}
 .seg button+button{border-left:1px solid var(--line)}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--sheet)}
@@ -541,7 +544,7 @@ td:first-child{font-weight:600;min-width:150px}
   // ---------- concept 13: Dream 7 refined (one tab, three stairwell settings) ----------
   const C13 = {
     no:'13', short:'Dream 7, refined', tag:'Your idea · Dream 7 with a stairwell that changes', title:'Dream 7, refined', dream:true, variant:'H',
-    toggleLabel:'Stairwell setting', toggle:[['dreamH','Stair'],['dreamHtable','Big table'],['dreamHfloor','Extra floor']],
+    toggleLabel:'Stairwell setting',
     pitch:'Dream 7 with the kitchen and the stair refined. The island is shorter and starts further from the bedroom hall, so the way into the kitchen is clear. The old pantry is a pantry again. And the stairwell has three settings: a stair, a big work table, or extra floor.',
     route: ROUTE_KSTAY_NOGARAGE,
     walls:'The same as concept 12: about 54 ft of interior wall comes out and no new walls go in. About 9 ft turns into glass: the library side of the stair, plus a short piece on the kitchen side between the island and the pantry.',
@@ -557,23 +560,42 @@ td:first-child{font-weight:600;min-width:150px}
             '<p><b>Just one.</b> If three settings feel like too much, the floor panel alone gives you the party space, and the leaf alone gives you the work table.</p>',
     downstairs: DOWNSTAIRS
   };
-  CONCEPTS.push(Object.assign({key:'dreamH', mode:'stair',
-    steps:[[17.0,19.6,'The island now starts about 4 ft from the bedroom hall instead of 2, and it\'s shorter, so you walk straight out of the hall into the kitchen. Glass fills the gap along the stair.'],
+  // three stairwell settings, each with the garage as living space or kept as a garage
+  const H_STEPS = {
+    stair: [[17.0,19.6,'The island now starts about 4 ft from the bedroom hall instead of 2, and it\'s shorter, so you walk straight out of the hall into the kitchen. Glass fills the gap along the stair.'],
            [21.2,19.2,'The fridge moves a step west, clear of the way in, with a coffee shelf in the corner by the hall.'],
            [16.2,17.4,'The old pantry is a pantry again, open to the kitchen, with shelves on three sides. The laundry goes in the basement.'],
            [16.2,21.4,'The island keeps the cooktop on its kitchen side. A leaf, folded in half, hangs on its stair side, ready to fold out.'],
            [12.2,20.4,'The floor panel stands upright at the bottom end of the stairwell, against the back of the pantry. Its underside can be a chalkboard or a pinboard.'],
-           [12.3,27.2,'Most days the stair works as it does now, with glass on the library side and the island as the guard on the kitchen side.']]}, C13));
-  CONCEPTS.push(Object.assign({key:'dreamHtable', tab:'dreamH', hidden:true, mode:'table', stepsHead:'As a big table',
-    steps:[[13.29,21.6,'The leaf unfolds across the stairwell and rests on the library-side rail, which is set at counter height. With the island, that\'s a work surface of about 31 sq ft.'],
+           [12.3,27.2,'Most days the stair works as it does now, with glass on the library side and the island as the guard on the kitchen side.']],
+    table: [[13.29,21.6,'The leaf unfolds across the stairwell and rests on the library-side rail, which is set at counter height. With the island, that\'s a work surface of about 31 sq ft.'],
            [16.2,21.4,'The cooktop stays at the kitchen edge, so the table works for big cooking days, baking, homework, crafts or a buffet.'],
            [13.29,26.9,'A gate closes the top of the stair while the leaf is out, so no one steps down under it.'],
-           [13.29,20.3,'The floor panel stays upright at the bottom end.']]}, C13));
-  CONCEPTS.push(Object.assign({key:'dreamHfloor', tab:'dreamH', hidden:true, mode:'floor', stepsHead:'As extra floor',
-    steps:[[13.0,20.6,'The floor panel folds down from the back of the pantry, counterbalanced like a wall bed, and lands flush on ledges around the stairwell. That\'s about 26 sq ft of extra floor.'],
+           [13.29,20.3,'The floor panel stays upright at the bottom end.']],
+    floor: [[13.0,20.6,'The floor panel folds down from the back of the pantry, counterbalanced like a wall bed, and lands flush on ledges around the stairwell. That\'s about 26 sq ft of extra floor.'],
            [14.2,21.2,'Half of the leaf folds up as a bar ledge on the island\'s stair side, with room for three stools, so guests sit across from the cook.'],
            [12.3,27.2,'The new floor opens onto the landing, so the library, the landing and the kitchen work as one room when people are over.'],
-           [10.6,20.8,'The glass on the library side stays as a divider. Panels that pivot open could join the new floor to the library (see Variations).']]}, C13));
+           [10.6,20.8,'The glass on the library side stays as a divider. Panels that pivot open could join the new floor to the library (see Variations).']]
+  };
+  const H_MODES = [['stair', '', 'Stair', 'What changes'], ['table', 'table', 'Big table', 'As a big table'], ['floor', 'floor', 'Extra floor', 'As extra floor']];
+  const H_GARAGE = [[false, '', 'Living room'], [true, 'gar', 'Garage']];
+  const toLivingRoom = t => t.replace('library-side rail', 'rail on the living-room side').replace('the library side', 'the living-room side').replace('the library', 'the living room');
+  const H_GARAGE_STEP = [8.8, 38.9, 'Kept as a garage, it\'s finished as in concept 7: insulated, with an epoxy floor, a new insulated door, storage, an EV charger, and lockers with a bench by the steps up to the landing. The front room goes back to being the living room, with a media wall and a linear fireplace.'];
+  const C13_GARAGE = {
+    pitch:'Dream 7 refined, with the garage kept as a garage. The kitchen, the pantry, the two bedrooms and the stairwell\'s three settings are the same. The garage is finished instead of converted, and the front room is the living room again.',
+    walls:'About 27 ft of interior wall comes out: the closets between the bedrooms, the hall wall, the landing wall and the kitchen\'s half wall. The garage keeps its fire-rated walls and a self-closing door to the landing. About 9 ft turns into glass, and no new walls go in.',
+    tradeoff:'You keep the garage but lose the big sunken living room and the library: the living room is the front room, about 11½ × 17 ft. The stair is still closed while the table or the floor is in use, and the panels are still custom.',
+    checks:'The same as concept 12, without the garage conversion: the beams, the window header, and direct-vent furnace and water heater units so the flue chase can come out. The garage keeps its fire-rated walls and a self-closing door.',
+    cost:'Less than with the garage converted. Finishing the garage runs from a few thousand dollars up to This Old House\'s mid-range $14,000–28,000 for a typical two-car garage, against about $10,000–52,000 for most garage conversions. The panels add roughly $4,000–12,000 (my guess).'
+  };
+  H_MODES.forEach(([mode, ms, , head]) => H_GARAGE.forEach(([gar, gs]) => {
+    const key = 'dreamH' + ms + gs;
+    const steps = gar ? H_STEPS[mode].map(([x, y, t]) => [x, y, toLivingRoom(t)]).concat([H_GARAGE_STEP]) : H_STEPS[mode];
+    CONCEPTS.push(Object.assign({}, C13, gar ? C13_GARAGE : {}, {key, mode, garageKept: gar, steps, stepsHead: head,
+      tab: key === 'dreamH' ? undefined : 'dreamH', hidden: key !== 'dreamH',
+      toggle: H_MODES.map(([, m2, label]) => ['dreamH' + m2 + gs, label]),
+      toggle2Label: 'Garage', toggle2: H_GARAGE.map(([, g2, label]) => ['dreamH' + ms + g2, label])}));
+  }));
 
   // ---------- shared drawing pieces ----------
   const DEFS = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern>
@@ -943,6 +965,9 @@ td:first-child{font-weight:600;min-width:150px}
     {t:'door', ax:'v', c:15.5, s:8.4, e:10.95, hinge:'s', swing:1, room:'bed'},
     {t:'pocket', ax:'v', c:11.5, s:3.2, e:5.4, room:'wet'} ]);
   const OPEN_H_OPENINGS = OPEN_G_OPENINGS.filter(o => o.t !== 'bypass').concat([{t:'cased', ax:'v', c:15.08, s:16.6, e:18.5, room:'store'}]);
+  const OPEN_H_GARAGE_OPENINGS = OPEN_H_OPENINGS.filter(o => !(o.t === 'win' && (o.c === -4.25 || (o.c === 40.5 && o.s < 10)))).concat([
+    {t:'win', ax:'h', c:40.5, s:1.5, e:4.5}, {t:'door', ax:'h', c:28.75, s:11.8, e:14.7, hinge:'s', swing:1, room:'garage'}]);
+  const GARAGE_LIVING_FURN = [[2.0,9.0,19.0,21.8,'sofa'],[4.0,7.0,16.3,17.8,'table'],[0.6,2.6,14.6,16.6,'chair'],[3.0,8.5,27.9,28.55,'console'],[-2.8,11.0,31.7,37.7,'car']];
   const OPEN_LOUNGE_FURN = [[0.5,2.5,15.2,19.2,'desk'],[4.2,6.2,17.0,19.0,'chair'],[8.4,10.4,17.0,19.0,'chair'],
     [-0.9,7.1,32.2,35.0,'sofa'],[1.5,4.5,35.7,37.1,'table'],[7.8,9.8,34.3,36.3,'chair'],[-4.15,-2.85,31.2,38.2,'window seat']];
   const OPEN_SUITE_FURN = [[2.2,8.6,4.9,11.4,'king bed'],[0.9,2.0,10.3,11.4,''],[8.8,9.9,10.3,11.4,''],[0.5,2.5,0.6,2.6,'chair']];
@@ -954,7 +979,7 @@ td:first-child{font-weight:600;min-width:150px}
     [19.65,20.65,18.3,19.0,''],[19.65,20.65,26.2,26.9,'']];
 
   function drawOpenE(cfg){
-    const v = cfg.variant, kStay = v !== 'E', twoBed = v === 'G' || v === 'H', refined = v === 'H', mode = cfg.mode || 'stair';
+    const v = cfg.variant, kStay = v !== 'E', twoBed = v === 'G' || v === 'H', refined = v === 'H', mode = cfg.mode || 'stair', gk = !!cfg.garageKept;
     let s = DEFS;
     s += `<rect class="porch" x="${n(X(0))}" y="${n(Y(28.75))}" width="4.25" height="${n(28.75 - 21.8)}"/>` + vtext(-2.1, 25.3, 'covered porch');
     s += `<rect class="porch" x="${n(X(30.3))}" y="${n(Y(28.45))}" width="${n(30.3 - 25.25)}" height="${n(28.45 - 17.0)}"/>` + tiny(27.8, 22.7, 'deck');
@@ -964,14 +989,15 @@ td:first-child{font-weight:600;min-width:150px}
       twoBed ? {type:'wet', g:{x:11.5,y:0,w:4,h:8}} : {type:'wet', g:{x:22.0,y:7.0,w:3.0,h:4.5}},
       {type:'living', poly:[[0,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,15.5],[11.5,15.5],[11.5,28.75],[0,28.75]]},
       {type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}},
-      {type:'living', g:{x:-4.25,y:28.75,w:34.83,h:11.75}},
+      gk ? {type:'living', g:{x:15.08,y:28.75,w:15.5,h:11.75}} : {type:'living', g:{x:-4.25,y:28.75,w:34.83,h:11.75}},
       {type:'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}},
       {type:'store', g:{x:11.5,y:15.5,w:3.58,h:3.17}},
       {type:'circ', g:{x:11.5,y:18.67,w:3.58,h:7.33}},
       {type:'circ', g:{x:11.5,y:26,w:3.58,h:2.75}}
     ];
+    if (gk) rooms.push({type:'garage', g:{x:-4.25,y:28.75,w:19.33,h:11.75}});
     rooms.forEach(r => { s += `<polygon class="rm ${r.type}" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
-    [rooms[0], rooms[4], rooms[5]].forEach(r => { s += `<polygon class="wall" points="${pts(rectPoly(r.g))}"/>`; });
+    [rooms[0], rooms[4], rooms[5]].concat(gk ? [rooms[rooms.length - 1]] : []).forEach(r => { s += `<polygon class="wall" points="${pts(rectPoly(r.g))}"/>`; });
     if (twoBed) [[0, 11.5], [15.5, 25]].forEach(([x0, x1]) => { s += `<polygon class="wall" points="${pts([[x0,0],[x1,0],[x1,11.5],[x0,11.5]])}"/>`; });
     else s += `<polygon class="wall" points="${pts([[0,0],[25,0],[25,11.5],[0,11.5]])}"/>`;
 
@@ -979,14 +1005,22 @@ td:first-child{font-weight:600;min-width:150px}
     if (mode === 'stair') s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
     DREAM_GLASS.forEach(([a,b]) => { if (!kStay || a[0] === 11.5) s += line(a, b, 'glassrail'); });
     if (refined) s += line([15.08,18.67],[15.08,20.6],'glassrail');
-    (twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).forEach(([a,b]) => { s += line(a, b, 'removed'); });
+    (twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).filter(([a, b]) => !(gk && (a[1] === 28.75 && b[1] === 28.75 || a[0] === 15.08 && a[1] === 28.75))).forEach(([a,b]) => { s += line(a, b, 'removed'); });
     if (!twoBed) s += line([11.5,11.5],[15.5,11.5],'added') + line([22.0,7.0],[22.0,11.5],'added') + line([22.0,7.0],[25,7.0],'added');
 
-    // wide steps down into the sunken living room, wrapping around to the kitchen side
-    [29.65, 30.55].forEach((y, i) => { s += line([-4.25, y],[i ? 10.7 : 11.6, y],'stepline'); });
-    [[11.6, 29.65], [10.7, 30.55]].forEach(([x, y0]) => { s += line([x, y0],[x, 40.5],'stepline'); });
-    s += line([12.5, 28.75],[12.5, 40.5],'stepline') + line([0, 28.75],[12.5, 28.75],'stepline');
-    s += tiny(5.5, 30.1, 'wide steps down · 3 risers') + vtext(11.15, 34.0, '3 steps down');
+    if (!gk){
+      // wide steps down into the sunken living room, wrapping around to the kitchen side
+      [29.65, 30.55].forEach((y, i) => { s += line([-4.25, y],[i ? 10.7 : 11.6, y],'stepline'); });
+      [[11.6, 29.65], [10.7, 30.55]].forEach(([x, y0]) => { s += line([x, y0],[x, 40.5],'stepline'); });
+      s += line([12.5, 28.75],[12.5, 40.5],'stepline') + line([0, 28.75],[12.5, 28.75],'stepline');
+      s += tiny(5.5, 30.1, 'wide steps down · 3 risers') + vtext(11.15, 34.0, '3 steps down');
+    } else {
+      // the garage, finished: steps down from the landing door, lockers with a bench, storage, the garage door
+      [29.9, 30.8].forEach(y => { s += line([11.8, y],[14.7, y],'stepline'); });
+      s += tiny(13.25, 30.35, 'steps') + rectF(13.95, 15.0, 31.2, 37.2, 'fix') + vtext(14.47, 34.2, 'lockers + bench');
+      s += rectF(-3.5, 10.5, 28.85, 30.2, 'fix') + tiny(3.5, 29.5, 'storage cabinets');
+      s += RR(-4.65,-4.25,30.4,38.9,'gap-sheet') + RR(-4.25,-3.9,30.4,38.9,'gap-garage') + line([-3.35,30.4],[-3.35,38.9],'ohd');
+    }
     if (!kStay){
       // kitchen by the deck; the fridge and pantry are a freestanding cabinet block where the garage wall was
       s += rectF(17.1, 30.3, 38.5, 40.5, 'fix') + rectF(15.08, 17.08, 35.5, 40.5, 'fix') + vtext(16.08, 38.0, 'fridge · pantry');
@@ -1005,12 +1039,15 @@ td:first-child{font-weight:600;min-width:150px}
       [20.4, 22.2, 24.0].forEach(x => { s += circF(x, 29.5, 0.45, 'furn'); });
       s += rectF(15.2, 17.0, 34.0, 40.4, 'fix-new') + vtext(16.1, 37.4, 'drinks bar · buffet');
     }
-    s += rectF(12.55, 15.03, 39.3, 40.45, 'fix') + tiny(13.8, 38.8, 'built-ins');
-    s += rectF(1.5, 4.5, 39.4, 40.5, 'fix') + tiny(3.0, 38.9, 'fireplace');
-    // front room: library wall, entry cabinet
-    s += rectF(0.6, 11.0, 11.6, 12.8, 'fix') + tiny(5.8, 12.2, 'library wall');
+    if (!gk){
+      s += rectF(12.55, 15.03, 39.3, 40.45, 'fix') + tiny(13.8, 38.8, 'built-ins');
+      s += rectF(1.5, 4.5, 39.4, 40.5, 'fix') + tiny(3.0, 38.9, 'fireplace');
+    }
+    // front room: library wall (or the living room's media wall), entry cabinet
+    if (!gk) s += rectF(0.6, 11.0, 11.6, 12.8, 'fix') + tiny(5.8, 12.2, 'library wall');
+    else s += rectF(1.0, 10.5, 11.6, 13.2, 'fix') + tiny(5.75, 12.4, 'media wall · linear fireplace');
     s += rectF(0.2, 1.8, 25.7, 28.6, 'fix') + vtext(1.0, 27.15, 'coat cabinet');
-    s += circF(7.3, 18.0, 0.8, 'furn');
+    if (!gk) s += circF(7.3, 18.0, 0.8, 'furn');
     if (!twoBed){
       // primary suite (as concept 8)
       s += rectF(11.6, 17.4, 0.05, 2.0, 'fix') + tiny(14.5, 1.0, 'wardrobes') + rectF(13.0, 16.0, 4.5, 6.3, 'fix') + tiny(14.5, 5.4, 'dresser');
@@ -1042,11 +1079,11 @@ td:first-child{font-weight:600;min-width:150px}
     s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
     s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
 
-    s += furnSvg([OPEN_LOUNGE_FURN.concat(twoBed ? TWO_BED_FURN : OPEN_SUITE_FURN, kStay ? BUMP_DINING_FURN : OLD_KITCHEN_DINING_FURN)]);
+    s += furnSvg([(gk ? GARAGE_LIVING_FURN : OPEN_LOUNGE_FURN).concat(twoBed ? TWO_BED_FURN : OPEN_SUITE_FURN, kStay ? BUMP_DINING_FURN : OLD_KITCHEN_DINING_FURN)]);
     s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
-    s += openingsSvg(refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
+    s += openingsSvg(gk ? OPEN_H_GARAGE_OPENINGS : refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
     if (cfg.route) s += `<polyline class="flow" points="${pts(cfg.route)}" marker-end="url(#ah)"/>`;
-    const L = [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[4.4,38.0,'LIVING ROOM','t-name'],[21.65,13.25,'BATH','t-small'],[16.0,13.6,'HALL','t-fix']];
+    const L = (gk ? [[5.75,24.3,'LIVING ROOM','t-name'],[4.0,39.4,'GARAGE','t-name']] : [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[4.4,38.0,'LIVING ROOM','t-name']]).concat([[21.65,13.25,'BATH','t-small'],[16.0,13.6,'HALL','t-fix']]);
     if (twoBed) L.push([5.75,3.4,'PRIMARY BEDROOM','t-name'],[20.8,4.2,'BEDROOM 2','t-name'],[12.7,4.3,'BATH','t-small']);
     if (refined) L.push([13.75,17.05,'PANTRY','t-fix']);
     else L.push([5.75,2.75,'PRIMARY SUITE','t-name'],[19.6,6.4,'OPEN BATH','t-small'],[14.5,3.3,'DRESSING','t-small']);
@@ -1210,7 +1247,8 @@ td:first-child{font-weight:600;min-width:150px}
     let route = '';
     if (len) route = `<div class="route"><b>≈ ${len} ft</b><span>walk from the front door to the deck slider${len < base ? `, about ${base - len} ft shorter than today` : ''}.</span></div>`;
     const sec = (h, t) => t ? `<h3>${h}</h3><p>${esc(t)}</p>` : '';
-    const seg = cfg.toggle ? `<div class="seg" role="group" aria-label="${esc(cfg.toggleLabel || 'Lid position')}">${cfg.toggle.map(([k, l]) => `<button type="button" data-state="${k}" aria-pressed="${k === cfg.key}">${esc(l)}</button>`).join('')}</div>` : '';
+    const segRow = (label, list, title) => `<div class="segrow">${title ? `<span>${esc(title)}</span>` : ''}<div class="seg" role="group" aria-label="${esc(label)}">${list.map(([k, l]) => `<button type="button" data-state="${k}" aria-pressed="${k === cfg.key}">${esc(l)}</button>`).join('')}</div></div>`;
+    const seg = (cfg.toggle ? segRow(cfg.toggleLabel || 'Lid position', cfg.toggle, cfg.toggle2 ? 'Stairwell' : '') : '') + (cfg.toggle2 ? segRow(cfg.toggle2Label, cfg.toggle2, cfg.toggle2Label) : '');
     const stepsHead = cfg.stepsHead || (cfg.key === 'today' ? 'What holds it back' : cfg.island === 'open' ? 'With the lid open' : 'What changes');
     document.getElementById('card').innerHTML =
       `<div class="tag">${esc(cfg.tag)}</div><h2>${cfg.no ? cfg.no + ' · ' : ''}${esc(cfg.title)}</h2><p class="pitch">${esc(cfg.pitch)}</p>` + seg +

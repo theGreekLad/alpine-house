@@ -42,6 +42,7 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,48px);lin
 .vgroup button:hover{border-color:var(--accent)}
 .vgroup button[aria-pressed="true"]{background:var(--chip-on);color:var(--chip-on-fg);border-color:var(--chip-on)}
 .vgroup button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cfgrow{display:flex;flex-wrap:wrap;gap:10px 22px}
 .viewer{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;max-height:76vh;border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:#cfdde7}
 @media (max-width:640px){.viewer{aspect-ratio:4/5}}
 #c{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
@@ -79,12 +80,18 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     <button type="button" data-model="dreamE" aria-pressed="false">Dream 5<small>fewer walls, no garage</small></button>
     <button type="button" data-model="dreamF" aria-pressed="false">Dream 6<small>kitchen stays, no garage</small></button>
     <button type="button" data-model="dreamG" aria-pressed="false">Dream 7<small>two bedrooms, no garage</small></button>
-    <button type="button" data-model="dreamH" aria-pressed="false">Dream 7 refined<small>stair · table · floor</small></button>
+    <button type="button" data-model="dreamH" aria-pressed="false">Dream 7 refined<small>stairwell and garage switches</small></button>
   </div>
-  <div class="vgroup cfgsw" id="cfgsw" role="group" aria-label="Stairwell setting" hidden><span>Stairwell</span>
-    <button type="button" data-cfg="stair" aria-pressed="true">Stair open</button>
-    <button type="button" data-cfg="table" aria-pressed="false">Big table</button>
-    <button type="button" data-cfg="floor" aria-pressed="false">Extra floor</button>
+  <div class="cfgrow" id="cfgsw" hidden>
+    <div class="vgroup" role="group" aria-label="Stairwell setting"><span>Stairwell</span>
+      <button type="button" data-cfg="stair" aria-pressed="true">Stair open</button>
+      <button type="button" data-cfg="table" aria-pressed="false">Big table</button>
+      <button type="button" data-cfg="floor" aria-pressed="false">Extra floor</button>
+    </div>
+    <div class="vgroup" role="group" aria-label="Garage"><span>Garage</span>
+      <button type="button" data-gar="living" aria-pressed="true">Living room</button>
+      <button type="button" data-gar="garage" aria-pressed="false">Garage</button>
+    </div>
   </div>
 
   <div class="views" id="views">
@@ -171,6 +178,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
         <li><b>Stair open:</b> a folding leaf hangs on the stair side of the island, and the floor panel stands upright at the bottom of the stairwell, its underside a chalkboard.</li>
         <li><b>Big table:</b> the leaf unfolds across the stairwell onto the library-side rail, making a work surface of about 31 sq ft with the island. A gate closes the top of the stair.</li>
         <li><b>Extra floor:</b> the floor panel folds down flush with the floor, adding about 26 sq ft, and half the leaf becomes a bar ledge so guests can sit at the island.</li>
+        <li><b>Garage:</b> as a living room, it's Dream 5's sunken living room with the front room as a library. Kept as a garage, it's finished as in Dream 2, and the front room goes back to being the living room.</li>
       </ul>
     </section>
     <section class="panel" aria-labelledby="ab-h">
@@ -304,7 +312,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     kitchen:[15.08,16.42,25,28.75,'cream','laminate'], garage:[-4.25,28.75,15.08,40.5,'plywood',null], dining:[15.08,28.75,30.58,40.5,'cream','laminateWorn']
   };
   const groups = { site: new T.Group() }; scene.add(groups.site);
-  // ---------- nine models in one scene: today, the seven dream plans and Dream 7 refined ----------
+  // ---------- ten models in one scene: today, the seven dream plans, and Dream 7 refined with and without the garage ----------
   const models = {
     today: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
     dream: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
@@ -314,7 +322,8 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     dreamE: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
     dreamF: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
     dreamG: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
-    dreamH: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null }
+    dreamH: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null },
+    dreamI: { house: new T.Group(), ceiling: new T.Group(), lamps: [], rooms: null }
   };
   Object.values(models).forEach(m => { scene.add(m.house); scene.add(m.ceiling); });
   let CUR = models.today;
@@ -1244,10 +1253,12 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
 
   // Dream 7 refined: the old pantry is a pantry again, and the stairwell has three settings
   const ROOMS_DREAM_H = Object.assign({}, ROOMS_DREAM_G, {laund:[11.5,15.5,15.08,18.67,'dWarm','dOak']});
+  // the same with the garage kept as a garage: the front room is the living room again
+  const ROOMS_DREAM_I = Object.assign({}, ROOMS_DREAM_H, {lounge:[-4.25,28.75,15.08,40.5,'dGarage',null]});
 
-  // v = 'E' (Dream 5), 'F' (Dream 6: the kitchen stays), 'G' (Dream 7: the kitchen stays and two bedrooms) or 'H' (Dream 7 refined)
+  // v = 'E' (Dream 5), 'F' (Dream 6: the kitchen stays), 'G' (Dream 7: the kitchen stays and two bedrooms), 'H' (Dream 7 refined) or 'I' (Dream 7 refined, garage kept)
   function buildDream5(v){
-    v = v || 'E'; const kStay = v !== 'E', twoBed = v === 'G' || v === 'H', refined = v === 'H';
+    v = v || 'E'; const kStay = v !== 'E', twoBed = 'GHI'.includes(v), refined = v === 'H' || v === 'I', keepGarage = v === 'I';
     const LF = 0.35, ST = (F - LF)/3, CT = F + 2.95, ceil = {parent: CUR.ceiling};
     const winD = (s, e, o) => win(s, e, Object.assign({frameMat: MD.black}, o || {}));
 
@@ -1257,7 +1268,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
       winD(14.8, 21.6, {sill: F + 1.8, head: F + 6.9, fixed: true, lites: 2}),
       {k:'front', s:22.4, e:25.4, sill:F, head:DOORH}]});
     wall([-4.25,28.75],[0,28.75], {t:0.5, bot:0, ext:true, out:1, outside: M.stone});
-    wall([-4.25,28.75],[-4.25,40.5], {t:0.5, bot:0, ext:true, out:1, outside: M.stone, ops:[winD(30.4, 38.9, {sill: LF + 1.8, head: 8.9, fixed: true, lites: 3})]});
+    wall([-4.25,28.75],[-4.25,40.5], {t:0.5, bot:0, ext:true, out:1, outside: M.stone, ops:[keepGarage ? {k:'garage', s:30.4, e:38.9, sill:0, head:7.2, mat: MD.garageDoorNew} : winD(30.4, 38.9, {sill: LF + 1.8, head: 8.9, fixed: true, lites: 3})]});
     wall([0,0],[25,0], {t:0.5, bot:0, ext:true, out:1, breaks: twoBed ? [11.5, 15.5] : [11.5, 17.5], ops:[winD(7.0, 9.8, {head: F + 7.0}), winD(18.2, 21.2, {sill: F + 3.3, head: F + 7.2, frosted: !twoBed})]});
     wall([25,0],[25,28.75], {t:0.5, bot:0, ext:true, out:-1, breaks:[11.5, 16.42], ops:[
       winD(1.4, 4.0, {sill: F + 3.8, head: F + 7.2, frosted: !twoBed}),
@@ -1265,9 +1276,9 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
       kStay ? winD(18.8, 24.8, {sill: F + 3.3, head: F + 7.4, lites: 3, fixed: true}) : {k:'slider', s:19.6, e:25.6, sill:F, head:DOORH, lites:2, frameMat: MD.black}]});
     wall([25,28.75],[30.58,28.75], {t:0.5, bot:0, ext:true, out:1, ops:[winD(26.3, 29.3, {sill: F + 3.4, head: F + 7.2})]});
     wall([30.58,28.75],[30.58,40.5], {t:0.5, bot:0, ext:true, out:-1, ops:[{k:'slider', s:30.0, e:38.2, sill:F, head:DOORH + 0.2, lites:3, frameMat: MD.black}]});
-    wall([-4.25,40.5],[30.58,40.5], {t:0.5, bot:0, ext:true, out:-1, breaks:[12.5, 15.08], ops:[
-      winD(-3.0, 0.2, {sill: LF + 2.4, head: 8.9, fixed: true}), winD(5.8, 9.0, {sill: LF + 2.4, head: 8.9, fixed: true}),
-      winD(21.6, 24.1, {sill: F + 3.4, head: F + 7.2}), winD(26.6, 29.1, {sill: F + 3.4, head: F + 7.2})]});
+    wall([-4.25,40.5],[30.58,40.5], {t:0.5, bot:0, ext:true, out:-1, breaks: keepGarage ? [15.08] : [12.5, 15.08], ops:(keepGarage ? [winD(1.5, 4.5, {sill: 4.6, head: 7.0, fixed: true})] :
+      [winD(-3.0, 0.2, {sill: LF + 2.4, head: 8.9, fixed: true}), winD(5.8, 9.0, {sill: LF + 2.4, head: 8.9, fixed: true})]).concat([
+      winD(21.6, 24.1, {sill: F + 3.4, head: F + 7.2}), winD(26.6, 29.1, {sill: F + 3.4, head: F + 7.2})])});
 
     // Interior walls: only around the bedrooms, the bathrooms, the toilet and the laundry cupboard
     wall([0,11.5],[11.5,11.5]);
@@ -1289,11 +1300,20 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     if (!refined){ wall([11.5,15.5],[15.08,15.5], {ops:[{k:'bypass', s:11.7, e:14.9, sill:F, head:DOORH}]}); wall([15.08,15.5],[15.08,18.67]); }
     else { wall([11.5,15.5],[15.08,15.5]); wall([15.08,15.5],[15.08,18.67], {ops:[{k:'cased', s:16.6, e:18.5, sill:F, head:DOORH}]}); }
     wall([11.5,18.67],[15.08,18.67]);
+    if (!keepGarage){
     // beams where the garage walls were
     pbox(0, 15.08, 28.6, 28.9, CEIL - 0.75, CEIL, M.dWarm); pbox(14.93, 15.23, 28.75, kStay ? 40.5 : 35.5, CEIL - 0.75, CEIL, M.dWarm);
+    } else {
+    // the garage keeps its fire-rated walls and a self-closing door to the landing
+    wall([0,28.75],[11.5,28.75], {bot:0});
+    wall([11.5,28.75],[15.08,28.75], {bot:0, ops:[{k:'slab', s:11.85, e:14.7, sill:F, head:DOORH, hinge:'s', panels:true}]});
+    wall([15.08,28.75],[15.08,40.5], {bot:0});
+    }
 
     // Floors: house level, then the old garage slab, with wide steps wrapping its south and west sides
     for (const k in CUR.rooms){ const r = CUR.rooms[k]; if (r[5]) pbox(r[0], r[2], r[1], r[3], F - 0.3, F, M[r[5]], {uv: true}); }
+    if (keepGarage) pbox(-4.25, 15.08, 28.75, 40.5, -0.1, 0.12, MD.epoxy, {uv: true});
+    else {
     pbox(-4.25, 15.08, 28.75, 40.5, -0.1, 0.12, M.concrete, {uv: true});
     pbox(-4.25, 10.7, 30.55, 40.5, 0.12, LF, M.dOak, {uv: true});
     pbox(-4.25, 11.6, 29.65, 30.55, 0.12, LF + ST, M.dOak, {uv: true}); pbox(10.7, 11.6, 30.55, 40.5, 0.12, LF + ST, M.dOak, {uv: true});
@@ -1302,6 +1322,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     // darker oak nosings so each step reads
     [[0, 12.5, 28.62, 28.75, F], [-4.25, 11.6, 29.52, 29.65, LF + 2*ST], [-4.25, 10.7, 30.42, 30.55, LF + ST],
      [12.5, 12.63, 28.75, 40.5, F], [11.6, 11.73, 29.65, 40.5, LF + 2*ST], [10.7, 10.83, 30.55, 40.5, LF + ST]].forEach(([a, b, c, d, h]) => pbox(a, b, c, d, h - 0.06, h + 0.01, MD.oakFurn, {cast: false}));
+    }
 
     // Ceilings: flat over the house with a skylight above the stair, flat over the kitchen, vaulted over the living room
     [[0, 25, 0, 20.4], [0, 25, 24.6, 28.75], [0, 11.9, 20.4, 24.6], [14.7, 25, 20.4, 24.6]].forEach(([a, b, c, d]) => pbox(a, b, c, d, CEIL, CEIL + 0.12, M.white, ceil));
@@ -1310,6 +1331,8 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     pbox(11.9, 14.7, 20.4, 24.6, CEIL + 1.6, CEIL + 1.65, MD.sky, Object.assign({cast: false}, ceil));
     pbox(15.08, 30.58, 28.75, 40.5, CEIL, CEIL + 0.12, M.white, ceil);
     pbox(-4.25, 0, 22.5, 28.75, CEIL, CEIL + 0.12, M.white, ceil);
+    if (keepGarage) pbox(-4.25, 15.08, 28.75, 40.5, CEIL, CEIL + 0.12, M.white, ceil);
+    else {
     const vx0 = -4.25, vx1 = 15.08, vy0 = 28.75, vy1 = 40.5, vyc = (vy0 + vy1)/2, rise = 3.0, half = (vy1 - vy0)/2;
     const vl = Math.hypot(half, rise), th = Math.atan2(rise, half);
     [[vy0 + half/2, th], [vy1 - half/2, -th]].forEach(([yc, a]) => { const g = new T.BoxGeometry(vx1 - vx0, 0.12, vl); g.rotateX(a); const p = V((vx0 + vx1)/2, yc, CEIL + rise/2 + 0.06); g.translate(p.x, p.y, p.z); add(g, M.white, ceil); });
@@ -1318,6 +1341,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     gable(vx0); gable(vx1);
     [-2.0, 2.0, 6.0, 10.0].forEach(x => pbox(x - 0.22, x + 0.22, vy0 + 0.1, vy1 - 0.1, CEIL - 0.5, CEIL, MD.beam, ceil));
     pbox(vx0, vx1, vyc - 0.25, vyc + 0.25, CEIL + rise - 0.55, CEIL + rise - 0.05, MD.beam, ceil);
+    }
 
     // Stair: same place, oak treads, glass guards on both sides
     for (let i = 0; i < 8; i++){ const y1 = 26 - i*0.917, top = F - (i+1)*0.75; pbox(11.6, 15.0, y1 - 0.917, y1, top - 0.75, top, MD.oakFurn); }
@@ -1361,6 +1385,8 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     wb(true, 16.42, 21.65, F + 5.0, 4.4, 3.1, 0.05, -0.21, MD.black); wb(true, 16.42, 21.65, F + 5.0, 4.2, 2.9, 0.05, -0.25, MD.art);
     }
 
+    if (keepGarage) finishedGarage();
+    else {
     // ---------- living room (old garage), down the wide steps ----------
     pbox(0.5, 5.5, 39.0, 40.5, LF, CEIL + 0.75, MD.plaster);
     pbox(1.8, 4.2, 38.94, 39.0, LF + 1.3, LF + 3.6, MD.black); pbox(2.05, 3.95, 38.9, 38.94, LF + 1.45, LF + 2.15, MD.fire, {cast: false});
@@ -1379,7 +1405,10 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     cyl(-2.1, 30.95, LF, LF + 5.0, 0.04, 0.04, MD.black); cyl(-2.1, 30.95, LF, LF + 0.06, 0.5, 0.5, MD.black); cyl(-2.1, 30.95, LF + 4.4, LF + 5.3, 0.62, 0.48, M.shadeGlass, {cast: false}); plight(-2.1, 30.95, LF + 4.6, 0.22, 12);
     plant(8.4, 39.6, LF, 1.0);
     plight(3.5, 34.5, CEIL + 1.0, 0.45, 22); plight(13.6, 33.0, CEIL - 0.6, 0.25, 12);
+    }
 
+    if (keepGarage) frontLiving();
+    else {
     // ---------- library and entry (the front room) ----------
     bookcase(0.6, 11.0, 11.6, 12.8, F, F + 7.6);
     pbox(3.0, 11.0, 13.8, 20.2, F, F + 0.03, MD.rug, {cast: false});
@@ -1389,10 +1418,13 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     sofa(4.2, 6.2, 17.0, 19.0, 'n', MD.leather, F); sofa(8.4, 10.4, 17.0, 19.0, 'n', MD.fabric, F);
     cyl(7.3, 18.0, F + 1.7, F + 1.85, 0.75, 0.75, MD.oakFurn); cyl(7.3, 18.0, F, F + 1.7, 0.12, 0.12, MD.black); cyl(7.3, 18.0, F, F + 0.05, 0.5, 0.5, MD.black);
     cyl(7.3, 18.0, F + 1.85, F + 2.9, 0.05, 0.05, MD.black); cyl(7.3, 18.0, F + 2.7, F + 3.3, 0.45, 0.32, M.shadeGlass, {cast: false}); plight(7.3, 18.0, F + 3.0, 0.2, 10);
+    flush(6.2, 16.0);
+    plant(10.9, 13.7, F, 0.8);
+    }
+    // the coat cabinet and rug by the front door
     pbox(0.2, 1.8, 25.7, 28.6, F, F + 7.4, MD.shaker, {uv: true}); pbox(1.79, 1.82, 26.6, 26.7, F + 2.8, F + 3.8, MD.black); pbox(1.79, 1.82, 27.6, 27.7, F + 2.8, F + 3.8, MD.black);
     pbox(0.4, 4.4, 22.5, 25.3, F, F + 0.03, MD.rugBlue, {cast: false});
-    flush(6.2, 16.0); flush(5.0, 24.2, 0.55);
-    plant(10.9, 13.7, F, 0.8);
+    flush(5.0, 24.2, 0.55);
 
     // ---------- hall bath, laundry, hall ----------
     wb(false, 25, 13.96, F + 2.15, 4.62, 4.3, 0.04, 0.27, MD.zellige); wb(true, 16.42, 23.7, F + 3.6, 2.35, 7.2, 0.04, 0.22, MD.zellige); wb(true, 11.5, 23.7, F + 3.6, 2.35, 7.2, 0.04, -0.22, MD.zellige);
@@ -1437,8 +1469,44 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     pbox(-4.3, -3.8, 21.7, 22.2, 0, F + 7.7, M.trim); pbox(-4.45, -3.65, 21.55, 22.35, 0, 1.6, M.stone, {uv: true});
     wb(false, 0, 26.0, F + 5.7, 0.35, 0.7, 0.3, 0.42, MD.black);
     pbox(-3.0, -0.25, 1.0, 21.3, 0, 1.6, M.brick);
+    if (!keepGarage){
     pbox(-7.0, -4.6, 30.2, 39.1, 0, 1.3, M.stone, {uv: true});
     [31.4, 34.6, 37.8].forEach(y => { const m = new T.Mesh(new T.IcosahedronGeometry(1.3, 1), M.leaf[y > 35 ? 1 : 0]); m.scale.set(1, 0.7, 1); m.position.copy(V(-5.8, y, 1.9)); m.castShadow = true; CUR.house.add(m); });
+    }
+
+    function finishedGarage(){
+      // as in Dream 2: steps down from the landing door, lockers with a bench, storage, an EV charger and a car for scale
+      pbox(11.8, 14.7, 28.95, 29.9, 0.12, F - 0.58, MD.oakFurn); pbox(11.8, 14.7, 29.9, 30.8, 0.12, (F - 0.58)/2 + 0.06, MD.oakFurn);
+      pbox(14.0, 15.0, 31.2, 37.2, 1.75, 7.4, MD.shakerGreen, {uv: true}); pbox(13.6, 15.0, 31.2, 37.2, 1.3, 1.5, MD.oakFurn); pbox(13.95, 15.0, 31.3, 37.1, 0.12, 1.3, MD.shakerGreen);
+      [32.2, 33.7, 35.2, 36.7].forEach(y => pbox(13.85, 14.0, y - 0.05, y + 0.05, 4.6, 4.9, MD.black));
+      pbox(-3.5, 10.5, 28.95, 30.2, 4.4, 7.4, MD.shaker, {uv: true});
+      pbox(-3.5, 3.0, 28.95, 30.6, 0.12, 3.0, MD.shaker, {uv: true}); pbox(-3.55, 3.05, 28.9, 30.65, 3.0, 3.12, MD.oakFurn);
+      wb(true, 28.75, 6.0, 3.6, 0.8, 1.2, 0.3, -0.34, MD.black); wb(true, 28.75, 6.0, 3.85, 0.3, 0.2, 0.05, -0.5, M.bulb);
+      pbox(-2.8, 11.0, 31.75, 37.65, 0.75, 2.95, MD.car); pbox(-2.6, 10.8, 31.85, 37.55, 2.95, 3.15, MD.car);
+      pbox(0.4, 8.2, 32.15, 37.25, 3.15, 4.55, MD.carGlass); pbox(0.8, 7.8, 32.3, 37.1, 4.55, 4.72, MD.car);
+      [[0.3, 31.85], [0.3, 37.55], [8.6, 31.85], [8.6, 37.55]].forEach(([x, y]) => { const g = new T.CylinderGeometry(1.05, 1.05, 0.75, 24); g.rotateX(Math.PI/2); const p = V(x, y, 1.05); g.translate(p.x, p.y, p.z); add(g, MD.tire); });
+      [[-2.75, 32.6], [-2.75, 36.8]].forEach(([x, y]) => pbox(x - 0.06, x, y - 0.5, y + 0.5, 2.2, 2.6, M.bulb, {cast: false}));
+      pbox(1.5, 4.0, 33.5, 35.5, CEIL - 0.06, CEIL, M.bulb, {cast: false, parent: CUR.ceiling}); pbox(7.0, 9.5, 33.5, 35.5, CEIL - 0.06, CEIL, M.bulb, {cast: false, parent: CUR.ceiling});
+      plight(5.5, 34.5, CEIL - 1.0, 0.45, 18);
+    }
+    function frontLiving(){
+      // the front room is the living room again: a media wall with a linear fireplace, as in Dreams 2 to 4
+      pbox(1.0, 10.5, 11.69, 12.5, F, CEIL, M.dWarm);
+      pbox(1.0, 10.5, 12.5, 13.2, F, F + 1.25, MD.oakFurn);
+      pbox(3.4, 8.1, 12.5, 12.56, F + 1.55, F + 2.85, MD.black); pbox(3.6, 7.9, 12.55, 12.6, F + 1.75, F + 2.3, MD.fire, {cast: false});
+      pbox(3.95, 7.55, 12.5, 12.58, F + 3.7, F + 5.7, MD.black);
+      [[1.3, 3.1], [8.4, 10.2]].forEach(([a, b]) => [F + 3.9, F + 5.3].forEach(h => pbox(a, b, 12.5, 13.1, h, h + 0.1, MD.oakFurn)));
+      pbox(1.5, 9.5, 14.0, 21.2, F, F + 0.03, MD.rug, {cast: false});
+      sofa(2.0, 9.0, 19.0, 21.8, 'n', MD.fabric, F);
+      [2.9, 8.1].forEach(x => pbox(x - 0.55, x + 0.55, 20.65, 21.05, F + 1.4, F + 2.4, MD.fabricDark));
+      pbox(4.0, 7.0, 16.3, 17.8, F + 1.2, F + 1.38, MD.oakFurn); pbox(4.3, 6.7, 16.6, 17.5, F, F + 1.2, MD.oakFurn);
+      sofa(0.6, 2.6, 14.6, 16.6, 'e', MD.leather, F);
+      pbox(3.0, 8.5, 27.9, 28.55, F + 0.3, F + 2.4, MD.oakSlab, {uv: true}); pbox(3.2, 8.3, 28.0, 28.45, F, F + 0.3, MD.black);
+      wb(true, 28.75, 5.75, F + 5.0, 3.6, 2.5, 0.05, 0.21, MD.black); wb(true, 28.75, 5.75, F + 5.0, 3.4, 2.3, 0.05, 0.25, MD.art);
+      cyl(7.6, 28.2, F + 2.4, F + 3.6, 0.3, 0.2, MD.terracotta);
+      cyl(1.3, 20.6, F, F + 5.0, 0.04, 0.04, MD.black); cyl(1.3, 20.6, F, F + 0.06, 0.5, 0.5, MD.black); cyl(1.3, 20.6, F + 4.4, F + 5.3, 0.62, 0.48, M.shadeGlass, {cast: false});
+      flush(5.75, 17.0);
+    }
   
     function twoBedrooms(){
       const nightstand = (x, y) => { pbox(x - 0.5, x + 0.5, y - 0.5, y + 0.5, F, F + 2.0, MD.oakFurn); cyl(x, y, F + 2.0, F + 3.1, 0.12, 0.08, MD.black); cyl(x, y, F + 3.0, F + 3.7, 0.45, 0.35, M.shadeGlass, {cast: false}); };
@@ -1510,6 +1578,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
   CUR = models.dreamF; CUR.rooms = ROOMS_DREAM_F; buildDream5('F');
   CUR = models.dreamG; CUR.rooms = ROOMS_DREAM_G; buildDream5('G');
   CUR = models.dreamH; CUR.rooms = ROOMS_DREAM_H; buildDream5('H');
+  CUR = models.dreamI; CUR.rooms = ROOMS_DREAM_I; buildDream5('I');
 
   // ---------- site (kept simple: the inside is the focus) ----------
   const site = {parent: groups.site};
@@ -1556,6 +1625,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
   // ---------- views: the same cameras for all three models ----------
   const VIEWS = {
     over:     {mode: 'cut', sun: 'midday',    pos: V(-6, -6, 38), at: V(12.5, 20.5, F), fov: 50, title: 'Cutaway from the front',
+      dreamI: 'Dream 7 refined with the garage kept as a garage: finished, with lockers by the door to the landing. The front room goes back to being the living room, and everything else is the same.',
       dreamH: 'Dream 7 refined: the island starts further from the bedroom hall, the fridge moves along the south wall, the old pantry is a pantry again, and the stairwell can become a big table or extra floor. Try the stairwell switch above.',
       dreamF: 'Dream 6: Dream 5 with the kitchen kept in its current spot around a big new west window. The bump-out becomes the dining room, and the garage is still the sunken living room.',
       dreamG: 'Dream 7: Dream 6 with two bedrooms instead of the open suite. The bedrooms keep their walls, and a small bathroom for the primary bedroom fills the space between them.',
@@ -1566,6 +1636,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
       dream: 'Dream 1 from the same spot: the garage is a sunken living room, the front room is a foyer and office, and the two south bedrooms are one primary suite.',
       dreamB: 'Dream 2 from the same spot: the garage stays (finished, with a car for scale), the front room stays the living room, and a small entry addition sits in the corner by the garage.'},
     overback: {mode: 'cut', sun: 'midday',    pos: V(36, 50, 37), at: V(13.5, 21.5, F), fov: 50, title: 'Cutaway from the back',
+      dreamI: 'From the northwest: the dining room and the refined kitchen, with the finished garage on the other side of the wall.',
       dreamH: 'From the northwest: the dining room, the kitchen with its shorter island, and the stairwell beside it.',
       dreamF: 'From the northwest: the dining room in the bump-out, the kitchen in its current spot with the new window, and the sunken living room beyond the drinks bar.',
       dreamG: 'From the northwest: the same dining room and kitchen as Dream 6, with the two bedrooms and the primary bath at the far end.',
@@ -1576,6 +1647,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
       dream: 'From the northwest: the kitchen and green island in the old dining room, the dining table where the kitchen was, and the stair behind glass.',
       dreamB: 'From the northwest: the same kitchen, dining room and glass stair as Dream 1, with the finished garage on the other side of the kitchen wall.'},
     entry:    {mode: 'in', sun: 'afternoon', pos: V(1.7, 24.2, F + 5.2), at: V(20, 23.5, F + 3.4), fov: 72, title: 'Just inside the front door',
+      dreamI: 'Across the living room and the stairwell to the island and the kitchen. The stairwell switch works the same with the garage kept.',
       dreamH: 'Across the library and the stairwell to the island and the kitchen. The stairwell switch changes this view the most.',
       dreamF: 'Through the front door into the library, across the glass stair to the cooktop counter and the kitchen, with the steps down to the living room on the right.',
       dreamG: 'The same as Dream 6.',
@@ -1586,6 +1658,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
       dream: 'Dream 1\'s foyer. The stair is behind glass, so you see through the dining room to the glass doors and the deck.',
       dreamB: 'Just past the new entry, in the living room: the stair is behind glass, so you see straight through the dining room to the deck doors.'},
     front:    {mode: 'in', sun: 'morning',   pos: V(9.6, 26.8, F + 5.2), at: V(2.0, 13.0, F + 3.0), fov: 74, title: 'Front room',
+      dreamI: 'The living room, with a media wall and a linear fireplace on the south wall, as in Dreams 2 to 4.',
       dreamH: 'The same library as Dream 5.',
       dreamF: 'The same library as Dream 5.',
       dreamG: 'The same library as Dream 5.',
@@ -1596,6 +1669,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
       dream: 'In Dream 1 this end of the front room is the foyer, with the coat closet and the office door.',
       dreamB: 'The living room: a media wall with a linear fireplace on the south wall, the picture window, and the doorway to the hall.'},
     north:    {mode: 'in', sun: 'afternoon', pos: V(9.8, 23.0, F + 5.2), at: V(3.0, 37.0, F + 0.8), fov: 74, title: 'North from the front room',
+      dreamI: 'The north end of the living room, with a console against the garage wall.',
       dreamH: 'The same as Dream 5: down the wide steps into the living room.',
       dreamF: 'The same as Dream 5: down the wide steps into the living room.',
       dreamG: 'The same as Dream 5: down the wide steps into the living room.',
@@ -1630,6 +1704,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
       dreamC: 'One open room from the bed past the wardrobes and dresser to the tub and shower. Only the toilet has its own walls.',
       dreamD: 'The same open suite as Dream 3.', dreamE: 'The same open suite as Dream 3.'},
     living:   {mode: 'in', sun: 'morning',   pos: V(14.2, 30.6, F + 5.0), at: V(-4.25, 36.6, F + 2.4), fov: 74, title: 'Garage end, looking out',
+      dreamI: 'The finished garage, as in Dream 2: an epoxy floor, a new insulated door with windows, storage along the wall, and room for a car.',
       dreamH: 'The same living room as Dream 5.',
       dreamF: 'The same living room as Dream 5.',
       dreamG: 'The same living room as Dream 5.',
@@ -1639,6 +1714,7 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
       dream: 'In Dream 1 the garage becomes the living room: three steps down, a vaulted ceiling with oak beams, a window seat where the garage door was, and a fireplace on the north wall.',
       dreamB: 'In Dream 2 the garage stays a garage, finished: drywall, an epoxy floor, a new insulated door with windows, storage along the wall, and room for a car.'},
     mud:      {mode: 'in', sun: 'afternoon', pos: V(-1.6, 39.2, 5.7), at: V(14.5, 30.5, 2.6), fov: 74, title: 'Garage end, looking in',
+      dreamI: 'From the far corner of the garage: green lockers with a bench beside the steps up to the landing, storage cabinets and an EV charger.',
       dreamH: 'The same as Dream 6.',
       dreamF: 'From the far corner of the living room: the wide steps, the drinks bar and the dining room beyond, and the library on the left.',
       dreamG: 'The same as Dream 6.',
@@ -1696,21 +1772,24 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
   };
   const BADGE = {today: 'Today', dream: 'Dream 1 · garage → living room', dreamB: 'Dream 2 · garage kept', dreamC: 'Dream 3 · fewer walls', dreamD: 'Dream 4 · kitchen stays', dreamE: 'Dream 5 · fewer walls, no garage', dreamF: 'Dream 6 · kitchen stays, no garage', dreamG: 'Dream 7 · two bedrooms, no garage', dreamH: 'Dream 7 refined'};
   const CFG_NAME = {stair: 'stair open', table: 'big table', floor: 'extra floor'};
-  let stairCfg = 'stair';
+  let stairCfg = 'stair', garageCfg = 'living';
+  const mk = () => model === 'dreamH' && garageCfg === 'garage' ? 'dreamI' : model;
 
   let model = 'dreamC', viewKey = 'over', viewMode = 'cut';
   function applyModel(){
-    Object.entries(models).forEach(([k, m]) => { m.house.visible = k === model; m.ceiling.visible = k === model && viewMode === 'in';
-      m.lamps.forEach(([l]) => { l.visible = k === model && viewMode === 'in'; }); });
+    const cur = mk();
+    Object.entries(models).forEach(([k, m]) => { m.house.visible = k === cur; m.ceiling.visible = k === cur && viewMode === 'in';
+      m.lamps.forEach(([l]) => { l.visible = k === cur && viewMode === 'in'; }); });
     renderer.shadowMap.needsUpdate = true;
     document.querySelectorAll('.switch button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.model === model)));
-    const badge = document.getElementById('badge'); badge.textContent = BADGE[model] + (model === 'dreamH' ? ' · ' + CFG_NAME[stairCfg] : ''); badge.className = 'badge' + (model === 'today' ? '' : ' dream');
+    const badge = document.getElementById('badge'); badge.textContent = BADGE[model] + (model === 'dreamH' ? (garageCfg === 'garage' ? ' · garage kept' : ' · garage → living room') + ' · ' + CFG_NAME[stairCfg] : ''); badge.className = 'badge' + (model === 'today' ? '' : ' dream');
     const cs = document.getElementById('cfgsw'); cs.hidden = model !== 'dreamH';
-    cs.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.cfg === stairCfg)));
-    if (models.dreamH.configs) Object.entries(models.dreamH.configs).forEach(([k, g]) => { g.visible = k === stairCfg; });
-    const v = VIEWS[viewKey]; document.getElementById('caption').innerHTML = `<b>${v.title}</b>${v[model]}`;
+    cs.querySelectorAll('button[data-cfg]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.cfg === stairCfg)));
+    cs.querySelectorAll('button[data-gar]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.gar === garageCfg)));
+    ['dreamH', 'dreamI'].forEach(k => { if (models[k].configs) Object.entries(models[k].configs).forEach(([c, g]) => { g.visible = c === stairCfg; }); });
+    const v = VIEWS[viewKey]; document.getElementById('caption').innerHTML = `<b>${v.title}</b>${v[cur] || v[model]}`;
     document.querySelectorAll('[data-for]').forEach(el => { el.hidden = el.dataset.for !== model; });
-    try { history.replaceState(null, '', '#' + model + ':' + viewKey + (model === 'dreamH' && stairCfg !== 'stair' ? ':' + stairCfg : '')); } catch(_){}
+    try { history.replaceState(null, '', '#' + model + ':' + viewKey + (model === 'dreamH' && (stairCfg !== 'stair' || garageCfg !== 'living') ? ':' + stairCfg + (garageCfg === 'garage' ? ':garage' : '') : '')); } catch(_){}
     dirty = true;
   }
   function setMode(mode, sunKey){
@@ -1739,7 +1818,8 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
   function finish(v){ setControls(v.mode); controls.enabled = true; controls.update(); dirty = true; }
   document.getElementById('views').addEventListener('click', e => { const b = e.target.closest('button[data-view]'); if (b) go(b.dataset.view); });
   document.querySelector('.switch').addEventListener('click', e => { const b = e.target.closest('button[data-model]'); if (b){ model = b.dataset.model; applyModel(); } });
-  document.getElementById('cfgsw').addEventListener('click', e => { const b = e.target.closest('button[data-cfg]'); if (b){ stairCfg = b.dataset.cfg; applyModel(); } });
+  document.getElementById('cfgsw').addEventListener('click', e => { const b = e.target.closest('button[data-cfg]'), g = e.target.closest('button[data-gar]');
+    if (b){ stairCfg = b.dataset.cfg; applyModel(); } if (g){ garageCfg = g.dataset.gar; applyModel(); } });
 
   function resize(){
     const el = document.getElementById('viewer'); const w = el.clientWidth, h = el.clientHeight; if (!w || !h) return;
@@ -1758,9 +1838,10 @@ h2{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.03e
     } else if (controls.update()) dirty = true;
     if (dirty){ renderer.render(scene, camera); dirty = false; }
   }
-  const [hm, hv, hc] = (location.hash || '').replace('#', '').split(':');
-  if (models[hm]) model = hm;
+  const [hm, hv, hc, hg] = (location.hash || '').replace('#', '').split(':');
+  if (models[hm] && hm !== 'dreamI') model = hm;
   if (CFG_NAME[hc]) stairCfg = hc;
+  if (hg === 'garage') garageCfg = 'garage';
   go(VIEWS[hv] ? hv : 'over', true);
   statusEl.hidden = true;
   requestAnimationFrame(loop);
