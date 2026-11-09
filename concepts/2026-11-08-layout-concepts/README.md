@@ -161,13 +161,15 @@ Put a counter-height island over the stairwell and make the middle of its top a 
 
 ![Concept 6](6-dream-plan.png)
 
+**See it in 3D:** [the dream plan model](../../renderings/2026-11-08-dream-plan/) compares it with the house today from the same camera views.
+
 Living, kitchen and dining wrap around an open stair, the garage becomes a sunken living room, and the two south bedrooms become one primary suite. Kids, guests and a family room go downstairs.
 
 1. **Living room in the garage.** The garage becomes a sunken living room, three steps down, since its floor is already 1½–2 ft below the house. Its rafters are already open, so it can have a vaulted ceiling. A big window with a window seat replaces the garage door, and there's a fireplace on the north wall. A raised strip along the kitchen side links the landing to the kitchen.
 2. **Kitchen by the deck.** The kitchen moves to the old dining room. It has an 8-ft island with four stools, counters under the north windows, a tall wall for the fridge, pantry and ovens, and a wide glass door to the deck.
-3. **Dining.** Dining takes the old kitchen spot, with new glass doors in the west wall to a new patio.
+3. **Dining.** Dining takes the old kitchen spot, with new glass doors in the west wall out to the deck.
 4. **Open stair.** The stair stays where it is but opens up, with glass guards on both sides and a skylight above.
-5. **Foyer.** The north half of the front room becomes a real foyer, with a coat closet, a bench and a view through the glass stair to the patio. A covered porch shelters the front door.
+5. **Foyer.** The north half of the front room becomes a real foyer, with a coat closet, a bench and a view through the glass stair to the deck doors. A covered porch shelters the front door.
 6. **Office or guest room.** It takes the south half of the front room, with the front window.
 7. **Primary suite.** The two south bedrooms become one suite behind a small vestibule:
    - The green room is the bedroom.
@@ -177,7 +179,7 @@ Living, kitchen and dining wrap around an open stair, the garage becomes a sunke
 
 The walk from the front door to the deck drops to about **31 ft**.
 
-- **How it feels:** you arrive in a real foyer and see straight through the glass stair to the patio. Daily life runs in one loop: down the steps to the fire, cooking at the island with the deck doors open, eating by the west glass. The bedroom wing sits behind a vestibule, quiet and separate.
+- **How it feels:** you arrive in a real foyer and see straight through the glass stair to the deck doors. Daily life runs in one loop: down the steps to the fire, cooking at the island with the deck doors open, eating by the west glass. The bedroom wing sits behind a vestibule, quiet and separate.
 - **Trade-offs:**
   - You give up the garage, which matters in Utah winters.
   - The main floor drops to one bedroom plus an office. It works best with a finished basement, or with the office doubling as a guest room.
