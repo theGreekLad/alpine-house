@@ -60,4 +60,4 @@ It's built from the measured [floor plan](../../floor-plan/), the [walkthrough p
 - **Estimated, not measured:** window sizes and the linen closet. The deck size is a guess.
 - **Exterior:** a simple shell with beige siding, the stone garage front and the brick planter. The roof is left off.
 - **Walls** aren't drawn to their real thickness.
-- **The 2D floor plan in [`floor-plan/`](../../floor-plan/) hasn't caught up yet.** It doesn't have the corrections from the photos (listed in `existing-conditions.md`, section 8). This 3D model does.
+- The [2D floor plan](../../floor-plan/) was updated the same day to match this model.

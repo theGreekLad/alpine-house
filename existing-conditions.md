@@ -37,7 +37,7 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | Green room | 11′ 6″ × 11′ 6″ | 132 | |
 | Green room closet | 2′ × 6′ | 12 | |
 | Bedroom 2 | 9′ 6″ × 11′ 6″ | 109 | |
-| Bedroom 2 closet | 2′ × 4′ 6″ | 9 | Measured. The plan currently shows 2′ × 6′. |
+| Bedroom 2 closet | 2′ × 4′ 6″ | 9 | Measured. |
 | Bathroom | 6′ 8″ × 4′ 11″ | 33 | Measured as 80″ × 59″. |
 | Main hall | 4′ × 7′ 6″ | 30 | Runs north–south from the linen closet to the pantry. |
 | Short hall | 2′ 8″ × 5′ 3″ | 14 | Between the main hall and the bath, leading into the kitchen. |
@@ -176,7 +176,7 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | **Floor** | **Oak strip hardwood**, worn near the windows. It needs a full sand and refinish. |
 | **Walls** | Cream, with many nail and anchor holes and scuffs. |
 | **Ceiling** | White, with a **ceiling supply register**. **No ceiling light** is visible, only a round ceiling device, probably a smoke detector. |
-| **Door** | White flat slab door at the **north end of the east wall**, from the hall. It faces the green room door. *(The current floor plan wrongly shows it on the north wall.)* |
+| **Door** | White flat slab door at the **north end of the east wall**, from the hall. It faces the green room door. |
 | **Closet** | At the south end of the east wall. It's an open reach-in with a rod and shelf and **no doors**, about 4′ 6″ wide, back-to-back with the green room closet. |
 | **Windows** | **South:** a white double-hung window toward the east end of the wall. **West:** a white double-hung window near the southwest corner. |
 | **Heating** | A floor register in the southwest corner, and a ceiling supply register. Cover plates or junction boxes low on the south and west walls, probably from **removed baseboard heaters**. |
@@ -398,7 +398,10 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 
 ---
 
-## 8. Corrections pending on the floor plan and 3D model
+## 8. Corrections from the photos (done)
+
+These corrections were applied to the [floor plan](floor-plan/) and the [baseline 3D model](renderings/2026-11-08-baseline/) on November 8, 2026. The exterior items are in the 3D model only as a simple shell.
+
 
 - **Bedroom 2's door** moves to its **east wall** (north end), facing the green room door.
 - **Bedroom 2's closet** goes back to the measured **2′ × 4′ 6″**. Add the **flue chase** between it and the linen closet.

@@ -4,7 +4,7 @@ These are 3D models of the house, saved as dated snapshots so changes can be com
 
 | Version | Date | What it shows |
 |---|---|---|
-| [**Baseline**](2026-11-08-baseline/) | Nov 8, 2026 | The house as it is today, before any renovation. This is the reference point for every later version. |
+| [**Baseline**](2026-11-08-baseline/) | Nov 8, 2026 | The house as it is today, before any renovation. This is the reference point for every later version. It matches the updated [floor plan](../floor-plan/). |
 
 ## Adding a new version
 

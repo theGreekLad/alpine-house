@@ -13,6 +13,7 @@
   --bg:#F2F4F1; --sheet:#FCFCFA; --ink:#1C2320; --line:#3A4440; --muted:#66706B; --rule:#D6DBD5;
   --accent:#2C6878; --warn:#B4632A;
   --f-living:#FFFFFF; --f-bed:#ECF1E7; --f-wet:#E0ECF0; --f-circ:#F4F0E5; --f-store:#E8E8E1; --f-garage:#DFE2DE; --hl:#FBE4C2;
+  --glass:#CFE3EC; --fix:#F7F6F2;
   --display:"Barlow Condensed","Arial Narrow",sans-serif;
   --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -22,6 +23,7 @@
     --bg:#0F1311; --sheet:#151A17; --ink:#E1E6E2; --line:#A8B3AD; --muted:#8C9792; --rule:#2A322E;
     --accent:#7DB7C6; --warn:#E39A62;
     --f-living:#1B211E; --f-bed:#1D2720; --f-wet:#18252A; --f-circ:#24221C; --f-store:#22231F; --f-garage:#2A2E2C; --hl:#4D3B20;
+    --glass:#26414C; --fix:#232925;
     color-scheme:dark;
   }
 }
@@ -29,6 +31,7 @@
   --bg:#0F1311; --sheet:#151A17; --ink:#E1E6E2; --line:#A8B3AD; --muted:#8C9792; --rule:#2A322E;
   --accent:#7DB7C6; --warn:#E39A62;
   --f-living:#1B211E; --f-bed:#1D2720; --f-wet:#18252A; --f-circ:#24221C; --f-store:#22231F; --f-garage:#2A2E2C; --hl:#4D3B20;
+    --glass:#26414C; --fix:#232925;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -91,6 +94,12 @@ tr.sub td{color:var(--muted);border-bottom:0}
 #plan .rm.circ{fill:var(--f-circ)} #plan .rm.store{fill:var(--f-store)} #plan .rm.garage{fill:var(--f-garage)}
 #plan .rm.hl{fill:var(--hl)}
 #plan .gap-sheet{fill:var(--sheet)} #plan .gap-living{fill:var(--f-living)} #plan .gap-garage{fill:var(--f-garage)} #plan .gap-circ{fill:var(--f-circ)}
+#plan .gap-bed{fill:var(--f-bed)} #plan .gap-wet{fill:var(--f-wet)} #plan .gap-store{fill:var(--f-store)}
+#plan .rm.mech{fill:url(#hatch)}
+#plan .win{fill:var(--glass);stroke:var(--ink);stroke-width:.05} #plan .winline{stroke:var(--ink);stroke-width:.05}
+#plan .bypass{fill:var(--sheet);stroke:var(--line);stroke-width:.05} #plan .jamb{stroke:var(--ink);stroke-width:.14}
+#plan .fix{fill:var(--fix);stroke:var(--line);stroke-width:.06} #plan .fix2{fill:none;stroke:var(--line);stroke-width:.05}
+#plan .halfwall{stroke:var(--line);stroke-width:.1} #plan .t-fix{font-family:var(--mono);font-size:.36px;fill:var(--muted)}
 #plan .wall{fill:none;stroke:var(--line);stroke-width:.28;stroke-linejoin:miter}
 #plan .outer{fill:none;stroke:var(--ink);stroke-width:.55;stroke-linejoin:miter}
 #plan .left{fill:url(#hatch)}
@@ -140,14 +149,17 @@ tr.sub td{color:var(--muted);border-bottom:0}
       <span><i style="background:var(--f-circ)"></i>Hall / stairs</span>
       <span><i style="background:var(--f-store)"></i>Closet / pantry</span>
       <span><i style="background:var(--f-garage)"></i>Garage</span>
+      <span><i style="background:repeating-linear-gradient(45deg,var(--warn) 0 1px,transparent 1px 5px)"></i>Flue chase</span>
+      <span><i style="background:var(--glass);height:6px;vertical-align:2px"></i>Window</span>
+      <span>◜ door swing</span>
       <span>- - - open to the next room</span>
     </div>
     <div class="titleblock">
-      <div><span>Drawn from</span><strong>Your room measurements</strong></div>
+      <div><span>Drawn from</span><strong>Measurements and walkthrough photos</strong></div>
       <div><span>Scale</span><strong>Approximate · not for construction</strong></div>
       <div><span>Orientation</span><strong>Front faces east</strong></div>
       <div><span>Walls</span><strong>Not drawn to thickness</strong></div>
-      <div><span>Date</span><strong>Nov 7, 2026</strong></div>
+      <div><span>Updated</span><strong>Nov 8, 2026</strong></div>
     </div>
   </section>
 
@@ -160,7 +172,7 @@ tr.sub td{color:var(--muted);border-bottom:0}
           <tbody id="sched"></tbody>
         </table>
       </div>
-      <p class="note">Sizes are the measurements you gave, except the hall, the hall closet and bedroom 2's closet, which were fitted to the space. On the drawing, a few rooms are stretched or shrunk by up to about 9 inches so the walls meet.</p>
+      <p class="note">Sizes are the measurements you gave, except the linen closet, which is estimated. Doors, windows and fixtures are placed from the walkthrough photos. On the drawing, a few rooms are stretched or shrunk by up to about 9 inches so the walls meet.</p>
     </section>
 
     <section class="sheet panel" aria-labelledby="check-h">
@@ -168,10 +180,14 @@ tr.sub td{color:var(--muted);border-bottom:0}
       <ul class="checks">
         <li class="ok"><h3>Garage</h3>
           <p>The garage is back to your measurement of 19′ 4″ deep. Its back wall lines up with the west side of the stairs, so it sticks out about 4′ 3″ past the front of the house.</p></li>
-        <li class="ask"><h3>Hall closet</h3>
-          <p>The closet across from the pantry is drawn at about 4′ wide × 2′ 10″ deep, opening north into the hall. That leaves a short stretch of hall in front of it leading to the green room door. Send its real size if you have it.</p></li>
-        <li class="ask"><h3>Doors</h3>
-          <p>The plan shows only the front door, the garage door and the door from the stair landing into the garage. Bedroom, bath and kitchen doors still need placing.</p></li>
+        <li class="ok"><h3>Doors, windows and fixtures</h3>
+          <p>Every door, window and closet opening is drawn where the walkthrough photos show it, along with the kitchen cabinets, bath fixtures, front room duct and dining room baseboard heaters.</p></li>
+        <li class="ask"><h3>Window sizes</h3>
+          <p>Window widths are estimated from the photos. Measure them before ordering blinds or replacements.</p></li>
+        <li class="ask"><h3>Linen closet</h3>
+          <p>The linen closet at the south end of the hall is drawn at about 2′ 7″ × 2′. Send its real size if you measure it.</p></li>
+        <li class="ok"><h3>Flue chase</h3>
+          <p>The hatched space between the linen closet and bedroom 2 holds the flue pipe from the basement. It's the wall that's open in bedroom 2.</p></li>
         <li class="ok"><h3>What lines up</h3>
           <p>Across the bedroom side: green room 11′ 6″ + two 2′ closets + bedroom 2 at 9′ 6″ = 25′. Across the kitchen side: front room 11′ 6″ + stairs 3′ 7″ + kitchen 9′ 8″ ≈ 24′ 9″. Front to back, bedroom 2 + bath + kitchen comes to 28′ 1″ against 28′ 9″ on the front side. The 8″ difference is about two interior walls.</p></li>
       </ul>
@@ -191,27 +207,46 @@ tr.sub td{color:var(--muted);border-bottom:0}
     {id:'front',  name:'Front room', sub:'Entry / living', type:'living', g:{x:0,y:11.5,w:11.5,h:17.25}, d:[138,207], mode:'full'},
     {id:'green',  name:'Green room', sub:'Bedroom', type:'bed', g:{x:0,y:0,w:11.5,h:11.5}, d:[138,138], mode:'full'},
     {id:'gcl',    name:'Green room closet', type:'store', g:{x:11.5,y:0,w:2,h:6}, d:[24,72], mode:'cl'},
-    {id:'b2cl',   name:'Bedroom 2 closet', type:'store', g:{x:13.5,y:0,w:2,h:6}, d:[24,72], mode:'cl'},
+    {id:'b2cl',   name:'Bedroom 2 closet', type:'store', g:{x:13.5,y:0,w:2,h:4.5}, d:[24,54], mode:'cl'},
     {id:'bed2',   name:'Bedroom 2', type:'bed', g:{x:15.5,y:0,w:9.5,h:11.5}, d:[114,138], mode:'full'},
-    {id:'hall',   name:'Hall', type:'circ', poly:[[11.5,8.84],[15.5,8.84],[15.5,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,15.5],[11.5,15.5]], lab:[14.9,12.6], mode:'hall'},
-    {id:'hcl',    name:'Hall closet', type:'store', g:{x:11.5,y:6,w:4,h:2.84}, d:[48,34], mode:'cl'},
-    {id:'bath',   name:'Bathroom', short:'Bath', type:'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}, d:[80,59], mode:'full'},
+    {id:'hall',   name:'Hall', type:'circ', poly:[[11.5,8],[15.5,8],[15.5,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,15.5],[11.5,15.5]], lab:[13.5,12.4], mode:'hall'},
+    {id:'linen',  name:'Linen closet', type:'store', g:{x:11.5,y:6,w:2.6,h:2}, d:[31,24], mode:'tiny', label:'LINEN'},
+    {id:'chase',  name:'Flue chase', type:'mech', poly:[[13.5,4.5],[15.5,4.5],[15.5,8],[14.1,8],[14.1,6],[13.5,6]], lab:[14.5,5.2], mode:'none'},
+    {id:'bath',   name:'Bathroom', short:'Bath', type:'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}, d:[80,59], mode:'name', lab:[21.65,13.25]},
     {id:'pantry', name:'Pantry', type:'store', g:{x:11.5,y:15.5,w:3.58,h:3.17}, d:[44,38], mode:'small'},
     {id:'stair',  name:'Stair opening', type:'circ', g:{x:11.5,y:18.67,w:3.58,h:7.33}, d:[43,88], mode:'none'},
     {id:'landing',name:'Top landing', type:'circ', g:{x:11.5,y:26,w:3.58,h:2.75}, d:[43,32], mode:'none'},
-    {id:'kitchen',name:'Kitchen', type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}, d:[116,140], mode:'full'},
+    {id:'kitchen',name:'Kitchen', type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}, d:[116,140], mode:'full', lab:[19.1,22.7]},
     {id:'garage', name:'Garage', type:'garage', g:{x:-4.25,y:28.75,w:19.33,h:11.75}, d:[232,141], mode:'full'},
     {id:'dining', name:'Dining room', type:'living', g:{x:15.08,y:28.75,w:15.5,h:11.75}, d:[186,138], mode:'full'}
   ];
   const LEFTOVER = [];
   const OUTLINE = [[0,0],[25,0],[25,28.75],[30.58,28.75],[30.58,40.5],[-4.25,40.5],[-4.25,28.75],[0,28.75]];
-  const OPEN = [ [[11.5,11.5],[11.5,15.5]], [[15.08,28.75],[25,28.75]], [[15.08,26],[15.08,28.75]], [[15.08,16.42],[18.33,16.42]] ];
+  const OPEN = [ [[15.08,28.75],[25,28.75]], [[15.08,26],[15.08,28.75]], [[15.08,16.42],[18.33,16.42]] ];
+  // Doors, windows and openings. ax 'v' = wall at x = c, 'h' = wall at y = c. swing = which way (+/- along the other axis) the door opens.
+  const OPENINGS = [
+    {t:'door', ax:'v', c:0, s:25.4, e:28.4, hinge:'e', swing:1, room:'living', out:-1},   // front door
+    {t:'door', ax:'v', c:11.5, s:8.4, e:10.95, hinge:'e', swing:-1, room:'bed'},          // green room
+    {t:'door', ax:'v', c:15.5, s:8.4, e:10.95, hinge:'e', swing:1, room:'bed'},           // bedroom 2
+    {t:'door', ax:'v', c:18.33, s:12.2, e:14.7, hinge:'s', swing:1, room:'wet'},          // bathroom
+    {t:'door', ax:'h', c:8, s:12.15, e:14.0, hinge:'e', swing:1, room:'circ'},            // linen closet
+    {t:'door', ax:'h', c:15.5, s:12.2, e:14.45, hinge:'e', swing:-1, room:'circ'},        // pantry
+    {t:'door', ax:'h', c:28.75, s:11.8, e:14.7, hinge:'s', swing:1, room:'garage'},       // landing to garage
+    {t:'bypass', ax:'v', c:11.5, s:0.4, e:5.6, room:'store'},                             // green room closet
+    {t:'cased', ax:'v', c:15.5, s:0.3, e:4.25, room:'store'},                             // bedroom 2 closet (no doors)
+    {t:'cased', ax:'v', c:11.5, s:12.0, e:15.0, room:'living'},                           // front room to hall
+    {t:'slider', ax:'v', c:30.58, s:32.2, e:38.2},                                         // patio door to the deck
+    {t:'win', ax:'v', c:0, s:3.8, e:7.8}, {t:'win', ax:'v', c:0, s:14.8, e:21.6},
+    {t:'win', ax:'h', c:0, s:7.0, e:9.8}, {t:'win', ax:'h', c:0, s:16.6, e:19.4},
+    {t:'win', ax:'v', c:25, s:1.4, e:4.0}, {t:'win', ax:'v', c:25, s:12.9, e:15.1},
+    {t:'win', ax:'h', c:40.5, s:21.6, e:24.1}, {t:'win', ax:'h', c:40.5, s:26.6, e:29.1}
+  ];
 
   const SCHEDULE = [
     ['Living', [['front','Front room (entry / living)',[138,207]],['kitchen','Kitchen',[116,140]],['dining','Dining room',[186,138]]]],
-    ['Bedrooms', [['green','Green room',[138,138]],['gcl','Green room closet',[24,72]],['bed2','Bedroom 2',[114,138]],['b2cl','Bedroom 2 closet (extended to fit)',[24,72]]]],
-    ['Bath & storage', [['bath','Bathroom',[80,59]],['pantry','Pantry',[44,38]],['hcl','Hall closet (size estimated)',[48,34]]]],
-    ['Halls & stairs', [['hall','Hall (fitted to the space)',null],['stair','Stair opening',[43,88]],['landing','Top landing to garage door',[43,32]]]],
+    ['Bedrooms', [['green','Green room',[138,138]],['gcl','Green room closet',[24,72]],['bed2','Bedroom 2',[114,138]],['b2cl','Bedroom 2 closet',[24,54]]]],
+    ['Bath & storage', [['bath','Bathroom',[80,59]],['pantry','Pantry',[44,38]],['linen','Linen closet (size estimated)',[31,24]]]],
+    ['Halls & stairs', [['hall','Hall, main section',[48,90]],['hall','Hall, short section',[32,63]],['stair','Stair opening',[43,88]],['landing','Top landing to garage door',[43,32]]]],
     ['Garage', [['garage','Garage',[232,141]]]]
   ];
 
@@ -271,18 +306,62 @@ tr.sub td{color:var(--muted);border-bottom:0}
     // openings between rooms
     OPEN.forEach(([a,b]) => { s += line(a,b,'open-cover') + line(a,b,'open-dash'); });
 
-    // outer wall, then cut door openings
+    // fixtures (drawn over the floor, under the labels)
+    const P = (x, y) => `${n(X(x))},${n(Y(y))}`;
+    const rectF = (x0, x1, y0, y1, cls) => `<polygon class="${cls}" points="${pts([[x0,y0],[x1,y0],[x1,y1],[x0,y1]])}"/>`;
+    const circF = (x, y, r, cls) => `<circle class="${cls}" cx="${n(X(x))}" cy="${n(Y(y))}" r="${n(r)}"/>`;
+    const ellF = (x, y, rx, ry, cls) => `<ellipse class="${cls}" cx="${n(X(x))}" cy="${n(Y(y))}" rx="${n(rx)}" ry="${n(ry)}"/>`;
+    const tiny = (x, y, t) => text(x, y, t, 't-fix', 'pointer-events="none"');
+    // kitchen: counters on the south and back walls, sink, dishwasher, range, fridge, breakfast bar
+    s += rectF(18.33, 25, 16.42, 18.42, 'fix') + rectF(23.0, 25, 18.42, 24.05, 'fix');
+    s += rectF(21.1, 22.6, 16.75, 18.15, 'fix2') + rectF(21.3, 22.4, 16.9, 18.0, 'fix2') + tiny(21.85, 18.85, 'SINK');
+    s += rectF(18.4, 20.45, 16.5, 18.35, 'fix2') + tiny(19.42, 17.4, 'DW');
+    s += rectF(22.75, 25, 20.0, 22.5, 'fix') + [[23.4,20.6],[24.4,20.6],[23.4,21.9],[24.4,21.9]].map(([x,y]) => circF(x, y, 0.32, 'fix2')).join('') + tiny(22.1, 21.25, 'RANGE');
+    s += rectF(22.35, 25, 24.05, 26.85, 'fix') + line([22.35,24.05],[25,26.85],'fix2') + line([22.35,26.85],[25,24.05],'fix2') + tiny(21.6, 25.45, 'FRIDGE');
+    { const pen = [[25,26.9],[17.9,26.9]]; for (let i = 1; i < 12; i++){ const a = -Math.PI/2 - i*Math.PI/12; pen.push([17.9 + 1.025*Math.cos(a), 27.925 + 1.025*Math.sin(a)]); } pen.push([17.9,28.95],[25,28.95]);
+      s += `<polygon class="fix" points="${pts(pen)}"/>` + tiny(21.2, 27.9, 'BREAKFAST BAR'); }
+    // bathroom: tub, toilet, vanity
+    s += rectF(22.5, 24.85, 11.65, 16.27, 'fix') + `<rect class="fix2" x="${n(Math.min(X(22.75),X(24.6)))}" y="${n(Y(16.0))}" width="${n(1.85)}" height="${n(4.08)}" rx=".5"/>` + tiny(23.68, 13.95, 'TUB');
+    s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
+    s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
+    // front room duct, flue pipe, dining room baseboard heaters
+    s += circF(10.85, 28.1, 0.42, 'fix') + tiny(9.6, 27.6, 'DUCT');
+    s += circF(14.8, 6.3, 0.22, 'fix') + tiny(14.75, 7.35, 'FLUE');
+    s += rectF(21.35, 24.35, 39.95, 40.25, 'fix') + rectF(26.35, 29.35, 39.95, 40.25, 'fix') + tiny(25.35, 39.35, 'BASEBOARD HEATERS');
+    // half wall with pass-through between the kitchen and the stairs
+    s += rectF(14.88, 15.28, 18.75, 25.95, 'gap-living') + line([15.08,18.67],[15.08,26],'halfwall');
+    { const hx = X(15.75), hy = Y(22.35); s += `<text x="${n(hx)}" y="${n(hy)}" text-anchor="middle" dominant-baseline="middle" class="t-fix" transform="rotate(-90 ${n(hx)} ${n(hy)})">HALF WALL + PASS-THROUGH</text>`; }
+
+    // outer wall
     s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
-    const gapRect = (x1,x2,y1,y2,cls) => { const a = Math.min(X(x1),X(x2)), b = Math.max(X(x1),X(x2)); return `<rect class="${cls}" x="${n(a)}" y="${n(Y(y2))}" width="${n(b-a)}" height="${n(y2-y1)}"/>`; };
-    // front door: west wall of front room
-    s += gapRect(-0.4,0,19.5,22.5,'gap-sheet') + gapRect(0,0.35,19.5,22.5,'gap-living');
-    s += line([0,19.5],[3,19.5],'leaf') + arc([0,19.5],[3,19.5],[0,22.5],false);
+    const RR = (x1, x2, y1, y2, cls) => { const a = Math.min(X(x1),X(x2)), b = Math.max(X(x1),X(x2)); return `<rect class="${cls}" x="${n(a)}" y="${n(Y(Math.max(y1,y2)))}" width="${n(b-a)}" height="${n(Math.abs(y2-y1))}"/>`; };
+    // along-wall coordinate helper: point at (u along the wall, v across it)
+    const at = (o, u, v) => o.ax === 'v' ? [o.c + v, u] : [u, o.c + v];
+    const band = (o, u0, u1, v0, v1, cls) => { const a = at(o, u0, v0), b = at(o, u1, v1); return RR(a[0], b[0], a[1], b[1], cls); };
+    OPENINGS.forEach(o => {
+      const w = o.e - o.s;
+      if (o.t === 'win' || o.t === 'slider'){
+        s += band(o, o.s, o.e, -0.3, 0.3, 'win');
+        if (o.t === 'win') s += line(at(o, o.s, 0), at(o, o.e, 0), 'winline');
+        else s += line(at(o, o.s, -0.1), at(o, o.s + w*0.55, -0.1), 'winline') + line(at(o, o.e - w*0.55, 0.1), at(o, o.e, 0.1), 'winline');
+        return;
+      }
+      if (o.out) s += band(o, o.s, o.e, o.out*0.32, 0, 'gap-sheet') + band(o, o.s, o.e, 0, -o.out*0.32, 'gap-' + o.room);
+      else s += band(o, o.s, o.e, -0.2, 0.2, 'gap-' + o.room);
+      if (o.t === 'door'){
+        const hu = o.hinge === 's' ? o.s : o.e, ou = o.hinge === 's' ? o.e : o.s, H = at(o, hu, 0), L = at(o, hu, o.swing*w);
+        s += line(H, L, 'leaf');
+        const arcPts = []; for (let i = 0; i <= 16; i++){ const t = i/16*Math.PI/2; arcPts.push(at(o, hu + (ou - hu)*Math.sin(t), o.swing*w*Math.cos(t))); }
+        s += `<polyline class="swing" points="${pts(arcPts)}"/>`;
+      } else if (o.t === 'bypass'){
+        s += band(o, o.s, o.s + w*0.55, -0.17, -0.04, 'bypass') + band(o, o.e - w*0.55, o.e, 0.04, 0.17, 'bypass');
+      } else if (o.t === 'cased'){
+        s += line(at(o, o.s, -0.3), at(o, o.s, 0.3), 'jamb') + line(at(o, o.e, -0.3), at(o, o.e, 0.3), 'jamb');
+      }
+    });
     // overhead garage door: front (east) face of the garage
-    s += gapRect(-4.65,-4.25,30.4,38.9,'gap-sheet') + gapRect(-4.25,-3.9,30.4,38.9,'gap-garage');
+    s += RR(-4.65,-4.25,30.4,38.9,'gap-sheet') + RR(-4.25,-3.9,30.4,38.9,'gap-garage');
     s += line([-3.35,30.4],[-3.35,38.9],'ohd');
-    // garage to house door at top of the stair landing
-    s += gapRect(11.8,14.7,28.55,28.95,'gap-circ');
-    s += line([11.8,28.75],[11.8,31.65],'leaf') + arc([11.8,28.75],[11.8,31.65],[14.7,28.75],true);
 
     // labels
     ROOMS.forEach(r => {
@@ -299,6 +378,10 @@ tr.sub td{color:var(--muted);border-bottom:0}
         s += text(lx, ly-0.45, `${fmt(r.d[0])}×${fmt(r.d[1])}`, 't-tiny', 'pointer-events="none"');
       } else if (r.mode === 'cl'){
         s += text(lx, ly, 'CL', 't-small', 'pointer-events="none"');
+      } else if (r.mode === 'name'){
+        s += text(lx, ly, (r.short || r.name).toUpperCase(), 't-small', 'pointer-events="none"');
+      } else if (r.mode === 'tiny'){
+        s += text(lx, ly, r.label, 't-fix', 'pointer-events="none"');
       } else if (r.mode === 'hall'){
         s += text(lx, ly+0.55, 'HALL', 't-small', 'pointer-events="none"');
         s += text(lx, ly-0.25, `≈ ${Math.round(polyArea(r.poly))} sq ft`, 't-area', 'pointer-events="none"');
