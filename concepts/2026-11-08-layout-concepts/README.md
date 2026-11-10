@@ -1,6 +1,6 @@
 # Layout concepts (November 8, 2026)
 
-Fifteen ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
+Sixteen ideas for the main floor that focus on **flow, use of space and how the house feels**. Colors, finishes and fixtures come later.
 
 Each concept is drawn on the measured [floor plan](../../floor-plan/), with the same orientation: north is up and the front of the house (east) is on the right. The starting point is the [baseline model](../../renderings/2026-11-08-baseline/).
 
@@ -551,11 +551,40 @@ Dream 7 refined, with the bedroom end reworked around a big working pantry. The 
   - **Laundry downstairs:** the pantry gets its whole southeast corner back for a tall fridge or freezer.
   - **Keep the garage:** concept 13's garage switch works here too; the bedroom end doesn't change.
 
+## 16 · Dream 10: a calmer bedroom hall
+
+*Your idea: clean up where the bedrooms, the pantry, the powder room and the living-room doorway meet. Built on concept 15.*
+
+![Concept 16](16-dream-10-calmer-bedroom-hall.png)
+
+**See it in 3D:** [Dream 10, a calmer bedroom hall](../../renderings/2026-11-09-dream-10-calmer-bedroom-hall/).
+
+In concept 15, seven openings share about 50 sq ft of hall: the kitchen, the pantry, bedroom 2, the bath, the primary bedroom, the powder room and the doorway from the library (today's living-room doorway). Concept 16 closes the doorway from the library, so the bedroom end becomes a private wing off the kitchen.
+
+1. **Doorway closed.** The doorway from the library closes. The bedroom hall now has one way in, from the kitchen, and nobody passes through it on the way to somewhere else.
+2. **Linen cabinet.** A full-height built-in, 3½ ft wide and 2 ft deep, takes its place, facing the bedroom hall. The house has had no linen closet since wardrobes replaced the closets.
+3. **Powder room.** Back at full size, about 3½ × 5 ft, with its door off the library, so guests use it from the entry and never walk into the bedroom hall.
+4. **Flush doors.** The bedroom hall is a simple L off the kitchen. The doors to the bath and both bedrooms are flush, full height and painted the wall color, so they read as one quiet wall, with a picture at the end on the pantry wall.
+5. **Everything else** is the same as concept 15: the big pantry, the shared bath, both bedrooms, the kitchen and the stairwell's three settings.
+
+- **Walls:** about 74 ft of interior wall comes out. About 31 ft of new wall goes in for the pantry, the short hall, the shared bath, the linen cabinet and the powder room, and to fill in the old doorway from the library. About 9 ft turns into glass at the stair.
+- **How it feels:** the bedroom end becomes a private wing. Nobody cuts through it, and guests reach the powder room from the entry without passing a bedroom door.
+- **Trade-offs:**
+  - From the front door to the bedrooms you go through the kitchen, about 15 ft further than in concept 15.
+  - The library loses its door to the bedroom end, so it's quieter but one step further from the bedrooms.
+  - Everything concept 15 gives up still applies: bedroom 2 is about 76 sq ft, and the main floor has one full bath plus a powder room.
+- **Checks first:** the same as concept 15. The full-height doors need 8-ft slabs and concealed hinges, which cost more and take more care to hang.
+- **Rough cost:** about the same as concept 15, plus roughly $3,000–8,000 for the linen cabinet and the full-height doors (my guess).
+- **Variations:**
+  - **Close the kitchen end instead:** keep the doorway from the library and close the hall from the kitchen. The pantry takes that bit of hall and grows to about 70 sq ft, opening straight off the kitchen, and the bedrooms are reached from the library, as today. Getting from the kitchen to the bedrooms then means going around the stair, about 30 ft instead of 14.
+  - **Jack-and-Jill bath:** open the bath from both bedrooms and drop its hall door. Guests use the powder room, but anyone sleeping downstairs would shower through a bedroom.
+  - **Why the primary bedroom keeps its door alcove:** moving its door a foot east would let the hall run straight, but the door would then swing into the king bed.
+
 ## How they fit together
 
 - **Now:** concept 1 costs little and can be undone. Living in the back for a while also shows how much you really want concept 2.
 - **As one project:** concepts 2 and 3 use the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath needs rebuilding anyway because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.
-- **Or go all in:** the dream plans (6 to 15) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
+- **Or go all in:** the dream plans (6 to 16) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo. Finish the basement first so you have somewhere to live, then do the main floor in one go.
 - **When it's due:** concept 4 waits for the furnace or water heater to need replacing.
 
 ## Also worth a look

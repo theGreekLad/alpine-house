@@ -189,6 +189,7 @@ td:first-child{font-weight:600;min-width:150px}
           <tr><td>13 · Dream 7, refined</td><td>Concept 12 with a shorter island, the fridge moved, the pantry back, and a stairwell that becomes a table or extra floor.</td><td>A clear way in from the bedroom hall, and a stairwell that works three ways.</td><td>The stair is closed while the table or floor is in use, and the panels are custom.</td><td>Concept 12, plus roughly $4,000–12,000 for the panels (my guess).</td></tr>
           <tr><td>14 · Garage kitchen</td><td>The garage becomes a vaulted kitchen on a raised floor, the bump-out the dining room, and the old kitchen a family room. The rest follows concept 13.</td><td>The biggest room becomes the kitchen, beside the dining room and deck and a few steps from the front door.</td><td>No garage, the kitchen window faces the street, and every kitchen service is new.</td><td>The most of any plan: a whole-floor renovation, a garage conversion and an all-new kitchen.</td></tr>
           <tr><td>15 · Big pantry</td><td>Concept 13 with a 56 sq ft working pantry where the hall bath and the north end of bedroom 2 were, a shared full bath between the bedrooms, and a powder room in the old pantry.</td><td>A real pantry with a prep sink and the laundry, a step from the kitchen, and a powder room for guests.</td><td>Bedroom 2 drops to about 76 sq ft (a full bed, not a queen), and the primary bedroom loses its own bath.</td><td>About the same as concept 13.</td></tr>
+          <tr><td>16 · Calmer hall</td><td>Concept 15 with the doorway from the library closed, a linen cabinet in its place, the powder room back at full size off the library, and flush, full-height doors in the bedroom hall.</td><td>A private bedroom wing with a simple hall, a linen closet, and a powder room guests reach from the entry.</td><td>The front door to the bedrooms goes through the kitchen, about 15 ft further, plus everything concept 15 gives up.</td><td>About the same as concept 15, plus roughly $3,000–8,000 (my guess).</td></tr>
         </tbody>
       </table>
     </div>
@@ -200,7 +201,7 @@ td:first-child{font-weight:600;min-width:150px}
     <div class="extras">
       <div><h3>Now</h3><p>Concept 1 costs little and can be undone. Living in the back for a while also tells you how much you really want concept 2.</p></div>
       <div><h3>One project</h3><p>Concepts 2 and 3 share the same trades (an engineer, framing, drywall, plumbing and electrical), so they're cheaper and less disruptive done together. The bath rebuild is already on the list because the surround is failing. Concept 5 is a bolder version of concept 2's stairwell, so choose between them before the framing starts.</p></div>
-      <div><h3>Or go all in</h3><p>The dream plans (6 to 15) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
+      <div><h3>Or go all in</h3><p>The dream plans (6 to 16) replace concepts 1–5 rather than adding to them, so pick one. If that's where you want to end up, skip the in-between steps it would undo, and phase it: finish the basement first so you have somewhere to live, then do the main floor in one go.</p></div>
       <div><h3>When it's due</h3><p>Concept 4 waits for the furnace or water heater to need replacing. Ask the HVAC contractor about direct-vent units when you get quotes.</p></div>
     </div>
     <h2 style="margin-top:22px">Also worth a look</h2>
@@ -680,6 +681,33 @@ td:first-child{font-weight:600;min-width:150px}
       toggle: H_MODES.map(([, m2, label]) => ['dreamM' + m2, label])}));
   });
 
+  // ---------- concept 16: Dream 10, a calmer bedroom hall (one tab, three stairwell settings) ----------
+  const C16 = Object.assign({}, C15, {
+    no:'16', short:'Calmer hall', tag:'Your idea · Dream 9, with the bedroom hall cleaned up', title:'Dream 10: a calmer bedroom hall', variant:'N',
+    pitch:'Dream 9, with the tangle where the bedrooms, the pantry, the powder room and the library doorway meet cleaned up. The doorway from the library closes, so the bedroom hall has one way in, from the kitchen. A linen cabinet takes its place, the powder room goes back to full size with its door off the library, and the hall\'s doors become flush and full height.',
+    walls:'About 74 ft of interior wall comes out: the closets between the bedrooms, the walls around bedroom 2 and the hall bath, the garage walls and the kitchen\'s half wall. About 31 ft of new wall goes in for the pantry, the short hall, the shared bath, the linen cabinet and the powder room, and to fill in the old doorway from the library. About 9 ft turns into glass at the stair.',
+    feel:'The bedroom end becomes a private wing. Nobody cuts through it, and guests reach the powder room from the entry without passing a bedroom door. The hall is a simple L off the kitchen, with flush doors that read as one quiet wall and a picture at the end on the pantry wall.',
+    tradeoff:'From the front door to the bedrooms you now go through the kitchen, about 15 ft further than in Dream 9. The library loses its door to the bedroom end, so it\'s quieter but one step further from the bedrooms. Everything Dream 9 gives up still applies: bedroom 2 is about 76 sq ft, and the main floor has one full bath plus a powder room.',
+    checks:'The same as concept 15. The full-height doors need 8-ft slabs and concealed hinges, which cost more and take more care to hang than standard doors.',
+    build:'The linen cabinet is a built-in, 3½ ft wide and 2 ft deep, floor to ceiling, in the space the doorway from the library used. The old doorway is filled in, and the powder room\'s new door is cut a little further north. The doors to the bath and both bedrooms are 8-ft flush slabs with concealed hinges and no casings, painted the wall color. The pantry, the bath and the stairwell are built as in concept 15.',
+    cost:'About the same as concept 15, plus roughly $3,000–8,000 for the linen cabinet and the full-height doors (my guess).',
+    altHtml:'<p><b>Close the kitchen end instead.</b> Keep the doorway from the library and close the hall from the kitchen. The pantry takes that bit of hall and grows to about 70 sq ft, opening straight off the kitchen, and the bedrooms are reached from the library, as they are today. Getting from the kitchen to the bedrooms then means going around the stair, about 30 ft instead of 14.</p>' +
+            '<p><b>Jack-and-Jill bath.</b> Open the bath from both bedrooms and drop its hall door, so one more door leaves the hall. Guests use the powder room, but anyone sleeping downstairs would shower through a bedroom.</p>' +
+            '<p><b>Why the primary bedroom keeps its door alcove.</b> Moving its door a foot east would let the hall run straight, but the door would then swing into the king bed.</p>'
+  });
+  const N_STEPS = [
+    [10.4, 13.0, 'The doorway from the library closes. The bedroom hall now has one way in, from the kitchen, and nobody passes through it on the way to somewhere else.'],
+    [13.3, 12.15, 'A full-height linen cabinet, 2 ft deep, takes its place, facing the bedroom hall. The house has had no linen closet since wardrobes replaced the closets.'],
+    [14.45, 17.3, 'The powder room is back at full size, about 3½ × 5 ft, with its door off the library, so guests use it from the entry and never walk into the bedroom hall.'],
+    [16.9, 9.75, 'The bedroom hall is a simple L off the kitchen. The doors to the bath and both bedrooms are flush, full height and painted the wall color, so they read as one quiet wall, with a picture at the end on the pantry wall.'],
+    [21.1, 13.7, 'The big pantry, the shared bath, both bedrooms, the kitchen and the stairwell\'s three settings are the same as concept 15. Try the switch above.']];
+  H_MODES.forEach(([mode, ms, , head]) => {
+    const key = 'dreamN' + ms;
+    CONCEPTS.push(Object.assign({}, C16, {key, mode, steps: mode === 'stair' ? N_STEPS : H_STEPS[mode].map(([x, y, t]) => [x, y, toPowder(t)]), stepsHead: mode === 'stair' ? 'What changes' : head,
+      tab: key === 'dreamN' ? undefined : 'dreamN', hidden: key !== 'dreamN',
+      toggle: H_MODES.map(([, m2, label]) => ['dreamN' + m2, label])}));
+  });
+
   // ---------- shared drawing pieces ----------
   const DEFS = `<defs><pattern id="hatch" width=".55" height=".55" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".55" class="hatchline"/></pattern>
       <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker>
@@ -1074,6 +1102,10 @@ td:first-child{font-weight:600;min-width:150px}
     {t:'door', ax:'h', c:8, s:11.85, e:14.05, hinge:'s', swing:-1, room:'wet'},
     {t:'door', ax:'h', c:8, s:15.7, e:18.1, hinge:'s', swing:-1, room:'bed'},
     {t:'door', ax:'h', c:14.5, s:11.7, e:14.0, hinge:'s', swing:1, room:'wet'} ]);
+  // concept 16 (Dream 10): the doorway from the library closes; a linen cabinet and a full-size powder room fill the gap
+  const OPEN_N_REMOVED = OPEN_M_REMOVED.filter(([a, b]) => !(a[0] === 11.5 && b[0] === 11.5 && a[1] === 11.5 && b[1] === 14.5));
+  const OPEN_N_ADDED = [ [[10.5,0],[10.5,8]], [[10.5,8],[11.5,8]], [[15.5,8],[25,8]], [[18.33,8],[18.33,11.5]], [[11.5,13.5],[15.08,13.5]], [[15.08,11.5],[15.08,15.5]], [[11.5,12.0],[11.5,13.75]] ];
+  const OPEN_N_OPENINGS = OPEN_M_OPENINGS.filter(o => !(o.t === 'door' && o.ax === 'h' && o.c === 14.5)).concat([{t:'door', ax:'v', c:11.5, s:13.75, e:16.05, hinge:'s', swing:1, room:'wet'}]);
   const M_PRIMARY = [[0,0],[10.5,0],[10.5,8],[11.5,8],[11.5,11.5],[0,11.5]];
   const M_BED_FURN = [[2.0,8.4,4.9,11.4,'king bed'],[0.7,1.8,10.3,11.4,''],[8.6,9.5,10.3,11.4,''],[8.6,10.2,0.6,2.4,'chair'],
     [18.75,24.95,3.0,7.45,''],[24.05,24.95,2.05,2.95,''],[18.4,21.4,0.05,1.9,'desk'],[19.4,20.4,2.0,2.9,'']];
@@ -1088,20 +1120,20 @@ td:first-child{font-weight:600;min-width:150px}
     [19.65,20.65,18.3,19.0,''],[19.65,20.65,26.2,26.9,'']];
 
   function drawOpenE(cfg){
-    const v = cfg.variant, wi = !!cfg.bigPantry, gKit = v === 'J', kStay = v !== 'E' && !gKit, twoBed = 'GHJM'.includes(v), d9 = v === 'M', refined = v === 'H' || d9, mode = cfg.mode || 'stair', gk = !!cfg.garageKept;
+    const v = cfg.variant, wi = !!cfg.bigPantry, gKit = v === 'J', kStay = v !== 'E' && !gKit, twoBed = 'GHJMN'.includes(v), d9 = v === 'M' || v === 'N', d10 = v === 'N', refined = v === 'H' || d9, mode = cfg.mode || 'stair', gk = !!cfg.garageKept;
     let s = DEFS;
     s += `<rect class="porch" x="${n(X(0))}" y="${n(Y(28.75))}" width="4.25" height="${n(28.75 - 21.8)}"/>` + vtext(-2.1, 25.3, 'covered porch');
     s += `<rect class="porch" x="${n(X(30.3))}" y="${n(Y(28.45))}" width="${n(30.3 - 25.25)}" height="${n(28.45 - 17.0)}"/>` + tiny(27.8, 22.7, 'deck');
-    if (d9) [[M_PRIMARY, 'bed'], [[[15.5,0],[25,0],[25,8],[15.5,8]], 'bed'], [[[11.5,8],[18.33,8],[18.33,11.5],[11.5,11.5]], 'living']].forEach(([P, t]) => { s += `<polygon class="rm ${t}" points="${pts(P)}"/>`; });
+    if (d9) [[M_PRIMARY, 'bed'], [[[15.5,0],[25,0],[25,8],[15.5,8]], 'bed'], [[[11.5,8],[18.33,8],[18.33,11.5],[11.5,11.5]], 'living']].concat(d10 ? [[[[15.08,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42]], 'living']] : []).forEach(([P, t]) => { s += `<polygon class="rm ${t}" points="${pts(P)}"/>`; });
     else (wi ? [[0, 11.5, 0, 11.5, 'bed'], [16.5, 25, 0, 11.5, 'bed'], [15.5, 16.5, 8, 11.5, 'bed'], [11.5, 15.5, 8, 11.5, 'living']] : twoBed ? [[0, 11.5, 0, 11.5, 'bed'], [15.5, 25, 0, 11.5, 'bed'], [11.5, 15.5, 8, 11.5, 'living']] : [[0, 17.5, 0, 11.5, 'bed'], [17.5, 25, 0, 11.5, 'wet']])
       .forEach(([x0, x1, y0, y1, t]) => { s += `<polygon class="rm ${t}" points="${pts([[x0,y0],[x1,y0],[x1,y1],[x0,y1]])}"/>`; });
     const rooms = [
       d9 ? {type:'wet', g:{x:10.5,y:0,w:5,h:8}} : wi ? {type:'wet', g:{x:11.5,y:0,w:5,h:8}} : twoBed ? {type:'wet', g:{x:11.5,y:0,w:4,h:8}} : {type:'wet', g:{x:22.0,y:7.0,w:3.0,h:4.5}},
-      {type:'living', poly:[[0,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,d9 ? 14.5 : 15.5],[11.5,d9 ? 14.5 : 15.5],[11.5,28.75],[0,28.75]]},
+      d10 ? {type:'living', poly:[[0,11.5],[11.5,11.5],[11.5,28.75],[0,28.75]]} : {type:'living', poly:[[0,11.5],[18.33,11.5],[18.33,16.42],[15.08,16.42],[15.08,d9 ? 14.5 : 15.5],[11.5,d9 ? 14.5 : 15.5],[11.5,28.75],[0,28.75]]},
       {type:'living', g:{x:15.08,y:16.42,w:9.92,h:12.33}},
       gk ? {type:'living', g:{x:15.08,y:28.75,w:15.5,h:11.75}} : {type:'living', g:{x:-4.25,y:28.75,w:34.83,h:11.75}},
       d9 ? {type:'store', g:{x:18.33,y:8,w:6.67,h:8.42}} : {type: wi ? 'store' : 'wet', g:{x:18.33,y:11.5,w:6.67,h:4.92}},
-      d9 ? {type:'wet', g:{x:11.5,y:14.5,w:3.58,h:4.17}} : {type:'store', g:{x:11.5,y:15.5,w:3.58,h:3.17}},
+      d10 ? {type:'wet', g:{x:11.5,y:13.5,w:3.58,h:5.17}} : d9 ? {type:'wet', g:{x:11.5,y:14.5,w:3.58,h:4.17}} : {type:'store', g:{x:11.5,y:15.5,w:3.58,h:3.17}},
       {type:'circ', g:{x:11.5,y:18.67,w:3.58,h:7.33}},
       {type:'circ', g:{x:11.5,y:26,w:3.58,h:2.75}}
     ];
@@ -1117,9 +1149,9 @@ td:first-child{font-weight:600;min-width:150px}
     if (mode === 'stair') s += line([13.29, 27.6],[13.29, 19.57],'arrow') + `<polygon class="arrowhead" points="${pts([[12.91,19.72],[13.67,19.72],[13.29,19.02]])}"/>` + text(13.29, 27.95, 'DN', 't-small');
     DREAM_GLASS.forEach(([a,b]) => { if (!kStay || a[0] === 11.5) s += line(a, b, 'glassrail'); });
     if (refined) s += line([15.08,18.67],[15.08,20.6],'glassrail');
-    (d9 ? OPEN_M_REMOVED : gKit ? OPEN_J_REMOVED : twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).filter(([a, b]) => !(gk && (a[1] === 28.75 && b[1] === 28.75 || a[0] === 15.08 && a[1] === 28.75))).concat(wi ? [[[15.5,0],[15.5,8]]] : []).forEach(([a,b]) => { s += line(a, b, 'removed'); });
+    (d10 ? OPEN_N_REMOVED : d9 ? OPEN_M_REMOVED : gKit ? OPEN_J_REMOVED : twoBed ? OPEN_G_REMOVED : kStay ? OPEN_F_REMOVED : OPEN_E_REMOVED).filter(([a, b]) => !(gk && (a[1] === 28.75 && b[1] === 28.75 || a[0] === 15.08 && a[1] === 28.75))).concat(wi ? [[[15.5,0],[15.5,8]]] : []).forEach(([a,b]) => { s += line(a, b, 'removed'); });
     if (wi) s += line([16.5,0],[16.5,8],'added') + line([15.5,8],[16.5,8],'added');
-    if (d9) OPEN_M_ADDED.forEach(([a, b]) => { s += line(a, b, 'added'); });
+    if (d9) (d10 ? OPEN_N_ADDED : OPEN_M_ADDED).forEach(([a, b]) => { s += line(a, b, 'added'); });
     if (!twoBed) s += line([11.5,11.5],[15.5,11.5],'added') + line([22.0,7.0],[22.0,11.5],'added') + line([22.0,7.0],[25,7.0],'added');
 
     if (gKit) s += tiny(6.0, 29.9, 'floor raised to house level');
@@ -1202,7 +1234,9 @@ td:first-child{font-weight:600;min-width:150px}
       s += rectF(12.35, 13.65, 7.55, 7.95, 'fix-new') + ellF(13.0, 6.85, 0.5, 0.6, 'fix-new');
       }
     }
-    if (d9) s += rectF(12.65, 13.95, 18.25, 18.62, 'fix-new') + ellF(13.3, 17.55, 0.5, 0.6, 'fix-new') + rectF(14.35, 15.03, 15.0, 16.2, 'fix-new') + ellF(14.7, 15.6, 0.22, 0.4, 'fix2');
+    if (d10) s += rectF(12.65, 13.95, 18.25, 18.62, 'fix-new') + ellF(13.3, 17.55, 0.5, 0.6, 'fix-new') + rectF(14.35, 15.03, 15.2, 16.4, 'fix-new') + ellF(14.7, 15.8, 0.22, 0.4, 'fix2')
+      + rectF(11.6, 15.0, 11.55, 13.45, 'fix-new') + tiny(13.3, 12.8, 'linen cabinet');
+    else if (d9) s += rectF(12.65, 13.95, 18.25, 18.62, 'fix-new') + ellF(13.3, 17.55, 0.5, 0.6, 'fix-new') + rectF(14.35, 15.03, 15.0, 16.2, 'fix-new') + ellF(14.7, 15.6, 0.22, 0.4, 'fix2');
     else if (!refined || wi) s += rectF(11.7, 14.0, 16.2, 18.55, 'fix') + tiny(12.85, 17.4, 'W/D') + rectF(14.05, 14.95, 17.2, 18.55, 'fix');
     else s += rectF(11.55, 12.5, 15.55, 18.62, 'fix') + rectF(12.5, 15.03, 17.75, 18.62, 'fix') + rectF(12.5, 15.03, 15.55, 16.3, 'fix');
     // the stairwell's three settings
@@ -1234,10 +1268,11 @@ td:first-child{font-weight:600;min-width:150px}
 
     s += furnSvg([(gk ? GARAGE_LIVING_FURN : gKit ? OPEN_LOUNGE_FURN.slice(0, 3).concat(FAMILY_J_FURN) : OPEN_LOUNGE_FURN).concat(d9 ? M_BED_FURN : wi ? WALKIN_BED2_FURN : twoBed ? TWO_BED_FURN : OPEN_SUITE_FURN, (kStay || gKit) ? BUMP_DINING_FURN : OLD_KITCHEN_DINING_FURN)]);
     s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
-    s += openingsSvg(d9 ? OPEN_M_OPENINGS : wi ? WALKIN_OPENINGS(gk ? OPEN_H_GARAGE_OPENINGS : OPEN_H_OPENINGS) : gKit ? OPEN_J_OPENINGS : gk ? OPEN_H_GARAGE_OPENINGS : refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
+    s += openingsSvg(d10 ? OPEN_N_OPENINGS : d9 ? OPEN_M_OPENINGS : wi ? WALKIN_OPENINGS(gk ? OPEN_H_GARAGE_OPENINGS : OPEN_H_OPENINGS) : gKit ? OPEN_J_OPENINGS : gk ? OPEN_H_GARAGE_OPENINGS : refined ? OPEN_H_OPENINGS : twoBed ? OPEN_G_OPENINGS : kStay ? OPEN_F_OPENINGS : OPEN_E_OPENINGS);
     if (cfg.route) s += `<polyline class="flow" points="${pts(cfg.route)}" marker-end="url(#ah)"/>`;
     const L = (gk ? [[5.75,24.3,'LIVING ROOM','t-name'],[4.0,39.4,'GARAGE','t-name']] : gKit ? [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[5.0,36.6,'KITCHEN','t-name'],[24.8,39.4,'DINING','t-name'],[20.6,26.9,'FAMILY ROOM','t-name']] : [[6.8,23.4,'LIBRARY + ENTRY','t-name'],[4.4,38.0,'LIVING ROOM','t-name']]).concat([d9 ? [21.1,12.1,'PANTRY','t-small'] : wi ? [21.6,14.1,'WALK-IN PANTRY','t-small'] : [21.65,13.25,'BATH','t-small'],[16.0,13.6,'HALL','t-fix']]);
     if (d9) L.push([5.25,3.4,'PRIMARY BEDROOM','t-name'],[21.85,5.6,'BEDROOM 2','t-name'],[12.4,5.25,'BATH','t-small'],[12.95,16.45,'POWDER','t-small']);
+    if (d10) L.forEach(l => { if (l[2] === 'HALL') l[0] = 16.7; });
     else if (wi) L.push([5.75,3.4,'PRIMARY BEDROOM','t-name'],[20.6,3.6,'BEDROOM 2','t-name'],[13.2,4.9,'BATH','t-small']);
     else if (twoBed) L.push([5.75,3.4,'PRIMARY BEDROOM','t-name'],[20.8,4.2,'BEDROOM 2','t-name'],[12.7,4.3,'BATH','t-small']);
     else L.push([5.75,2.75,'PRIMARY SUITE','t-name'],[19.6,6.4,'OPEN BATH','t-small'],[14.5,3.3,'DRESSING','t-small']);
@@ -1250,7 +1285,7 @@ td:first-child{font-weight:600;min-width:150px}
   }
 
   function drawDream(cfg){
-    if ('EFGHJM'.includes(cfg.variant || '-')) return drawOpenE(cfg);
+    if ('EFGHJMN'.includes(cfg.variant || '-')) return drawOpenE(cfg);
     if (cfg.variant === 'B') return drawDreamB(cfg);
     if (cfg.variant === 'C' || cfg.variant === 'D') return drawOpen(cfg);
     let s = DEFS;
