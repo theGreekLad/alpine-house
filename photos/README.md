@@ -1,10 +1,10 @@
 # Photos: Existing Conditions
 
-These photos show the main floor and the outside as they were on **November 8, 2026**, before renovation. The front of the house faces **east**. "Left" and "right" are as seen from the camera.
+These photos show the main floor and the outside as they were on **November 8, 2026**, and the basement on **November 9–10, 2026**, before renovation. The front of the house faces **east**. "Left" and "right" are as seen from the camera.
 
 The full room-by-room notes are in [`../existing-conditions.md`](../existing-conditions.md), and the floor plan is in [`../floor-plan/`](../floor-plan/).
 
-> Privacy: this repository is public, so the house number in photo 16 and the people in photo 17 are blurred.
+> Privacy: this repository is public, so the house number in photo 16, the people in photo 17, a small taped-up picture in photos 25 and 26, and a word in the drawings in photo 28 are blurred.
 
 ---
 
@@ -246,3 +246,134 @@ The full room-by-room notes are in [`../existing-conditions.md`](../existing-con
 - **Roof:** several box vents, a turbine vent and plumbing vent pipes. The south end appears to be **hipped**.
 - **Deck:** large, with weathered gray boards in two sections (in front of the slider, and along the back wall). The white railing has peeling paint, with steps at the south end.
 - **Under the deck:** a **basement window**, at the south end.
+
+---
+
+## Basement
+
+The basement photos were taken November 9–10, 2026. The [basement plan](../floor-plan/basement/) shows where each room is, and §4.10 of the [existing conditions](../existing-conditions.md) has the notes.
+
+### 19 · Utility area, laundry wall
+![Utility area, laundry wall](19-basement-utility-laundry-wall.jpg)
+
+**Camera:** in the hall, looking north into the utility area.
+
+- **Left:** the wall-hung tankless water heater, a whole-house filter, the water softener with its brine tank, and a condensate pump on the floor.
+- **Far wall:** the dryer and the top-load washer on the north foundation wall, with the laundry standpipe and a metal pipe rising behind the dryer into the joists.
+- **Floor and ceiling:** concrete with old tile-adhesive trowel marks and patches; open joists with wiring.
+
+### 20 · Utility area, furnace
+![Utility area, furnace](20-basement-utility-furnace.jpg)
+
+**Camera:** in the utility area, looking at the furnace.
+
+- The high-efficiency gas furnace with its two plastic vent pipes, the galvanized supply plenum beside it, and the water heater at the right edge.
+- A drywalled wall behind it with a small framed opening low on the left.
+
+### 21 · Bathroom rough-in
+![Bathroom rough-in](21-basement-bathroom-rough-in.jpg)
+
+**Camera:** outside the bathroom's open stud wall, looking east at the foundation wall. The washer and dryer show through the studs on the left.
+
+- **Back wall:** a double sink drain with supply stubs, electrical boxes and wiring.
+- **Floor:** a toilet flange with a test cap, and a capped drain stub standing up on the left, probably for a shower.
+- **Right:** drywall sheets stored against the wall.
+
+### 22 · Bedroom, window wall
+![Bedroom, window wall](22-basement-bedroom-window-wall.jpg)
+
+**Camera:** in the bedroom, looking toward the west wall.
+
+- A slider window with decorative film on one pane, looking out at the deck framing.
+- Painted drywall, a textured ceiling and a ceiling fan with lights.
+- **Floor:** the carpet is up, showing a grid of black adhesive from old square tiles.
+
+### 23 · Bedroom, door and closet
+![Bedroom, door and closet](23-basement-bedroom-door-and-closet.jpg)
+
+**Camera:** in the bedroom, looking east toward the door and the closet under the stairs.
+
+- **Left:** the closet opening, with no doors.
+- **Right:** the door to the hall, open, with the unfinished basement beyond.
+
+### 24 · Bedroom closet
+![Bedroom closet](24-basement-bedroom-closet.jpg)
+
+**Camera:** in front of the closet under the stairs.
+
+- A wood rod on side cleats, a shelf with sliding-door brackets above the opening, and the same black adhesive on the floor.
+
+### 25 · Master bedroom, toward the window
+![Master bedroom, toward the window](25-basement-master-toward-window.jpg)
+
+**Camera:** at the east end of the master bedroom, looking west.
+
+- **Left:** the south wall, framed and insulated with kraft-faced batts.
+- **Far wall:** the slider window, looking out at the yard. The north wall juts in here, which is why the room is narrower at this end.
+- **Right:** the north wall, with cardboard behind the studs, and the door to the hall with a keypad lock.
+- **Floor:** concrete with a patched rectangle, and old black adhesive near the camera.
+
+### 26 · Master bedroom, toward the door
+![Master bedroom, toward the door](26-basement-master-toward-door.jpg)
+
+**Camera:** in the master bedroom, looking north and east.
+
+- The door to the hall, a wood post, and the opening to the walk-in closet hung with plastic sheeting.
+- **Right:** a newly framed wall with wiring and boxes.
+
+### 27 · Walk-in closet, end wall
+![Walk-in closet, end wall](27-basement-walk-in-closet-end-wall.jpg)
+
+**Camera:** in the walk-in closet, looking south at the end wall.
+
+- The end wall is framed and insulated with kraft-faced batts. The long wall on the left is drywall, hung but not finished.
+- **Floor:** old dark square tiles, partly removed.
+
+### 28 · Walk-in closet, toward the opening
+![Walk-in closet, toward the opening](28-basement-walk-in-closet-toward-opening.jpg)
+
+**Camera:** in the walk-in closet, looking north toward its opening into the master bedroom.
+
+- Plastic sheeting at the opening, a 2x post, and drywall with children's drawings.
+- **Floor:** the old dark tiles stop partway, showing the concrete.
+
+### 29 · Hall, toward the master bedroom door
+![Hall, toward the master bedroom door](29-basement-hall-toward-master-door.jpg)
+
+**Camera:** in the hall beside the bathroom, looking south.
+
+- The door to the master bedroom, with its keypad lock, in a wall lined with cardboard.
+- **Right:** the wood post and the bottom of the stairs.
+- A galvanized supply trunk and a register along the ceiling.
+
+### 30 · Long hall, toward the back door
+![Long hall, toward the back door](30-basement-long-hall-toward-back-door.jpg)
+
+**Camera:** at the bottom of the stairs, looking west down the long hall.
+
+- **Far wall:** the door to the back yard on the left, a small hopper window, and the main drain stack in the corner.
+- **Left:** the master bedroom's door. **Right:** the bedroom's door and the stairs.
+- A round metal duct runs along the ceiling.
+
+### 31 · Hall, toward the utility area
+![Hall, toward the utility area](31-basement-hall-toward-utility.jpg)
+
+**Camera:** by the bottom step, looking toward the utility area.
+
+- The bathroom's open stud wall, with the washer and dryer behind it, and the softener and water heater on the left.
+
+### 32 · Bedroom door and stairs
+![Bedroom door and stairs](32-basement-bedroom-door-and-stairs.jpg)
+
+**Camera:** in the long hall, looking north at the bedroom door.
+
+- The bedroom door, with the dark wood stair treads rising north just to its right.
+- Beyond: the bathroom framing and the laundry.
+
+### 33 · Long hall, the master bedroom's wall
+![Long hall, the master bedroom's wall](33-basement-long-hall-master-wall.jpg)
+
+**Camera:** in the long hall, looking south at the master bedroom's north wall.
+
+- Open framing with cardboard behind it, wiring and boxes, and a plywood patch.
+- **Left:** the keypad door and the hall toward the bathroom.

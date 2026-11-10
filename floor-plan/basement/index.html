@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basement Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a drafting sheet. The plan is the hero, with a title block under it, then the room schedule beside the list of things to check. */
+:root{
+  --bg:#F2F4F1; --sheet:#FCFCFA; --ink:#1C2320; --line:#3A4440; --muted:#66706B; --rule:#D6DBD5;
+  --accent:#2C6878; --warn:#B4632A;
+  --f-living:#FFFFFF; --f-bed:#ECF1E7; --f-wet:#E0ECF0; --f-circ:#F4F0E5; --f-store:#E8E8E1; --f-garage:#DFE2DE; --hl:#FBE4C2;
+  --glass:#CFE3EC; --fix:#F7F6F2;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1311; --sheet:#151A17; --ink:#E1E6E2; --line:#A8B3AD; --muted:#8C9792; --rule:#2A322E;
+    --accent:#7DB7C6; --warn:#E39A62;
+    --f-living:#1B211E; --f-bed:#1D2720; --f-wet:#18252A; --f-circ:#24221C; --f-store:#22231F; --f-garage:#2A2E2C; --hl:#4D3B20;
+    --glass:#26414C; --fix:#232925;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1311; --sheet:#151A17; --ink:#E1E6E2; --line:#A8B3AD; --muted:#8C9792; --rule:#2A322E;
+  --accent:#7DB7C6; --warn:#E39A62;
+  --f-living:#1B211E; --f-bed:#1D2720; --f-wet:#18252A; --f-circ:#24221C; --f-store:#22231F; --f-garage:#2A2E2C; --hl:#4D3B20;
+    --glass:#26414C; --fix:#232925;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 24px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,48px);line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:4px 0 0;text-wrap:balance}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:8px}
+.meta b{color:var(--ink);font-weight:500}
+.flip{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.flip-label{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.seg button{font:500 14px var(--body);color:var(--ink);background:var(--sheet);border:0;padding:7px 14px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:3px}
+.plan-scroll{overflow-x:auto;padding:12px 8px 4px}
+#plan{display:block;width:100%;min-width:600px;height:auto}
+.titleblock{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border-top:1px solid var(--rule)}
+.titleblock div{padding:10px 14px;border-right:1px solid var(--rule);min-width:0}
+.titleblock div:last-child{border-right:0}
+.titleblock span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.titleblock strong{font-weight:500;font-size:14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;padding:10px 14px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border:1px solid var(--line);vertical-align:-2px;margin-right:6px}
+.cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}}
+h2{font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:.03em;text-transform:uppercase;margin:0 0 10px}
+.panel{padding:18px 18px 14px;min-width:0}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:6px 8px;border-bottom:1px solid var(--rule);white-space:nowrap}
+td:first-child{white-space:normal}
+td.num,th.num{text-align:right}
+td.dim{font-family:var(--mono);font-size:13px}
+tr.grp td{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-top:14px;border-bottom:0}
+tbody tr[data-room]{cursor:default}
+tbody tr[data-room].hl td{background:var(--hl)}
+tbody tr[data-room]:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+tr.total td{font-weight:600;border-bottom:0;border-top:1px solid var(--line)}
+tr.sub td{color:var(--muted);border-bottom:0}
+.note{font-size:13px;color:var(--muted);margin:12px 0 0;max-width:62ch}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.checks li{padding-left:14px;border-left:3px solid var(--rule)}
+.checks li.ask{border-left-color:var(--warn)}
+.checks li.ok{border-left-color:var(--accent)}
+.checks h3{font-size:15px;font-weight:600;margin:0 0 2px}
+.checks p{margin:0;font-size:14px;max-width:60ch}
+.budget{margin-top:18px;padding:12px 14px;background:var(--bg);border-radius:3px;font-size:14px}
+.budget strong{font-weight:600}
+/* plan drawing */
+#plan text{font-family:var(--display);fill:var(--ink)}
+#plan .rm{stroke:none;transition:fill .12s}
+#plan .rm.living{fill:var(--f-living)} #plan .rm.bed{fill:var(--f-bed)} #plan .rm.wet{fill:var(--f-wet)}
+#plan .rm.circ{fill:var(--f-circ)} #plan .rm.store{fill:var(--f-store)} #plan .rm.garage{fill:var(--f-garage)}
+#plan .rm.hl{fill:var(--hl)}
+#plan .gap-sheet{fill:var(--sheet)} #plan .gap-living{fill:var(--f-living)} #plan .gap-garage{fill:var(--f-garage)} #plan .gap-circ{fill:var(--f-circ)}
+#plan .gap-bed{fill:var(--f-bed)} #plan .gap-wet{fill:var(--f-wet)} #plan .gap-store{fill:var(--f-store)}
+#plan .rm.mech{fill:url(#hatch)}
+#plan .win{fill:var(--glass);stroke:var(--ink);stroke-width:.05} #plan .winline{stroke:var(--ink);stroke-width:.05}
+#plan .bypass{fill:var(--sheet);stroke:var(--line);stroke-width:.05} #plan .jamb{stroke:var(--ink);stroke-width:.14}
+#plan .fix{fill:var(--fix);stroke:var(--line);stroke-width:.06} #plan .fix2{fill:none;stroke:var(--line);stroke-width:.05}
+#plan .halfwall{stroke:var(--line);stroke-width:.1} #plan .t-fix{font-family:var(--mono);font-size:.36px;fill:var(--muted)}
+#plan .wall{fill:none;stroke:var(--line);stroke-width:.28;stroke-linejoin:miter}
+#plan .outer{fill:none;stroke:var(--ink);stroke-width:.55;stroke-linejoin:miter}
+#plan .left{fill:url(#hatch)}
+#plan .hatchline{stroke:var(--warn);stroke-width:.1}
+#plan .open-cover{stroke:var(--f-living);stroke-width:.42}
+#plan .open-dash{stroke:var(--muted);stroke-width:.07;stroke-dasharray:.35 .25}
+#plan .tread{stroke:var(--line);stroke-width:.06}
+#plan .arrow{stroke:var(--ink);stroke-width:.09;fill:none}
+#plan .arrowhead{fill:var(--ink)}
+#plan .swing{fill:none;stroke:var(--line);stroke-width:.07}
+#plan .leaf{stroke:var(--ink);stroke-width:.12}
+#plan .ohd{stroke:var(--line);stroke-width:.08;stroke-dasharray:.4 .3}
+#plan .dimline{stroke:var(--muted);stroke-width:.06}
+#plan .dimline.acc{stroke:var(--warn)}
+#plan .t-name{font-weight:600;font-size:.82px;letter-spacing:.04px}
+#plan .t-sub{font-size:.6px;fill:var(--muted)}
+#plan .t-dim{font-family:var(--mono);font-size:.56px}
+#plan .t-area{font-family:var(--mono);font-size:.5px;fill:var(--muted)}
+#plan .t-small{font-weight:600;font-size:.56px}
+#plan .t-tiny{font-family:var(--mono);font-size:.4px}
+#plan .t-dimlabel{font-family:var(--mono);font-size:.6px;fill:var(--muted)}
+#plan .t-dimlabel.acc{fill:var(--warn);font-weight:500}
+#plan .t-front{font-weight:600;font-size:.8px;letter-spacing:.25px;fill:var(--accent)}
+#plan .compass{fill:none;stroke:var(--line);stroke-width:.07}
+#plan .compass-n{fill:var(--ink)}
+#plan .sb-dark{fill:var(--ink)} #plan .sb-light{fill:var(--sheet);stroke:var(--ink);stroke-width:.05}
+@media (prefers-reduced-motion:reduce){#plan .rm{transition:none}}
+</style>
+<style>
+#plan .rough{fill:var(--sheet);stroke:var(--warn);stroke-width:.07}
+#plan .stack{fill:var(--fix);stroke:var(--ink);stroke-width:.07}
+#plan .above{fill:none;stroke:var(--muted);stroke-width:.06;stroke-dasharray:.3 .22}
+#plan .framed{stroke:var(--line);stroke-width:.1;stroke-dasharray:.12 .2}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Sheet A-0 · Basement</div>
+      <h1>Basement Plan</h1>
+      <div class="meta" id="meta"></div>
+    </div>
+  </header>
+
+  <section class="sheet" aria-label="Basement plan drawing">
+    <div class="plan-scroll"><svg id="plan" role="img" aria-label="Basement plan drawn from room measurements"></svg></div>
+    <div class="legend">
+      <span><i style="background:var(--f-bed)"></i>Bedroom</span>
+      <span><i style="background:var(--f-wet)"></i>Bath</span>
+      <span><i style="background:var(--f-circ)"></i>Hall / stairs</span>
+      <span><i style="background:var(--f-store)"></i>Closet</span>
+      <span><i style="background:var(--f-garage)"></i>Utility</span>
+      <span><i style="background:var(--glass);height:6px;vertical-align:2px"></i>Window</span>
+      <span>◜ door swing</span>
+      <span>- - - open to the next space</span>
+      <span><i style="border-radius:50%;border-color:var(--warn)"></i>Plumbing rough-in</span>
+    </div>
+    <div class="titleblock">
+      <div><span>Drawn from</span><strong>Your measurements and photos</strong></div>
+      <div><span>Scale</span><strong>Approximate · not for construction</strong></div>
+      <div><span>Orientation</span><strong>Front faces east</strong></div>
+      <div><span>Walls</span><strong>Not drawn to thickness</strong></div>
+      <div><span>Updated</span><strong>Nov 10, 2026</strong></div>
+    </div>
+  </section>
+
+  <div class="cols">
+    <section class="sheet panel" aria-labelledby="sched-h">
+      <h2 id="sched-h">Room schedule</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Room</th><th>East–west × north–south</th><th class="num">Sq ft</th></tr></thead>
+          <tbody id="sched"></tbody>
+        </table>
+      </div>
+      <p class="note">Sizes are the measurements you gave. Where the rooms are, which way they run, and the bedroom door and closets come from your answers. The other doors, the windows, the bathroom rough-in and the utility equipment are placed from the photos, so their positions are approximate.</p>
+    </section>
+
+    <section class="sheet panel" aria-labelledby="check-h">
+      <h2 id="check-h">Things to check</h2>
+      <ul class="checks">
+        <li class="ask"><h3>Test the old floor tiles and black adhesive</h3>
+          <p>The dark square tiles still down in the walk-in closet and the black adhesive in both bedrooms can contain asbestos. Have a chip of each tested before any more steaming or scraping.</p></li>
+        <li class="ask"><h3>Climb-out windows</h3>
+          <p>A basement bedroom needs a window big enough and low enough to climb out of. Measure the opening (width and height) and the sill height of the bedroom and master windows. The bedroom's window opens under the deck.</p></li>
+        <li class="ask"><h3>The flue upstairs</h3>
+          <p>The furnace and the wall-hung water heater both vent through plastic pipe. If nothing else uses the metal flue in the chase beside bedroom 2, the chase can come out rather than be boxed in. Check what the metal pipe rising behind the dryer connects to.</p></li>
+        <li class="ask"><h3>Placed from photos</h3>
+          <p>The back door, the windows, the bathroom rough-in and the furnace, water heater, softener, washer and dryer are placed from the photos. The bathroom's walls are open framing, and it has no door yet; the opening is drawn where the photo shows a wider gap.</p></li>
+        <li class="ok"><h3>What lines up</h3>
+          <p>Front to back on the front side: master 10′ 6″ + bathroom 9′ 11″ + utility 6′ 9″ = 27′ 2″. On the back side: master 10′ 6″ + long hall 5′ 10″ + bedroom 10′ 10″ = 27′ 2″. Across, the hall side comes to about 24′ 6″ and the master side to about 24′ 3″. With walls, that's about 24′ 7″ × 27′ 11″ inside, which fits under the 25′ × 28′ 9″ main floor.</p></li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<script>
+(function(){
+  const W = 24.55, H = 27.92;
+  const flip = true; // x is measured west from the front wall; the front faces east, so draw it mirrored like the main floor plan
+
+  // Plan geometry in feet: x = west from the inside of the front (east) wall, y = north from the inside of the south wall.
+  // d = your measurement in inches [east-west, north-south].
+  const ROOMS = [
+    {id:'mcl',    name:'Master walk-in closet', short:'Walk-in', type:'store', g:{x:0,y:0,w:4.58,h:10.5}, d:[55,126], mode:'small'},
+    {id:'master', name:'Master bedroom', sub:'8′ 8″ wide at the west end', type:'bed', poly:[[4.96,0],[24.55,0],[24.55,8.67],[21.55,8.67],[19.55,10.5],[4.96,10.5]], d:[231,126], a:195, mode:'full', lab:[13.3,5.0]},
+    {id:'bath',   name:'Bathroom', type:'wet', g:{x:0,y:10.875,w:6,h:9.92}, d:[72,119], mode:'full', lab:[2.8,17.0]},
+    {id:'hall1',  name:'Hall', type:'circ', g:{x:6.38,y:10.875,w:4.67,h:9.92}, d:[56,119], mode:'hall', lab:[8.7,18.6]},
+    {id:'hall2',  name:'Long hall', type:'circ', poly:[[11.05,10.875],[19.55,10.875],[21.55,9.045],[24.55,9.045],[24.55,16.7],[14.85,16.7],[14.85,16.0],[11.05,16.0]], d:[162,70], mode:'hall', lab:[18.3,13.4]},
+    {id:'util',   name:'Utility area', sub:'Laundry · furnace · water', type:'garage', g:{x:0,y:21.17,w:11.05,h:6.75}, d:[132,81], mode:'full', lab:[4.7,23.15]},
+    {id:'stair',  name:'Stairs', type:'circ', g:{x:11.05,y:16.0,w:3.8,h:7.2}, mode:'none'},
+    {id:'bcl',    name:'Bedroom closet', type:'store', g:{x:11.68,y:23.2,w:3.17,h:4.25}, d:[38,51], mode:'cl'},
+    {id:'bed',    name:'Bedroom', type:'bed', g:{x:15.22,y:17.08,w:9.33,h:10.83}, d:[112,130], mode:'full', lab:[19.9,22.0]}
+  ];
+  const OUTLINE = [[0,0],[W,0],[W,H],[0,H]];
+  // open to the next space: hall to utility, the two hall pieces, the open side and foot of the stairs
+  const OPEN = [ [[6.38,21.17],[11.05,21.17]], [[11.05,10.875],[11.05,16.0]], [[11.05,16.0],[11.05,21.17]], [[11.05,16.0],[14.85,16.0]] ];
+  // ax 'v' = wall at x = c, 'h' = wall at y = c. swing = which way (+/- along the other axis) the door opens.
+  const OPENINGS = [
+    {t:'door', ax:'h', c:10.69, s:7.6, e:10.25, hinge:'s', swing:-1, room:'bed'},     // master bedroom (keypad lock)
+    {t:'door', ax:'h', c:16.89, s:15.45, e:17.95, hinge:'s', swing:1, room:'bed'},     // bedroom
+    {t:'door', ax:'v', c:24.55, s:9.35, e:12.35, hinge:'s', swing:-1, room:'circ', out:1}, // door to the back yard
+    {t:'cased', ax:'v', c:4.77, s:7.1, e:10.1, room:'store'},                          // walk-in closet, from the master
+    {t:'cased', ax:'v', c:15.03, s:23.45, e:27.2, room:'store'},                       // bedroom closet, under the stairs
+    {t:'cased', ax:'v', c:6.19, s:14.6, e:17.0, room:'wet'},                           // bathroom rough opening (no door yet)
+    {t:'win', ax:'v', c:W, s:2.2, e:6.2}, {t:'win', ax:'v', c:W, s:13.4, e:15.2}, {t:'win', ax:'v', c:W, s:18.4, e:21.9}
+  ];
+
+  const SCHEDULE = [
+    ['Bedrooms', [['master','Master bedroom (8′ 8″ wide for 3 ft at the west end, angled back over 2 ft)',[231,126],195],['mcl','Master walk-in closet',[55,126]],['bed','Bedroom',[112,130]],['bcl','Bedroom closet, under the stairs',[38,51]]]],
+    ['Bath & utility', [['bath','Bathroom, roughed in',[72,119]],['util','Utility area, open to the hall',[132,81]]]],
+    ['Halls', [['hall1','Hall beside the bathroom',[56,119]],['hall2','Long hall to the back door',[162,70]]]]
+  ];
+
+  const fmt = i => { const f = Math.floor(i/12), r = Math.round(i - f*12); return r ? `${f}′ ${r}″` : `${f}′`; };
+  const area = d => d[0]*d[1]/144;
+  const polyArea = p => Math.abs(p.reduce((s,[x,y],i) => { const [x2,y2] = p[(i+1)%p.length]; return s + x*y2 - x2*y; }, 0))/2;
+  const X = x => flip ? W - x : x;
+  const Y = y => H - y;
+  const n = v => (+v).toFixed(3);
+  const rectPoly = g => [[g.x,g.y],[g.x+g.w,g.y],[g.x+g.w,g.y+g.h],[g.x,g.y+g.h]];
+  const pts = p => p.map(([x,y]) => `${n(X(x))},${n(Y(y))}`).join(' ');
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+  function text(x, y, s, cls, extra=''){ return `<text x="${n(X(x))}" y="${n(Y(y))}" text-anchor="middle" dominant-baseline="middle" class="${cls}" ${extra}>${esc(s)}</text>`; }
+  function line(a, b, cls){ return `<line x1="${n(X(a[0]))}" y1="${n(Y(a[1]))}" x2="${n(X(b[0]))}" y2="${n(Y(b[1]))}" class="${cls}"/>`; }
+
+  function dimH(x1, x2, y, label, acc){
+    const c = acc ? ' acc' : '';
+    let s = line([x1,y],[x2,y],'dimline'+c);
+    [x1,x2].forEach(x => { s += line([x-0.3,y-0.3],[x+0.3,y+0.3],'dimline'+c); });
+    s += text((x1+x2)/2, y+0.55, label, 't-dimlabel'+c);
+    return s;
+  }
+  function dimV(y1, y2, x, label, acc){
+    const c = acc ? ' acc' : '';
+    let s = line([x,y1],[x,y2],'dimline'+c);
+    [y1,y2].forEach(y => { s += line([x-0.3,y-0.3],[x+0.3,y+0.3],'dimline'+c); });
+    const tx = X(x) + (flip ? 0.55 : -0.55), ty = Y((y1+y2)/2);
+    s += `<text x="${n(tx)}" y="${n(ty)}" text-anchor="middle" dominant-baseline="middle" class="t-dimlabel${c}" transform="rotate(-90 ${n(tx)} ${n(ty)})">${esc(label)}</text>`;
+    return s;
+  }
+  function arc(hinge, from, to, cwInPlan){
+    const r = Math.hypot(from[0]-hinge[0], from[1]-hinge[1]);
+    // Clockwise in plan (y up) is counter-clockwise on screen; mirroring reverses it again.
+    let sweep = cwInPlan ? 0 : 1; if (flip) sweep = 1 - sweep;
+    return `<path class="swing" d="M${n(X(from[0]))},${n(Y(from[1]))} A${n(r)},${n(r)} 0 0 ${sweep} ${n(X(to[0]))},${n(Y(to[1]))}"/>`;
+  }
+
+
+  function draw(){
+    let s = '';
+    ROOMS.forEach(r => { s += `<polygon class="rm ${r.type}" data-room="${r.id}" points="${pts(r.poly || rectPoly(r.g))}"><title>${esc(r.name)}</title></polygon>`; });
+    ROOMS.forEach(r => { s += `<polygon class="wall" points="${pts(r.poly || rectPoly(r.g))}"/>`; });
+
+    // stairs: up to the north; the top part runs over the bedroom closet
+    const st = ROOMS.find(r => r.id === 'stair').g, cx = st.x + st.w/2;
+    for (let i = 1; i < 11; i++){ const y = st.y + i*0.86; s += line([st.x, y],[st.x + st.w, y], y < st.y + st.h ? 'tread' : 'above'); }
+    s += `<polygon class="above" points="${pts([[st.x,st.y+st.h],[st.x+st.w,st.y+st.h],[st.x+st.w,25.5],[st.x,25.5]])}"/>`;
+    s += line([cx, st.y + 0.5],[cx, st.y + st.h - 0.9],'arrow');
+    s += `<polygon class="arrowhead" points="${pts([[cx-0.38,st.y+st.h-1.05],[cx+0.38,st.y+st.h-1.05],[cx,st.y+st.h-0.35]])}"/>`;
+    s += text(cx + 0.9, st.y + 0.5, 'UP', 't-small');
+
+    OPEN.forEach(([a,b]) => { s += line(a,b,'open-cover') + line(a,b,'open-dash'); });
+
+    const rectF = (x0, x1, y0, y1, cls) => `<polygon class="${cls}" points="${pts([[x0,y0],[x1,y0],[x1,y1],[x0,y1]])}"/>`;
+    const circF = (x, y, r, cls) => `<circle class="${cls}" cx="${n(X(x))}" cy="${n(Y(y))}" r="${n(r)}"/>`;
+    const tiny = (x, y, t) => text(x, y, t, 't-fix', 'pointer-events="none"');
+    // bathroom rough-in (approximate, from the photo)
+    s += rectF(0.05, 0.45, 12.1, 13.6, 'rough') + tiny(1.75, 12.85, 'SINK DRAINS');
+    s += circF(4.6, 14.6, 0.36, 'rough') + tiny(4.4, 13.75, 'TOILET FLANGE');
+    s += circF(4.4, 19.3, 0.24, 'rough') + tiny(3.4, 19.95, 'DRAIN STUB');
+    // utility: washer and dryer on the north wall, softener, wall-hung water heater, furnace and supply plenum
+    s += rectF(0.6, 3.1, 25.3, 27.85, 'fix') + tiny(1.85, 26.55, 'WASHER');
+    s += rectF(3.3, 5.8, 25.3, 27.85, 'fix') + tiny(4.55, 26.55, 'DRYER');
+    s += circF(8.9, 26.95, 0.62, 'fix') + circF(9.95, 27.25, 0.38, 'fix') + tiny(8.5, 25.95, 'SOFTENER');
+    s += rectF(10.6, 11.0, 25.9, 27.7, 'fix') + tiny(9.1, 24.8, 'WATER HEATER');
+    s += rectF(9.5, 11.0, 21.6, 23.0, 'fix') + rectF(9.5, 11.0, 23.0, 24.2, 'fix2') + tiny(8.55, 22.3, 'FURNACE');
+    // main drain stack, straight down from the upstairs bathroom
+    s += circF(24.05, 16.25, 0.27, 'stack') + tiny(22.9, 16.25, 'STACK');
+    // bathroom's west wall is open framing for now
+    s += line([6.19, 10.875],[6.19, 14.6],'framed') + line([6.19, 17.0],[6.19, 20.8],'framed');
+
+    s += `<polygon class="outer" points="${pts(OUTLINE)}"/>`;
+    const RR = (x1, x2, y1, y2, cls) => { const a = Math.min(X(x1),X(x2)), b = Math.max(X(x1),X(x2)); return `<rect class="${cls}" x="${n(a)}" y="${n(Y(Math.max(y1,y2)))}" width="${n(b-a)}" height="${n(Math.abs(y2-y1))}"/>`; };
+    const at = (o, u, v) => o.ax === 'v' ? [o.c + v, u] : [u, o.c + v];
+    const band = (o, u0, u1, v0, v1, cls) => { const a = at(o, u0, v0), b = at(o, u1, v1); return RR(a[0], b[0], a[1], b[1], cls); };
+    OPENINGS.forEach(o => {
+      const w = o.e - o.s;
+      if (o.t === 'win'){ s += band(o, o.s, o.e, -0.3, 0.3, 'win') + line(at(o, o.s, 0), at(o, o.e, 0), 'winline'); return; }
+      if (o.out) s += band(o, o.s, o.e, o.out*0.32, 0, 'gap-sheet') + band(o, o.s, o.e, 0, -o.out*0.32, 'gap-' + o.room);
+      else s += band(o, o.s, o.e, -0.2, 0.2, 'gap-' + o.room);
+      if (o.t === 'door'){
+        const hu = o.hinge === 's' ? o.s : o.e, ou = o.hinge === 's' ? o.e : o.s, Hh = at(o, hu, 0), L = at(o, hu, o.swing*w);
+        s += line(Hh, L, 'leaf');
+        const arcPts = []; for (let i = 0; i <= 16; i++){ const t = i/16*Math.PI/2; arcPts.push(at(o, hu + (ou - hu)*Math.sin(t), o.swing*w*Math.cos(t))); }
+        s += `<polyline class="swing" points="${pts(arcPts)}"/>`;
+      } else if (o.t === 'cased'){
+        s += line(at(o, o.s, -0.3), at(o, o.s, 0.3), 'jamb') + line(at(o, o.e, -0.3), at(o, o.e, 0.3), 'jamb');
+      }
+    });
+    s += tiny(22.9, 12.95, 'TO BACK YARD');
+    s += tiny(9.0, 11.6, 'KEYPAD DOOR');
+
+    // labels
+    ROOMS.forEach(r => {
+      const g = r.g || {x:0,y:0,w:0,h:0}; let lx, ly;
+      if (r.lab){ [lx,ly] = r.lab; } else { lx = g.x + g.w/2; ly = g.y + g.h/2; }
+      const a = r.a || (r.d ? area(r.d) : 0);
+      if (r.mode === 'full'){
+        const lines = [[(r.short || r.name).toUpperCase(),'t-name']];
+        if (r.sub) lines.push([r.sub,'t-sub']);
+        lines.push([`${fmt(r.d[0])} × ${fmt(r.d[1])}`,'t-dim'],[`${Math.round(a)} sq ft`,'t-area']);
+        const step = 0.82, top = ly + (lines.length-1)*step/2;
+        lines.forEach(([t,c],i) => { s += text(lx, top - i*step, t, c, `data-room="${r.id}" pointer-events="none"`); });
+      } else if (r.mode === 'small'){
+        s += text(lx, ly+0.35, (r.short || r.name).toUpperCase(), 't-small', 'pointer-events="none"');
+        s += text(lx, ly-0.45, `${fmt(r.d[0])}×${fmt(r.d[1])}`, 't-tiny', 'pointer-events="none"');
+      } else if (r.mode === 'cl'){
+        s += text(lx, ly, 'CL', 't-small', 'pointer-events="none"');
+      } else if (r.mode === 'hall'){
+        s += text(lx, ly+0.55, 'HALL', 't-small', 'pointer-events="none"');
+        s += text(lx, ly-0.25, `${fmt(r.d[0])} × ${fmt(r.d[1])}`, 't-tiny', 'pointer-events="none"');
+      }
+    });
+
+    // overall inside dimensions
+    s += dimH(0, W, -1.7, '≈ 24′ 7″ inside');
+    s += dimV(0, H, -1.7, '≈ 27′ 11″ inside');
+    const fx = X(-3.4), fy = Y(14.0);
+    s += `<text x="${n(fx)}" y="${n(fy)}" text-anchor="middle" dominant-baseline="middle" class="t-front" transform="rotate(90 ${n(fx)} ${n(fy)})">FRONT · EAST</text>`;
+    // north arrow and scale bar, west of the plan
+    const nc = [X(W + 2.9), Y(22.0)];
+    s += `<circle class="compass" cx="${n(nc[0])}" cy="${n(nc[1])}" r="1.25"/>`;
+    s += `<polygon class="compass-n" points="${n(nc[0])},${n(nc[1]-1.05)} ${n(nc[0]-0.42)},${n(nc[1]+0.65)} ${n(nc[0])},${n(nc[1]+0.3)} ${n(nc[0]+0.42)},${n(nc[1]+0.65)}"/>`;
+    s += `<text x="${n(nc[0])}" y="${n(nc[1]-1.85)}" text-anchor="middle" dominant-baseline="middle" class="t-small">N</text>`;
+    const sbx = X(W + 6.0), sby = Y(16.6);
+    for (let i = 0; i < 5; i++){ s += `<rect class="${i%2?'sb-light':'sb-dark'}" x="${n(sbx+i)}" y="${n(sby)}" width="1" height=".32"/>`; }
+    s += `<rect class="sb-light" x="${n(sbx)}" y="${n(sby)}" width="5" height=".32" style="fill:none"/>`;
+    [[0,'0'],[5,'5 ft']].forEach(([o,t]) => { s += `<text x="${n(sbx+o)}" y="${n(sby+0.85)}" text-anchor="middle" dominant-baseline="middle" class="t-tiny">${t}</text>`; });
+
+    const svg = document.getElementById('plan');
+    svg.setAttribute('viewBox', `-6.4 -1.6 37.0 ${n(H+5.2)}`);
+    svg.innerHTML = s;
+  }
+
+  function schedule(){
+    let h = '', total = 0;
+    SCHEDULE.forEach(([grp, rows]) => {
+      h += `<tr class="grp"><td colspan="3">${grp}</td></tr>`;
+      rows.forEach(([id,label,d,a]) => {
+        const sq = a || area(d); total += sq;
+        h += `<tr data-room="${id}" tabindex="0"><td>${label}</td><td class="dim">${fmt(d[0])} × ${fmt(d[1])}</td><td class="num">${Math.round(sq)}</td></tr>`;
+      });
+    });
+    h += `<tr class="total"><td>Basement, rooms and halls</td><td></td><td class="num">≈ ${Math.round(total)}</td></tr>`;
+    document.getElementById('sched').innerHTML = h;
+    document.getElementById('meta').innerHTML = `<b>≈ ${Math.round(total)} sq ft</b> of rooms and halls · 2 bedrooms · 1 bath roughed in · laundry and mechanicals`;
+  }
+
+  function setHL(id, on){
+    document.querySelectorAll(`#plan .rm[data-room="${id}"], #sched tr[data-room="${id}"]`).forEach(el => el.classList.toggle('hl', on));
+  }
+  let cur = null;
+  function hover(e){
+    const t = e.target.closest && e.target.closest('[data-room]');
+    const id = t ? t.getAttribute('data-room') : null;
+    if (id === cur) return;
+    if (cur) setHL(cur, false);
+    cur = id; if (cur) setHL(cur, true);
+  }
+  ['mouseover','focusin'].forEach(ev => {
+    document.getElementById('plan').addEventListener(ev, hover);
+    document.getElementById('sched').addEventListener(ev, hover);
+  });
+  ['mouseleave','focusout'].forEach(ev => {
+    ['plan','sched'].forEach(k => document.getElementById(k).addEventListener(ev, () => { if (cur) setHL(cur,false); cur = null; }));
+  });
+
+  schedule();
+  draw();
+})();
+</script>
+
+</body>
+</html>

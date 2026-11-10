@@ -1,6 +1,6 @@
-# Existing Conditions: Main Floor and Exterior
+# Existing Conditions: Main Floor, Basement and Exterior
 
-This is a room-by-room record of the house **as it is now, before renovation**. It's based on hand measurements and the walkthrough photos taken **November 8, 2026** (see [`photos/`](photos/)). The measured floor plan is in [`floor-plan/`](floor-plan/).
+This is a room-by-room record of the house **as it is now, before renovation**. It's based on hand measurements and the walkthrough photos taken **November 8, 2026** (see [`photos/`](photos/)), plus the basement measurements and photos from **November 9–10, 2026**. The measured floor plans are in [`floor-plan/`](floor-plan/) (main floor) and [`floor-plan/basement/`](floor-plan/basement/) (basement).
 
 **How to read it:**
 
@@ -19,9 +19,9 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | **Bedrooms / baths** | 4 bed / 1 bath total. On the main floor: 2 bedrooms (green room, bedroom 2) and 1 bath. |
 | **Main floor** | About **887 sq ft** of rooms. |
 | **Garage** | Attached one-car garage, **19′ 4″ × 11′ 9″ (227 sq ft)**. It sticks out about 4′ 3″ past the front wall. |
-| **Basement** | Unfinished, and plumbed for a second bathroom. Not photographed yet. |
+| **Basement** | About **616 sq ft** of rooms and halls under the main block, mostly unfinished: a master bedroom with a walk-in closet across the south end, a smaller bedroom in the northwest, a bathroom roughed in but not built, an open utility and laundry area, and a door out to the back yard. See §4.10. |
 | **Exterior** | Beige vinyl lap siding, stacked stone on the garage front, white trim and gutters, gray architectural asphalt shingle roof. |
-| **Heating** | Forced air, with floor and ceiling registers. The gas furnace and water heater are probably in the basement; see the flue pipe in §4.4. Some old electric baseboard heaters are still in place, and others have already been removed. |
+| **Heating** | Forced air, with floor and ceiling registers. A high-efficiency gas furnace and a wall-hung tankless water heater are in the basement utility area; both vent through plastic pipe (§4.10). Some old electric baseboard heaters are still in place, and others have already been removed. |
 | **Cooling** | No central air seen. There's a window AC unit in the green room. |
 | **Electrical panel** | In an open wall bay at the top of the stairs. The meter is on the back of the dining bump-out. |
 
@@ -46,6 +46,8 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | Stair opening | 3′ 7″ × 7′ 4″ | 26 | Measured as 43″ × 88″. |
 | Top landing | 3′ 7″ × 2′ 8″ | 10 | |
 | Garage | 19′ 4″ × 11′ 9″ | 227 | Measured as 232″ × 141″. |
+
+The basement's rooms are listed in §4.10.
 
 ---
 
@@ -284,6 +286,39 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 - **Stains:** identify the dark stains on the south wall (soot, mold or paint) before covering that wall.
 - **Wiring:** protect the exposed wiring where it could be bumped.
 
+### 4.10 Basement *(photos 19–33)*
+
+Measured and photographed November 9–10, 2026. The [basement plan](floor-plan/basement/) shows how the rooms fit together. The two sides tie out: master + bathroom + utility on the front side and master + long hall + bedroom on the back side both come to **27′ 2″** front to back.
+
+| Space | Size (east–west × north–south) | Sq ft | Where |
+|---|---|---:|---|
+| Master bedroom | 19′ 3″ × 10′ 6″ | ~195 | South wall, under the green room and bedroom 2. It narrows to **8′ 8″** for the 3 ft at its west end, then angles back to full width over 2 ft. |
+| Master walk-in closet | 4′ 7″ × 10′ 6″ | 48 | East end of the master, opening from the master. |
+| Bedroom | 9′ 4″ × 10′ 10″ | 101 | Northwest, under the kitchen. |
+| Bedroom closet | 3′ 2″ deep × 4′ 3″ wide | 13 | Under the stairs, opening from the bedroom's east wall. No doors. |
+| Bathroom (roughed in) | 6′ × 9′ 11″ | 60 | Against the front wall, under the front room. |
+| Utility area | 11′ × 6′ 9″ | 74 | North of the bathroom, under the front room. Open to the hall. |
+| Hall beside the bathroom | 4′ 8″ × 9′ 11″ | 46 | Between the bathroom and the stairs. |
+| Long hall | 13′ 6″ × 5′ 10″ | 79 | Along the master's north side, from the stairs to the back wall. |
+| **Total** | | **≈ 616** | About 24′ 7″ × 27′ 11″ inside, under the 25′ × 28′ 9″ main block. |
+
+| | |
+|---|---|
+| **Stairs** | Come down facing south under the main stair, landing where the two halls meet. The bedroom door is just west of the bottom step. |
+| **Master bedroom** *(photos 25, 26, 29, 33)* | Unfinished. The south wall is framed and insulated with kraft-faced batts; the north wall is framing with cardboard tacked behind the studs. A slider window on the west end wall looks out at the yard at about ground level. The door from the hall has an electronic keypad lock. Concrete floor with a patched rectangle and some old black adhesive. |
+| **Walk-in closet** *(photos 27, 28)* | Drywall hung but not finished. The south end wall is framed and insulated. **Old dark square floor tiles** are still down over most of the floor. |
+| **Bedroom** *(photos 22, 23, 24)* | The only finished room: painted drywall, a textured ceiling and a ceiling fan with lights. A slider window on the west wall looks out under the deck. The carpet is up, showing a grid of **black adhesive** from old square tiles. |
+| **Bathroom** *(photo 21)* | Framed with open studs, no drywall and no door yet. The back wall is the foundation. Rough-in: a double sink drain with supply stubs on the back wall, a toilet flange with a test cap, a capped drain stub that's probably for a shower, and wiring and boxes. |
+| **Utility area** *(photos 19, 20, 31)* | A **high-efficiency gas furnace** vented with two plastic pipes, with its supply plenum; a **wall-hung tankless water heater**; a water softener with a brine tank; a whole-house filter; a condensate pump; the **washer and dryer** on the north wall with a laundry standpipe. A metal pipe rises behind the dryer into the joists. Open studs on the concrete walls, open joists, and a concrete floor with old tile-adhesive trowel marks and patches. |
+| **Halls** *(photos 29–33)* | Concrete floor with patches and some old adhesive. The long hall ends at the back (west) wall with a **door to the back yard**, a small hopper window that looks out under the deck, and the **main drain stack**, which comes straight down from the upstairs bathroom. A round metal duct and a galvanized supply trunk run along the ceiling. There's a wood post under a beam near the bottom of the stairs, and one framed wall has a plywood patch. |
+| **Ceilings** | Open joists everywhere except the bedroom, with exposed wiring. |
+
+**[Attention]**
+
+- **Asbestos test:** the dark square floor tiles in the walk-in closet and the black adhesive in the bedroom, master and halls can contain asbestos. Have a sample of each tested before any more steaming, scraping or grinding.
+- **Climb-out (egress) windows:** a basement bedroom needs a window big enough and low enough to climb out of. Measure the opening and sill height of the bedroom and master windows. The bedroom's window opens under the deck.
+- **The flue upstairs:** the furnace and water heater vent through plastic pipe, so the metal flue in the chase beside bedroom 2 may no longer serve them. Confirm what the metal pipe behind the dryer connects to.
+
 ---
 
 ## 5. Schedules
@@ -335,7 +370,9 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | Electric baseboard heaters, **still installed** | Dining, under both north windows (2) | Remove them and cap the circuits. |
 | Old heater junction boxes and covers | Bedroom 2 (south and west walls), front room (north and west walls) | The heaters are gone. Make the boxes and circuits safe. |
 | Window AC | Green room, south window | No central air seen. |
-| Gas flue pipe | Chase between bedroom 2 and the hall | Check clearances before closing the wall. |
+| Gas flue pipe | Chase between bedroom 2 and the hall | Check clearances before closing the wall. The furnace and water heater vent through plastic pipe, so **[Confirm]** whether anything still uses this flue. |
+| Gas furnace | Basement utility area | High-efficiency, vented with two plastic pipes. Supply plenum beside it. |
+| Tankless water heater | Basement utility area, on the wall | Vented with plastic pipe. |
 | Bath exhaust fan | — | **None seen.** |
 | Roof vents | Back slope: about 6–7 box vents, 1 turbine, 2+ plumbing vents | |
 
@@ -364,34 +401,39 @@ This is a room-by-room record of the house **as it is now, before renovation**. 
 | Bedroom 2, bedroom 2 closet | Oak strip hardwood | Refinish. |
 | Bathroom | Large dark gray tile | Keep. |
 | Garage | Concrete | Optional sealer or epoxy. |
-| Basement | — | **[Confirm]** This is probably where the carpeted room and the unfinished room are. |
+| Basement bedroom | Carpet removed; black adhesive from old square tiles | **[Attention]** Test before removing. |
+| Basement walk-in closet | Old dark square tiles | **[Attention]** Test before removing. |
+| Rest of the basement | Concrete, with patches and some old adhesive | Test any black adhesive first. |
 
 ---
 
 ## 6. Issues to address, roughly by priority
 
-1. **Gas flue clearance** in bedroom 2's open wall. Confirm the clearances and wiring before closing it. *(Safety)*
-2. **Open electrical panel bay** at the top of the stairs. Finish the opening properly and keep the access clear. *(Safety)*
-3. **Garage fire separation.** Put fire-rated drywall on the walls shared with the house, close off any attic opening, and make sure the door to the house is solid or fire-rated and closes on its own. *(Safety)*
-4. **Garage south wall stains.** Identify them (soot, mold or paint).
-5. **Bathroom tub surround.** It's failing, so check for water damage behind it and around the window. Replace the surround and waterproof the window.
-6. **Bathroom exhaust fan.** None seen; add one vented outside.
-7. **Hall ceiling hole.** Check for a leak (roof or flue pipe) before patching.
-8. **Baseboard heaters.** Remove the two in the dining room, and make the old junction boxes in bedroom 2 and the front room safe.
-9. **Exposed duct** in the front room. It's live, so get an HVAC quote to reroute it (into a wall or closet, or replace it with floor registers), or box it in. Decide before the new floors go in.
-10. **Open walls.** Close the bath wall by the door, bedroom 2's east wall and the panel bay.
-11. **Exposed garage wiring.** Protect it where it could be bumped.
-12. **Drywall repair** throughout: shelf and anchor holes, damaged patches, the marker in the dining room.
+1. **Asbestos test** before any more floor removal in the basement: the old dark square tiles in the walk-in closet and the black adhesive in the bedroom, master and halls. *(Safety)*
+2. **Gas flue clearance** in bedroom 2's open wall. Confirm the clearances and wiring before closing it. *(Safety)*
+3. **Open electrical panel bay** at the top of the stairs. Finish the opening properly and keep the access clear. *(Safety)*
+4. **Garage fire separation.** Put fire-rated drywall on the walls shared with the house, close off any attic opening, and make sure the door to the house is solid or fire-rated and closes on its own. *(Safety)*
+5. **Basement bedroom windows.** Measure them for climb-out (egress) size before either room is used as a bedroom. *(Safety)*
+6. **Garage south wall stains.** Identify them (soot, mold or paint).
+7. **Bathroom tub surround.** It's failing, so check for water damage behind it and around the window. Replace the surround and waterproof the window.
+8. **Bathroom exhaust fan.** None seen; add one vented outside.
+9. **Hall ceiling hole.** Check for a leak (roof or flue pipe) before patching.
+10. **Baseboard heaters.** Remove the two in the dining room, and make the old junction boxes in bedroom 2 and the front room safe.
+11. **Exposed duct** in the front room. It's live, so get an HVAC quote to reroute it (into a wall or closet, or replace it with floor registers), or box it in. Decide before the new floors go in.
+12. **Open walls.** Close the bath wall by the door, bedroom 2's east wall and the panel bay.
+13. **Exposed garage wiring.** Protect it where it could be bumped.
+14. **Drywall repair** throughout: shelf and anchor holes, damaged patches, the marker in the dining room.
 
 ---
 
 ## 7. Open questions
 
-- Which basement rooms are the **carpeted bedroom** and the **unfinished room**?
 - What are the **deck's dimensions**? It looks larger than 150 sq ft.
 - Is the south end of the roof a **hip or a gable**? What's on the north and south sides (garage side windows or doors)?
 - What's the **linen closet's** exact size?
-- Where are the **gas meter, furnace and water heater**, presumably in the basement?
+- Where is the **gas meter**? (The furnace and water heater are in the basement utility area.)
+- Does anything still use the **metal flue** in the chase beside bedroom 2?
+- What are the **bedroom and master windows'** opening sizes and sill heights?
 - Does the **picture window** open?
 - What caused the **hall ceiling hole**?
 - Is there any **central AC**?

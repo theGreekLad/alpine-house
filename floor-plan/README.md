@@ -6,6 +6,8 @@ The main-floor plan of the house as it is today, before renovation. It's drawn f
 
 **Open `index.html` in a browser** to see the interactive version. Hovering a room highlights it in both the drawing and the room schedule.
 
+The **[basement plan](basement/)** (Nov 10, 2026) is in `basement/`.
+
 ## Overview
 
 - **Orientation:** the front of the house faces east. The bedrooms are on the south side, and the garage and dining room are on the north side.
