@@ -312,7 +312,7 @@ Measured and photographed November 9–10, 2026. The [basement plan](floor-plan/
 | **Utility area** *(photos 19, 20, 31)* | Along the **north wall**: a **high-efficiency gas furnace** vented with two plastic pipes, with its supply plenum; a **wall-hung tankless water heater**; a whole-house filter; and a water softener with a brine tank. A condensate pump sits on the floor. The **washer and dryer** are on the **east (front) wall**, with a laundry standpipe, and a metal pipe rises behind the dryer into the joists. Open studs on the concrete walls, open joists, and a concrete floor with old tile-adhesive trowel marks and patches. |
 | **Halls** *(photos 29–33)* | Concrete floor with patches and some old adhesive. The long hall ends at the back (west) wall with a **door to the back yard**, a small hopper window that looks out under the deck, and the **main drain stack**, which comes straight down from the upstairs bathroom. A round metal duct and a galvanized supply trunk run along the ceiling. There's a wood post under a beam near the bottom of the stairs, and one framed wall has a plywood patch. |
 | **Ceilings** | Open joists everywhere except the bedroom, with exposed wiring. |
-| **Heating ducts** *(photos 34–41)* | The supply riser goes straight up from the furnace to the attic; it's the exposed round duct in the front room's northwest corner upstairs. The main supply trunk runs south along the ceiling over the hall beside the bathroom to the master bedroom, with round branches west along the long hall and through the master. Along the south wall, sheet metal nailed across the ceiling joists forms a duct running from the walk-in closet through the master. The return comes down beside the furnace, through a media filter cabinet. |
+| **Heating ducts** *(photos 34–41)* | The supply riser goes straight up from the furnace to the attic; it's the exposed round duct in the front room's northwest corner upstairs. A supply run from the furnace's west side and a return run from its east side go south side by side along the ceiling over the hall beside the bathroom and into the master bedroom. Round supply branches run west along the long hall and through the master. Along the south wall, sheet metal nailed across the ceiling joists forms the **returns**, from the walk-in closet through the master; **they have holes somewhere**. The return comes down to the furnace through a media filter cabinet. |
 
 **[Attention]**
 
@@ -367,7 +367,8 @@ Measured and photographed November 9–10, 2026. The [basement plan](floor-plan/
 | Floor registers | Front room (west wall by the hall door), green room (by the door; southeast corner), bedroom 2 (southwest corner), kitchen (stair half wall) | From the basement furnace. |
 | Ceiling supply registers | Front room (near the front wall), bedroom 2, dining (above the slider) | Probably fed by the corner duct through ducts in the attic. |
 | Exposed round duct | Front room, northwest corner, floor to ceiling | **Live (confirmed).** It's the riser that goes **straight up from the furnace** in the basement to the attic, feeding the ceiling registers. |
-| Main supply trunk | Basement ceiling, over the hall beside the bathroom | Rectangular, running south from the furnace to the master bedroom's north wall. Round branches run west along the long hall and through the master. *(photos 34–41)* |
+| Supply and return runs | Basement ceiling, over the hall beside the bathroom | Side by side: the supply from the furnace's west side, the return from its east side. Both run south into the master bedroom. Round supply branches run west along the long hall and through the master. *(photos 34–41)* |
+| Return ducts on the ceiling joists | Basement, along the south wall (walk-in closet and master) | Sheet metal nailed across the joists. **They have holes somewhere**, so they pull in basement air and dust. |
 | Return and filter | Basement, beside the furnace | A return drop on the furnace's east side, with a media filter cabinet between them. |
 | Thermostat | Front room, west wall by the hall door | |
 | Electric baseboard heaters, **still installed** | Dining, under both north windows (2) | Remove them and cap the circuits. |
@@ -416,16 +417,17 @@ Measured and photographed November 9–10, 2026. The [basement plan](floor-plan/
 2. **Gas flue clearance** in bedroom 2's open wall. Confirm the clearances and wiring before closing it. *(Safety)*
 3. **Open electrical panel bay** at the top of the stairs. Finish the opening properly and keep the access clear. *(Safety)*
 4. **Garage fire separation.** Put fire-rated drywall on the walls shared with the house, close off any attic opening, and make sure the door to the house is solid or fire-rated and closes on its own. *(Safety)*
-5. **Basement bedroom windows.** Measure them for climb-out (egress) size before either room is used as a bedroom. *(Safety)*
-6. **Garage south wall stains.** Identify them (soot, mold or paint).
-7. **Bathroom tub surround.** It's failing, so check for water damage behind it and around the window. Replace the surround and waterproof the window.
-8. **Bathroom exhaust fan.** None seen; add one vented outside.
-9. **Hall ceiling hole.** Check for a leak (roof or flue pipe) before patching.
-10. **Baseboard heaters.** Remove the two in the dining room, and make the old junction boxes in bedroom 2 and the front room safe.
-11. **Exposed duct** in the front room. It's live, so get an HVAC quote to reroute it (into a wall or closet, or replace it with floor registers), or box it in. Decide before the new floors go in.
-12. **Open walls.** Close the bath wall by the door, bedroom 2's east wall and the panel bay.
-13. **Exposed garage wiring.** Protect it where it could be bumped.
-14. **Drywall repair** throughout: shelf and anchor holes, damaged patches, the marker in the dining room.
+5. **Leaky return ducts** in the basement. Seal the holes in the sheet-metal returns on the ceiling joists, and while the basement floors are being stripped, turn the furnace fan off or cover the returns so the dust isn't drawn through the house. *(Safety)*
+6. **Basement bedroom windows.** Measure them for climb-out (egress) size before either room is used as a bedroom. *(Safety)*
+7. **Garage south wall stains.** Identify them (soot, mold or paint).
+8. **Bathroom tub surround.** It's failing, so check for water damage behind it and around the window. Replace the surround and waterproof the window.
+9. **Bathroom exhaust fan.** None seen; add one vented outside.
+10. **Hall ceiling hole.** Check for a leak (roof or flue pipe) before patching.
+11. **Baseboard heaters.** Remove the two in the dining room, and make the old junction boxes in bedroom 2 and the front room safe.
+12. **Exposed duct** in the front room. It's live, so get an HVAC quote to reroute it (into a wall or closet, or replace it with floor registers), or box it in. Decide before the new floors go in.
+13. **Open walls.** Close the bath wall by the door, bedroom 2's east wall and the panel bay.
+14. **Exposed garage wiring.** Protect it where it could be bumped.
+15. **Drywall repair** throughout: shelf and anchor holes, damaged patches, the marker in the dining room.
 
 ---
 

@@ -384,7 +384,7 @@ The basement photos were taken November 9–10, 2026. Photos 34–41 show the he
 **Camera:** in the utility area, looking north.
 
 - The furnace, with its two plastic vent pipes, a media filter cabinet beside it, and the tall return drop.
-- **Overhead:** the wide supply trunk, and the round riser rising at the top left. The riser goes straight up to the attic; it's the exposed duct in the front room upstairs.
+- **Overhead:** the supply leaves the furnace's left (west) side and the return comes in on its right (east) side; both run south toward the camera. The round riser at the top left goes straight up to the attic; it's the exposed duct in the front room upstairs.
 - **Right:** the wall-hung tankless water heater, the whole-house filter, the softener's brine tank and the condensate pump.
 - **Left:** a drywalled wall with a framed opening near the floor.
 
@@ -393,7 +393,7 @@ The basement photos were taken November 9–10, 2026. Photos 34–41 show the he
 
 **Camera:** in the hall beside the bathroom, looking up and south toward the master bedroom's door.
 
-- The main supply trunk runs along the ceiling, with a rectangular takeoff on its underside.
+- The supply and return runs go side by side along the ceiling, with the dark seam between them, heading south into the master bedroom. There's a rectangular takeoff on the underside.
 
 ### 36 · Duct by the post
 ![Duct by the post](36-basement-duct-by-the-post.jpg)
@@ -407,21 +407,21 @@ The basement photos were taken November 9–10, 2026. Photos 34–41 show the he
 
 **Camera:** in the walk-in closet, looking up into the corner by the south wall.
 
-- Sheet metal is nailed across the ceiling joists along the south wall, turning the joist bay into a duct. Foil insulation lines the next bay, and a black flexible line crosses it.
+- Sheet metal is nailed across the ceiling joists along the south wall, turning the joist bay into a return duct. Foil insulation lines the next bay, and a black flexible line crosses it.
 
 ### 38 · Ceiling duct at the walk-in closet's south wall
 ![Ceiling duct at the walk-in closet's south wall](38-basement-duct-along-outside-wall-2.jpg)
 
 **Camera:** in the walk-in closet, looking up at the south end.
 
-- The same sheet-metal duct on the ceiling along the insulated south wall, between the closet's drywall walls.
+- The same sheet-metal return on the ceiling along the insulated south wall, between the closet's drywall walls.
 
 ### 39 · Ceiling duct in the master bedroom
 ![Ceiling duct in the master bedroom](39-basement-duct-beside-beam.jpg)
 
 **Camera:** in the master bedroom, looking up toward the west window.
 
-- The sheet-metal duct continues along the ceiling. The round supply duct runs beside it, and spray foam seals the rim joist above the window.
+- The sheet-metal return continues along the ceiling. The round supply duct runs beside it, and spray foam seals the rim joist above the window.
 
 ### 40 · Master bedroom ceiling
 ![Master bedroom ceiling](40-basement-master-ceiling-round-duct.jpg)
