@@ -256,16 +256,16 @@ The basement photos were taken November 9–10, 2026. The [basement plan](../flo
 ### 19 · Utility area, laundry wall
 ![Utility area, laundry wall](19-basement-utility-laundry-wall.jpg)
 
-**Camera:** in the hall, looking north into the utility area.
+**Camera:** in the utility area, looking east toward the front wall.
 
-- **Left:** the wall-hung tankless water heater, a whole-house filter, the water softener with its brine tank, and a condensate pump on the floor.
-- **Far wall:** the dryer and the top-load washer on the north foundation wall, with the laundry standpipe and a metal pipe rising behind the dryer into the joists.
+- **Left (north wall):** the wall-hung tankless water heater, a whole-house filter, the water softener with its brine tank, and a condensate pump on the floor.
+- **Far wall (east):** the dryer and the top-load washer, with the laundry standpipe and a metal pipe rising behind the dryer into the joists.
 - **Floor and ceiling:** concrete with old tile-adhesive trowel marks and patches; open joists with wiring.
 
 ### 20 · Utility area, furnace
 ![Utility area, furnace](20-basement-utility-furnace.jpg)
 
-**Camera:** in the utility area, looking at the furnace.
+**Camera:** in the utility area, looking north at the furnace.
 
 - The high-efficiency gas furnace with its two plastic vent pipes, the galvanized supply plenum beside it, and the water heater at the right edge.
 - A drywalled wall behind it with a small framed opening low on the left.

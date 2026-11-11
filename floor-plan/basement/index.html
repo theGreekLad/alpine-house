@@ -190,7 +190,7 @@ tr.sub td{color:var(--muted);border-bottom:0}
         <li class="ask"><h3>The flue upstairs</h3>
           <p>The furnace and the wall-hung water heater both vent through plastic pipe. If nothing else uses the metal flue in the chase beside bedroom 2, the chase can come out rather than be boxed in. Check what the metal pipe rising behind the dryer connects to.</p></li>
         <li class="ask"><h3>Placed from photos</h3>
-          <p>The back door, the windows, the bathroom rough-in and the furnace, water heater, softener, washer and dryer are placed from the photos. The bathroom's walls are open framing, and it has no door yet; the opening is drawn where the photo shows a wider gap.</p></li>
+          <p>The washer and dryer are on the east wall and the furnace and softener on the north wall, as you described; their exact spots along those walls, the back door, the windows and the bathroom rough-in are placed from the photos. The bathroom's walls are open framing, and it has no door yet; the opening is drawn where the photo shows a wider gap.</p></li>
         <li class="ok"><h3>What lines up</h3>
           <p>Front to back on the front side: master 10′ 6″ + bathroom 9′ 11″ + utility 6′ 9″ = 27′ 2″. On the back side: master 10′ 6″ + long hall 5′ 10″ + bedroom 10′ 10″ = 27′ 2″. Across, the hall side comes to about 24′ 6″ and the master side to about 24′ 3″. With walls, that's about 24′ 7″ × 27′ 11″ inside, which fits under the 25′ × 28′ 9″ main floor.</p></li>
       </ul>
@@ -211,7 +211,7 @@ tr.sub td{color:var(--muted);border-bottom:0}
     {id:'bath',   name:'Bathroom', type:'wet', g:{x:0,y:10.875,w:6,h:9.92}, d:[72,119], mode:'full', lab:[2.8,17.0]},
     {id:'hall1',  name:'Hall', type:'circ', g:{x:6.38,y:10.875,w:4.67,h:9.92}, d:[56,119], mode:'hall', lab:[8.7,18.6]},
     {id:'hall2',  name:'Long hall', type:'circ', poly:[[11.05,10.875],[19.55,10.875],[21.55,9.045],[24.55,9.045],[24.55,16.7],[14.85,16.7],[14.85,16.0],[11.05,16.0]], d:[162,70], mode:'hall', lab:[18.3,13.4]},
-    {id:'util',   name:'Utility area', sub:'Laundry · furnace · water', type:'garage', g:{x:0,y:21.17,w:11.05,h:6.75}, d:[132,81], mode:'full', lab:[4.7,23.15]},
+    {id:'util',   name:'Utility area', sub:'Laundry · furnace · water', type:'garage', g:{x:0,y:21.17,w:11.05,h:6.75}, d:[132,81], mode:'full', lab:[6.2,22.95]},
     {id:'stair',  name:'Stairs', type:'circ', g:{x:11.05,y:16.0,w:3.8,h:7.2}, mode:'none'},
     {id:'bcl',    name:'Bedroom closet', type:'store', g:{x:11.68,y:23.2,w:3.17,h:4.25}, d:[38,51], mode:'cl'},
     {id:'bed',    name:'Bedroom', type:'bed', g:{x:15.22,y:17.08,w:9.33,h:10.83}, d:[112,130], mode:'full', lab:[19.9,22.0]}
@@ -294,12 +294,12 @@ tr.sub td{color:var(--muted);border-bottom:0}
     s += rectF(0.05, 0.45, 12.1, 13.6, 'rough') + tiny(1.75, 12.85, 'SINK DRAINS');
     s += circF(4.6, 14.6, 0.36, 'rough') + tiny(4.4, 13.75, 'TOILET FLANGE');
     s += circF(4.4, 19.3, 0.24, 'rough') + tiny(3.4, 19.95, 'DRAIN STUB');
-    // utility: washer and dryer on the north wall, softener, wall-hung water heater, furnace and supply plenum
-    s += rectF(0.6, 3.1, 25.3, 27.85, 'fix') + tiny(1.85, 26.55, 'WASHER');
-    s += rectF(3.3, 5.8, 25.3, 27.85, 'fix') + tiny(4.55, 26.55, 'DRYER');
-    s += circF(8.9, 26.95, 0.62, 'fix') + circF(9.95, 27.25, 0.38, 'fix') + tiny(8.5, 25.95, 'SOFTENER');
-    s += rectF(10.6, 11.0, 25.9, 27.7, 'fix') + tiny(9.1, 24.8, 'WATER HEATER');
-    s += rectF(9.5, 11.0, 21.6, 23.0, 'fix') + rectF(9.5, 11.0, 23.0, 24.2, 'fix2') + tiny(8.55, 22.3, 'FURNACE');
+    // utility: washer and dryer on the east (front) wall; softener, wall-hung water heater, supply plenum and furnace along the north wall
+    s += rectF(0.05, 2.45, 21.45, 23.7, 'fix') + tiny(1.25, 22.575, 'WASHER');
+    s += rectF(0.05, 2.45, 23.8, 26.05, 'fix') + tiny(1.25, 24.925, 'DRYER');
+    s += circF(1.2, 26.95, 0.68, 'fix') + circF(2.35, 27.4, 0.4, 'fix') + tiny(3.05, 26.4, 'SOFTENER');
+    s += rectF(3.6, 5.1, 27.5, 27.9, 'fix') + tiny(4.75, 27.0, 'WATER HEATER');
+    s += rectF(7.0, 8.9, 26.1, 27.9, 'fix2') + rectF(8.9, 10.4, 25.4, 27.9, 'fix') + tiny(9.65, 24.95, 'FURNACE');
     // main drain stack, straight down from the upstairs bathroom
     s += circF(24.05, 16.25, 0.27, 'stack') + tiny(22.9, 16.25, 'STACK');
     // bathroom's west wall is open framing for now
