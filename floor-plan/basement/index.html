@@ -139,6 +139,9 @@ tr.sub td{color:var(--muted);border-bottom:0}
 #plan .t-duct{font-family:var(--mono);font-size:.36px;fill:var(--accent)}
 #plan .duct-ret{fill:var(--warn);fill-opacity:.07;stroke:var(--warn);stroke-width:.07;stroke-dasharray:.35 .2}
 #plan .t-ret{font-family:var(--mono);font-size:.36px;fill:var(--warn)}
+#plan .route{fill:none;stroke:var(--ink);stroke-width:.16;stroke-dasharray:.6 .25 .12 .25;stroke-linejoin:round}
+#plan .route-up{fill:var(--sheet);stroke:var(--ink);stroke-width:.14}
+#plan .t-route{font-family:var(--display);font-weight:600;font-size:.42px;fill:var(--ink)}
 </style>
 </head>
 <body>
@@ -166,6 +169,7 @@ tr.sub td{color:var(--muted);border-bottom:0}
       <span><i style="border-radius:50%;border-color:var(--warn)"></i>Plumbing rough-in</span>
       <span><i style="border:1px dashed var(--accent);background:transparent"></i>Supply duct overhead (approx.)</span>
       <span><i style="border:1px dashed var(--warn);background:transparent"></i>Return duct overhead (approx.)</span>
+      <span>-·- Riser move, option A or B (proposed)</span>
     </div>
     <div class="titleblock">
       <div><span>Drawn from</span><strong>Your measurements and photos</strong></div>
@@ -201,6 +205,8 @@ tr.sub td{color:var(--muted);border-bottom:0}
           <p>The washer and dryer are on the east wall and the furnace and softener on the north wall, as you described; their exact spots along those walls, the back door, the windows and the bathroom rough-in are placed from the photos. The bathroom's walls are open framing, and it has no door yet; the opening is drawn where the photo shows a wider gap.</p></li>
 <li class="ask"><h3>Seal the return ducts</h3>
           <p>The returns made of sheet metal on the ceiling joists have holes somewhere, so they pull in basement air and dust. Seal them, and while floors are being stripped down here, turn the furnace fan off or cover the returns so dust from the old adhesive isn't drawn through the house.</p></li>
+        <li class="ask"><h3>Moving the riser: two options</h3>
+          <p><b>A:</b> a new supply off the furnace runs west under the top of the stairs and along the bedroom's north side, then up into the north end of the kitchen's west counter. It's the shortest and straightest, but opens the bedroom ceiling. <b>B:</b> it runs south over the hall beside the bathroom, west along the long hall, and up into the kitchen's southwest corner cabinet beside the drain stack. Only unfinished ceilings, but longer, with more bends. Either way it continues up to the attic and reconnects to the attic ducts. Today's riser looks about 12″ across in the photos; to carry the same air over the longer path, plan on about 14″ for A and 14–16″ for B (sizes in the README).</p></li>
         <li class="ok"><h3>Heating ducts</h3>
           <p>A supply run from the furnace's west side and a return run from its east side go south side by side along the ceiling over the hall beside the bathroom and into the master bedroom. The supply also rises straight up to the attic (the exposed round duct in the front room's northwest corner upstairs) and sends round branches west along the long hall and through the master. Along the south wall, sheet metal across the ceiling joists forms the returns. How the runs end inside the master is approximate, from the photos.</p></li>
         <li class="ok"><h3>What lines up</h3>
@@ -223,7 +229,7 @@ tr.sub td{color:var(--muted);border-bottom:0}
     {id:'bath',   name:'Bathroom', type:'wet', g:{x:0,y:10.875,w:6,h:9.92}, d:[72,119], mode:'full', lab:[2.8,17.0]},
     {id:'hall1',  name:'Hall', type:'circ', g:{x:6.38,y:10.875,w:4.67,h:9.92}, d:[56,119], mode:'hall', lab:[8.7,13.9]},
     {id:'hall2',  name:'Long hall', type:'circ', poly:[[11.05,10.875],[19.55,10.875],[21.55,9.045],[24.55,9.045],[24.55,16.7],[14.85,16.7],[14.85,16.0],[11.05,16.0]], d:[162,70], mode:'hall', lab:[18.3,13.4]},
-    {id:'util',   name:'Utility area', short:'Utility', type:'garage', g:{x:0,y:21.17,w:11.05,h:6.75}, d:[132,81], mode:'full', lab:[5.0,22.9]},
+    {id:'util',   name:'Utility area', short:'Utility', type:'garage', g:{x:0,y:21.17,w:11.05,h:6.75}, d:[132,81], mode:'full', lab:[4.3,22.9]},
     {id:'stair',  name:'Stairs', type:'circ', g:{x:11.05,y:16.0,w:3.8,h:7.2}, mode:'none'},
     {id:'bcl',    name:'Bedroom closet', type:'store', g:{x:11.68,y:23.2,w:3.17,h:4.25}, d:[38,51], mode:'cl'},
     {id:'bed',    name:'Bedroom', type:'bed', g:{x:15.22,y:17.08,w:9.33,h:10.83}, d:[112,130], mode:'full', lab:[19.9,22.0]}
@@ -324,8 +330,13 @@ tr.sub td{color:var(--muted);border-bottom:0}
     s += circF(9.95, 27.35, 0.42, 'riser') + dt(9.95, 28.35, '↑ SUPPLY RISER TO ATTIC');
     // returns: sheet metal across the ceiling joists along the south wall; they have holes somewhere
     s += rectF(0.3, 24.2, 0.25, 1.55, 'duct-ret') + dtr(15.6, 1.95, 'RETURN: SHEET METAL ON THE CEILING JOISTS · HAS HOLES');
+    // options for moving the riser out of the front room's corner (proposed, not built)
+    const route = P => `<polyline class="route" points="${pts(P)}"/>`;
+    const up = (x, y, t) => circF(x, y, 0.55, 'route-up') + text(x, y, t, 't-route', 'pointer-events="none"');
+    s += route([[9.7, 25.9],[23.35, 25.9]]) + up(23.7, 25.9, 'A') + text(19.6, 25.3, 'A: UNDER STAIRS, BEDROOM CEILING', 't-route', 'pointer-events="none"');
+    s += route([[9.4, 25.0],[6.9, 25.0],[6.9, 15.55],[22.05, 15.55]]) + up(22.6, 15.75, 'B') + text(18.6, 16.1, 'B: OVER THE HALLS', 't-route', 'pointer-events="none"');
     // main drain stack, straight down from the upstairs bathroom
-    s += circF(24.05, 16.25, 0.27, 'stack') + tiny(22.9, 16.25, 'STACK');
+    s += circF(24.05, 16.25, 0.27, 'stack') + tiny(23.75, 15.3, 'STACK');
     // bathroom's west wall is open framing for now
     s += line([6.19, 10.875],[6.19, 14.6],'framed') + line([6.19, 17.0],[6.19, 20.8],'framed');
 

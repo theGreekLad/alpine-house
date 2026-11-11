@@ -37,6 +37,7 @@ The **[basement plan](basement/)** (Nov 10, 2026) is in `basement/`.
   - Kitchen: the counters, sink, dishwasher, range, fridge and breakfast bar.
   - Bathroom: the tub, toilet and vanity.
   - The live duct in the front room corner, and the two baseboard heaters in the dining room.
+- **Duct move, options A and B** (circled letters, proposed): where the front room duct could come up instead, inside a kitchen cabinet on the west wall. **A** is at the north end of the west counter, where the fridge is today. **B** is in the southwest corner cabinet, beside the drain stack. Both carry on to the attic and reconnect to the attic ducts there. The routes underneath and the duct sizes are on the [basement plan](basement/#moving-the-supply-riser-phase-2).
 - **The flue chase** (hatched): between the linen closet and bedroom 2, with the flue pipe from the basement.
 
 ## Room schedule

@@ -25,6 +25,7 @@ The basement as it is today, before renovation. It's drawn from the room measure
 - **Plumbing rough-in:** the bathroom's sink drains, toilet flange and drain stub, and the main stack under the upstairs bathroom.
 - **Utility:** the furnace, filter and return, the wall-hung water heater and the softener along the north wall; the washer and dryer on the east wall.
 - **Heating ducts overhead** (approximate, from the photos): the supply riser straight up from the furnace to the attic; the supply and return runs side by side south over the hall into the master; round supply branches west along the long hall and through the master; and the returns made of sheet metal on the ceiling joists along the south wall, which have holes somewhere.
+- **Riser move, options A and B** (dash-dot, proposed): two ways to take the supply riser out of the middle of the front room. See below.
 - **Open to the next space** (dashed): the utility area, the two halls, and the open side of the stairs.
 
 The room sizes are your measurements. The doors, windows, rough-in and equipment are placed from the photos, so their positions are approximate.
@@ -44,6 +45,44 @@ Sizes are east–west × north–south.
 | Hall beside the bathroom | 4′ 8″ × 9′ 11″ | 46 |
 | Long hall to the back door | 13′ 6″ × 5′ 10″ | 79 |
 | **Basement, rooms and halls** | | **≈ 616** |
+
+## Moving the supply riser (Phase 2)
+
+Today the supply riser goes straight up from the furnace, through the northwest corner of the front room, to the attic. Both options start at the furnace, come up inside a kitchen cabinet on the west wall, carry on to the attic, and reconnect to the attic ducts there. The old riser then comes out.
+
+- **Option A: under the stairs and over the bedroom.** It runs straight west over the top of the stairs and the bedroom closet, then along the bedroom's north wall, and comes up at the north end of the kitchen's west wall.
+  - **Pros:** shortest and straightest, and it runs along the joists.
+  - **Cons:** it opens the finished bedroom ceiling. A 14″ round duct is deeper than the joists, so it needs a boxed-in soffit along the bedroom's north wall, or two flat ducts in neighboring joist bays. Upstairs it comes up where the fridge stands today. In the favorite plan that's the north end of the west counter, so it needs a tall cabinet or a boxed column there.
+- **Option B: over the halls.** It runs south over the hall beside the bathroom, next to today's supply and return, then west along the long hall, and comes up in the kitchen's southwest corner beside the drain stack.
+  - **Pros:** it only crosses unfinished ceilings, and it comes up in the blind corner cabinet. That corner is dead space in both today's kitchen and the favorite plan.
+  - **Cons:** it's longer and has more bends, and it has to cross the existing runs, so it needs a bigger duct for the same air.
+
+**How big.** The riser carries the air for the whole attic system, so the new path has to carry the same air at the same pressure loss. A longer path with more bends needs a bigger duct. These sizes assume a typical 0.1″ of pressure loss per 100 ft:
+
+| Today's riser | Carries about | Option A | Option B |
+|---|---:|---|---|
+| 8″ round | 230 CFM | 10″ | 10″ |
+| 10″ round | 420 CFM | 12″ | 12–14″ |
+| **12″ round** (looks about this in the photos) | **680 CFM** | **14″** | **14–16″** |
+
+Flat ducts that fit between joists, and the round size each matches:
+
+| Flat duct | Same as round | Fits joists |
+|---|---|---|
+| 6″ × 14″ | 10″ | 2×8 and up |
+| 7″ × 14″ | 10½″ | 2×10 and up |
+| 8″ × 14″ | 11½″ | 2×10 and up |
+| 10″ × 18″ | 14½″ | Soffit only |
+
+Two 7″ × 14″ ducts in neighboring joist bays carry about what one 14″ round does.
+
+**Before you pick:**
+
+- **Measure the riser:** wrap a tape around it and divide by 3.14 (a 37½″ wrap is 12″).
+- **Measure the joists:** check their depth and spacing.
+- **In the attic:** insulate and seal the new section where it runs.
+- **Add a damper:** put a balancing damper in the new run.
+- **Get an airflow check:** have the HVAC tech confirm the size, and measure airflow at the upstairs ceiling registers before and after.
 
 ## Things to check
 

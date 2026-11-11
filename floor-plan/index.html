@@ -98,6 +98,8 @@ tr.sub td{color:var(--muted);border-bottom:0}
 #plan .rm.mech{fill:url(#hatch)}
 #plan .win{fill:var(--glass);stroke:var(--ink);stroke-width:.05} #plan .winline{stroke:var(--ink);stroke-width:.05}
 #plan .bypass{fill:var(--sheet);stroke:var(--line);stroke-width:.05} #plan .jamb{stroke:var(--ink);stroke-width:.14}
+#plan .route-up{fill:var(--sheet);stroke:var(--ink);stroke-width:.14}
+#plan .t-route{font-family:var(--display);font-weight:600;font-size:.42px;fill:var(--ink)}
 #plan .fix{fill:var(--fix);stroke:var(--line);stroke-width:.06} #plan .fix2{fill:none;stroke:var(--line);stroke-width:.05}
 #plan .halfwall{stroke:var(--line);stroke-width:.1} #plan .t-fix{font-family:var(--mono);font-size:.36px;fill:var(--muted)}
 #plan .wall{fill:none;stroke:var(--line);stroke-width:.28;stroke-linejoin:miter}
@@ -153,13 +155,14 @@ tr.sub td{color:var(--muted);border-bottom:0}
       <span><i style="background:var(--glass);height:6px;vertical-align:2px"></i>Window</span>
       <span>◜ door swing</span>
       <span>- - - open to the next room</span>
+      <span>Ⓐ Ⓑ New duct spot, option A or B (proposed)</span>
     </div>
     <div class="titleblock">
       <div><span>Drawn from</span><strong>Measurements and walkthrough photos</strong></div>
       <div><span>Scale</span><strong>Approximate · not for construction</strong></div>
       <div><span>Orientation</span><strong>Front faces east</strong></div>
       <div><span>Walls</span><strong>Not drawn to thickness</strong></div>
-      <div><span>Updated</span><strong>Nov 8, 2026</strong></div>
+      <div><span>Updated</span><strong>Nov 10, 2026</strong></div>
     </div>
   </section>
 
@@ -188,6 +191,8 @@ tr.sub td{color:var(--muted);border-bottom:0}
           <p>The linen closet at the south end of the hall is drawn at about 2′ 7″ × 2′. Send its real size if you measure it.</p></li>
         <li class="ok"><h3>Flue chase</h3>
           <p>The hatched space between the linen closet and bedroom 2 holds the flue pipe from the basement. It's the wall that's open in bedroom 2.</p></li>
+        <li class="ask"><h3>Moving the duct: two options</h3>
+          <p>The round duct in the front room's corner is the furnace's supply riser. Phase 2 moves it into a kitchen cabinet on the west wall. <b>A</b> comes up at the north end of the west counter, where the fridge is today, after running under the stairs and over the basement bedroom. <b>B</b> comes up in the southwest corner cabinet beside the drain stack, after running over the basement halls. Either way it carries on up to the attic and reconnects to the attic ducts. To carry the same air, plan on about 14″ for A and 14–16″ for B if today's riser is 12″. Details are on the <a href="basement/">basement plan</a>.</p></li>
         <li class="ok"><h3>What lines up</h3>
           <p>Across the bedroom side: green room 11′ 6″ + two 2′ closets + bedroom 2 at 9′ 6″ = 25′. Across the kitchen side: front room 11′ 6″ + stairs 3′ 7″ + kitchen 9′ 8″ ≈ 24′ 9″. Front to back, bedroom 2 + bath + kitchen comes to 28′ 1″ against 28′ 9″ on the front side. The 8″ difference is about two interior walls.</p></li>
       </ul>
@@ -325,7 +330,9 @@ tr.sub td{color:var(--muted);border-bottom:0}
     s += rectF(20.95, 22.25, 15.95, 16.38, 'fix') + ellF(21.6, 15.3, 0.55, 0.68, 'fix');
     s += rectF(18.5, 20.6, 14.7, 16.38, 'fix') + ellF(19.55, 15.55, 0.6, 0.4, 'fix2');
     // front room duct, flue pipe, dining room baseboard heaters
-    s += circF(10.85, 28.1, 0.42, 'fix') + tiny(9.6, 27.6, 'DUCT');
+    { const up = (x, y, t) => circF(x, y, 0.5, 'route-up') + text(x, y, t, 't-route', 'pointer-events="none"');
+      s += up(24.2, 25.95, 'A') + up(23.45, 16.95, 'B'); }
+    s += circF(10.85, 28.1, 0.42, 'fix') + tiny(8.6, 27.55, 'DUCT, MOVES TO A OR B');
     s += circF(14.8, 6.3, 0.22, 'fix') + tiny(14.75, 7.35, 'FLUE');
     s += rectF(21.35, 24.35, 39.95, 40.25, 'fix') + rectF(26.35, 29.35, 39.95, 40.25, 'fix') + tiny(25.35, 39.35, 'BASEBOARD HEATERS');
     // half wall with pass-through between the kitchen and the stairs
