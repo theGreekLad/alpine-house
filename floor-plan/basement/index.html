@@ -197,7 +197,7 @@ tr.sub td{color:var(--muted);border-bottom:0}
         <li class="ask"><h3>Placed from photos</h3>
           <p>The washer and dryer are on the east wall and the furnace and softener on the north wall, as you described; their exact spots along those walls, the back door, the windows and the bathroom rough-in are placed from the photos. The bathroom's walls are open framing, and it has no door yet; the opening is drawn where the photo shows a wider gap.</p></li>
         <li class="ok"><h3>Heating ducts</h3>
-          <p>The furnace's supply goes straight up from the furnace to the attic: that's the exposed round duct in the front room's northwest corner upstairs. The main supply trunk runs south along the ceiling over the hall beside the bathroom to the master bedroom, with round branches running west along the long hall and through the master. The return comes down beside the furnace. Branch routes are approximate, from the photos.</p></li>
+          <p>The furnace's supply goes straight up from the furnace to the attic: that's the exposed round duct in the front room's northwest corner upstairs. The main supply trunk runs south along the ceiling over the hall beside the bathroom to the master bedroom, with round branches running west along the long hall and through the master. Along the south wall, sheet metal nailed across the ceiling joists forms a duct from the walk-in closet through the master. The return comes down beside the furnace. Branch routes are approximate, from the photos.</p></li>
         <li class="ok"><h3>What lines up</h3>
           <p>Front to back on the front side: master 10′ 6″ + bathroom 9′ 11″ + utility 6′ 9″ = 27′ 2″. On the back side: master 10′ 6″ + long hall 5′ 10″ + bedroom 10′ 10″ = 27′ 2″. Across, the hall side comes to about 24′ 6″ and the master side to about 24′ 3″. With walls, that's about 24′ 7″ × 27′ 11″ inside, which fits under the 25′ × 28′ 9″ main floor.</p></li>
       </ul>
@@ -314,6 +314,7 @@ tr.sub td{color:var(--muted);border-bottom:0}
     s += line([10.2, 14.7],[22.6, 14.7],'duct-r') + dt(16.6, 15.25, 'ROUND SUPPLY (OVERHEAD)');
     s += line([8.9, 11.4],[8.9, 9.6],'duct-r') + line([8.9, 9.6],[19.4, 9.6],'duct-r') + dt(14.6, 9.05, 'ROUND SUPPLY (OVERHEAD)');
     s += circF(9.95, 27.35, 0.42, 'riser') + dt(9.95, 28.35, '↑ RISER TO ATTIC');
+    s += rectF(0.3, 24.2, 0.25, 1.55, 'duct') + dt(13.6, 1.95, 'SHEET-METAL DUCT ON THE CEILING JOISTS (OVERHEAD)');
     // main drain stack, straight down from the upstairs bathroom
     s += circF(24.05, 16.25, 0.27, 'stack') + tiny(22.9, 16.25, 'STACK');
     // bathroom's west wall is open framing for now

@@ -24,7 +24,7 @@ The basement as it is today, before renovation. It's drawn from the room measure
 - **Windows:** three on the west wall, one each for the master bedroom, the long hall and the bedroom.
 - **Plumbing rough-in:** the bathroom's sink drains, toilet flange and drain stub, and the main stack under the upstairs bathroom.
 - **Utility:** the furnace, filter and return, the wall-hung water heater and the softener along the north wall; the washer and dryer on the east wall.
-- **Heating ducts overhead** (approximate, from the photos): the riser straight up from the furnace to the attic, the main supply trunk south over the hall, and round branches west along the long hall and through the master.
+- **Heating ducts overhead** (approximate, from the photos): the riser straight up from the furnace to the attic, the main supply trunk south over the hall, round branches west along the long hall and through the master, and a sheet-metal duct on the ceiling joists along the south wall.
 - **Open to the next space** (dashed): the utility area, the two halls, and the open side of the stairs.
 
 The room sizes are your measurements. The doors, windows, rough-in and equipment are placed from the photos, so their positions are approximate.

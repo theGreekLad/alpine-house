@@ -402,26 +402,26 @@ The basement photos were taken November 9–10, 2026. Photos 34–41 show the he
 
 - A flat sheet-metal duct runs up along the framing, with a black gas pipe beside it. The walk-in closet's plastic-sheeted opening and the drywall with drawings are below.
 
-### 37 · Duct along an outside wall
-![Duct along an outside wall](37-basement-duct-along-outside-wall.jpg)
+### 37 · Ceiling duct in the walk-in closet
+![Ceiling duct in the walk-in closet](37-basement-duct-along-outside-wall.jpg)
 
-**Camera:** looking up at the top of an insulated outside wall.
+**Camera:** in the walk-in closet, looking up into the corner by the south wall.
 
-- A sheet-metal duct runs along the top of the wall. Foil insulation lines the joist bay, and a black flexible line crosses it.
+- Sheet metal is nailed across the ceiling joists along the south wall, turning the joist bay into a duct. Foil insulation lines the next bay, and a black flexible line crosses it.
 
-### 38 · Duct along an outside wall, another stretch
-![Duct along an outside wall, another stretch](38-basement-duct-along-outside-wall-2.jpg)
+### 38 · Ceiling duct at the walk-in closet's south wall
+![Ceiling duct at the walk-in closet's south wall](38-basement-duct-along-outside-wall-2.jpg)
 
-**Camera:** looking up at another insulated outside wall.
+**Camera:** in the walk-in closet, looking up at the south end.
 
-- Another sheet-metal run along the top of the wall, under the floor joists.
+- The same sheet-metal duct on the ceiling along the insulated south wall, between the closet's drywall walls.
 
-### 39 · Duct beside a beam
-![Duct beside a beam](39-basement-duct-beside-beam.jpg)
+### 39 · Ceiling duct in the master bedroom
+![Ceiling duct in the master bedroom](39-basement-duct-beside-beam.jpg)
 
-**Camera:** looking up along a beam near a window.
+**Camera:** in the master bedroom, looking up toward the west window.
 
-- A long sheet-metal duct runs beside the beam. Spray foam seals the rim joist above the window.
+- The sheet-metal duct continues along the ceiling. The round supply duct runs beside it, and spray foam seals the rim joist above the window.
 
 ### 40 · Master bedroom ceiling
 ![Master bedroom ceiling](40-basement-master-ceiling-round-duct.jpg)
