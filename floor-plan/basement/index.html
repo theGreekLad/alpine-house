@@ -133,6 +133,10 @@ tr.sub td{color:var(--muted);border-bottom:0}
 #plan .stack{fill:var(--fix);stroke:var(--ink);stroke-width:.07}
 #plan .above{fill:none;stroke:var(--muted);stroke-width:.06;stroke-dasharray:.3 .22}
 #plan .framed{stroke:var(--line);stroke-width:.1;stroke-dasharray:.12 .2}
+#plan .duct{fill:var(--accent);fill-opacity:.07;stroke:var(--accent);stroke-width:.07;stroke-dasharray:.35 .2}
+#plan .duct-r{stroke:var(--accent);stroke-width:.5;stroke-opacity:.35;stroke-linecap:round}
+#plan .riser{fill:var(--sheet);stroke:var(--accent);stroke-width:.1}
+#plan .t-duct{font-family:var(--mono);font-size:.36px;fill:var(--accent)}
 </style>
 </head>
 <body>
@@ -158,6 +162,7 @@ tr.sub td{color:var(--muted);border-bottom:0}
       <span>◜ door swing</span>
       <span>- - - open to the next space</span>
       <span><i style="border-radius:50%;border-color:var(--warn)"></i>Plumbing rough-in</span>
+      <span><i style="border:1px dashed var(--accent);background:transparent"></i>Ducts overhead (approx.)</span>
     </div>
     <div class="titleblock">
       <div><span>Drawn from</span><strong>Your measurements and photos</strong></div>
@@ -191,6 +196,8 @@ tr.sub td{color:var(--muted);border-bottom:0}
           <p>The furnace and the wall-hung water heater both vent through plastic pipe. If nothing else uses the metal flue in the chase beside bedroom 2, the chase can come out rather than be boxed in. Check what the metal pipe rising behind the dryer connects to.</p></li>
         <li class="ask"><h3>Placed from photos</h3>
           <p>The washer and dryer are on the east wall and the furnace and softener on the north wall, as you described; their exact spots along those walls, the back door, the windows and the bathroom rough-in are placed from the photos. The bathroom's walls are open framing, and it has no door yet; the opening is drawn where the photo shows a wider gap.</p></li>
+        <li class="ok"><h3>Heating ducts</h3>
+          <p>The furnace's supply goes straight up from the furnace to the attic: that's the exposed round duct in the front room's northwest corner upstairs. The main supply trunk runs south along the ceiling over the hall beside the bathroom to the master bedroom, with round branches running west along the long hall and through the master. The return comes down beside the furnace. Branch routes are approximate, from the photos.</p></li>
         <li class="ok"><h3>What lines up</h3>
           <p>Front to back on the front side: master 10′ 6″ + bathroom 9′ 11″ + utility 6′ 9″ = 27′ 2″. On the back side: master 10′ 6″ + long hall 5′ 10″ + bedroom 10′ 10″ = 27′ 2″. Across, the hall side comes to about 24′ 6″ and the master side to about 24′ 3″. With walls, that's about 24′ 7″ × 27′ 11″ inside, which fits under the 25′ × 28′ 9″ main floor.</p></li>
       </ul>
@@ -209,9 +216,9 @@ tr.sub td{color:var(--muted);border-bottom:0}
     {id:'mcl',    name:'Master walk-in closet', short:'Walk-in', type:'store', g:{x:0,y:0,w:4.58,h:10.5}, d:[55,126], mode:'small'},
     {id:'master', name:'Master bedroom', sub:'8′ 8″ wide at the west end', type:'bed', poly:[[4.96,0],[24.55,0],[24.55,8.67],[21.55,8.67],[19.55,10.5],[4.96,10.5]], d:[231,126], a:195, mode:'full', lab:[13.3,5.0]},
     {id:'bath',   name:'Bathroom', type:'wet', g:{x:0,y:10.875,w:6,h:9.92}, d:[72,119], mode:'full', lab:[2.8,17.0]},
-    {id:'hall1',  name:'Hall', type:'circ', g:{x:6.38,y:10.875,w:4.67,h:9.92}, d:[56,119], mode:'hall', lab:[8.7,18.6]},
+    {id:'hall1',  name:'Hall', type:'circ', g:{x:6.38,y:10.875,w:4.67,h:9.92}, d:[56,119], mode:'hall', lab:[8.7,13.9]},
     {id:'hall2',  name:'Long hall', type:'circ', poly:[[11.05,10.875],[19.55,10.875],[21.55,9.045],[24.55,9.045],[24.55,16.7],[14.85,16.7],[14.85,16.0],[11.05,16.0]], d:[162,70], mode:'hall', lab:[18.3,13.4]},
-    {id:'util',   name:'Utility area', sub:'Laundry · furnace · water', type:'garage', g:{x:0,y:21.17,w:11.05,h:6.75}, d:[132,81], mode:'full', lab:[6.2,22.95]},
+    {id:'util',   name:'Utility area', short:'Utility', type:'garage', g:{x:0,y:21.17,w:11.05,h:6.75}, d:[132,81], mode:'full', lab:[5.0,22.9]},
     {id:'stair',  name:'Stairs', type:'circ', g:{x:11.05,y:16.0,w:3.8,h:7.2}, mode:'none'},
     {id:'bcl',    name:'Bedroom closet', type:'store', g:{x:11.68,y:23.2,w:3.17,h:4.25}, d:[38,51], mode:'cl'},
     {id:'bed',    name:'Bedroom', type:'bed', g:{x:15.22,y:17.08,w:9.33,h:10.83}, d:[112,130], mode:'full', lab:[19.9,22.0]}
@@ -299,7 +306,14 @@ tr.sub td{color:var(--muted);border-bottom:0}
     s += rectF(0.05, 2.45, 23.8, 26.05, 'fix') + tiny(1.25, 24.925, 'DRYER');
     s += circF(1.2, 26.95, 0.68, 'fix') + circF(2.35, 27.4, 0.4, 'fix') + tiny(3.05, 26.4, 'SOFTENER');
     s += rectF(3.6, 5.1, 27.5, 27.9, 'fix') + tiny(4.75, 27.0, 'WATER HEATER');
-    s += rectF(7.0, 8.9, 26.1, 27.9, 'fix2') + rectF(8.9, 10.4, 25.4, 27.9, 'fix') + tiny(9.65, 24.95, 'FURNACE');
+    s += rectF(7.1, 8.5, 26.3, 27.9, 'fix2') + rectF(8.5, 9.0, 25.6, 27.9, 'fix2') + rectF(9.0, 10.4, 25.4, 27.9, 'fix') + tiny(9.7, 24.95, 'FURNACE') + tiny(7.8, 25.9, 'RETURN');
+    // heating ducts overhead (approximate, from the photos): the riser straight up from the furnace to the attic,
+    // the main supply trunk south over the hall, and round branches west along the long hall and through the master
+    const dt = (x, y, t, rot) => { const tx = X(x), ty = Y(y); return `<text x="${n(tx)}" y="${n(ty)}" text-anchor="middle" dominant-baseline="middle" class="t-duct" pointer-events="none"${rot ? ` transform="rotate(-90 ${n(tx)} ${n(ty)})"` : ''}>${t}</text>`; };
+    s += rectF(7.6, 10.2, 11.4, 25.4, 'duct') + dt(9.75, 19.3, 'SUPPLY TRUNK (OVERHEAD)', true);
+    s += line([10.2, 14.7],[22.6, 14.7],'duct-r') + dt(16.6, 15.25, 'ROUND SUPPLY (OVERHEAD)');
+    s += line([8.9, 11.4],[8.9, 9.6],'duct-r') + line([8.9, 9.6],[19.4, 9.6],'duct-r') + dt(14.6, 9.05, 'ROUND SUPPLY (OVERHEAD)');
+    s += circF(9.95, 27.35, 0.42, 'riser') + dt(9.95, 28.35, '↑ RISER TO ATTIC');
     // main drain stack, straight down from the upstairs bathroom
     s += circF(24.05, 16.25, 0.27, 'stack') + tiny(22.9, 16.25, 'STACK');
     // bathroom's west wall is open framing for now

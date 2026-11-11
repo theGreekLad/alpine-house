@@ -312,6 +312,7 @@ Measured and photographed November 9–10, 2026. The [basement plan](floor-plan/
 | **Utility area** *(photos 19, 20, 31)* | Along the **north wall**: a **high-efficiency gas furnace** vented with two plastic pipes, with its supply plenum; a **wall-hung tankless water heater**; a whole-house filter; and a water softener with a brine tank. A condensate pump sits on the floor. The **washer and dryer** are on the **east (front) wall**, with a laundry standpipe, and a metal pipe rises behind the dryer into the joists. Open studs on the concrete walls, open joists, and a concrete floor with old tile-adhesive trowel marks and patches. |
 | **Halls** *(photos 29–33)* | Concrete floor with patches and some old adhesive. The long hall ends at the back (west) wall with a **door to the back yard**, a small hopper window that looks out under the deck, and the **main drain stack**, which comes straight down from the upstairs bathroom. A round metal duct and a galvanized supply trunk run along the ceiling. There's a wood post under a beam near the bottom of the stairs, and one framed wall has a plywood patch. |
 | **Ceilings** | Open joists everywhere except the bedroom, with exposed wiring. |
+| **Heating ducts** *(photos 34–41)* | The supply riser goes straight up from the furnace to the attic; it's the exposed round duct in the front room's northwest corner upstairs. The main supply trunk runs south along the ceiling over the hall beside the bathroom to the master bedroom, with round branches west along the long hall and through the master, and sheet-metal runs along the tops of the outside walls. The return comes down beside the furnace, through a media filter cabinet. |
 
 **[Attention]**
 
@@ -365,7 +366,9 @@ Measured and photographed November 9–10, 2026. The [basement plan](floor-plan/
 |---|---|---|
 | Floor registers | Front room (west wall by the hall door), green room (by the door; southeast corner), bedroom 2 (southwest corner), kitchen (stair half wall) | From the basement furnace. |
 | Ceiling supply registers | Front room (near the front wall), bedroom 2, dining (above the slider) | Probably fed by the corner duct through ducts in the attic. |
-| Exposed round duct | Front room, northwest corner, floor to ceiling | **Live (confirmed).** Probably feeds the attic ducts and ceiling registers. |
+| Exposed round duct | Front room, northwest corner, floor to ceiling | **Live (confirmed).** It's the riser that goes **straight up from the furnace** in the basement to the attic, feeding the ceiling registers. |
+| Main supply trunk | Basement ceiling, over the hall beside the bathroom | Rectangular, running south from the furnace to the master bedroom's north wall. Round branches run west along the long hall and through the master. *(photos 34–41)* |
+| Return and filter | Basement, beside the furnace | A return drop on the furnace's east side, with a media filter cabinet between them. |
 | Thermostat | Front room, west wall by the hall door | |
 | Electric baseboard heaters, **still installed** | Dining, under both north windows (2) | Remove them and cap the circuits. |
 | Old heater junction boxes and covers | Bedroom 2 (south and west walls), front room (north and west walls) | The heaters are gone. Make the boxes and circuits safe. |

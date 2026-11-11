@@ -251,7 +251,7 @@ The full room-by-room notes are in [`../existing-conditions.md`](../existing-con
 
 ## Basement
 
-The basement photos were taken November 9–10, 2026. The [basement plan](../floor-plan/basement/) shows where each room is, and §4.10 of the [existing conditions](../existing-conditions.md) has the notes.
+The basement photos were taken November 9–10, 2026. Photos 34–41 show the heating ducts. The [basement plan](../floor-plan/basement/) shows where each room is, and §4.10 of the [existing conditions](../existing-conditions.md) has the notes.
 
 ### 19 · Utility area, laundry wall
 ![Utility area, laundry wall](19-basement-utility-laundry-wall.jpg)
@@ -377,3 +377,62 @@ The basement photos were taken November 9–10, 2026. The [basement plan](../flo
 
 - Open framing with cardboard behind it, wiring and boxes, and a plywood patch.
 - **Left:** the keypad door and the hall toward the bathroom.
+
+### 34 · Furnace and ducts
+![Furnace and ducts](34-basement-furnace-and-ducts.jpg)
+
+**Camera:** in the utility area, looking north.
+
+- The furnace, with its two plastic vent pipes, a media filter cabinet beside it, and the tall return drop.
+- **Overhead:** the wide supply trunk, and the round riser rising at the top left. The riser goes straight up to the attic; it's the exposed duct in the front room upstairs.
+- **Right:** the wall-hung tankless water heater, the whole-house filter, the softener's brine tank and the condensate pump.
+- **Left:** a drywalled wall with a framed opening near the floor.
+
+### 35 · Supply trunk over the hall
+![Supply trunk over the hall](35-basement-supply-trunk-over-hall.jpg)
+
+**Camera:** in the hall beside the bathroom, looking up and south toward the master bedroom's door.
+
+- The main supply trunk runs along the ceiling, with a rectangular takeoff on its underside.
+
+### 36 · Duct by the post
+![Duct by the post](36-basement-duct-by-the-post.jpg)
+
+**Camera:** looking up beside a wood post and beam.
+
+- A flat sheet-metal duct runs up along the framing, with a black gas pipe beside it. The walk-in closet's plastic-sheeted opening and the drywall with drawings are below.
+
+### 37 · Duct along an outside wall
+![Duct along an outside wall](37-basement-duct-along-outside-wall.jpg)
+
+**Camera:** looking up at the top of an insulated outside wall.
+
+- A sheet-metal duct runs along the top of the wall. Foil insulation lines the joist bay, and a black flexible line crosses it.
+
+### 38 · Duct along an outside wall, another stretch
+![Duct along an outside wall, another stretch](38-basement-duct-along-outside-wall-2.jpg)
+
+**Camera:** looking up at another insulated outside wall.
+
+- Another sheet-metal run along the top of the wall, under the floor joists.
+
+### 39 · Duct beside a beam
+![Duct beside a beam](39-basement-duct-beside-beam.jpg)
+
+**Camera:** looking up along a beam near a window.
+
+- A long sheet-metal duct runs beside the beam. Spray foam seals the rim joist above the window.
+
+### 40 · Master bedroom ceiling
+![Master bedroom ceiling](40-basement-master-ceiling-round-duct.jpg)
+
+**Camera:** in the master bedroom, looking up toward the west window.
+
+- A round supply duct runs between the joists toward the window, past a doubled beam and a panned joist bay.
+
+### 41 · Long hall ceiling
+![Long hall ceiling](41-basement-long-hall-ceiling-round-duct.jpg)
+
+**Camera:** in the long hall, looking up and west.
+
+- A round duct runs along the ceiling toward the back door and the small window. The back door has a knob and a keypad deadbolt.
